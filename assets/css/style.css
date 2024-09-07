@@ -19,16 +19,60 @@ section {
     padding: 50px 0;
 }
 
+/* Position the arrows relative to the projects section */
+.projects-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scrolling-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    flex-grow: 1;
+}
+
+/* Position arrows correctly next to the project cards */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.left-arrow {
+    left: -50px;
+}
+
+.right-arrow {
+    right: -50px;
+}
+
+
+/* Project Cards */
 .project-card {
-    border: 1px solid #ddd;
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+    display: inline-block;
+    width: 95%;
+    white-space: normal;
+    word-wrap: break-word;
+    height: auto;
+    min-height: 150px;
 }
 
 .project-card:hover {
-    background-color: #007bff;
-    color: white;
-    transition: 0.3s;
+    transform: scale(1.05);
 }
 
 /* Dark mode styles */
@@ -46,7 +90,7 @@ body.dark-mode .navbar-light.bg-light {
 }
 
 body.dark-mode .navbar-light .navbar-brand, 
-body.dark-mode .navbar-light .nav-link {
+body.dark-mode .navbar-light .navbar-nav .nav-link {
     color: white !important;
 }
 
@@ -65,6 +109,10 @@ body.dark-mode .btn {
     border-color: #555;
     color: white;
 }
+
+
+
+
 
 
 

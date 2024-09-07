@@ -14,6 +14,26 @@ darkModeToggle.addEventListener('click', () => {
         themeIcon.classList.add('fa-moon');
     }
 });
+// Scroll Arrows Functionality
+const scrollContainer = document.getElementById('scroll-container');
+const scrollLeft = document.getElementById('scroll-left');
+const scrollRight = document.getElementById('scroll-right');
+
+// Scroll left
+scrollLeft.addEventListener('click', () => {
+    scrollContainer.scrollBy({
+        left: -300, // Adjust the scroll amount
+        behavior: 'smooth'
+    });
+});
+
+// Scroll right
+scrollRight.addEventListener('click', () => {
+    scrollContainer.scrollBy({
+        left: 300, // Adjust the scroll amount
+        behavior: 'smooth'
+    });
+});
 
 
 
