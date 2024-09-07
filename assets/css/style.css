@@ -1,0 +1,71 @@
+/* Light mode styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.hero-section {
+    background-color: #007bff;
+    color: white;
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.project-card:hover {
+    background-color: #007bff;
+    color: white;
+    transition: 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .hero-section {
+    background-color: #333;
+}
+
+body.dark-mode .navbar-light.bg-light {
+    background-color: #333 !important;
+}
+
+body.dark-mode .navbar-light .navbar-brand, 
+body.dark-mode .navbar-light .nav-link {
+    color: white !important;
+}
+
+body.dark-mode .project-card {
+    border-color: #444;
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .project-card:hover {
+    background-color: #1a73e8;
+}
+
+body.dark-mode .btn {
+    background-color: #555;
+    border-color: #555;
+    color: white;
+}
+
+
+
+
