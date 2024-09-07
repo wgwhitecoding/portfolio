@@ -19,7 +19,6 @@ section {
     padding: 50px 0;
 }
 
-/* Position the arrows relative to the projects section */
 .projects-wrapper {
     position: relative;
     display: flex;
@@ -34,7 +33,6 @@ section {
     flex-grow: 1;
 }
 
-/* Position arrows correctly next to the project cards */
 .arrow {
     position: absolute;
     top: 50%;
@@ -52,30 +50,95 @@ section {
     right: -50px;
 }
 
-
-/* Project Cards */
 .project-card {
-    padding: 20px;
+    position: relative;
+    width: 100%; /* Responsive width */
+    max-width: 400px; /* Ensure cards have max width */
+    height: 200px;
     margin: 20px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background-size: cover;
+    background-position: center;
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
     transition: transform 0.3s;
-    display: inline-block;
-    width: 95%;
-    white-space: normal;
-    word-wrap: break-word;
-    height: auto;
-    min-height: 150px;
+    color: white;
+    overflow: hidden;
 }
 
 .project-card:hover {
     transform: scale(1.05);
 }
 
-/* Dark mode styles */
+.project-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.project-card h4, .project-card p {
+    z-index: 1;
+    margin: 0;
+}
+
+.project-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.modal-body h6 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.modal-body p {
+    font-size: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.modal-footer a {
+    margin-right: 10px;
+}
+
+/* Images in modals */
+.modal-body .row {
+    margin-top: 20px;
+}
+
+.modal-body .col-4 {
+    padding: 10px;
+}
+
+.modal-body img {
+    border-radius: 8px;
+    max-height: 150px;
+    width: 100%;
+}
+
 body.dark-mode {
     background-color: #121212;
     color: white;
@@ -109,6 +172,23 @@ body.dark-mode .btn {
     border-color: #555;
     color: white;
 }
+
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .modal-content .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
+
 
 
 

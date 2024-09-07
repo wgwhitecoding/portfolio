@@ -14,15 +14,25 @@ darkModeToggle.addEventListener('click', () => {
         themeIcon.classList.add('fa-moon');
     }
 });
+
 // Scroll Arrows Functionality
 const scrollContainer = document.getElementById('scroll-container');
 const scrollLeft = document.getElementById('scroll-left');
 const scrollRight = document.getElementById('scroll-right');
 
+// Get the width of one project card dynamically
+const projectCard = document.querySelector('.project-card');
+let cardWidth = projectCard.offsetWidth + 40; // Add margin/padding (adjust 40px as needed)
+
+// Recalculate card width on window resize to maintain responsiveness
+window.addEventListener('resize', () => {
+    cardWidth = projectCard.offsetWidth + 40; // Recalculate card width when window resizes
+});
+
 // Scroll left
 scrollLeft.addEventListener('click', () => {
     scrollContainer.scrollBy({
-        left: -300, // Adjust the scroll amount
+        left: -cardWidth, // Scroll by one full project card
         behavior: 'smooth'
     });
 });
@@ -30,10 +40,11 @@ scrollLeft.addEventListener('click', () => {
 // Scroll right
 scrollRight.addEventListener('click', () => {
     scrollContainer.scrollBy({
-        left: 300, // Adjust the scroll amount
+        left: cardWidth, // Scroll by one full project card
         behavior: 'smooth'
     });
 });
+
 
 
 
