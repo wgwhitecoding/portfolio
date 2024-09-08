@@ -33,6 +33,15 @@
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#credentials">Credentials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
@@ -63,41 +72,85 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="bg-light py-5">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Front-End</h4>
-                    <p>HTML, CSS, JavaScript, Bootstrap</p>
+        <!-- Skills Section -->
+<section id="skills" class="skills-carousel-container py-5">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-wrapper">
+            <!-- Left Arrow (Small Devices) -->
+            <span class="skills-arrow skills-left-arrow" id="skills-left"><i class="fas fa-chevron-left"></i></span>
+
+            <!-- Skills Carousel -->
+            <div class="skills-carousel" id="skillsCarousel">
+                <div class="skill-item" style="--i:0;">
+                    <a href="your-html-credential-link.html" target="_blank">
+                        <img src="assets/images/js.png" alt="HTML Logo">
+                    </a>
                 </div>
-                <div class="col-md-4">
-                    <h4>Back-End</h4>
-                    <p>Python, Django, SQL</p>
+                <div class="skill-item" style="--i:1;">
+                    <a href="your-css-credential-link.html" target="_blank">
+                        <img src="assets/images/js.png" alt="CSS Logo">
+                    </a>
                 </div>
-                <div class="col-md-4">
-                    <h4>Tools</h4>
-                    <p>Git, GitHub, Heroku</p>
+                <div class="skill-item" style="--i:2;">
+                    <a href="your-bootstrap-credential-link.html" target="_blank">
+                        <img src="assets/images/bootstrap-logo.png" alt="Bootstrap Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:3;">
+                    <a href="your-python-credential-link.html" target="_blank">
+                        <img src="assets/images/python-logo.png" alt="Python Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:4;">
+                    <a href="your-django-credential-link.html" target="_blank">
+                        <img src="assets/images/django-logo.png" alt="Django Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:5;">
+                    <a href="your-sql-credential-link.html" target="_blank">
+                        <img src="assets/images/sql-logo.png" alt="SQL Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:6;">
+                    <a href="your-git-credential-link.html" target="_blank">
+                        <img src="assets/images/git-logo.png" alt="Git Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:7;">
+                    <a href="your-github-credential-link.html" target="_blank">
+                        <img src="assets/images/github-logo.png" alt="GitHub Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:8;">
+                    <a href="your-heroku-credential-link.html" target="_blank">
+                        <img src="assets/images/heroku-logo.png" alt="Heroku Logo">
+                    </a>
                 </div>
             </div>
+
+            <!-- Right Arrow (Small Devices) -->
+            <span class="skills-arrow skills-right-arrow" id="skills-right"><i class="fas fa-chevron-right"></i></span>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
+
+    
+
+
 
     <!-- Projects Section -->
     <section id="projects" class="py-5">
         <div class="container">
             <h2>My Projects</h2>
-
-            <!-- Wrapper for arrows and projects -->
             <div class="projects-wrapper position-relative" id="projectWrapper">
-                
                 <!-- Left Arrow -->
                 <span class="arrow left-arrow" id="scroll-left"><i class="fas fa-chevron-left"></i></span>
-
                 <!-- Horizontal Scroll Wrapper -->
                 <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4" id="scroll-container">
-                    
                     <!-- Project 1 -->
                     <div class="col-12 col-md-4 project-item">
                         <div class="project-card" style="background-image: url('assets/images/kanbanview.png');" data-bs-toggle="modal" data-bs-target="#projectModal1">
@@ -107,7 +160,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Project 2 -->
                     <div class="col-12 col-md-4 project-item">
                         <div class="project-card" style="background-image: url('assets/images/wwtbam.jpg');" data-bs-toggle="modal" data-bs-target="#projectModal2">
@@ -117,7 +169,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Project 3 -->
                     <div class="col-12 col-md-4 project-item">
                         <div class="project-card" style="background-image: url('assets/images/weather.png');" data-bs-toggle="modal" data-bs-target="#projectModal3">
@@ -127,7 +178,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Project 4 -->
                     <div class="col-12 col-md-4 project-item">
                         <div class="project-card" style="background-image: url('assets/images/portfolio.jpg');" data-bs-toggle="modal" data-bs-target="#projectModal4">
@@ -137,16 +187,14 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <!-- Right Arrow -->
                 <span class="arrow right-arrow" id="scroll-right"><i class="fas fa-chevron-right"></i></span>
             </div>
         </div>
     </section>
 
-    <!-- Project Modals -->
+    <!-- Modals for Projects -->
     <!-- Modal for Project 1 -->
     <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -157,10 +205,8 @@
                 </div>
                 <div class="modal-body">
                     <p>This is a project management board built using Django and JavaScript. It allows users to create, assign, and track tasks efficiently.</p>
-                    
                     <h6>Technologies Used:</h6>
                     <p>Python, Django, JavaScript, HTML, CSS</p>
-
                     <div class="row">
                         <div class="col-4">
                             <img src="assets/images/signin.png" class="img-fluid" alt="Screenshot 1">
@@ -172,7 +218,6 @@
                             <img src="assets/images/lightmode.png" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-
                     <div class="modal-footer">
                         <a href="https://liveprojectlink.com" class="btn btn-primary" target="_blank">Visit Project</a>
                         <a href="https://github.com/wgwhitecoding/CanDo-CiFinal" class="btn btn-secondary" target="_blank">GitHub Repo</a>
@@ -192,10 +237,8 @@
                 </div>
                 <div class="modal-body">
                     <p>This is a quiz game based on the famous "Who Wants to Be a Millionaire?" format, built using HTML, CSS, and JavaScript.</p>
-                    
                     <h6>Technologies Used:</h6>
                     <p>HTML, CSS, JavaScript</p>
-
                     <div class="row">
                         <div class="col-4">
                             <img src="assets/images/wwtbam1.jpg" class="img-fluid" alt="Screenshot 1">
@@ -207,7 +250,6 @@
                             <img src="assets/images/wwtbam3.jpg" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-
                     <div class="modal-footer">
                         <a href="https://livequizgame.com" class="btn btn-primary" target="_blank">Visit Project</a>
                         <a href="https://github.com/wgwhitecoding/Who-Wants-To-Be-A-Millionaire" class="btn btn-secondary" target="_blank">GitHub Repo</a>
@@ -227,10 +269,8 @@
                 </div>
                 <div class="modal-body">
                     <p>This is a weather app built during a hackathon using HTML, CSS, and JavaScript. It fetches weather data dynamically for the user.</p>
-                    
                     <h6>Technologies Used:</h6>
                     <p>JavaScript, HTML, CSS</p>
-
                     <div class="row">
                         <div class="col-4">
                             <img src="assets/images/weather1.jpg" class="img-fluid" alt="Screenshot 1">
@@ -242,7 +282,6 @@
                             <img src="assets/images/weather3.jpg" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-
                     <div class="modal-footer">
                         <a href="https://crewweatherapp.com" class="btn btn-primary" target="_blank">Visit Project</a>
                         <a href="https://github.com/ChrissyLV/crew-weather" class="btn btn-secondary" target="_blank">GitHub Repo</a>
@@ -262,10 +301,8 @@
                 </div>
                 <div class="modal-body">
                     <p>This is my personal portfolio website built to showcase my projects, skills, and experiences as a full-stack developer.</p>
-                    
                     <h6>Technologies Used:</h6>
                     <p>HTML, CSS, JavaScript</p>
-
                     <div class="row">
                         <div class="col-4">
                             <img src="assets/images/portfolio1.jpg" class="img-fluid" alt="Screenshot 1">
@@ -277,7 +314,6 @@
                             <img src="assets/images/portfolio3.jpg" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-
                     <div class="modal-footer">
                         <a href="https://walidwhiteportfolio.com" class="btn btn-primary" target="_blank">Visit Project</a>
                         <a href="https://github.com/wgwhitecoding/portfolio" class="btn btn-secondary" target="_blank">GitHub Repo</a>
@@ -287,27 +323,82 @@
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-light py-5">
+    <!-- Credentials Section -->
+    <section id="credentials" class="py-5">
         <div class="container">
-            <h2>Contact Me</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+            <h2>Credentials</h2>
+            <div class="row">
+                <div class="col-md-4" id="html-cert">
+                    <h4>HTML Certification</h4>
+                    <p>Certification and details about my HTML skills.</p>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <div class="col-md-4" id="css-cert">
+                    <h4>CSS Certification</h4>
+                    <p>Certification and details about my CSS skills.</p>
                 </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+                <div class="col-md-4" id="js-cert">
+                    <h4>JavaScript Certification</h4>
+                    <p>Certification and details about my JavaScript skills.</p>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                <div class="col-md-4" id="python-cert">
+                    <h4>Python Certification</h4>
+                    <p>Certification and details about my Python skills.</p>
+                </div>
+                <div class="col-md-4" id="django-cert">
+                    <h4>Django Certification</h4>
+                    <p>Certification and details about my Django skills.</p>
+                </div>
+            </div>
         </div>
     </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="py-5">
+            <div class="container">
+                <h2>Resume</h2>
+                <p>Download my resume <a href="path-to-your-resume.pdf" target="_blank">here</a>.</p>
+                <!-- You can add more resume details or link to a separate page if needed -->
+            </div>
+        </section>
+    
+        <!-- Blog Section -->
+        <section id="blog" class="py-5">
+            <div class="container">
+                <h2>Blog</h2>
+                <p>Read my latest blog posts:</p>
+                <ul>
+                    <li><a href="blog-post-1-link.html">Blog Post 1</a></li>
+                    <li><a href="blog-post-2-link.html">Blog Post 2</a></li>
+                    <li><a href="blog-post-3-link.html">Blog Post 3</a></li>
+                </ul>
+            </div>
+        </section>
+
+    <!-- Footer (Contact Section) -->
+    <footer id="contact" class="bg-dark text-white py-5">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:walidwhite@example.com" class="text-white">walidwhite@example.com</a></p>
+            <p>Connect with me on social media:</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://github.com/wgwhitecoding" class="text-white">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://linkedin.com/in/walidwhite" class="text-white">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/walidwhite" class="text-white">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -315,3 +406,5 @@
     <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+

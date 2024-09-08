@@ -32,24 +32,24 @@ section {
     padding: 10px 0;
     flex-grow: 1;
     overflow-x: auto;
-    scroll-snap-type: x mandatory; /* Snapping between projects */
-    scroll-padding-left: 10px; /* Adjust padding for the first project */
-    justify-content: flex-start; /* Align items to the left by default */
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 10px;
+    justify-content: flex-start;
 }
 
 /* Adjusting arrows for large screens */
 .arrow {
     position: absolute;
-    top: 50%; /* Center arrows vertically */
+    top: 50%;
     transform: translateY(-50%);
     font-size: 2rem;
     cursor: pointer;
     z-index: 1000;
-    color: rgb(7, 6, 6); /* Make arrows white */
+    color: rgb(7, 6, 6);
 }
 
 .left-arrow {
-    left: -50px; /* Keep arrows positioned further apart for large screens */
+    left: -50px;
 }
 
 .right-arrow {
@@ -60,9 +60,9 @@ section {
 .project-card {
     position: relative;
     width: 100%;
-    max-width: 350px; /* Ensure cards have a consistent width */
+    max-width: 380px;
     height: 200px;
-    margin: 0 10px; /* Consistent spacing between cards */
+    margin: 0 10px;
     background-size: cover;
     background-position: center;
     border-radius: 8px;
@@ -71,7 +71,7 @@ section {
     transition: transform 0.3s;
     color: white;
     overflow: hidden;
-    scroll-snap-align: start; /* Ensure projects snap at the start */
+    scroll-snap-align: start;
 }
 
 .project-card:hover {
@@ -192,24 +192,81 @@ body.dark-mode .modal-content .overlay {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Skills Carousel */
+.skills-carousel-container {
+    perspective: 1000px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.skills-carousel {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    transform-style: preserve-3d;
+    animation: rotate 30s infinite linear;
+}
+
+.skill-item {
+    width: 100px;
+    height: 100px;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(calc(var(--i) * 40deg)) translateZ(200px);
+    transition: transform 0.5s;
+}
+
+.skill-item img {
+    max-width: 90%; /* Adjusted the image size */
+    max-height: 90%; /* Adjusted the image size */
+    
+}
+
+.skill-item:hover img {
+    transform: scale(1.8);
+}
+
+/* Stop animation on hover */
+.skills-carousel:hover {
+    animation-play-state: paused;
+}
+
+/* Hide skill names */
+.skill-item p {
+    display: none;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
 /* Responsive Design for Small Devices */
 @media (max-width: 768px) {
     .scrolling-wrapper {
         display: flex;
-        overflow-x: auto; /* Allow horizontal scrolling */
-        scroll-snap-type: x mandatory; /* Enable snapping */
-        scroll-padding-left: 30px; /* Add padding to center the first project */
-        justify-content: flex-start; /* Ensure the first project starts at the left */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 30px;
+        justify-content: flex-start;
     }
 
     .arrow {
-        top: 85%; /* Adjust for small screens */
+        top: 105%;
         font-size: 1.5rem;
-        color: #fff;
+        color: #000;
     }
 
     .left-arrow {
-        left: 120px; /* Move arrows closer together on small screens */
+        left: 120px;
     }
 
     .right-arrow {
@@ -217,27 +274,69 @@ body.dark-mode .modal-content .overlay {
     }
 
     .project-card {
-        width: 95%; /* Make the project cards wider */
-        max-width: 400px; /* Adjust the max-width to fit within the screen */
+        width: 95%;
+        max-width: 400px;
         height: 250px;
-        scroll-snap-align: start; /* Ensure projects snap to the start */
+        scroll-snap-align: start;
     }
 }
 
+/* Responsive Design for Small Devices */
+@media (max-width: 768px) {
+    .skills-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
 
+    .skills-arrow {
+        top: 100%; /* Moves the arrows further down */
+        font-size: 1.5rem;
+        color: #000;
+        position: absolute;
+        z-index: 1000;
+        cursor: pointer;
+    }
 
+    .skills-left-arrow {
+        left: 120px; /* Bring arrows closer horizontally */
+    }
 
+    .skills-right-arrow {
+        right: 120px; /* Bring arrows closer horizontally */
+    }
 
+    /* Stop rotation and enable scrolling for small devices */
+    .skills-carousel {
+        animation: none;
+        transform: none;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+    }
 
+    .skills-carousel-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 
+    
+    .skill-item {
+        width: 100px;
+        height: 100px;
+        transform: none;
+        margin: 0 10px;
+    }
+}
 
-
-
-
-
-
-
-
+/* Hide arrows on large screens */
+@media (min-width: 769px) {
+    .skills-arrow {
+        display: none;
+    }
+}
 
 
 
