@@ -20,30 +20,40 @@ const scrollContainer = document.getElementById('scroll-container');
 const scrollLeft = document.getElementById('scroll-left');
 const scrollRight = document.getElementById('scroll-right');
 
-// Get the width of one project card dynamically
-const projectCard = document.querySelector('.project-card');
-let cardWidth = projectCard.offsetWidth + 40; // Add margin/padding (adjust 40px as needed)
-
-// Recalculate card width on window resize to maintain responsiveness
-window.addEventListener('resize', () => {
-    cardWidth = projectCard.offsetWidth + 40; // Recalculate card width when window resizes
-});
-
-// Scroll left
+// Scroll one project at a time
 scrollLeft.addEventListener('click', () => {
     scrollContainer.scrollBy({
-        left: -cardWidth, // Scroll by one full project card
+        left: -scrollContainer.clientWidth, // Scroll the width of one project
         behavior: 'smooth'
     });
 });
 
-// Scroll right
 scrollRight.addEventListener('click', () => {
     scrollContainer.scrollBy({
-        left: cardWidth, // Scroll by one full project card
+        left: scrollContainer.clientWidth, // Scroll the width of one project
         behavior: 'smooth'
     });
 });
+
+// Swipe functionality for small devices
+let startX;
+
+scrollContainer.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+scrollContainer.addEventListener('touchmove', (e) => {
+    if (!startX) return;
+    const diffX = startX - e.touches[0].clientX;
+
+    if (diffX > 50) {
+        scrollRight.click(); // Swipe left (show next project)
+    } else if (diffX < -50) {
+        scrollLeft.click(); // Swipe right (show previous project)
+    }
+    startX = null;
+});
+
 
 
 
