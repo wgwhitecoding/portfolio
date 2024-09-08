@@ -35,6 +35,14 @@ section {
     scroll-snap-type: x mandatory;
     scroll-padding-left: 10px;
     justify-content: flex-start;
+
+    /* Hide scrollbars */
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
 /* Adjusting arrows for large screens */
@@ -192,14 +200,106 @@ body.dark-mode .modal-content .overlay {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Skills Section - Two Columns with Black Background */
+.skill-bars-container {
+    margin-top: 20px;
+}
+
+.skill-bars-container .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-6 {
+    flex: 0 0 48%; /* Adjust to make it two columns */
+}
+
+.skill-bar {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%; /* Take up full width of the column */
+}
+
+.skill-bar a {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+.bar {
+    background-color: #000;  /* Black background for the bar */
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 16cm;  /* Ensure a minimum width of 16cm */
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bar:hover {
+    transform: scale(1.05);  /* Pop out effect */
+}
+
+.progress {
+    background-color: #007bff;
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Skill labels inside the bars */
+.skill-bar label {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+    z-index: 1;
+}
+
+.skill-percentage {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+    z-index: 1;
+}
 /* Skills Carousel */
+
 .skills-carousel-container {
     perspective: 1000px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     margin: 50px 0;
+
+/* Hide scrollbars */
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    scrollbar-width: none;     /* Firefox */
 }
+
+
+
+.skills-carousel-container::-webkit-scrollbar {
+    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
+}
+
+
 
 .skills-carousel {
     display: flex;
@@ -207,12 +307,14 @@ body.dark-mode .modal-content .overlay {
     max-width: 1200px;
     transform-style: preserve-3d;
     animation: rotate 30s infinite linear;
+    flex-wrap: nowrap;
 }
 
 .skill-item {
-    width: 100px;
-    height: 100px;
-    margin: 0 15px;
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    width: 150px; /* Width for each skill logo */
+    height: 150px;
+    margin: 0 15px; /* Spacing between each logo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,23 +323,25 @@ body.dark-mode .modal-content .overlay {
 }
 
 .skill-item img {
-    max-width: 90%; /* Adjusted the image size */
-    max-height: 90%; /* Adjusted the image size */
-    
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .skill-item:hover img {
     transform: scale(1.8);
 }
-
 /* Stop animation on hover */
 .skills-carousel:hover {
     animation-play-state: paused;
 }
+/* Hide scrollbars in Projects Carousel */
+.scrolling-wrapper {
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
 
-/* Hide skill names */
-.skill-item p {
-    display: none;
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
 @keyframes rotate {
@@ -278,6 +382,10 @@ body.dark-mode .modal-content .overlay {
         max-width: 400px;
         height: 250px;
         scroll-snap-align: start;
+    }
+
+    .col-md-6 {
+        flex: 0 0 100%; /* Full-width columns for mobile */
     }
 }
 
@@ -322,12 +430,16 @@ body.dark-mode .modal-content .overlay {
         white-space: nowrap;
     }
 
-    
     .skill-item {
         width: 100px;
         height: 100px;
         transform: none;
         margin: 0 10px;
+    }
+
+    .skill-item img {
+        width: 120px; /* Adjust image size for small devices */
+        height: auto;
     }
 }
 
@@ -337,9 +449,5 @@ body.dark-mode .modal-content .overlay {
         display: none;
     }
 }
-
-
-
-
 
 
