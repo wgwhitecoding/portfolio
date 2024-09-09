@@ -5,6 +5,7 @@ body {
     color: #333;
 }
 
+/* Hero Section Styles */
 .hero-section {
     background-color: #007bff;
     color: white;
@@ -15,16 +16,19 @@ body {
     font-size: 3rem;
 }
 
+/* Section Padding */
 section {
-    padding: 50px 0;
+    padding: 20px 0; /* Reduce the padding to bring sections closer */
 }
 
+/* Projects Section Styles */
 .projects-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
 
+/* Smooth scroll and hide scrollbars for projects */
 .scrolling-wrapper {
     display: flex;
     white-space: nowrap;
@@ -35,8 +39,6 @@ section {
     scroll-snap-type: x mandatory;
     scroll-padding-left: 10px;
     justify-content: flex-start;
-
-    /* Hide scrollbars */
     -ms-overflow-style: none;  /* Internet Explorer and Edge */
     scrollbar-width: none;     /* Firefox */
 }
@@ -45,7 +47,7 @@ section {
     display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
-/* Adjusting arrows for large screens */
+/* Project Cards Styles */
 .arrow {
     position: absolute;
     top: 50%;
@@ -64,7 +66,6 @@ section {
     right: 0px;
 }
 
-/* Project Cards */
 .project-card {
     position: relative;
     width: 100%;
@@ -109,39 +110,84 @@ section {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Modal styles */
+/* Modal Styles */
+.modal-dialog {
+    max-width: 80%;  /* Larger modals on large screens */
+    margin: 1.75rem auto;  /* Center the modal */
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 90%;  /* Smaller modals on mobile */
+    }
+}
+
 .modal-content {
     background-color: #fff;
     color: #333;
     padding: 20px;
     border-radius: 8px;
+    max-height: 80vh;  /* Ensure the modal doesn't overflow vertically */
+    overflow-y: auto;  /* Allow vertical scrolling if content exceeds the height */
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        max-height: 90vh;  /* Allow more height for smaller screens */
+        padding: 15px;  /* Reduce padding on mobile for better fit */
+    }
 }
 
 .modal-title {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;  /* Larger title size for bigger modals */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .modal-title {
+        font-size: 1.5rem;  /* Smaller title for mobile */
+    }
 }
 
 .modal-body h6 {
     margin-top: 20px;
     font-weight: bold;
+    font-size: 1.5rem;  /* Larger font size for better readability */
+    text-align: center;
 }
 
 .modal-body p {
-    font-size: 1rem;
+    font-size: 1.2rem;  /* Increased font size for better readability */
+    line-height: 1.6;
 }
 
 .modal-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;  /* Center the footer buttons */
     padding-top: 20px;
 }
 
 .modal-footer a {
     margin-right: 10px;
+    font-size: 1.2rem;  /* Larger buttons */
 }
 
-/* Images in modals */
+/* Images in Modals */
+.modal-body img {
+    border-radius: 8px;
+    max-width: 100%;  /* Ensure the image fits inside modal */
+    max-height: 300px;  /* Larger image size */
+    margin-bottom: 20px;  /* Add space below the image */
+}
+
+@media (max-width: 768px) {
+    .modal-body img {
+        max-height: 200px;  /* Smaller image for mobile */
+    }
+}
+
+/* Images in Modals */
 .modal-body .row {
     margin-top: 20px;
 }
@@ -150,13 +196,7 @@ section {
     padding: 10px;
 }
 
-.modal-body img {
-    border-radius: 8px;
-    max-height: 150px;
-    width: 100%;
-}
-
-/* Dark mode styles */
+/* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
     color: white;
@@ -200,9 +240,20 @@ body.dark-mode .modal-content .overlay {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Skills Section - Two Columns with Black Background */
+/* Skills Section Styles - Two Columns */
 .skill-bars-container {
     margin-top: 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 0.6s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-bars-container.show {
+    max-height: 1000px;
+    opacity: 1;
 }
 
 .skill-bars-container .row {
@@ -220,14 +271,17 @@ body.dark-mode .modal-content .overlay {
     align-items: center;
     position: relative;
     width: 100%; /* Take up full width of the column */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.skill-bar a {
-    text-decoration: none;
-    width: 100%;
-    display: block;
+.skill-bars-container.show .skill-bar {
+    opacity: 1;
+    transform: translateY(0);
 }
 
+/* Skill Bar Progress and Background */
 .bar {
     background-color: #000;  /* Black background for the bar */
     border-radius: 20px;
@@ -235,13 +289,14 @@ body.dark-mode .modal-content .overlay {
     height: 30px;
     width: 100%;
     max-width: 100%;
-    min-width: 16cm;  /* Ensure a minimum width of 16cm */
+    min-width: 15cm;
     position: relative;
     transition: transform 0.3s ease-in-out;
+    display: flex;
 }
 
 .bar:hover {
-    transform: scale(1.05);  /* Pop out effect */
+    transform: scale(1.02);  /* Pop out effect */
 }
 
 .progress {
@@ -253,9 +308,12 @@ body.dark-mode .modal-content .overlay {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
+    width: 100%; /* Make sure it fills the entire bar */
+    color: #fff; /* Make text white */
 }
 
-/* Skill labels inside the bars */
+/* Skill Labels Inside the Bars */
 .skill-bar label {
     position: absolute;
     left: 10px;
@@ -265,7 +323,7 @@ body.dark-mode .modal-content .overlay {
     align-items: center;
     font-size: 14px;
     color: #fff;
-    z-index: 1;
+    z-index: 3;
 }
 
 .skill-percentage {
@@ -277,72 +335,58 @@ body.dark-mode .modal-content .overlay {
     align-items: center;
     font-size: 14px;
     color: #fff;
-    z-index: 1;
+    z-index: 3;
 }
-/* Skills Carousel */
 
+/* Skills Dropdown Arrow */
+.rotate-arrow {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+/* Bounce effect for the dropdown arrow */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Bounce effect added to the dropdown arrow */
+#skillsDropdownToggle i {
+    animation: bounce 2s infinite;
+}
+
+/* Skills Carousel Container */
 .skills-carousel-container {
-    perspective: 1000px;
+    perspective: 1000px; /* Adjust perspective for better depth */
     overflow: hidden;
     display: flex;
     justify-content: center;
     margin: 50px 0;
-
-/* Hide scrollbars */
+    padding: 0 20px;
+    position: relative;
+    max-width: 100%; /* Ensure container does not overflow */
     -ms-overflow-style: none;  /* Internet Explorer and Edge */
     scrollbar-width: none;     /* Firefox */
 }
-
-
 
 .skills-carousel-container::-webkit-scrollbar {
     display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
-
-
+/* Skills Carousel */
 .skills-carousel {
     display: flex;
-    width: 100%;
-    max-width: 1200px;
+    width: 800px; /* Constrain the carousel width */
     transform-style: preserve-3d;
-    animation: rotate 30s infinite linear;
-    flex-wrap: nowrap;
+    animation: rotate 70s infinite linear;
+    transform-origin: center right; /* Adjusted to center the rotation */
 }
 
-.skill-item {
-    flex: 0 0 auto; /* Prevent items from shrinking */
-    width: 150px; /* Width for each skill logo */
-    height: 150px;
-    margin: 0 15px; /* Spacing between each logo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotateY(calc(var(--i) * 40deg)) translateZ(200px);
-    transition: transform 0.5s;
-}
-
-.skill-item img {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.skill-item:hover img {
-    transform: scale(1.8);
-}
-/* Stop animation on hover */
-.skills-carousel:hover {
-    animation-play-state: paused;
-}
-/* Hide scrollbars in Projects Carousel */
-.scrolling-wrapper {
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;     /* Firefox */
-}
-
-.scrolling-wrapper::-webkit-scrollbar {
-    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
-}
+/* Add specific alignment for the "Skills" header */
 
 @keyframes rotate {
     from {
@@ -353,14 +397,280 @@ body.dark-mode .modal-content .overlay {
     }
 }
 
+/* Skill Item */
+.skill-item {
+    flex: 0 0 auto;
+    width: 100px; /* Keep the items smaller */
+    height: 100px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px); /* Adjust translateZ to fit within the screen */
+    transition: transform 0.5s ease;
+}
+
+.skill-item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.skill-item:hover img {
+    transform: scale(1.2);
+}
+
+/* Stop animation on hover */
+.skills-carousel:hover {
+    animation-play-state: paused;
+}
+
+/* Hide Scrollbars in Projects Carousel */
+.scrolling-wrapper {
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
+}
+
+/* Credentials Section Styles */
+.credentials-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Smooth scroll and hide scrollbars for credentials */
+.scrolling-wrapper-cred {
+    display: flex;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    flex-grow: 1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 10px;
+    justify-content: flex-start;
+    perspective: 1000px;  /* Adds depth for 3D effect */
+    transform-style: preserve-3d;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.scrolling-wrapper-cred::-webkit-scrollbar {
+    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
+}
+
+/* Credential Cards */
+.credential-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 200px;
+    margin: 0 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+    color: white;
+    overflow: hidden;
+    scroll-snap-align: start;
+    transform: rotateX(15deg);  /* Slight 3D tilt effect */
+}
+
+.credential-card:hover {
+    transform: scale(1.05) rotateX(0deg);  /* Hover brings it forward */
+}
+
+/* Overlay for credential titles */
+.credential-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.credential-card h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.credential-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Control Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
+}
+
+.left-arrow {
+    left: -50px;
+}
+
+.right-arrow {
+    right: 0px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000;  /* Dark background */
+    color: #fff;
+    padding: 40px 0;
+}
+
+footer h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #1a73e8;  /* Change color on hover */
+}
+
+.list-inline-item {
+    margin-right: 15px;
+}
+
+.list-inline-item a {
+    color: white;
+}
+
+.list-inline-item a:hover {
+    color: #1a73e8;  /* Hover effect for social media icons */
+}
+
+.fa-2x {
+    font-size: 2rem;  /* Increase icon size */
+}
+
+/* Adjust Social Media Section */
+footer .col-md-4:nth-child(3) {
+    position: relative;
+    left: 2cm;  /* Move the Social section 2cm to the right */
+}
+#about .about-box {
+    height: 300px; /* Fixed height to make it square-like */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #007bff; /* Optional border to enhance the square appearance */
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: justify; /* This ensures that the text is aligned on both sides */
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+.about-section {
+    padding: 40px 0;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;  /* Adds spacing between the two paragraphs */
+    align-items: stretch;  /* Ensures both paragraphs align at the same level */
+}
+
+.about-paragraph {
+    flex: 1;
+    text-align: justify; /* Ensure the text is justified for clean square appearance */
+    line-height: 1.6;
+    word-spacing: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack the paragraphs on top of each other */
+    }
+    .about-paragraph {
+        margin-bottom: 20px; /* Adds space between the stacked paragraphs */
+    }
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .credential-card {
+        width: 95%;
+        max-width: 400px;
+        height: 250px;
+        scroll-snap-align: start;
+    }
+
+    .credential-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .arrow {
+        top: 90%;
+    }
+
+    .left-arrow {
+        left: 20px;
+    }
+
+    .right-arrow {
+        right: 20px;
+    }
+}
+
+
 /* Responsive Design for Small Devices */
 @media (max-width: 768px) {
+    #about h2,
+    #skills h2,
+    #projects h2 {
+        text-align: left;
+        padding-left: 15px; /* Align all headers on small devices */
+    }
+
     .scrolling-wrapper {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scroll-padding-left: 30px;
         justify-content: flex-start;
+    }
+
+    #skills h2 {
+        
+        margin-right: 60px; 
     }
 
     .arrow {
@@ -387,10 +697,13 @@ body.dark-mode .modal-content .overlay {
     .col-md-6 {
         flex: 0 0 100%; /* Full-width columns for mobile */
     }
-}
 
-/* Responsive Design for Small Devices */
-@media (max-width: 768px) {
+    /* Hide scrollbars in Skills section on small devices */
+    .skills-carousel-container::-webkit-scrollbar,
+    .scrolling-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
     .skills-wrapper {
         position: relative;
         display: flex;
@@ -441,6 +754,10 @@ body.dark-mode .modal-content .overlay {
         width: 120px; /* Adjust image size for small devices */
         height: auto;
     }
+    .skill-bar {
+        
+        width: 60%; /* Take up full width of the column */
+    }
 }
 
 /* Hide arrows on large screens */
@@ -449,5 +766,3 @@ body.dark-mode .modal-content .overlay {
         display: none;
     }
 }
-
-

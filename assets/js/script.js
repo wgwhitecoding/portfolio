@@ -114,33 +114,87 @@ const skillsSection = document.getElementById('skills');
 const skillsContent = document.getElementById('skillBars'); // Correct ID from HTML
 const skillsDropdownToggle = document.getElementById('skillsDropdownToggle'); // The toggle button
 let isSkillsOpen = false;
+let isAnimating = false;
 
-// Toggle skills section on click
+// Toggle skills section on click with rotation and bounce
 skillsDropdownToggle.addEventListener('click', () => {
+    if (isAnimating) return; // Prevent multiple clicks during animation
+
     if (!isSkillsOpen) {
-        skillsContent.style.display = "flex"; // Show the skill bars in a flex container
-        skillsDropdownToggle.querySelector('i').classList.remove('fa-chevron-down');
-        skillsDropdownToggle.querySelector('i').classList.add('fa-chevron-up');
+        openSkillSection();
     } else {
-        closeSkillSection(); // Close using function to ensure proper closure
+        closeSkillSection();
     }
     isSkillsOpen = !isSkillsOpen;
 });
 
-// Function to fully close the skill section
+function openSkillSection() {
+    isAnimating = true;
+    skillsContent.style.display = 'block';
+    skillsContent.style.maxHeight = skillsContent.scrollHeight + 'px';
+    skillsContent.style.opacity = '1';
+    skillsDropdownToggle.querySelector('i').classList.add('rotate-arrow');
+    staggerSkills();
+    setTimeout(() => {
+        skillsContent.style.maxHeight = 'none'; // Remove max-height restriction after it's fully opened
+        isAnimating = false;
+    }, 800);
+}
+
 function closeSkillSection() {
-    skillsContent.style.display = "none"; // Fully hide the skill bars
-    skillsDropdownToggle.querySelector('i').classList.remove('fa-chevron-up');
-    skillsDropdownToggle.querySelector('i').classList.add('fa-chevron-down');
-    isSkillsOpen = false;
+    isAnimating = true;
+    skillsContent.style.maxHeight = skillsContent.scrollHeight + 'px';
+    setTimeout(() => {
+        skillsContent.style.maxHeight = '0';
+        skillsContent.style.opacity = '0';
+        skillsDropdownToggle.querySelector('i').classList.remove('rotate-arrow');
+        isSkillsOpen = false;
+    }, 10);
+    setTimeout(() => {
+        skillsContent.style.display = 'none'; // Hide it after collapse
+        isAnimating = false;
+    }, 600);
+}
+
+function staggerSkills() {
+    const skillBars = document.querySelectorAll('.skill-bar');
+    skillBars.forEach((bar, index) => {
+        setTimeout(() => {
+            bar.style.opacity = '1';
+            bar.style.transform = 'translateY(0)';
+            bar.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+        }, 100);
+    });
 }
 
 // Auto-collapse skills section when scrolling away
 window.addEventListener('scroll', () => {
     const skillsRect = skillsSection.getBoundingClientRect();
-    const isSkillsVisible = skillsRect.top >= 0 && skillsRect.bottom <= window.innerHeight;
-
-    if (!isSkillsVisible && isSkillsOpen) {
-        closeSkillSection(); // Ensure full closure when scrolling away
+    if (skillsRect.top < 0 || skillsRect.bottom > window.innerHeight) {
+        if (isSkillsOpen && !isAnimating) {
+            closeSkillSection();
+        }
     }
 });
+
+// Handle scrolling for credentials carousel
+const credContainer = document.getElementById('scroll-container-cred');
+const credLeft = document.getElementById('scroll-left-cred');
+const credRight = document.getElementById('scroll-right-cred');
+
+// Scroll left
+credLeft.addEventListener('click', () => {
+    credContainer.scrollBy({
+        left: -300,  // Adjust scroll amount based on card size
+        behavior: 'smooth'
+    });
+});
+
+// Scroll right
+credRight.addEventListener('click', () => {
+    credContainer.scrollBy({
+        left: 300,  // Adjust scroll amount based on card size
+        behavior: 'smooth'
+    });
+});
+

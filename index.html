@@ -68,16 +68,23 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="about-section">
         <div class="container">
             <h2>About Me</h2>
-            <p>I'm a full-stack developer with expertise in front-end and back-end technologies. Passionate about
-                creating interactive and user-friendly web applications. I love scuba diving, chess, and working on cool
-                tech projects.</p>
+            <div class="about-content">
+                <p class="about-paragraph">
+                    As a detail-focused Junior Full-Stack Developer, I’m passionate about creating user-centric web applications using technologies like HTML, CSS, JavaScript, and Python. My tech journey is just beginning, and I’m excited about the future, eager to keep learning and adapting. I excel in problem-solving, thrive in collaborative environments, and am committed to delivering innovative, impactful solutions. My attention to detail and quick learning ability make me a valuable asset in any team
+                </p>
+                <p class="about-paragraph">
+                    Outside of coding, I’m driven by my love for adventure. I’ve traveled to 84 countries as a scuba diving instructor, with the goal of visiting every country in the world. I speak four languages and love connecting with people from diverse backgrounds. My experiences around the globe shape my creativity and adaptability, and I’m excited to apply these qualities to my tech career as I continue to grow.
+                </p>
+            </div>
         </div>
     </section>
+    
 
-    <!-- Skills Section -->
+
+
     <section id="skills" class="skills-carousel-container py-5">
         <div class="container">
             <h2>
@@ -87,84 +94,90 @@
                 </span>
             </h2>
 
-            <!-- Skill bars section -->
-            <div id="skillBars" class="skill-bars-container" style="display: none;">
+            <!-- Skill bars will be shown when the dropdown is clicked -->
+            <div id="skillBars" class="skill-bars-container">
                 <div class="row">
-                    <!-- Left Column -->
                     <div class="col-md-6">
                         <div class="skill-bar">
                             <a href="#html-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 90%;"></div>
                                     <label>HTML</label>
-                                    <span class="skill-percentage">90%</span>
+                                    <div class="progress" style="width: 90%;">
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                         <div class="skill-bar">
                             <a href="#css-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 85%;"></div>
                                     <label>CSS</label>
-                                    <span class="skill-percentage">85%</span>
+                                    <div class="progress" style="width: 85%;">
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                         <div class="skill-bar">
                             <a href="#js-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 80%;"></div>
                                     <label>JavaScript</label>
-                                    <span class="skill-percentage">80%</span>
+                                    <div class="progress" style="width: 80%;">
+                                        <span class="skill-percentage">80%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                         <div class="skill-bar">
                             <a href="#python-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 75%;"></div>
                                     <label>Python</label>
-                                    <span class="skill-percentage">75%</span>
+                                    <div class="progress" style="width: 75%;">
+                                        <span class="skill-percentage">75%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Right Column -->
                     <div class="col-md-6">
                         <div class="skill-bar">
                             <a href="#django-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 70%;"></div>
                                     <label>Django</label>
-                                    <span class="skill-percentage">70%</span>
+                                    <div class="progress" style="width: 70%;">
+                                        <span class="skill-percentage">70%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                         <div class="skill-bar">
                             <a href="#sql-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 75%;"></div>
                                     <label>SQL</label>
-                                    <span class="skill-percentage">75%</span>
+                                    <div class="progress" style="width: 75%;">
+                                        <span class="skill-percentage">75%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                         <div class="skill-bar">
                             <a href="#git-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 85%;"></div>
                                     <label>Git</label>
-                                    <span class="skill-percentage">85%</span>
+                                    <div class="progress" style="width: 85%;">
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
                         <div class="skill-bar">
                             <a href="#github-cert">
                                 <div class="bar">
-                                    <div class="progress" style="width: 80%;"></div>
                                     <label>GitHub</label>
-                                    <span class="skill-percentage">80%</span>
+                                    <div class="progress" style="width: 80%;">
+                                        <span class="skill-percentage">80%</span>
+                                    </div>
                                 </div>
                             </a>
                         </div>
@@ -184,47 +197,47 @@
             <div class="skills-carousel" id="skillsCarousel">
                 <div class="skill-item" style="--i:0;">
                     <a href="your-html-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="HTML Logo">
+                        <img src="assets/images/html.png" alt="HTML Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:0;">
+                    <a href="your-html-credential-link.html" target="_blank">
+                        <img src="assets/images/js1.png" alt="JaveScript Logo">
                     </a>
                 </div>
                 <div class="skill-item" style="--i:1;">
                     <a href="your-css-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="CSS Logo">
+                        <img src="assets/images/css.png" alt="CSS Logo">
                     </a>
                 </div>
                 <div class="skill-item" style="--i:2;">
                     <a href="your-bootstrap-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="Bootstrap Logo">
+                        <img src="assets/images/boots.png" alt="Bootstrap Logo">
                     </a>
                 </div>
                 <div class="skill-item" style="--i:3;">
                     <a href="your-python-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="Python Logo">
+                        <img src="assets/images/python1.png" alt="Python Logo">
                     </a>
                 </div>
                 <div class="skill-item" style="--i:4;">
                     <a href="your-django-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="Django Logo">
+                        <img src="assets/images/dj.png" alt="Django Logo">
                     </a>
                 </div>
                 <div class="skill-item" style="--i:5;">
                     <a href="your-sql-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="SQL Logo">
-                    </a>
-                </div>
-                <div class="skill-item" style="--i:6;">
-                    <a href="your-git-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="Git Logo">
+                        <img src="assets/images/sql.png" alt="SQL Logo">
                     </a>
                 </div>
                 <div class="skill-item" style="--i:7;">
                     <a href="your-github-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="GitHub Logo">
+                        <img src="assets/images/github.png" alt="GitHub Logo">
                     </a>
                 </div>
                 <div class="skill-item" style="--i:8;">
                     <a href="your-heroku-credential-link.html" target="_blank">
-                        <img src="assets/images/js.png" alt="Heroku Logo">
+                        <img src="assets/images/heroku.png" alt="Heroku Logo">
                     </a>
                 </div>
             </div>
@@ -433,30 +446,171 @@
     <section id="credentials" class="py-5">
         <div class="container">
             <h2>Credentials</h2>
-            <div class="row">
-                <div class="col-md-4" id="html-cert">
-                    <h4>HTML Certification</h4>
-                    <p>Certification and details about my HTML skills.</p>
+            <div class="credentials-wrapper position-relative">
+                <!-- Left Arrow -->
+                <span class="arrow left-arrow" id="scroll-left-cred"><i class="fas fa-chevron-left"></i></span>
+
+                <!-- Carousel Wrapper -->
+                <div class="scrolling-wrapper-cred row flex-row flex-nowrap mt-4 pb-4" id="scroll-container-cred">
+                    <!-- Credential Item 1: Code Institute Bootcamp -->
+                    <div class="col-12 col-md-4 credential-item">
+                        <div class="credential-card" style="background-image: url('assets/images/ci.jpg');"
+                            data-bs-toggle="modal" data-bs-target="#modalCodeInstituteCert">
+                            <div class="overlay">
+                                <h4>Code Institute Bootcamp</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credential Item 2: HTML & CSS -->
+                    <div class="col-12 col-md-4 credential-item">
+                        <div class="credential-card" style="background-image: url('assets/images/html-css-cert.jpg');"
+                            data-bs-toggle="modal" data-bs-target="#modalHtmlCssCert">
+                            <div class="overlay">
+                                <h4>HTML & CSS Certification</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credential Item 3: JavaScript -->
+                    <div class="col-12 col-md-4 credential-item">
+                        <div class="credential-card" style="background-image: url('assets/images/js-cert.jpg');"
+                            data-bs-toggle="modal" data-bs-target="#modalJsCert">
+                            <div class="overlay">
+                                <h4>JavaScript Certification</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credential Item 4: Python -->
+                    <div class="col-12 col-md-4 credential-item">
+                        <div class="credential-card" style="background-image: url('assets/images/python-cert.jpg');"
+                            data-bs-toggle="modal" data-bs-target="#modalPythonCert">
+                            <div class="overlay">
+                                <h4>Python Certification</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credential Item 5: Django -->
+                    <div class="col-12 col-md-4 credential-item">
+                        <div class="credential-card" style="background-image: url('assets/images/django-cert.jpg');"
+                            data-bs-toggle="modal" data-bs-target="#modalDjangoCert">
+                            <div class="overlay">
+                                <h4>Django Certification</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4" id="css-cert">
-                    <h4>CSS Certification</h4>
-                    <p>Certification and details about my CSS skills.</p>
+
+                <!-- Right Arrow -->
+                <span class="arrow right-arrow" id="scroll-right-cred"><i class="fas fa-chevron-right"></i></span>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <!-- Modal 1: Code Institute Bootcamp -->
+        <div class="modal fade" id="modalCodeInstituteCert" tabindex="-1" aria-labelledby="modalCodeInstituteCertLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCodeInstituteCertLabel">Code Institute Bootcamp</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/ci.jpg" class="img-fluid mb-3" alt="Code Institute Certificate">
+                        <h6>Technologies Learned:</h6>
+                        <p><strong>HTML & CSS:</strong> Fundamentals of web development, semantic HTML, responsive
+                            design with CSS and Bootstrap.</p>
+                        <p><strong>JavaScript:</strong> Understanding of ES6, DOM manipulation, and event-driven
+                            programming.</p>
+                        <p><strong>Python & Django:</strong> Back-end development, Django framework for building
+                            full-stack web applications, databases, and authentication.</p>
+                    </div>
                 </div>
-                <div class="col-md-4" id="js-cert">
-                    <h4>JavaScript Certification</h4>
-                    <p>Certification and details about my JavaScript skills.</p>
+            </div>
+        </div>
+
+        <!-- Modal 2: HTML & CSS Certification -->
+        <div class="modal fade" id="modalHtmlCssCert" tabindex="-1" aria-labelledby="modalHtmlCssCertLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalHtmlCssCertLabel">HTML & CSS Certification</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/html-css-cert.jpg" class="img-fluid mb-3" alt="HTML & CSS Certificate">
+                        <h6>Technologies Learned:</h6>
+                        <p><strong>HTML:</strong> Structure of web pages, accessibility, and semantic elements.</p>
+                        <p><strong>CSS:</strong> Styling of web pages, Flexbox, Grid, media queries, and animations
+                            using CSS transitions.</p>
+                    </div>
                 </div>
-                <div class="col-md-4" id="python-cert">
-                    <h4>Python Certification</h4>
-                    <p>Certification and details about my Python skills.</p>
+            </div>
+        </div>
+
+        <!-- Modal 3: JavaScript Certification -->
+        <div class="modal fade" id="modalJsCert" tabindex="-1" aria-labelledby="modalJsCertLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalJsCertLabel">JavaScript Certification</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/js-cert.jpg" class="img-fluid mb-3" alt="JavaScript Certificate">
+                        <h6>Technologies Learned:</h6>
+                        <p><strong>JavaScript:</strong> ES6+, asynchronous programming with Promises, APIs, and fetch,
+                            and DOM manipulation.</p>
+                    </div>
                 </div>
-                <div class="col-md-4" id="django-cert">
-                    <h4>Django Certification</h4>
-                    <p>Certification and details about my Django skills.</p>
+            </div>
+        </div>
+
+        <!-- Modal 4: Python Certification -->
+        <div class="modal fade" id="modalPythonCert" tabindex="-1" aria-labelledby="modalPythonCertLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalPythonCertLabel">Python Certification</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/python-cert.jpg" class="img-fluid mb-3" alt="Python Certificate">
+                        <h6>Technologies Learned:</h6>
+                        <p><strong>Python:</strong> Basics of programming, object-oriented programming, file handling,
+                            and working with data structures like lists and dictionaries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 5: Django Certification -->
+        <div class="modal fade" id="modalDjangoCert" tabindex="-1" aria-labelledby="modalDjangoCertLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDjangoCertLabel">Django Certification</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/images/django-cert.jpg" class="img-fluid mb-3" alt="Django Certificate">
+                        <h6>Technologies Learned:</h6>
+                        <p><strong>Django:</strong> Full-stack development, creating dynamic web applications, using
+                            Django ORM for database interaction, and user authentication systems.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
 
     <!-- Resume Section -->
     <section id="resume" class="py-5">
@@ -480,31 +634,64 @@
         </div>
     </section>
 
+
     <!-- Footer (Contact Section) -->
     <footer id="contact" class="bg-dark text-white py-5">
         <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:walidwhite@example.com" class="text-white">walidwhite@example.com</a></p>
-            <p>Connect with me on social media:</p>
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="https://github.com/wgwhitecoding" class="text-white">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://linkedin.com/in/walidwhite" class="text-white">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://twitter.com/walidwhite" class="text-white">
-                        <i class="fab fa-twitter fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
+            <div class="row">
+                <!-- Contact Section -->
+                <div class="col-md-4">
+                    <h4>Contact Me</h4>
+                    <p>Email: <a href="mailto:walidwillwhite@gmail.com" class="text-white">walidwillwhite@gmail.com</a>
+                    </p>
+                </div>
+
+                <!-- Download CV Section -->
+                <div class="col-md-4">
+                    <h4>Download CV</h4>
+                    <p>
+                        Need a printable version of my CV?
+                        <a href="assets/cv/CVTECH.pdf" target="_blank" class="text-white">
+                            Download it here <i class="fas fa-download"></i>
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-md-4">
+                    <h4>Social</h4>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://github.com/wgwhitecoding" class="text-white" target="_blank">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/walidwillwhite/" class="text-white" target="_blank">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/willgaileywhite" class="text-white" target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://x.com/home?lang=en" class="text-white" target="_blank">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://wa.me/+447724175010" class="text-white" target="_blank">
+                                <i class="fab fa-whatsapp fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
