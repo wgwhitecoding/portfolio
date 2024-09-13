@@ -1,13 +1,19 @@
+/* Import Exo 2 Font */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&display=swap');
+
 /* ========== Global Styles ========== */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Exo 2', sans-serif;
     background-color: #f8f9fa;
     color: #333;
+    font-weight: 400; /* Set base weight for body */
+    line-height: 1.6;
+    text-align: justify; /* Ensure text is aligned uniformly */
 }
 
 section {
     padding: 20px 0;
-    /* Reduce the padding to bring sections closer */
+    font-weight: 400; /* Standard weight */
 }
 
 /* ========== Hero Section Styles ========== */
@@ -15,10 +21,12 @@ section {
     background-color: #007bff;
     color: white;
     padding: 100px 0;
+    font-weight: 700; /* Bolder for headers */
 }
 
 .hero-section h1 {
     font-size: 3rem;
+    font-weight: 800; /* Heaviest for emphasis */
 }
 
 /* ========== Projects Section Styles ========== */
@@ -39,14 +47,11 @@ section {
     scroll-padding-left: 10px;
     justify-content: flex-start;
     -ms-overflow-style: none;
-    /* Internet Explorer and Edge */
     scrollbar-width: none;
-    /* Firefox */
 }
 
 .scrolling-wrapper::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
 .project-card {
@@ -88,6 +93,7 @@ section {
 .project-card p {
     z-index: 1;
     margin: 0;
+    font-weight: 600; /* Headers slightly bolder */
 }
 
 .project-card:hover .overlay {
@@ -115,9 +121,7 @@ section {
 /* ========== Modal Styles ========== */
 .modal-dialog {
     max-width: 80%;
-    /* Larger modals on large screens */
     margin: 1.75rem auto;
-    /* Center the modal */
 }
 
 .modal-content {
@@ -126,62 +130,108 @@ section {
     padding: 20px;
     border-radius: 8px;
     max-height: 80vh;
-    /* Ensure the modal doesn't overflow vertically */
     overflow-y: auto;
-    /* Allow vertical scrolling if content exceeds the height */
+    font-weight: 400; /* Standard weight for readability */
 }
 
 .modal-title {
-    font-weight: bold;
+    font-weight: 800; /* Heaviest for modal title */
     font-size: 2rem;
-    /* Larger title size for bigger modals */
-    text-align: center;
+    text-align: left;
 }
 
-.modal-body h6 {
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 1.5rem;
-    /* Larger font size for better readability */
-    text-align: center;
-}
-
-.modal-body p {
-    font-size: 1.2rem;
-    /* Increased font size for better readability */
-    line-height: 1.6;
-}
-
-.modal-footer {
+.modal-header {
+    padding-bottom: 10px;
     display: flex;
-    justify-content: center;
-    /* Center the footer buttons */
-    padding-top: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.modal-footer a {
-    margin-right: 10px;
-    font-size: 1.2rem;
-    /* Larger buttons */
+.modal-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    overflow-y: auto;
+    max-height: 70vh;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: justify; /* Align text uniformly */
 }
 
-/* Images in Modals */
-.modal-body img {
-    border-radius: 8px;
-    max-width: 100%;
-    /* Ensure the image fits inside modal */
-    max-height: 300px;
-    /* Larger image size */
-    margin-bottom: 20px;
-    /* Add space below the image */
-}
-
+/* Flexbox for Row */
 .modal-body .row {
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-body .col-md-6 {
+    flex: 1;
+    min-width: 0;
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
 
 .modal-body .col-4 {
     padding: 10px;
+}
+
+/* Ensure columns have equal height */
+.modal-body .row {
+    align-items: stretch;
+}
+
+/* Modal Section Headers */
+.modal-body h6 {
+    font-weight: 700;
+    font-size: 1.6rem; /* Bolder and larger for section headers */
+    margin-bottom: 15px; /* Ensure even spacing */
+}
+
+/* Tech Stack Styles */
+.tech-stack h8 {
+    font-size: 1.3rem;
+    font-weight: 700; /* Bolder subheaders */
+    margin-bottom: 10px;
+}
+
+.tech-stack p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.6; /* Ensure consistent line height */
+}
+
+/* Lists in Modal */
+.modal-body ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-body ul li {
+    margin-bottom: 8px;
+}
+
+/* Future Features and Date Section */
+.date-section {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Scrollable Overflow Fix */
+.modal-body {
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+/* Image Styling */
+.modal-body img {
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 300px;
+    margin-bottom: 15px;
 }
 
 /* ========== Skills Section Styles ========== */
@@ -195,7 +245,6 @@ section {
     flex-direction: column;
 }
 
-
 .skill-bars-container.show {
     max-height: 1000px;
     opacity: 1;
@@ -208,7 +257,6 @@ section {
 
 .col-md-6 {
     flex: 0 0 48%;
-    /* Adjust to make it two columns */
 }
 
 .skill-bar {
@@ -216,8 +264,7 @@ section {
     display: flex;
     align-items: center;
     position: relative;
-    width: 100%;
-    /* Take up full width of the column */
+    width: 90%;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -231,7 +278,6 @@ section {
 /* Skill Bar Progress and Background */
 .bar {
     background-color: #000;
-    /* Black background for the bar */
     border-radius: 20px;
     overflow: hidden;
     height: 30px;
@@ -241,11 +287,11 @@ section {
     position: relative;
     transition: transform 0.3s ease-in-out;
     display: flex;
+    margin-left: 10px;
 }
 
 .bar:hover {
-    transform: scale(1.02);
-    /* Pop out effect */
+    transform: scale(1.03);
 }
 
 .progress {
@@ -259,9 +305,7 @@ section {
     justify-content: space-between;
     z-index: 2;
     width: 100%;
-    /* Make sure it fills the entire bar */
     color: #fff;
-    /* Make text white */
 }
 
 /* Skill Labels Inside the Bars */
@@ -316,7 +360,6 @@ section {
 /* Skills Carousel Container */
 .skills-carousel-container {
     perspective: 1000px;
-    /* Adjust perspective for better depth */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -324,30 +367,25 @@ section {
     padding: 0 20px;
     position: relative;
     max-width: 100%;
-    /* Ensure container does not overflow */
     -ms-overflow-style: none;
     scrollbar-width: none;
-
 }
 
 .skills-carousel-container::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbars in Chrome, Safari, Opera */
-}
-.skills-wrapper {
-    margin-top: -100px; /* Move it closer by reducing the top margin */
 }
 
+.skills-wrapper {
+    margin-top: -100px;
+}
 
 /* Skills Carousel */
 .skills-carousel {
     display: flex;
     width: 800px;
-    /* Constrain the carousel width */
     transform-style: preserve-3d;
     animation: rotate 70s infinite linear;
     transform-origin: center right;
-    /* Adjusted to center the rotation */
 }
 
 @keyframes rotate {
@@ -364,14 +402,12 @@ section {
 .skill-item {
     flex: 0 0 auto;
     width: 100px;
-    /* Keep the items smaller */
     height: 100px;
     margin: 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
-    /* Adjust translateZ to fit within the screen */
     transition: transform 0.5s ease;
 }
 
@@ -412,11 +448,8 @@ section {
 
 #skills {
     margin-top: -60px;
-    /* Adjust this value to move the section closer */
     padding-top: 0px;
-    /* Remove any unnecessary padding */
 }
-
 
 /* ========== Credentials Section Styles ========== */
 .credentials-wrapper {
@@ -437,17 +470,13 @@ section {
     scroll-padding-left: 10px;
     justify-content: flex-start;
     perspective: 1000px;
-    /* Adds depth for 3D effect */
     transform-style: preserve-3d;
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
 }
 
 .scrolling-wrapper-cred::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
 .credential-card {
@@ -466,32 +495,16 @@ section {
     overflow: hidden;
     scroll-snap-align: start;
     transform: rotateX(15deg);
-    /* Slight 3D tilt effect */
 }
 
 .credential-card:hover {
     transform: scale(1.05) rotateX(0deg);
-    /* Hover brings it forward */
-}
-
-.credential-card .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    transition: background-color 0.3s ease;
 }
 
 .credential-card h4 {
     margin: 0;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .credential-card:hover .overlay {
@@ -520,13 +533,12 @@ section {
 /* ========== Footer Styles ========== */
 footer {
     background-color: #000;
-    /* Dark background */
     color: #fff;
     padding: 40px 0;
 }
 
 footer h4 {
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -539,7 +551,6 @@ footer a {
 
 footer a:hover {
     color: #1a73e8;
-    /* Change color on hover */
 }
 
 .list-inline-item {
@@ -552,33 +563,27 @@ footer a:hover {
 
 .list-inline-item a:hover {
     color: #1a73e8;
-    /* Hover effect for social media icons */
 }
 
 .fa-2x {
     font-size: 2rem;
-    /* Increase icon size */
 }
 
 /* Adjust Social Media Section */
 footer .col-md-4:nth-child(3) {
     position: relative;
-    left: 2cm;
-    /* Move the Social section 2cm to the right */
+    left: 4cm;
 }
 
 #about .about-box {
     height: 300px;
-    /* Fixed height to make it square-like */
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid #007bff;
-    /* Optional border to enhance the square appearance */
     padding: 20px;
     margin-bottom: 20px;
     text-align: justify;
-    /* This ensures that the text is aligned on both sides */
 }
 
 #about p {
@@ -595,15 +600,12 @@ footer .col-md-4:nth-child(3) {
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    /* Adds spacing between the two paragraphs */
     align-items: stretch;
-    /* Ensures both paragraphs align at the same level */
 }
 
 .about-paragraph {
     flex: 1;
     text-align: justify;
-    /* Ensure the text is justified for clean square appearance */
     line-height: 1.6;
     word-spacing: 0px;
     margin: 0;
@@ -616,67 +618,54 @@ footer .col-md-4:nth-child(3) {
     /* Modal Styles for Mobile */
     .modal-dialog {
         max-width: 90%;
-        /* Smaller modals on mobile */
     }
 
     .modal-content {
         max-height: 90vh;
-        /* Allow more height for smaller screens */
         padding: 15px;
-        /* Reduce padding on mobile for better fit */
     }
 
     .modal-title {
         font-size: 1.5rem;
-        /* Smaller title for mobile */
     }
 
     .modal-body img {
         max-height: 200px;
-        /* Smaller image for mobile */
     }
 
     /* Project Cards on Mobile */
     .project-card {
-        width: 95%;
+        width: 100%;
         max-width: 400px;
         height: 250px;
         scroll-snap-align: start;
+        left: 60px;
     }
-
     /* Position arrows under the cards for all sections on Mobile */
-    .arrow,
     .skills-arrow-left,
     .skills-arrow-right {
         top: 100%;
-        /* Place the arrow below the card or item */
-        font-size: 1.5rem;
+        font-size: 2rem;
         text-align: center;
         color: #000;
         display: block;
     }
 
-    .left-arrow,
     .skills-arrow-left {
-        left: 70px;
-        /* Align the left arrow under the content */
+        left: 50px;
     }
 
-    .right-arrow,
     .skills-arrow-right {
-        right: 70px;
-        /* Align the right arrow under the content */
+        right: 50px;
     }
 
     /* Skills Section for Mobile */
     .col-md-6 {
         flex: 0 0 100%;
-        /* Full-width columns for mobile */
     }
 
-    .skill-bar {
-        width: 60%;
-        /* Take up full width of the column */
+    .bar {
+        min-width: 9cm;
     }
 
     .skills-wrapper {
@@ -697,7 +686,6 @@ footer .col-md-4:nth-child(3) {
     .skills-carousel-container {
         justify-content: flex-start;
         overflow-x: auto;
-        /* Allow horizontal scrolling */
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
     }
@@ -711,7 +699,6 @@ footer .col-md-4:nth-child(3) {
 
     .skill-item img {
         width: 120px;
-        /* Adjust image size for small devices */
         height: auto;
     }
 
@@ -720,7 +707,6 @@ footer .col-md-4:nth-child(3) {
         transform: none;
         flex-direction: row;
         overflow-x: auto;
-        /* Enable horizontal scrolling */
         white-space: nowrap;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
@@ -728,67 +714,69 @@ footer .col-md-4:nth-child(3) {
 
     .skills-carousel-container::-webkit-scrollbar {
         display: none;
-        /* Hide the scrollbar for mobile */
     }
 
     .skills-carousel::-webkit-scrollbar {
         display: none;
-        /* Hide the scrollbar for mobile */
     }
-
 
     #skills h2 {
         position: relative;
         left: -20px;
-        /* Adjust this value to move it left */
         text-align: left;
-        /* Ensure it's aligned to the left */
     }
-
-
-
 
     /* About Section on Mobile */
     .about-content {
         flex-direction: column;
-        /* Stack the paragraphs on top of each other */
     }
 
     .about-paragraph {
         margin-bottom: 20px;
-        /* Adds space between the stacked paragraphs */
     }
 
     /* Credentials Cards on Mobile */
     .credential-card {
-        width: 95%;
+        width: 100%;
         max-width: 400px;
         height: 250px;
         scroll-snap-align: start;
+        left: 60px;
+
     }
 
     .credential-card h4 {
         font-size: 1.2rem;
     }
 
-    .arrow,
-    .skills-arrow-left,
-    .skills-arrow-right {
+    #scroll-left {
+        position: absolute;
         top: 100%;
-        /* Position all arrows under the content */
+        left: 40px;
     }
 
-    .left-arrow,
-    .skills-arrow-left {
-        left: 70px;
-        /* Align left arrows */
+    #scroll-right {
+        position: absolute;
+        top: 100%;
+        right: 40px;
     }
 
-    .right-arrow,
-    .skills-arrow-right {
-        right: 70px;
-        /* Align right arrows */
+    #scroll-left-cred {
+        position: absolute;
+        top: 100%;
+        left: 40px;
     }
+
+    #scroll-right-cred {
+        position: absolute;
+        top: 100%;
+        right: 40px;
+    }
+
+    .credentials-wrapper {
+        position: relative;
+    }
+
 }
 
 @media (min-width: 769px) {

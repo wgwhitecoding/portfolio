@@ -74,18 +74,23 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <p class="about-paragraph">
-                    As a detail-focused Junior Full-Stack Developer, I’m passionate about creating user-centric web applications using technologies like HTML, CSS, JavaScript, and Python. My tech journey is just beginning, and I’m excited about the future, eager to keep learning and adapting. I excel in problem-solving, thrive in collaborative environments, and am committed to delivering innovative, impactful solutions. My attention to detail and quick learning ability make me a valuable asset in any team
+                    As a detail-focused Junior Full-Stack Developer, I’m passionate about creating user-centric web
+                    applications using technologies like HTML, CSS, JavaScript, and Python. My tech journey is just
+                    beginning, and I’m excited about the future, eager to keep learning and adapting. I excel in
+                    problem-solving, thrive in collaborative environments, and am committed to delivering innovative,
+                    impactful solutions. My attention to detail and quick learning ability make me a valuable asset in
+                    any team
                 </p>
                 <p class="about-paragraph">
-                    Outside of coding, I’m driven by my love for adventure. I’ve traveled to 84 countries as a scuba diving instructor, with the goal of visiting every country in the world. I speak four languages and love connecting with people from diverse backgrounds. My experiences around the globe shape my creativity and adaptability, and I’m excited to apply these qualities to my tech career as I continue to grow.
+                    Outside of coding, I’m driven by my love for adventure. I’ve traveled to 84 countries as a scuba
+                    diving instructor, with the goal of visiting every country in the world. I speak four languages and
+                    love connecting with people from diverse backgrounds. My experiences around the globe shape my
+                    creativity and adaptability, and I’m excited to apply these qualities to my tech career as I
+                    continue to grow.
                 </p>
             </div>
         </div>
     </section>
-    
-
-
-
     <section id="skills" class="skills-carousel-container py-5">
         <div class="container">
             <h2>
@@ -94,7 +99,6 @@
                     <i class="fas fa-chevron-down"></i>
                 </span>
             </h2>
-
             <!-- Skill bars will be shown when the dropdown is clicked -->
             <div id="skillBars" class="skill-bars-container">
                 <div class="row">
@@ -142,8 +146,8 @@
                     </div>
 
                     <div class="col-md-6">
-                        <div class="skill-bar">
-                            <a href="#django-cert">
+                        <div class="skill-bar" id="djangoSkillBar">
+                            <a href="javascript:void(0);"> <!-- Keep the clickable link but prevent default behavior -->
                                 <div class="bar">
                                     <label>Django</label>
                                     <div class="progress" style="width: 70%;">
@@ -152,8 +156,9 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="skill-bar">
-                            <a href="#sql-cert">
+                        
+                        <div class="skill-bar" id="sqlSkillBar">
+                            <a href="javascript:void(0);">
                                 <div class="bar">
                                     <label>SQL</label>
                                     <div class="progress" style="width: 75%;">
@@ -162,6 +167,7 @@
                                 </div>
                             </a>
                         </div>
+                        
                         <div class="skill-bar">
                             <a href="#git-cert">
                                 <div class="bar">
@@ -193,7 +199,7 @@
         <div class="skills-wrapper">
             <!-- Left Arrow (Small Devices) -->
             <span class="skills-arrow-left" id="skills-left"><i class="fas fa-chevron-left"></i></span>
-    
+
             <!-- Skills Carousel -->
             <div class="skills-carousel" id="skillsCarousel">
                 <div class="skill-item" style="--i:0;">
@@ -221,16 +227,18 @@
                         <img src="assets/images/python1.png" alt="Python Logo">
                     </a>
                 </div>
-                <div class="skill-item" style="--i:5;">
-                    <a href="your-django-credential-link.html" target="_blank">
+                <div class="skill-item" style="--i:5;" id="djangoSkill3D">
+                    <a href="javascript:void(0);">
                         <img src="assets/images/dj.png" alt="Django Logo">
                     </a>
                 </div>
-                <div class="skill-item" style="--i:6;">
-                    <a href="your-sql-credential-link.html" target="_blank">
+                
+                <div class="skill-item" style="--i:6;" id="sqlSkill3D">
+                    <a href="javascript:void(0);">
                         <img src="assets/images/sql.png" alt="SQL Logo">
                     </a>
                 </div>
+                
                 <div class="skill-item" style="--i:7;">
                     <a href="your-github-credential-link.html" target="_blank">
                         <img src="assets/images/github.png" alt="GitHub Logo">
@@ -242,13 +250,13 @@
                     </a>
                 </div>
             </div>
-    
+
             <!-- Right Arrow (Small Devices) -->
             <span class="skills-arrow-right" id="skills-right"><i class="fas fa-chevron-right"></i></span>
         </div>
     </section>
-    
-    
+
+
 
     <!-- Projects Section -->
     <section id="projects" class="py-5">
@@ -264,7 +272,7 @@
                         <div class="project-card" style="background-image: url('assets/images/kanbanview.png');"
                             data-bs-toggle="modal" data-bs-target="#projectModal1">
                             <div class="overlay">
-                                <h4>CanDo-Kansan Board</h4>
+                                <h4>CanDo-Kanban Board</h4>
                                 <p>Project management board</p>
                             </div>
                         </div>
@@ -306,69 +314,210 @@
         </div>
     </section>
 
-    <!-- Modals for Projects -->
     <!-- Modal for Project 1 -->
     <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModal1Label">CanDo-Kansan Board</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title text-start" id="projectModal1Label">CanDo-Kansan Board</h5>
+                    <div class="d-flex align-items-center">
+                        <a href="https://cando-ci-6dea2075e664.herokuapp.com/accounts/login/"
+                            class="btn btn-primary me-2" target="_blank">Live Demo</a>
+                        <a href="https://github.com/wgwhitecoding/CanDo-CiFinal" class="btn btn-secondary me-3"
+                            target="_blank">Source Code</a>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <p>This is a project management board built using Django and JavaScript. It allows users to create,
-                        assign, and track tasks efficiently.</p>
-                    <h6>Technologies Used:</h6>
-                    <p>Python, Django, JavaScript, HTML, CSS</p>
-                    <div class="row">
+
+                    <!-- Images -->
+                    <div class="row mb-4">
                         <div class="col-4">
                             <img src="assets/images/signin.png" class="img-fluid" alt="Screenshot 1">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/responsive.jpg" class="img-fluid" alt="Screenshot 2">
+                            <img src="assets/images/cin.png" class="img-fluid" alt="Screenshot 2">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/lightmode.png" class="img-fluid" alt="Screenshot 3">
+                            <img src="assets/images/kanbanview.png" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="https://liveprojectlink.com" class="btn btn-primary" target="_blank">Visit Project</a>
-                        <a href="https://github.com/wgwhitecoding/CanDo-CiFinal" class="btn btn-secondary"
-                            target="_blank">GitHub Repo</a>
+
+                    <!-- Headers split into two columns and left aligned -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Date Section -->
+                            <div class="date-section">
+                                <h6 class="text-start">Date Created: July 15, 2024</h6>
+                            </div>
+                            <!-- Project Overview -->
+                            <h6 class="text-start">Project Overview:</h6>
+                            <p class="text-start">The Kanban Board Project is a comprehensive task management
+                                application developed as the capstone of my Code Institute Full-Stack Developer course.
+                                This project demonstrates my ability to architect and implement complex web applications
+                                using Django as the backend framework, alongside Bootstrap for responsive design. The
+                                application features full CRUD (Create, Read, Update, Delete) functionality, empowering
+                                users to manage tasks, set priorities, and track project progress seamlessly.</p>
+
+                            <p>Building this project honed my understanding of core Django concepts like
+                                model-view-template (MVT) architecture, user authentication, and database interactions
+                                using Django ORM. As my first solo Django project, this experience reinforced my skills
+                                in backend development, while also enhancing my ability to create intuitive,
+                                user-friendly interfaces that prioritize functionality and aesthetic coherence.</p>
+
+                            <!-- Features Section (Left Column) -->
+                            <h6 class="text-start">Features:</h6>
+                            <ul class="text-start">
+                                <li>Create and manage tasks</li>
+                                <li>Task tracking across different stages</li>
+                                <li>Responsive design with light and dark modes</li>
+                                <li>Kanban board with drag-and-drop functionality</li>
+                                <li>Task prioritization with due dates and notifications</li>
+                                <li>User authentication (login/register)</li>
+                                <li>Profile editing and password change</li>
+                                <li>Customizable background (personal image upload)</li>
+                                <li>Search functionality for tasks</li>
+                                <li>CRUD functionality for tasks and columns</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6">
+                            <!-- Tech Stack -->
+                            <h6 class="text-start">Tech Stack (Technologies Used):</h6>
+                            <div class="tech-stack">
+                                <h8 class="text-start">Django & Python:</h8>
+                                <p class="text-start">Django, a high-level Python web framework, handled the entire
+                                    backend. It streamlined the development of features like user authentication,
+                                    profile management, and task CRUD operations using its built-in models and views
+                                    system. Python's simplicity allowed for clean, scalable code, while Django ORM
+                                    enabled secure, efficient database interactions. Django's robust form handling
+                                    ensured that features like task creation, editing, and deletions were processed
+                                    securely. Custom views were used to handle the logic for Kanban functionality, while
+                                    templates integrated front-end components dynamically.</p>
+
+                                <h8 class="text-start">HTML:</h8>
+                                <p class="text-start">HTML was used to structure the application’s pages, integrating
+                                    Django’s template language to render dynamic content based on user interactions.</p>
+
+                                <h8 class="text-start">CSS:</h8>
+                                <p class="text-start">CSS defined the styling for the entire application, leveraging
+                                    Bootstrap’s framework for responsive layouts and custom styles for specific design
+                                    elements like the Kanban board.</p>
+
+                                <h8 class="text-start">JavaScript:</h8>
+                                <p class="text-start">JavaScript added interactivity, such as drag-and-drop for tasks,
+                                    dynamic updates, and enhancing the user experience with responsive elements and
+                                    animations.</p>
+
+                                <h8 class="text-start">Bootstrap:</h8>
+                                <p class="text-start">Bootstrap provided responsive, pre-styled components like forms,
+                                    buttons, and grids, ensuring that the app functioned seamlessly across devices.</p>
+
+                                <h8 class="text-start">PostgreSQL:</h8>
+                                <p class="text-start">PostgreSQL, the database, stored user data, task details, and
+                                    project information. Django ORM interacted with PostgreSQL to manage data
+                                    efficiently and securely.</p>
+
+                                <h8 class="text-start">Heroku:</h8>
+                                <p class="text-start">The application was deployed on Heroku, a platform-as-a-service
+                                    (PaaS), which ensured smooth deployment and integration with PostgreSQL.</p>
+                            </div>
+
+
+                            <!-- Learning Outcome -->
+                            <h6 class="text-start">Learning Outcome:</h6>
+                            <p class="text-start">Developing this project enhanced my skills in Django, PostgreSQL, and
+                                JavaScript. I deepened my understanding of the MVC pattern, user authentication, and
+                                CRUD functionality, as well as how to deploy a full-stack application using Heroku.</p>
+
+                            <!-- Future Enhancements (Moved to Right Column) -->
+                            <h6 class="text-start">Future Enhancements:</h6>
+                            <p class="text-start">I plan to add user analytics for tracking productivity, integration
+                                with services like Google Calendar, and real-time updates for team collaboration. Other
+                                potential improvements include task automation and enhanced customization features for
+                                users.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+
     <!-- Modal for Project 2 -->
     <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModal2Label">Who Wants to Be a Millionaire</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title text-start" id="projectModal2Label">Who Wants to Be a Millionaire</h5>
+                    <div class="d-flex align-items-center">
+                        <a href="https://wgwhitecoding.github.io/Who-Wants-To-Be-A-Millionaire/"
+                            class="btn btn-primary me-2" target="_blank">Live Demo</a>
+                        <a href="https://github.com/wgwhitecoding/Who-Wants-To-Be-A-Millionaire"
+                            class="btn btn-secondary me-3" target="_blank">Source Code</a>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <p>This is a quiz game based on the famous "Who Wants to Be a Millionaire?" format, built using
-                        HTML, CSS, and JavaScript.</p>
-                    <h6>Technologies Used:</h6>
-                    <p>HTML, CSS, JavaScript</p>
-                    <div class="row">
+                    <!-- Images -->
+                    <div class="row mb-4">
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 1">
+                            <img src="assets/images/firstwwt.png" class="img-fluid" alt="Screenshot 1">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 2">
+                            <img src="assets/images/wwtb2.png" class="img-fluid" alt="Screenshot 2">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/wwtbam3.jpg" class="img-fluid" alt="Screenshot 3">
+                            <img src="assets/images/wwtb3.png" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="https://livequizgame.com" class="btn btn-primary" target="_blank">Visit Project</a>
-                        <a href="https://github.com/wgwhitecoding/Who-Wants-To-Be-A-Millionaire"
-                            class="btn btn-secondary" target="_blank">GitHub Repo</a>
+
+                    <!-- Headers split into two columns and left aligned -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-start">Date Created: July 22, 2024</h6>
+                            <h6 class="text-start">Project Overview:</h6>
+                            <p class="text-start">This is a quiz game based on the famous "Who Wants to Be a
+                                Millionaire?" format, built using HTML, CSS, and JavaScript.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-start">Tech Stack (Technologies Used):</h6>
+                            <div class="tech-stack">
+                                <h8 class="text-start">HTML:</h8>
+                                <p class="text-start">Structured the layout of the quiz game interface.</p>
+
+                                <h8 class="text-start">CSS:</h8>
+                                <p class="text-start">Styled the quiz components and added responsive design for mobile
+                                    devices.</p>
+
+                                <h8 class="text-start">JavaScript:</h8>
+                                <p class="text-start">Managed the game logic, including question display, timer, and
+                                    answer validation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 features-section">
+                            <h6 class="text-start">Features:</h6>
+                            <ul class="text-start">
+                                <li>Interactive quiz with multiple-choice questions</li>
+                                <li>Responsive design for different devices</li>
+                                <li>Scoring and feedback system</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-start">Learning Outcome:</h6>
+                            <p class="text-start">Learned about DOM manipulation, event handling, and managing game
+                                states using JavaScript.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-start">Future Enhancement:</h6>
+                            <p class="text-start">Plan to add a leaderboard and multiplayer functionality.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -379,30 +528,78 @@
     <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModal3Label">Crew Weather</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title text-start" id="projectModal3Label">Crew Weather</h5>
+                    <div class="d-flex align-items-center">
+                        <a href="https://crewweatherapp.com" class="btn btn-primary me-2" target="_blank">Live Demo</a>
+                        <a href="https://github.com/ChrissyLV/crew-weather" class="btn btn-secondary me-3"
+                            target="_blank">Source Code</a>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <p>This is a weather app built during a hackathon using HTML, CSS, and JavaScript. It fetches
-                        weather data dynamically for the user.</p>
-                    <h6>Technologies Used:</h6>
-                    <p>JavaScript, HTML, CSS</p>
-                    <div class="row">
+                    <!-- Date Created -->
+                    <h6 class="text-start">Date Created: August 5, 2024</h6>
+
+                    <!-- Images -->
+                    <div class="row mb-4">
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 1">
+                            <img src="assets/images/crew-weather1.jpg" class="img-fluid" alt="Screenshot 1">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 2">
+                            <img src="assets/images/crew-weather2.jpg" class="img-fluid" alt="Screenshot 2">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 3">
+                            <img src="assets/images/crew-weather3.jpg" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="https://crewweatherapp.com" class="btn btn-primary" target="_blank">Visit Project</a>
-                        <a href="https://github.com/ChrissyLV/crew-weather" class="btn btn-secondary"
-                            target="_blank">GitHub Repo</a>
+
+                    <!-- Headers split into two columns and left aligned -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-start">Project Overview:</h6>
+                            <p class="text-start">This is a weather app built during a hackathon using HTML, CSS, and
+                                JavaScript. It fetches weather data dynamically for the user.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-start">Tech Stack (Technologies Used):</h6>
+                            <div class="tech-stack">
+                                <h8 class="text-start">HTML:</h8>
+                                <p class="text-start">Created the layout structure for the weather app interface.</p>
+
+                                <h8 class="text-start">CSS:</h8>
+                                <p class="text-start">Styled the weather interface for better user experience, making it
+                                    mobile-responsive.</p>
+
+                                <h8 class="text-start">JavaScript:</h8>
+                                <p class="text-start">Managed weather data fetching and dynamic updates on the UI using
+                                    the OpenWeatherMap API.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 features-section">
+                            <h6 class="text-start">Features:</h6>
+                            <ul class="text-start">
+                                <li>Real-time weather updates</li>
+                                <li>Responsive design</li>
+                                <li>Dynamic data fetching from API</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-start">Learning Outcome:</h6>
+                            <p class="text-start">Learned how to integrate third-party APIs, manage asynchronous data
+                                fetching, and develop responsive designs.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-start">Future Enhancement:</h6>
+                            <p class="text-start">Plan to integrate more weather-related features like forecasts and
+                                maps.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -413,36 +610,86 @@
     <div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModal4Label" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModal4Label">Personal Portfolio</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title text-start" id="projectModal4Label">Personal Portfolio</h5>
+                    <div class="d-flex align-items-center">
+                        <a href="https://walidwhiteportfolio.com" class="btn btn-primary me-2" target="_blank">Live
+                            Demo</a>
+                        <a href="https://github.com/wgwhitecoding/portfolio" class="btn btn-secondary me-3"
+                            target="_blank">Source Code</a>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                 </div>
                 <div class="modal-body">
-                    <p>This is my personal portfolio website built to showcase my projects, skills, and experiences as a
-                        full-stack developer.</p>
-                    <h6>Technologies Used:</h6>
-                    <p>HTML, CSS, JavaScript</p>
-                    <div class="row">
+                    <!-- Date Created -->
+                    <h6 class="text-start">Date Created: August 15, 2024</h6>
+
+                    <!-- Images -->
+                    <div class="row mb-4">
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 1">
+                            <img src="assets/images/portfolio1.jpg" class="img-fluid" alt="Screenshot 1">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 2">
+                            <img src="assets/images/portfolio2.jpg" class="img-fluid" alt="Screenshot 2">
                         </div>
                         <div class="col-4">
-                            <img src="assets/images/" class="img-fluid" alt="Screenshot 3">
+                            <img src="assets/images/portfolio3.jpg" class="img-fluid" alt="Screenshot 3">
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="https://walidwhiteportfolio.com" class="btn btn-primary" target="_blank">Visit
-                            Project</a>
-                        <a href="https://github.com/wgwhitecoding/portfolio" class="btn btn-secondary"
-                            target="_blank">GitHub Repo</a>
+
+                    <!-- Headers split into two columns and left aligned -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-start">Project Overview:</h6>
+                            <p class="text-start">This is my personal portfolio website built to showcase my projects,
+                                skills, and experiences as a full-stack developer.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-start">Tech Stack (Technologies Used):</h6>
+                            <div class="tech-stack">
+                                <h8 class="text-start">HTML:</h8>
+                                <p class="text-start">Structured the website layout and components.</p>
+
+                                <h8 class="text-start">CSS:</h8>
+                                <p class="text-start">Styled the portfolio with a focus on responsive design.</p>
+
+                                <h8 class="text-start">JavaScript:</h8>
+                                <p class="text-start">Added interactive features like the project modals and skill
+                                    animations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 features-section">
+                            <h6 class="text-start">Features:</h6>
+                            <ul class="text-start">
+                                <li>Portfolio showcasing multiple projects</li>
+                                <li>Interactive modals for each project</li>
+                                <li>Dark mode toggle for better user experience</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-start">Learning Outcome:</h6>
+                            <p class="text-start">Learned how to build a personal portfolio using modern web
+                                technologies and create an interactive user experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-start">Future Enhancement:</h6>
+                            <p class="text-start">Plan to add a blog section to share tech insights and a timeline of
+                                experiences.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
     <!-- Credentials Section -->
     <section id="credentials" class="py-5">
@@ -456,11 +703,8 @@
                 <div class="scrolling-wrapper-cred row flex-row flex-nowrap mt-4 pb-4" id="scroll-container-cred">
                     <!-- Credential Item 1: Code Institute Bootcamp -->
                     <div class="col-12 col-md-4 credential-item">
-                        <div class="credential-card" style="background-image: url('assets/images/ci.jpg');"
+                        <div class="credential-card" style="background-image: url('assets/images/code.png');"
                             data-bs-toggle="modal" data-bs-target="#modalCodeInstituteCert">
-                            <div class="overlay">
-                                <h4>Code Institute Bootcamp</h4>
-                            </div>
                         </div>
                     </div>
 
@@ -468,9 +712,6 @@
                     <div class="col-12 col-md-4 credential-item">
                         <div class="credential-card" style="background-image: url('assets/images/html-css-cert.jpg');"
                             data-bs-toggle="modal" data-bs-target="#modalHtmlCssCert">
-                            <div class="overlay">
-                                <h4>HTML & CSS Certification</h4>
-                            </div>
                         </div>
                     </div>
 
@@ -478,9 +719,6 @@
                     <div class="col-12 col-md-4 credential-item">
                         <div class="credential-card" style="background-image: url('assets/images/js-cert.jpg');"
                             data-bs-toggle="modal" data-bs-target="#modalJsCert">
-                            <div class="overlay">
-                                <h4>JavaScript Certification</h4>
-                            </div>
                         </div>
                     </div>
 
@@ -488,9 +726,6 @@
                     <div class="col-12 col-md-4 credential-item">
                         <div class="credential-card" style="background-image: url('assets/images/python-cert.jpg');"
                             data-bs-toggle="modal" data-bs-target="#modalPythonCert">
-                            <div class="overlay">
-                                <h4>Python Certification</h4>
-                            </div>
                         </div>
                     </div>
 
@@ -498,9 +733,6 @@
                     <div class="col-12 col-md-4 credential-item">
                         <div class="credential-card" style="background-image: url('assets/images/django-cert.jpg');"
                             data-bs-toggle="modal" data-bs-target="#modalDjangoCert">
-                            <div class="overlay">
-                                <h4>Django Certification</h4>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -509,106 +741,108 @@
                 <span class="arrow right-arrow" id="scroll-right-cred"><i class="fas fa-chevron-right"></i></span>
             </div>
         </div>
+    </section>
 
-        <!-- Modals -->
-        <!-- Modal 1: Code Institute Bootcamp -->
-        <div class="modal fade" id="modalCodeInstituteCert" tabindex="-1" aria-labelledby="modalCodeInstituteCertLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalCodeInstituteCertLabel">Code Institute Bootcamp</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="assets/images/ci.jpg" class="img-fluid mb-3" alt="Code Institute Certificate">
-                        <h6>Technologies Learned:</h6>
-                        <p><strong>HTML & CSS:</strong> Fundamentals of web development, semantic HTML, responsive
-                            design with CSS and Bootstrap.</p>
-                        <p><strong>JavaScript:</strong> Understanding of ES6, DOM manipulation, and event-driven
-                            programming.</p>
-                        <p><strong>Python & Django:</strong> Back-end development, Django framework for building
-                            full-stack web applications, databases, and authentication.</p>
-                    </div>
+
+    <!-- Modals -->
+    <!-- Modal 1: Code Institute Bootcamp -->
+    <div class="modal fade" id="modalCodeInstituteCert" tabindex="-1" aria-labelledby="modalCodeInstituteCertLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCodeInstituteCertLabel">Code Institute Bootcamp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/ci.jpg" class="img-fluid mb-3" alt="Code Institute Certificate">
+                    <h6>Technologies Learned:</h6>
+                    <p><strong>HTML & CSS:</strong> Fundamentals of web development, semantic HTML, responsive
+                        design with CSS and Bootstrap.</p>
+                    <p><strong>JavaScript:</strong> Understanding of ES6, DOM manipulation, and event-driven
+                        programming.</p>
+                    <p><strong>Python & Django:</strong> Back-end development, Django framework for building
+                        full-stack web applications, databases, and authentication.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal 2: HTML & CSS Certification -->
-        <div class="modal fade" id="modalHtmlCssCert" tabindex="-1" aria-labelledby="modalHtmlCssCertLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalHtmlCssCertLabel">HTML & CSS Certification</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="assets/images/html-css-cert.jpg" class="img-fluid mb-3" alt="HTML & CSS Certificate">
-                        <h6>Technologies Learned:</h6>
-                        <p><strong>HTML:</strong> Structure of web pages, accessibility, and semantic elements.</p>
-                        <p><strong>CSS:</strong> Styling of web pages, Flexbox, Grid, media queries, and animations
-                            using CSS transitions.</p>
-                    </div>
+    <!-- Modal 2: HTML & CSS Certification -->
+    <div class="modal fade" id="modalHtmlCssCert" tabindex="-1" aria-labelledby="modalHtmlCssCertLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHtmlCssCertLabel">HTML & CSS Certification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/html-css-cert.jpg" class="img-fluid mb-3" alt="HTML & CSS Certificate">
+                    <h6>Technologies Learned:</h6>
+                    <p><strong>HTML:</strong> Structure of web pages, accessibility, and semantic elements.</p>
+                    <p><strong>CSS:</strong> Styling of web pages, Flexbox, Grid, media queries, and animations
+                        using CSS transitions.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal 3: JavaScript Certification -->
-        <div class="modal fade" id="modalJsCert" tabindex="-1" aria-labelledby="modalJsCertLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalJsCertLabel">JavaScript Certification</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="assets/images/js-cert.jpg" class="img-fluid mb-3" alt="JavaScript Certificate">
-                        <h6>Technologies Learned:</h6>
-                        <p><strong>JavaScript:</strong> ES6+, asynchronous programming with Promises, APIs, and fetch,
-                            and DOM manipulation.</p>
-                    </div>
+    <!-- Modal 3: JavaScript Certification -->
+    <div class="modal fade" id="modalJsCert" tabindex="-1" aria-labelledby="modalJsCertLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalJsCertLabel">JavaScript Certification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/js-cert.jpg" class="img-fluid mb-3" alt="JavaScript Certificate">
+                    <h6>Technologies Learned:</h6>
+                    <p><strong>JavaScript:</strong> ES6+, asynchronous programming with Promises, APIs, and fetch,
+                        and DOM manipulation.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal 4: Python Certification -->
-        <div class="modal fade" id="modalPythonCert" tabindex="-1" aria-labelledby="modalPythonCertLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalPythonCertLabel">Python Certification</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="assets/images/python-cert.jpg" class="img-fluid mb-3" alt="Python Certificate">
-                        <h6>Technologies Learned:</h6>
-                        <p><strong>Python:</strong> Basics of programming, object-oriented programming, file handling,
-                            and working with data structures like lists and dictionaries.</p>
-                    </div>
+    <!-- Modal 4: Python Certification -->
+    <div class="modal fade" id="modalPythonCert" tabindex="-1" aria-labelledby="modalPythonCertLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPythonCertLabel">Python Certification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/python-cert.jpg" class="img-fluid mb-3" alt="Python Certificate">
+                    <h6>Technologies Learned:</h6>
+                    <p><strong>Python:</strong> Basics of programming, object-oriented programming, file handling,
+                        and working with data structures like lists and dictionaries.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal 5: Django Certification -->
-        <div class="modal fade" id="modalDjangoCert" tabindex="-1" aria-labelledby="modalDjangoCertLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalDjangoCertLabel">Django Certification</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="assets/images/django-cert.jpg" class="img-fluid mb-3" alt="Django Certificate">
-                        <h6>Technologies Learned:</h6>
-                        <p><strong>Django:</strong> Full-stack development, creating dynamic web applications, using
-                            Django ORM for database interaction, and user authentication systems.</p>
-                    </div>
+    <!-- Modal 5: Django Certification -->
+    <div class="modal fade" id="modalDjangoCert" tabindex="-1" aria-labelledby="modalDjangoCertLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDjangoCertLabel">Django Certification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/images/django-cert.jpg" class="img-fluid mb-3" alt="Django Certificate">
+                    <h6>Technologies Learned:</h6>
+                    <p><strong>Django:</strong> Full-stack development, creating dynamic web applications, using
+                        Django ORM for database interaction, and user authentication systems.</p>
                 </div>
             </div>
         </div>
+    </div>
     </section>
 
 

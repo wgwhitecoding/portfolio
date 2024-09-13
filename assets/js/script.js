@@ -216,3 +216,24 @@ credContainer.addEventListener('touchmove', (e) => {
     }
     startCredX = null;
 });
+
+
+// Function to open the CanDo project modal
+function openCanDoModal() {
+    var candoModal = new bootstrap.Modal(document.getElementById('projectModal1'));
+    candoModal.show();
+}
+
+// Add event listener to the Django Skill Bar
+document.getElementById('djangoSkillBar').addEventListener('click', openCanDoModal);
+
+// Add event listener to the 3D Django Skill Item
+document.getElementById('djangoSkill3D').addEventListener('click', openCanDoModal);
+
+// Add event listener to the SQL Skill Bar
+document.getElementById('sqlSkillBar').addEventListener('click', openCanDoModal);
+
+// Add event listener to the 3D SQL Skill Item
+document.getElementById('sqlSkill3D').addEventListener('click', openCanDoModal);
+
+
