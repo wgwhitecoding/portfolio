@@ -6,7 +6,8 @@ body {
 }
 
 section {
-    padding: 20px 0; /* Reduce the padding to bring sections closer */
+    padding: 20px 0;
+    /* Reduce the padding to bring sections closer */
 }
 
 /* ========== Hero Section Styles ========== */
@@ -37,12 +38,15 @@ section {
     scroll-snap-type: x mandatory;
     scroll-padding-left: 10px;
     justify-content: flex-start;
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .scrolling-wrapper::-webkit-scrollbar {
-    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
+    display: none;
+    /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
 .project-card {
@@ -80,7 +84,8 @@ section {
     padding: 20px;
 }
 
-.project-card h4, .project-card p {
+.project-card h4,
+.project-card p {
     z-index: 1;
     margin: 0;
 }
@@ -109,8 +114,10 @@ section {
 
 /* ========== Modal Styles ========== */
 .modal-dialog {
-    max-width: 80%;  /* Larger modals on large screens */
-    margin: 1.75rem auto;  /* Center the modal */
+    max-width: 80%;
+    /* Larger modals on large screens */
+    margin: 1.75rem auto;
+    /* Center the modal */
 }
 
 .modal-content {
@@ -118,45 +125,55 @@ section {
     color: #333;
     padding: 20px;
     border-radius: 8px;
-    max-height: 80vh;  /* Ensure the modal doesn't overflow vertically */
-    overflow-y: auto;  /* Allow vertical scrolling if content exceeds the height */
+    max-height: 80vh;
+    /* Ensure the modal doesn't overflow vertically */
+    overflow-y: auto;
+    /* Allow vertical scrolling if content exceeds the height */
 }
 
 .modal-title {
     font-weight: bold;
-    font-size: 2rem;  /* Larger title size for bigger modals */
+    font-size: 2rem;
+    /* Larger title size for bigger modals */
     text-align: center;
 }
 
 .modal-body h6 {
     margin-top: 20px;
     font-weight: bold;
-    font-size: 1.5rem;  /* Larger font size for better readability */
+    font-size: 1.5rem;
+    /* Larger font size for better readability */
     text-align: center;
 }
 
 .modal-body p {
-    font-size: 1.2rem;  /* Increased font size for better readability */
+    font-size: 1.2rem;
+    /* Increased font size for better readability */
     line-height: 1.6;
 }
 
 .modal-footer {
     display: flex;
-    justify-content: center;  /* Center the footer buttons */
+    justify-content: center;
+    /* Center the footer buttons */
     padding-top: 20px;
 }
 
 .modal-footer a {
     margin-right: 10px;
-    font-size: 1.2rem;  /* Larger buttons */
+    font-size: 1.2rem;
+    /* Larger buttons */
 }
 
 /* Images in Modals */
 .modal-body img {
     border-radius: 8px;
-    max-width: 100%;  /* Ensure the image fits inside modal */
-    max-height: 300px;  /* Larger image size */
-    margin-bottom: 20px;  /* Add space below the image */
+    max-width: 100%;
+    /* Ensure the image fits inside modal */
+    max-height: 300px;
+    /* Larger image size */
+    margin-bottom: 20px;
+    /* Add space below the image */
 }
 
 .modal-body .row {
@@ -178,6 +195,7 @@ section {
     flex-direction: column;
 }
 
+
 .skill-bars-container.show {
     max-height: 1000px;
     opacity: 1;
@@ -189,7 +207,8 @@ section {
 }
 
 .col-md-6 {
-    flex: 0 0 48%; /* Adjust to make it two columns */
+    flex: 0 0 48%;
+    /* Adjust to make it two columns */
 }
 
 .skill-bar {
@@ -197,7 +216,8 @@ section {
     display: flex;
     align-items: center;
     position: relative;
-    width: 100%; /* Take up full width of the column */
+    width: 100%;
+    /* Take up full width of the column */
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -210,7 +230,8 @@ section {
 
 /* Skill Bar Progress and Background */
 .bar {
-    background-color: #000;  /* Black background for the bar */
+    background-color: #000;
+    /* Black background for the bar */
     border-radius: 20px;
     overflow: hidden;
     height: 30px;
@@ -223,7 +244,8 @@ section {
 }
 
 .bar:hover {
-    transform: scale(1.02);  /* Pop out effect */
+    transform: scale(1.02);
+    /* Pop out effect */
 }
 
 .progress {
@@ -236,8 +258,10 @@ section {
     align-items: center;
     justify-content: space-between;
     z-index: 2;
-    width: 100%; /* Make sure it fills the entire bar */
-    color: #fff; /* Make text white */
+    width: 100%;
+    /* Make sure it fills the entire bar */
+    color: #fff;
+    /* Make text white */
 }
 
 /* Skill Labels Inside the Bars */
@@ -273,9 +297,12 @@ section {
 
 /* Bounce effect for the dropdown arrow */
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -288,35 +315,46 @@ section {
 
 /* Skills Carousel Container */
 .skills-carousel-container {
-    perspective: 1000px; /* Adjust perspective for better depth */
+    perspective: 1000px;
+    /* Adjust perspective for better depth */
     overflow: hidden;
     display: flex;
     justify-content: center;
     margin: 50px 0;
     padding: 0 20px;
     position: relative;
-    max-width: 100%; /* Ensure container does not overflow */
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;     /* Firefox */
+    max-width: 100%;
+    /* Ensure container does not overflow */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
 }
 
 .skills-carousel-container::-webkit-scrollbar {
-    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
+    display: none;
+    /* Hide scrollbars in Chrome, Safari, Opera */
 }
+.skills-wrapper {
+    margin-top: -100px; /* Move it closer by reducing the top margin */
+}
+
 
 /* Skills Carousel */
 .skills-carousel {
     display: flex;
-    width: 800px; /* Constrain the carousel width */
+    width: 800px;
+    /* Constrain the carousel width */
     transform-style: preserve-3d;
     animation: rotate 70s infinite linear;
-    transform-origin: center right; /* Adjusted to center the rotation */
+    transform-origin: center right;
+    /* Adjusted to center the rotation */
 }
 
 @keyframes rotate {
     from {
         transform: rotateY(0deg);
     }
+
     to {
         transform: rotateY(360deg);
     }
@@ -325,13 +363,15 @@ section {
 /* Skill Item */
 .skill-item {
     flex: 0 0 auto;
-    width: 100px; /* Keep the items smaller */
+    width: 100px;
+    /* Keep the items smaller */
     height: 100px;
     margin: 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px); /* Adjust translateZ to fit within the screen */
+    transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
+    /* Adjust translateZ to fit within the screen */
     transition: transform 0.5s ease;
 }
 
@@ -370,6 +410,14 @@ section {
     color: rgb(7, 6, 6);
 }
 
+#skills {
+    margin-top: -60px;
+    /* Adjust this value to move the section closer */
+    padding-top: 0px;
+    /* Remove any unnecessary padding */
+}
+
+
 /* ========== Credentials Section Styles ========== */
 .credentials-wrapper {
     position: relative;
@@ -388,14 +436,18 @@ section {
     scroll-snap-type: x mandatory;
     scroll-padding-left: 10px;
     justify-content: flex-start;
-    perspective: 1000px;  /* Adds depth for 3D effect */
+    perspective: 1000px;
+    /* Adds depth for 3D effect */
     transform-style: preserve-3d;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .scrolling-wrapper-cred::-webkit-scrollbar {
-    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
+    display: none;
+    /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
 .credential-card {
@@ -413,11 +465,13 @@ section {
     color: white;
     overflow: hidden;
     scroll-snap-align: start;
-    transform: rotateX(15deg);  /* Slight 3D tilt effect */
+    transform: rotateX(15deg);
+    /* Slight 3D tilt effect */
 }
 
 .credential-card:hover {
-    transform: scale(1.05) rotateX(0deg);  /* Hover brings it forward */
+    transform: scale(1.05) rotateX(0deg);
+    /* Hover brings it forward */
 }
 
 .credential-card .overlay {
@@ -465,7 +519,8 @@ section {
 
 /* ========== Footer Styles ========== */
 footer {
-    background-color: #000;  /* Dark background */
+    background-color: #000;
+    /* Dark background */
     color: #fff;
     padding: 40px 0;
 }
@@ -483,7 +538,8 @@ footer a {
 }
 
 footer a:hover {
-    color: #1a73e8;  /* Change color on hover */
+    color: #1a73e8;
+    /* Change color on hover */
 }
 
 .list-inline-item {
@@ -495,28 +551,34 @@ footer a:hover {
 }
 
 .list-inline-item a:hover {
-    color: #1a73e8;  /* Hover effect for social media icons */
+    color: #1a73e8;
+    /* Hover effect for social media icons */
 }
 
 .fa-2x {
-    font-size: 2rem;  /* Increase icon size */
+    font-size: 2rem;
+    /* Increase icon size */
 }
 
 /* Adjust Social Media Section */
 footer .col-md-4:nth-child(3) {
     position: relative;
-    left: 2cm;  /* Move the Social section 2cm to the right */
+    left: 2cm;
+    /* Move the Social section 2cm to the right */
 }
 
 #about .about-box {
-    height: 300px; /* Fixed height to make it square-like */
-    display: flex; 
+    height: 300px;
+    /* Fixed height to make it square-like */
+    display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #007bff; /* Optional border to enhance the square appearance */
+    border: 2px solid #007bff;
+    /* Optional border to enhance the square appearance */
     padding: 20px;
     margin-bottom: 20px;
-    text-align: justify; /* This ensures that the text is aligned on both sides */
+    text-align: justify;
+    /* This ensures that the text is aligned on both sides */
 }
 
 #about p {
@@ -524,6 +586,7 @@ footer .col-md-4:nth-child(3) {
     line-height: 1.6;
     margin: 0;
 }
+
 .about-section {
     padding: 40px 0;
 }
@@ -531,13 +594,16 @@ footer .col-md-4:nth-child(3) {
 .about-content {
     display: flex;
     justify-content: space-between;
-    gap: 50px;  /* Adds spacing between the two paragraphs */
-    align-items: stretch;  /* Ensures both paragraphs align at the same level */
+    gap: 50px;
+    /* Adds spacing between the two paragraphs */
+    align-items: stretch;
+    /* Ensures both paragraphs align at the same level */
 }
 
 .about-paragraph {
     flex: 1;
-    text-align: justify; /* Ensure the text is justified for clean square appearance */
+    text-align: justify;
+    /* Ensure the text is justified for clean square appearance */
     line-height: 1.6;
     word-spacing: 0px;
     margin: 0;
@@ -546,22 +612,28 @@ footer .col-md-4:nth-child(3) {
 
 /* ========== Media Queries ========== */
 @media (max-width: 768px) {
+
     /* Modal Styles for Mobile */
     .modal-dialog {
-        max-width: 90%;  /* Smaller modals on mobile */
+        max-width: 90%;
+        /* Smaller modals on mobile */
     }
 
     .modal-content {
-        max-height: 90vh;  /* Allow more height for smaller screens */
-        padding: 15px;  /* Reduce padding on mobile for better fit */
+        max-height: 90vh;
+        /* Allow more height for smaller screens */
+        padding: 15px;
+        /* Reduce padding on mobile for better fit */
     }
 
     .modal-title {
-        font-size: 1.5rem;  /* Smaller title for mobile */
+        font-size: 1.5rem;
+        /* Smaller title for mobile */
     }
 
     .modal-body img {
-        max-height: 200px;  /* Smaller image for mobile */
+        max-height: 200px;
+        /* Smaller image for mobile */
     }
 
     /* Project Cards on Mobile */
@@ -573,29 +645,38 @@ footer .col-md-4:nth-child(3) {
     }
 
     /* Position arrows under the cards for all sections on Mobile */
-    .arrow, .skills-arrow-left, .skills-arrow-right {
-        top: 100%; /* Place the arrow below the card or item */
+    .arrow,
+    .skills-arrow-left,
+    .skills-arrow-right {
+        top: 100%;
+        /* Place the arrow below the card or item */
         font-size: 1.5rem;
         text-align: center;
         color: #000;
         display: block;
     }
 
-    .left-arrow, .skills-arrow-left {
-        left: 70px; /* Align the left arrow under the content */
+    .left-arrow,
+    .skills-arrow-left {
+        left: 70px;
+        /* Align the left arrow under the content */
     }
 
-    .right-arrow, .skills-arrow-right {
-        right: 70px; /* Align the right arrow under the content */
+    .right-arrow,
+    .skills-arrow-right {
+        right: 70px;
+        /* Align the right arrow under the content */
     }
 
     /* Skills Section for Mobile */
     .col-md-6 {
-        flex: 0 0 100%; /* Full-width columns for mobile */
+        flex: 0 0 100%;
+        /* Full-width columns for mobile */
     }
 
     .skill-bar {
-        width: 60%; /* Take up full width of the column */
+        width: 60%;
+        /* Take up full width of the column */
     }
 
     .skills-wrapper {
@@ -615,7 +696,8 @@ footer .col-md-4:nth-child(3) {
 
     .skills-carousel-container {
         justify-content: flex-start;
-        overflow-x: auto; /* Allow horizontal scrolling */
+        overflow-x: auto;
+        /* Allow horizontal scrolling */
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
     }
@@ -628,7 +710,8 @@ footer .col-md-4:nth-child(3) {
     }
 
     .skill-item img {
-        width: 120px; /* Adjust image size for small devices */
+        width: 120px;
+        /* Adjust image size for small devices */
         height: auto;
     }
 
@@ -636,26 +719,44 @@ footer .col-md-4:nth-child(3) {
         animation: none;
         transform: none;
         flex-direction: row;
-        overflow-x: auto; /* Enable horizontal scrolling */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
         white-space: nowrap;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
     }
+
     .skills-carousel-container::-webkit-scrollbar {
-        display: none;  /* Hide the scrollbar for mobile */
+        display: none;
+        /* Hide the scrollbar for mobile */
     }
-    
+
     .skills-carousel::-webkit-scrollbar {
-        display: none;  /* Hide the scrollbar for mobile */
+        display: none;
+        /* Hide the scrollbar for mobile */
     }
+
+
+    #skills h2 {
+        position: relative;
+        left: -20px;
+        /* Adjust this value to move it left */
+        text-align: left;
+        /* Ensure it's aligned to the left */
+    }
+
+
+
 
     /* About Section on Mobile */
     .about-content {
-        flex-direction: column; /* Stack the paragraphs on top of each other */
+        flex-direction: column;
+        /* Stack the paragraphs on top of each other */
     }
 
     .about-paragraph {
-        margin-bottom: 20px; /* Adds space between the stacked paragraphs */
+        margin-bottom: 20px;
+        /* Adds space between the stacked paragraphs */
     }
 
     /* Credentials Cards on Mobile */
@@ -670,23 +771,31 @@ footer .col-md-4:nth-child(3) {
         font-size: 1.2rem;
     }
 
-    .arrow, .skills-arrow-left, .skills-arrow-right {
-        top: 100%; /* Position all arrows under the content */
+    .arrow,
+    .skills-arrow-left,
+    .skills-arrow-right {
+        top: 100%;
+        /* Position all arrows under the content */
     }
 
-    .left-arrow, .skills-arrow-left {
-        left: 70px; /* Align left arrows */
+    .left-arrow,
+    .skills-arrow-left {
+        left: 70px;
+        /* Align left arrows */
     }
 
-    .right-arrow, .skills-arrow-right {
-        right: 70px; /* Align right arrows */
+    .right-arrow,
+    .skills-arrow-right {
+        right: 70px;
+        /* Align right arrows */
     }
 }
 
 @media (min-width: 769px) {
+
     /* Hide arrows on large screens */
-    .skills-arrow-left, .skills-arrow-right {
+    .skills-arrow-left,
+    .skills-arrow-right {
         display: none;
     }
 }
-
