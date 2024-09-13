@@ -1,0 +1,182 @@
+/* -------------------------------------------
+   Dark Mode Styles
+------------------------------------------- */
+
+/* General Dark Mode Body Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Dark Mode Hero Section */
+body.dark-mode .hero-section {
+    background-color: #333;
+}
+
+/* Dark Mode Navbar */
+body.dark-mode .navbar-light.bg-light {
+    background-color: #333 !important;
+}
+
+body.dark-mode .navbar-light .navbar-brand,
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: white !important;
+}
+
+/* Dark Mode Project Cards */
+body.dark-mode .project-card {
+    border-color: #444;
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .project-card:hover {
+    background-color: #1a73e8;
+}
+
+/* Dark Mode Button Styles */
+body.dark-mode .btn {
+    background-color: #555;
+    border-color: #555;
+    color: white;
+}
+
+/* Dark Mode Modal Styles */
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .modal-content .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dark Mode Skill Bars */
+body.dark-mode .bar {
+    background-color: #444;
+}
+
+body.dark-mode .progress {
+    background-color: #1a73e8;
+}
+
+body.dark-mode .skill-bar label {
+    color: white;
+}
+
+body.dark-mode .skill-percentage {
+    color: white;
+}
+
+/* -------------------------------------------
+   Media Queries (Mobile Adjustments)
+------------------------------------------- */
+@media (max-width: 768px) {
+    body.dark-mode .modal-dialog {
+        max-width: 90%;
+    }
+
+    body.dark-mode .modal-content {
+        max-height: 90vh;
+        padding: 15px;
+    }
+
+    body.dark-mode .modal-title {
+        font-size: 1.5rem;
+    }
+
+    body.dark-mode .modal-body img {
+        max-height: 200px;
+    }
+
+    body.dark-mode .about-content {
+        flex-direction: column;
+    }
+
+    body.dark-mode .about-paragraph {
+        margin-bottom: 20px;
+    }
+
+    body.dark-mode .project-card {
+        width: 95%;
+        max-width: 400px;
+        height: 250px;
+        scroll-snap-align: start;
+    }
+
+    body.dark-mode .arrow {
+        top: 90%;
+    }
+
+    body.dark-mode .left-arrow {
+        left: 20px;
+    }
+
+    body.dark-mode .right-arrow {
+        right: 20px;
+    }
+
+    body.dark-mode .col-md-6 {
+        flex: 0 0 100%;
+    }
+
+    body.dark-mode .skills-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    body.dark-mode .skills-arrow {
+        top: 100%;
+        font-size: 1.5rem;
+        color: #000;
+        position: absolute;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    body.dark-mode .skills-left-arrow {
+        left: 120px;
+    }
+
+    body.dark-mode .skills-right-arrow {
+        right: 120px;
+    }
+
+    body.dark-mode .skills-carousel {
+        animation: none;
+        transform: none;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+    }
+
+    body.dark-mode .skills-carousel-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    body.dark-mode .skill-item {
+        width: 100px;
+        height: 100px;
+        transform: none;
+        margin: 0 10px;
+    }
+
+    body.dark-mode .skill-item img {
+        width: 120px;
+        height: auto;
+    }
+
+    body.dark-mode .skill-bar {
+        width: 60%;
+    }
+}
+
+@media (min-width: 769px) {
+    body.dark-mode .skills-arrow {
+        display: none;
+    }
+}

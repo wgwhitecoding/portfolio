@@ -105,7 +105,7 @@ skillsCarousel.addEventListener('touchmove', (e) => {
         isScrolling = true;
     }
 
-    setTimeout(() => { isScrolling = false }, 400);
+    setTimeout(() => { isScrolling = false; }, 400);
     startSkillsX = null;
 });
 
@@ -198,3 +198,21 @@ credRight.addEventListener('click', () => {
     });
 });
 
+// Swipe functionality for credentials carousel
+let startCredX;
+
+credContainer.addEventListener('touchstart', (e) => {
+    startCredX = e.touches[0].clientX;
+});
+
+credContainer.addEventListener('touchmove', (e) => {
+    if (!startCredX) return;
+    const diffX = startCredX - e.touches[0].clientX;
+
+    if (diffX > 50) {
+        credRight.click();
+    } else if (diffX < -50) {
+        credLeft.click();
+    }
+    startCredX = null;
+});

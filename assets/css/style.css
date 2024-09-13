@@ -1,11 +1,15 @@
-/* Light mode styles */
+/* ========== Global Styles ========== */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
 
-/* Hero Section Styles */
+section {
+    padding: 20px 0; /* Reduce the padding to bring sections closer */
+}
+
+/* ========== Hero Section Styles ========== */
 .hero-section {
     background-color: #007bff;
     color: white;
@@ -16,19 +20,13 @@ body {
     font-size: 3rem;
 }
 
-/* Section Padding */
-section {
-    padding: 20px 0; /* Reduce the padding to bring sections closer */
-}
-
-/* Projects Section Styles */
+/* ========== Projects Section Styles ========== */
 .projects-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-/* Smooth scroll and hide scrollbars for projects */
 .scrolling-wrapper {
     display: flex;
     white-space: nowrap;
@@ -45,25 +43,6 @@ section {
 
 .scrolling-wrapper::-webkit-scrollbar {
     display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
-}
-
-/* Project Cards Styles */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: rgb(7, 6, 6);
-}
-
-.left-arrow {
-    left: -50px;
-}
-
-.right-arrow {
-    right: 0px;
 }
 
 .project-card {
@@ -110,16 +89,28 @@ section {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Modal Styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
+}
+
+.left-arrow {
+    left: -50px;
+}
+
+.right-arrow {
+    right: 0px;
+}
+
+/* ========== Modal Styles ========== */
 .modal-dialog {
     max-width: 80%;  /* Larger modals on large screens */
     margin: 1.75rem auto;  /* Center the modal */
-}
-
-@media (max-width: 768px) {
-    .modal-dialog {
-        max-width: 90%;  /* Smaller modals on mobile */
-    }
 }
 
 .modal-content {
@@ -131,23 +122,10 @@ section {
     overflow-y: auto;  /* Allow vertical scrolling if content exceeds the height */
 }
 
-@media (max-width: 768px) {
-    .modal-content {
-        max-height: 90vh;  /* Allow more height for smaller screens */
-        padding: 15px;  /* Reduce padding on mobile for better fit */
-    }
-}
-
 .modal-title {
     font-weight: bold;
     font-size: 2rem;  /* Larger title size for bigger modals */
     text-align: center;
-}
-
-@media (max-width: 768px) {
-    .modal-title {
-        font-size: 1.5rem;  /* Smaller title for mobile */
-    }
 }
 
 .modal-body h6 {
@@ -181,13 +159,6 @@ section {
     margin-bottom: 20px;  /* Add space below the image */
 }
 
-@media (max-width: 768px) {
-    .modal-body img {
-        max-height: 200px;  /* Smaller image for mobile */
-    }
-}
-
-/* Images in Modals */
 .modal-body .row {
     margin-top: 20px;
 }
@@ -196,51 +167,7 @@ section {
     padding: 10px;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212;
-    color: white;
-}
-
-body.dark-mode .hero-section {
-    background-color: #333;
-}
-
-body.dark-mode .navbar-light.bg-light {
-    background-color: #333 !important;
-}
-
-body.dark-mode .navbar-light .navbar-brand, 
-body.dark-mode .navbar-light .navbar-nav .nav-link {
-    color: white !important;
-}
-
-body.dark-mode .project-card {
-    border-color: #444;
-    background-color: #333;
-    color: white;
-}
-
-body.dark-mode .project-card:hover {
-    background-color: #1a73e8;
-}
-
-body.dark-mode .btn {
-    background-color: #555;
-    border-color: #555;
-    color: white;
-}
-
-body.dark-mode .modal-content {
-    background-color: #333;
-    color: white;
-}
-
-body.dark-mode .modal-content .overlay {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Skills Section Styles - Two Columns */
+/* ========== Skills Section Styles ========== */
 .skill-bars-container {
     margin-top: 20px;
     max-height: 0;
@@ -386,8 +313,6 @@ body.dark-mode .modal-content .overlay {
     transform-origin: center right; /* Adjusted to center the rotation */
 }
 
-/* Add specific alignment for the "Skills" header */
-
 @keyframes rotate {
     from {
         transform: rotateY(0deg);
@@ -424,17 +349,28 @@ body.dark-mode .modal-content .overlay {
     animation-play-state: paused;
 }
 
-/* Hide Scrollbars in Projects Carousel */
-.scrolling-wrapper {
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;     /* Firefox */
+/* ========== New Skills Section Arrow Styles ========== */
+.skills-arrow-left {
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
 }
 
-.scrolling-wrapper::-webkit-scrollbar {
-    display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
+.skills-arrow-right {
+    position: absolute;
+    bottom: -50px;
+    right: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
 }
 
-/* Credentials Section Styles */
+/* ========== Credentials Section Styles ========== */
 .credentials-wrapper {
     position: relative;
     display: flex;
@@ -462,7 +398,6 @@ body.dark-mode .modal-content .overlay {
     display: none;  /* Hide scrollbars in Chrome, Safari, Opera */
 }
 
-/* Credential Cards */
 .credential-card {
     position: relative;
     width: 100%;
@@ -485,7 +420,6 @@ body.dark-mode .modal-content .overlay {
     transform: scale(1.05) rotateX(0deg);  /* Hover brings it forward */
 }
 
-/* Overlay for credential titles */
 .credential-card .overlay {
     position: absolute;
     top: 0;
@@ -529,7 +463,7 @@ body.dark-mode .modal-content .overlay {
     right: 0px;
 }
 
-/* Footer Styles */
+/* ========== Footer Styles ========== */
 footer {
     background-color: #000;  /* Dark background */
     color: #fff;
@@ -573,6 +507,7 @@ footer .col-md-4:nth-child(3) {
     position: relative;
     left: 2cm;  /* Move the Social section 2cm to the right */
 }
+
 #about .about-box {
     height: 300px; /* Fixed height to make it square-like */
     display: flex; 
@@ -609,84 +544,27 @@ footer .col-md-4:nth-child(3) {
     padding: 0;
 }
 
-
-
-/* Responsive adjustments for smaller screens */
+/* ========== Media Queries ========== */
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column; /* Stack the paragraphs on top of each other */
-    }
-    .about-paragraph {
-        margin-bottom: 20px; /* Adds space between the stacked paragraphs */
-    }
-}
-
-
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .credential-card {
-        width: 95%;
-        max-width: 400px;
-        height: 250px;
-        scroll-snap-align: start;
+    /* Modal Styles for Mobile */
+    .modal-dialog {
+        max-width: 90%;  /* Smaller modals on mobile */
     }
 
-    .credential-card h4 {
-        font-size: 1.2rem;
+    .modal-content {
+        max-height: 90vh;  /* Allow more height for smaller screens */
+        padding: 15px;  /* Reduce padding on mobile for better fit */
     }
 
-    .arrow {
-        top: 90%;
+    .modal-title {
+        font-size: 1.5rem;  /* Smaller title for mobile */
     }
 
-    .left-arrow {
-        left: 20px;
+    .modal-body img {
+        max-height: 200px;  /* Smaller image for mobile */
     }
 
-    .right-arrow {
-        right: 20px;
-    }
-}
-
-
-/* Responsive Design for Small Devices */
-@media (max-width: 768px) {
-    #about h2,
-    #skills h2,
-    #projects h2 {
-        text-align: left;
-        padding-left: 15px; /* Align all headers on small devices */
-    }
-
-    .scrolling-wrapper {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-padding-left: 30px;
-        justify-content: flex-start;
-    }
-
-    #skills h2 {
-        
-        margin-right: 60px; 
-    }
-
-    .arrow {
-        top: 105%;
-        font-size: 1.5rem;
-        color: #000;
-    }
-
-    .left-arrow {
-        left: 120px;
-    }
-
-    .right-arrow {
-        right: 120px;
-    }
-
+    /* Project Cards on Mobile */
     .project-card {
         width: 95%;
         max-width: 400px;
@@ -694,40 +572,38 @@ footer .col-md-4:nth-child(3) {
         scroll-snap-align: start;
     }
 
+    /* Position arrows under the cards for all sections on Mobile */
+    .arrow, .skills-arrow-left, .skills-arrow-right {
+        top: 100%; /* Place the arrow below the card or item */
+        font-size: 1.5rem;
+        text-align: center;
+        color: #000;
+        display: block;
+    }
+
+    .left-arrow, .skills-arrow-left {
+        left: 70px; /* Align the left arrow under the content */
+    }
+
+    .right-arrow, .skills-arrow-right {
+        right: 70px; /* Align the right arrow under the content */
+    }
+
+    /* Skills Section for Mobile */
     .col-md-6 {
         flex: 0 0 100%; /* Full-width columns for mobile */
     }
 
-    /* Hide scrollbars in Skills section on small devices */
-    .skills-carousel-container::-webkit-scrollbar,
-    .scrolling-wrapper::-webkit-scrollbar {
-        display: none;
+    .skill-bar {
+        width: 60%; /* Take up full width of the column */
     }
-    
+
     .skills-wrapper {
         position: relative;
         display: flex;
         align-items: center;
     }
 
-    .skills-arrow {
-        top: 100%; /* Moves the arrows further down */
-        font-size: 1.5rem;
-        color: #000;
-        position: absolute;
-        z-index: 1000;
-        cursor: pointer;
-    }
-
-    .skills-left-arrow {
-        left: 120px; /* Bring arrows closer horizontally */
-    }
-
-    .skills-right-arrow {
-        right: 120px; /* Bring arrows closer horizontally */
-    }
-
-    /* Stop rotation and enable scrolling for small devices */
     .skills-carousel {
         animation: none;
         transform: none;
@@ -739,8 +615,9 @@ footer .col-md-4:nth-child(3) {
 
     .skills-carousel-container {
         justify-content: flex-start;
-        overflow-x: auto;
+        overflow-x: auto; /* Allow horizontal scrolling */
         white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
 
     .skill-item {
@@ -754,15 +631,62 @@ footer .col-md-4:nth-child(3) {
         width: 120px; /* Adjust image size for small devices */
         height: auto;
     }
-    .skill-bar {
-        
-        width: 60%; /* Take up full width of the column */
+
+    .skills-carousel {
+        animation: none;
+        transform: none;
+        flex-direction: row;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    .skills-carousel-container::-webkit-scrollbar {
+        display: none;  /* Hide the scrollbar for mobile */
+    }
+    
+    .skills-carousel::-webkit-scrollbar {
+        display: none;  /* Hide the scrollbar for mobile */
+    }
+
+    /* About Section on Mobile */
+    .about-content {
+        flex-direction: column; /* Stack the paragraphs on top of each other */
+    }
+
+    .about-paragraph {
+        margin-bottom: 20px; /* Adds space between the stacked paragraphs */
+    }
+
+    /* Credentials Cards on Mobile */
+    .credential-card {
+        width: 95%;
+        max-width: 400px;
+        height: 250px;
+        scroll-snap-align: start;
+    }
+
+    .credential-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .arrow, .skills-arrow-left, .skills-arrow-right {
+        top: 100%; /* Position all arrows under the content */
+    }
+
+    .left-arrow, .skills-arrow-left {
+        left: 70px; /* Align left arrows */
+    }
+
+    .right-arrow, .skills-arrow-right {
+        right: 70px; /* Align right arrows */
     }
 }
 
-/* Hide arrows on large screens */
 @media (min-width: 769px) {
-    .skills-arrow {
+    /* Hide arrows on large screens */
+    .skills-arrow-left, .skills-arrow-right {
         display: none;
     }
 }
+
