@@ -237,17 +237,8 @@ section {
 /* ========== Skills Section Styles ========== */
 .skill-bars-container {
     margin-top: 20px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 1s ease, opacity 0.6s ease;
     display: flex;
     flex-direction: column;
-}
-
-.skill-bars-container.show {
-    max-height: 1000px;
-    opacity: 1;
 }
 
 .skill-bars-container .row {
@@ -265,14 +256,9 @@ section {
     align-items: center;
     position: relative;
     width: 90%;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.skill-bars-container.show .skill-bar {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* Skill Bar Progress and Background */
@@ -298,13 +284,13 @@ section {
     background-color: #007bff;
     height: 100%;
     border-radius: 20px;
-    transition: width 0.5s ease;
+    transition: width 1.5s ease; /* Animation for width transition */
     padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
-    width: 100%;
+    width: 0%; /* Initial width set to 0 for animation */
     color: #fff;
 }
 
@@ -331,30 +317,6 @@ section {
     font-size: 14px;
     color: #fff;
     z-index: 3;
-}
-
-/* Skills Dropdown Arrow */
-.rotate-arrow {
-    transform: rotate(180deg);
-    transition: transform 0.5s ease;
-}
-
-/* Bounce effect for the dropdown arrow */
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Bounce effect added to the dropdown arrow */
-#skillsDropdownToggle i {
-    animation: bounce 2s infinite;
 }
 
 /* Skills Carousel Container */
@@ -641,6 +603,7 @@ footer .col-md-4:nth-child(3) {
         scroll-snap-align: start;
         left: 60px;
     }
+
     /* Position arrows under the cards for all sections on Mobile */
     .skills-arrow-left,
     .skills-arrow-right {
@@ -742,7 +705,6 @@ footer .col-md-4:nth-child(3) {
         height: 250px;
         scroll-snap-align: start;
         left: 60px;
-
     }
 
     .credential-card h4 {
@@ -776,7 +738,6 @@ footer .col-md-4:nth-child(3) {
     .credentials-wrapper {
         position: relative;
     }
-
 }
 
 @media (min-width: 769px) {

@@ -109,74 +109,6 @@ skillsCarousel.addEventListener('touchmove', (e) => {
     startSkillsX = null;
 });
 
-// Skills Section Dropdown Functionality
-const skillsSection = document.getElementById('skills');
-const skillsContent = document.getElementById('skillBars'); // Correct ID from HTML
-const skillsDropdownToggle = document.getElementById('skillsDropdownToggle'); // The toggle button
-let isSkillsOpen = false;
-let isAnimating = false;
-
-// Toggle skills section on click with rotation and bounce
-skillsDropdownToggle.addEventListener('click', () => {
-    if (isAnimating) return; // Prevent multiple clicks during animation
-
-    if (!isSkillsOpen) {
-        openSkillSection();
-    } else {
-        closeSkillSection();
-    }
-    isSkillsOpen = !isSkillsOpen;
-});
-
-function openSkillSection() {
-    isAnimating = true;
-    skillsContent.style.display = 'block';
-    skillsContent.style.maxHeight = skillsContent.scrollHeight + 'px';
-    skillsContent.style.opacity = '1';
-    skillsDropdownToggle.querySelector('i').classList.add('rotate-arrow');
-    staggerSkills();
-    setTimeout(() => {
-        skillsContent.style.maxHeight = 'none'; // Remove max-height restriction after it's fully opened
-        isAnimating = false;
-    }, 800);
-}
-
-function closeSkillSection() {
-    isAnimating = true;
-    skillsContent.style.maxHeight = skillsContent.scrollHeight + 'px';
-    setTimeout(() => {
-        skillsContent.style.maxHeight = '0';
-        skillsContent.style.opacity = '0';
-        skillsDropdownToggle.querySelector('i').classList.remove('rotate-arrow');
-        isSkillsOpen = false;
-    }, 10);
-    setTimeout(() => {
-        skillsContent.style.display = 'none'; // Hide it after collapse
-        isAnimating = false;
-    }, 600);
-}
-
-function staggerSkills() {
-    const skillBars = document.querySelectorAll('.skill-bar');
-    skillBars.forEach((bar, index) => {
-        setTimeout(() => {
-            bar.style.opacity = '1';
-            bar.style.transform = 'translateY(0)';
-            bar.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-        }, 100);
-    });
-}
-
-// Auto-collapse skills section when scrolling away
-window.addEventListener('scroll', () => {
-    const skillsRect = skillsSection.getBoundingClientRect();
-    if (skillsRect.top < 0 || skillsRect.bottom > window.innerHeight) {
-        if (isSkillsOpen && !isAnimating) {
-            closeSkillSection();
-        }
-    }
-});
-
 // Handle scrolling for credentials carousel
 const credContainer = document.getElementById('scroll-container-cred');
 const credLeft = document.getElementById('scroll-left-cred');
@@ -217,6 +149,46 @@ credContainer.addEventListener('touchmove', (e) => {
     startCredX = null;
 });
 
+// Skill Bar Animation with Percentage Increase
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-bar .progress');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target;
+                const percentage = progressBar.getAttribute('data-percentage');
+                const skillPercentageElem = progressBar.querySelector('.skill-percentage');
+                const finalValue = parseInt(percentage, 10);
+                let currentPercentage = 0;
+
+                // Animate the bar width
+                progressBar.style.transition = "width 3s ease";  // Slow down the animation speed
+                progressBar.style.width = percentage;
+
+                // Animate the percentage text to increase with the bar
+                const interval = setInterval(() => {
+                    currentPercentage++;
+                    skillPercentageElem.textContent = currentPercentage + '%';
+
+                    if (currentPercentage >= finalValue) {
+                        clearInterval(interval);
+                    }
+                }, 30);  // Adjust this value to control how fast the percentage increases
+
+                observer.unobserve(progressBar);  // Stop observing once animated
+            }
+        });
+    }, { threshold: 0.5 });  // Trigger when 50% of the skill bar is visible
+
+    skillBars.forEach(bar => {
+        bar.style.width = '0%';  // Start at 0%
+        observer.observe(bar);
+    });
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', animateSkillBars);
 
 // Function to open the CanDo project modal
 function openCanDoModal() {
@@ -235,5 +207,3 @@ document.getElementById('sqlSkillBar').addEventListener('click', openCanDoModal)
 
 // Add event listener to the 3D SQL Skill Item
 document.getElementById('sqlSkill3D').addEventListener('click', openCanDoModal);
-
-
