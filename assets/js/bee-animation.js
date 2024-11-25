@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const followButton = document.getElementById("followButton");
   const clonedBeeContainer = document.getElementById("clonedBee");
 
+  // Full-screen overlay for fade-to-black effect
+  const fadeOverlay = document.createElement("div");
+  fadeOverlay.className = "fade-overlay";
+  document.body.appendChild(fadeOverlay);
+
   if (beeAnimation) {
     console.log("Bee animation element found");
     beeAnimation.load("assets/animation/just-a-bee.json");
@@ -162,11 +167,20 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "power1.inOut",
       onComplete: () => {
         console.log("Redirecting to the secret page...");
-        window.location.href = "secret-page.html"; // Redirect to the secret page
+
+        // Trigger fade-to-black effect
+        fadeOverlay.style.display = "block";
+        fadeOverlay.style.opacity = 1;
+
+        // Redirect after the fade completes
+        setTimeout(() => {
+          window.location.href = "secret-page.html"; // Redirect to the secret page
+        }, 2000); // Matches the fade duration
       },
     });
   });
 });
+
 
 
 
