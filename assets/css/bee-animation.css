@@ -143,4 +143,78 @@ body {
     }
   }
   
-  
+  /* Modal Styling */
+#beeModal {
+  position: fixed;
+  z-index: 1500;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #ff4500;
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#clonedBee {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  position: relative;
+}
+
+#clonedBee .message {
+  font-size: 16px;
+  color: #ff4500;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ff4500;
+  padding: 5px 10px;
+  border-radius: 8px;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Button Styling */
+#followButton {
+  background: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#followButton:hover {
+  background: #ff3300;
+}

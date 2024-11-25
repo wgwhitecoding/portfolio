@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   message.className = "message";
   document.body.appendChild(message);
 
+  // Modal elements
+  const modal = document.getElementById("beeModal");
+  const followButton = document.getElementById("followButton");
+  const clonedBeeContainer = document.getElementById("clonedBee");
+
   if (beeAnimation) {
     console.log("Bee animation element found");
     beeAnimation.load("assets/animation/just-a-bee.json");
@@ -21,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const missedPhrases = ["Hehe, missed me!", "Too slow!", "Try again!"];
 
   let isPaused = false;
+  let isCaught = false; // Track if the bee is caught
 
   // Random positions for flying
   function getRandomPosition() {
@@ -36,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Make the bee pause, speak, and then fly away
   function speakAndFly() {
-    if (isPaused) return;
+    if (isPaused || isCaught) return;
     isPaused = true;
 
     // Randomly pick a phrase
@@ -59,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Flying animation
   function flyBee() {
+    if (isCaught) return; // Stop flying if the bee is caught
     const { x, y } = getRandomPosition();
     gsap.to(beeContainer, {
       x: x,
@@ -91,11 +98,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle "catching" the bee
   beeContainer.addEventListener("click", () => {
     console.log("Bee clicked!");
+    isCaught = true; // Mark the bee as caught
 
     // Stop the flying animation
     gsap.killTweensOf(beeContainer);
+    beeContainer.style.display = "none"; // Hide the bee temporarily
 
-    // Create the vortex
+    // Show the modal
+    modal.style.display = "flex";
+
+    // Display the cloned bee in the modal
+    clonedBeeContainer.innerHTML = `
+      <lottie-player
+        src="assets/animation/just-a-bee.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+        style="width: 100px; height: 100px;"
+      ></lottie-player>
+      <div class="message">You got me... follow me!</div>
+    `;
+  });
+
+  // Handle "Follow" button in the modal
+  followButton.addEventListener("click", () => {
+    console.log("Follow button clicked");
+    modal.style.display = "none"; // Close the modal
+
+    // Remove the cloned bee
+    clonedBeeContainer.innerHTML = "";
+
+    // Restore the original bee and make it fly into the vortex
+    beeContainer.style.display = "block";
+
+    // Create the vortex if it doesn't exist
     let vortex = document.querySelector(".vortex");
     if (!vortex) {
       vortex = document.createElement("div");
@@ -114,48 +151,28 @@ document.addEventListener("DOMContentLoaded", () => {
       vortex.style.top = `${scrollY + 20}px`; // 20px from the top edge
     }
 
-    // GSAP animation for vortex (rotate, pulse, glow)
-    gsap.to(vortex, {
-      rotation: 360,
-      repeat: -1, // Infinite loop
-      duration: 1.5,
-      ease: "linear",
-    });
-    gsap.to(vortex, {
-      scale: 1.2,
-      repeat: -1, // Infinite loop
-      yoyo: true, // Reverse the animation
-      duration: 1,
-      ease: "sine.inOut",
-    });
-
-    // Display the message "You got me... follow me!"
-    message.textContent = "You got me... follow me!";
+    // Animate the bee into the vortex
+    const vortexRect = vortex.getBoundingClientRect();
     const beeRect = beeContainer.getBoundingClientRect();
-    message.style.left = `${beeRect.left + window.scrollX + 50}px`;
-    message.style.top = `${beeRect.top + window.scrollY - 30}px`;
-    message.style.display = "block";
-
-    // Wait 2 seconds before flying into the vortex
-    setTimeout(() => {
-      message.style.display = "none";
-
-      // Fly the bee into the vortex
-      const vortexRect = vortex.getBoundingClientRect();
-      gsap.to(beeContainer, {
-        x: vortexRect.left + window.scrollX + vortexRect.width / 2 - beeRect.width / 2 - beeRect.left,
-        y: vortexRect.top + window.scrollY + vortexRect.height / 2 - beeRect.height / 2 - beeRect.top,
-        scale: 0.2, // Shrink the bee as it enters the vortex
-        duration: 1.5,
-        ease: "power1.inOut",
-        onComplete: () => {
-          console.log("Redirecting to the secret page...");
-          window.location.href = "secret-page.html"; // Redirect to the secret page
-        },
-      });
-    }, 2000);
+    gsap.to(beeContainer, {
+      x: vortexRect.left + window.scrollX + vortexRect.width / 2 - beeRect.width / 2 - beeRect.left,
+      y: vortexRect.top + window.scrollY + vortexRect.height / 2 - beeRect.height / 2 - beeRect.top,
+      scale: 0.2, // Shrink the bee as it enters the vortex
+      duration: 1.5,
+      ease: "power1.inOut",
+      onComplete: () => {
+        console.log("Redirecting to the secret page...");
+        window.location.href = "secret-page.html"; // Redirect to the secret page
+      },
+    });
   });
 });
+
+
+
+
+
+
 
 
 
