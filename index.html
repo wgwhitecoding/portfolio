@@ -22,7 +22,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Walid White</a>
+            <a class="navbar-brand" href="#">Will G White</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,8 @@
                         <a class="nav-link" href="#credentials">Credentials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#resume">Resume</a>
+                        <a class="nav-link" href="assets/cv/CVTECH.pdf" target="_blank">
+                            Resume </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#blog">Blog</a>
@@ -61,36 +62,94 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-<header class="hero-section text-center">
+<!-- Hero Section -->
+<header class="hero-section text-center position-relative">
     <div class="container">
-      <h1>Hello, I'm Walid White</h1>
-      <p>Full-Stack Developer, Web Enthusiast, and Lifelong Learner</p>
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-  
-      <!-- Bee Toggle Switch -->
-      <div class="bee-toggle-container">
-        <label class="bee-switch">
-          <input type="checkbox" id="beeToggle">
-          <span class="slider"></span>
-        </label>
-        <span id="toggle-text">Bee is On</span>
-      </div>
+        <!-- Background Animation or Image -->
+        <img src="assets/images/clog.png" alt="gears" class="hero-image">
+        <img src="assets/images/tech.png" alt="circuit" class="hero-image circuit-bottom-right">
+       
+        <div class="hero-bg">
+            <!-- Add animated background, SVG, or Lottie -->
+            <lottie-player
+                src="assets/animation/background-animation.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+                style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;">
+            </lottie-player>
+        </div>
+
+        <!-- Main Heading and Subtext -->
+        <h1 class="hero-title">Hello, I'm WIll G White</h1>
+        <p class="hero-subtitle">Junior Full-Stack Developer/Data Engineer and Lifelong Learner</p>
+        <p class="hero-subtitle-small">Catch the Bee and a Secret You'll see!</p>
+
+        
+        
+        <!-- Social Media Links -->
+        <div class="hero-social-links mt-4">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://github.com/wgwhitecoding" target="_blank" class="text-dark">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/walidwillwhite/" target="_blank" class="text-dark">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/willgaileywhite" target="_blank" class="text-dark">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://x.com/home?lang=en" target="_blank" class="text-dark">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://wa.me/+447724175010" target="_blank" class="text-dark">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Bee Toggle Switch -->
+        <div class="bee-toggle-container mt-5">
+            <label class="bee-switch">
+                <input type="checkbox" id="beeToggle">
+                <span class="slider"></span>
+            </label>
+            <span id="toggle-text">Bee is On</span>
+        </div>
     </div>
-  </header>
+</header>
+
   
   <!-- Bee Modal -->
-<div id="beeModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modalBeeContainer">
-        <h2>Congratulations!</h2>
-        <p>You caught the busy bee!</p>
-        <div id="clonedBee" class="bee-clone"></div>
-        <button id="followButton">Follow</button>
+  <div id="beeModal1">
+    <div class="modal-content1">
+      <button class="close1">&times;</button>
+      <h2>🐝 Congratulations! 🎉</h2>
+      <p>✨ "Well done, you caught me! Follow me to discover a <strong>secret page</strong>... shhh! 🤫"</p>
+      <div id="clonedBee1">
+        <lottie-player
+          src="assets/animation/just-a-bee.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+          style="width: 100px; height: 100px;"
+        ></lottie-player>
       </div>
+      <button id="followButton1">Follow Me!</button>
     </div>
   </div>
+  
 
     <!-- About Section -->
     <section id="about" class="about-section">
@@ -98,10 +157,10 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <p class="about-paragraph">
-                    As a detail-focused Junior Full-Stack Developer and Data Engineer, I’m passionate about building efficient, user-centric web applications and data solutions. My expertise spans technologies like HTML, CSS, JavaScript, Python, Django, and SQL, along with data engineering tools such as Apache Spark, Azure, and Power BI. I specialize in designing automated data pipelines, creating cloud-based architectures, and delivering actionable insights through data visualization. My tech journey is just beginning, and I’m eager to keep learning, adapting, and solving problems. I thrive in collaborative environments and am committed to delivering impactful solutions. My attention to detail and learning ability make me a valuable asset to any team.
+                    As a Junior Full-Stack Developer and Data Engineer, I specialize in building efficient, user-focused applications and data solutions. My skills include HTML, CSS, JavaScript, Python, Django, SQL, Apache Spark, Azure, and Power BI. I’m passionate about designing automated pipelines, creating cloud architectures, and delivering insights via data visualization. My commitment to learning and problem-solving makes me a valuable team player.
                 </p>
                 <p class="about-paragraph">
-                    Outside of coding, I’m an adventurer at heart and find inspiration in the world around me. I’ve traveled to 84 countries as a scuba diving instructor, exploring the depths of the ocean and connecting with diverse cultures along the way. When I’m not diving, I’m a passionate photographer, chess enthusiast, and lifelong learner. I enjoy expanding my knowledge in areas like data science and emerging technologies or immersing myself in capturing breathtaking landscapes. Whether strategizing my next chess move or chasing new adventures, I bring curiosity and determination to everything I do. These experiences shape my creativity, adaptability, and drive—qualities that fuel my passion for technology and make me excited for what’s ahead.
+                    Beyond coding, I’m an adventurer who’s traveled to 84 countries as a scuba diving instructor, connecting with diverse cultures and exploring breathtaking underwater and terrestrial landscapes worldwide. I enjoy photography, chess, and expanding my knowledge of data science, emerging technologies, and innovative solutions. My curiosity and adaptability fuel my passion for technology and drive my creative problem-solving.
                 </p>
             </div>
         </div>
@@ -1662,18 +1721,6 @@
             </div>
         </div>
     </div>
-    </section>
-
-
-
-
-    <!-- Resume Section -->
-    <section id="resume" class="py-5">
-        <div class="container">
-            <h2>Resume</h2>
-            <p>Download my resume <a href="assets/cv/CVTECH.pdf"  target="_blank">here</a>.</p>
-            <!-- You can add more resume details or link to a separate page if needed -->
-        </div>
     </section>
 
 <!-- Blog Section -->

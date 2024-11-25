@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(message);
 
   // Modal elements
-  const modal = document.getElementById("beeModal");
-  const followButton = document.getElementById("followButton");
-  const closeModalButton = document.querySelector(".close"); // Modal close button
-  const clonedBeeContainer = document.getElementById("clonedBee");
+  const modal = document.getElementById("beeModal1");
+  const followButton = document.getElementById("followButton1");
+  const closeModalButton = document.querySelector(".close1"); // Modal close button
+  const clonedBeeContainer = document.getElementById("clonedBee1");
 
   // Full-screen overlay for fade-to-black effect
   const fadeOverlay = document.createElement("div");
@@ -65,8 +65,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Position the message near the bee
     const beeRect = beeContainer.getBoundingClientRect();
-    message.style.left = `${beeRect.left + window.scrollX + 50}px`; // Adjust as needed
-    message.style.top = `${beeRect.top + window.scrollY - 20}px`; // Adjust for scrolling
+    let messageX = beeRect.left + window.scrollX + 50; // Default position
+    let messageY = beeRect.top + window.scrollY - 20; // Default position
+
+    // Ensure the message doesn't go outside the screen horizontally
+    const messageWidth = message.offsetWidth;
+    if (messageX + messageWidth > window.innerWidth) {
+      messageX = window.innerWidth - messageWidth - 10; // Adjust to fit within the screen
+    }
+    if (messageX < 0) {
+      messageX = 10; // Adjust if it's too far left
+    }
+
+    // Ensure the message doesn't go outside the screen vertically
+    const messageHeight = message.offsetHeight;
+    if (messageY + messageHeight > window.innerHeight + window.scrollY) {
+      messageY = window.innerHeight + window.scrollY - messageHeight - 10; // Adjust to fit within the screen
+    }
+    if (messageY < window.scrollY) {
+      messageY = window.scrollY + 10; // Adjust if it's too high
+    }
+
+    message.style.left = `${messageX}px`;
+    message.style.top = `${messageY}px`;
     message.style.display = "block";
 
     // Pause for 2 seconds, then fly away
@@ -98,8 +119,29 @@ document.addEventListener("DOMContentLoaded", () => {
     message.textContent = randomMissedPhrase;
 
     // Position the message near the click
-    message.style.left = `${e.clientX}px`;
-    message.style.top = `${e.clientY}px`;
+    let messageX = e.clientX + window.scrollX;
+    let messageY = e.clientY + window.scrollY;
+
+    // Ensure the message doesn't go outside the screen horizontally
+    const messageWidth = message.offsetWidth;
+    if (messageX + messageWidth > window.innerWidth + window.scrollX) {
+      messageX = window.innerWidth + window.scrollX - messageWidth - 10; // Adjust to fit within the screen
+    }
+    if (messageX < window.scrollX) {
+      messageX = window.scrollX + 10; // Adjust if it's too far left
+    }
+
+    // Ensure the message doesn't go outside the screen vertically
+    const messageHeight = message.offsetHeight;
+    if (messageY + messageHeight > window.innerHeight + window.scrollY) {
+      messageY = window.innerHeight + window.scrollY - messageHeight - 10; // Adjust to fit within the screen
+    }
+    if (messageY < window.scrollY) {
+      messageY = window.scrollY + 10; // Adjust if it's too high
+    }
+
+    message.style.left = `${messageX}px`;
+    message.style.top = `${messageY}px`;
     message.style.display = "block";
 
     // Hide the message after 1 second
@@ -224,6 +266,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
 
 
 

@@ -18,19 +18,40 @@ body {
   overflow: hidden; /* Ensure no size spill */
 }
 
-
 /* Message styles */
 .message {
   position: absolute;
-  font-size: 25px;
-  color: #ff4500;
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 5px 10px;
-  pointer-events: none;
-  display: none;
-  z-index: 1100; /* Above the bee */
+  font-size: 16px; /* Smaller, clean text */
+  font-family: Arial, sans-serif; /* Use a clean font */
+  color: #ff4500; /* White text for readability */
+  font-weight: bold; /* Make the message stand out */
+  background: rgba(0, 0, 0, 0.8); /* Dark, semi-transparent background */
+  padding: 10px 15px; /* Add some padding for spacing */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  border: 2px solid #ff4500; /* Add a colorful border to draw attention */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some depth with a shadow */
+  display: none; /* Hidden by default */
+  z-index: 1100; /* Make sure it appears above other elements */
+  white-space: nowrap; /* Prevent breaking of single-line messages */
+  transform: translate(-50%, -50%); /* Center the message */
+  text-align: center; /* Align text in the middle */
+  pointer-events: none; /* Prevent interaction */
 }
+
+/* Add a pulsing animation for better visibility */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.message {
+  animation: pulse 1.5s infinite ease-in-out; /* Apply the pulse effect */
+}
+
 
 /* Vortex styles */
 .vortex {
@@ -142,68 +163,65 @@ body {
 }
 
 /* Modal Styling */
-#beeModal {
+#beeModal1 {
   position: fixed;
   z-index: 1500;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for focus */
   display: none;
   justify-content: center;
   align-items: center;
 }
 
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+.modal-content1 {
+  background: #222; /* Dark background for contrast */
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
   position: relative;
+  width: 60%;
+  max-width: 500px; /* Restrict size */
+  color: #fff; /* Light text for readability */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content h2 {
+.modal-content1 h2 {
   color: #ff4500;
+  font-size: 28px;
 }
 
-.modal-content p {
+.modal-content1 p {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.modal-content .close {
+.modal-content1 .close1 {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
   font-size: 18px;
+  background: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#clonedBee {
+#clonedBee1 {
   width: 100px;
   height: 100px;
   margin: 10px auto;
-  position: relative;
 }
 
-#clonedBee .message {
-  font-size: 16px;
-  color: #ff4500;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #ff4500;
-  padding: 5px 10px;
-  border-radius: 8px;
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-/* Button Styling */
-#followButton {
+#followButton1 {
   background: #ff4500;
   color: white;
   border: none;
@@ -211,10 +229,12 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
-#followButton:hover {
-  background: #ff3300;
+#followButton1:hover {
+  background: #e63e00;
 }
 
 /* Full-screen fade overlay */
@@ -234,7 +254,7 @@ body {
 /* Toggle switch for the bee */
 .bee-toggle-container {
   position: fixed;
-  bottom: 20px; /* Adjust position */
+  bottom: 20px;
   right: 20px;
   z-index: 2000;
   display: flex;
@@ -278,5 +298,6 @@ body {
   color: white;
   font-size: 16px;
 }
+
 
 
