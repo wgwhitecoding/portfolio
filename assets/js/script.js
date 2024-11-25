@@ -149,42 +149,46 @@ credContainer.addEventListener('touchmove', (e) => {
     startCredX = null;
 });
 
-// Skill Bar Animation with Percentage Increase
+// Skill Bar Animation for Full-Stack and Data Engineering Sections
 function animateSkillBars() {
-    const skillBars = document.querySelectorAll('.skill-bar .progress');
+    const fullStackSkillBars = document.querySelectorAll('#fullStackSkillBars .progress');
+    const dataEngSkillBars = document.querySelectorAll('#dataEngSkillBars .progress');
+
+    const animateBars = (bars) => {
+        bars.forEach((progressBar) => {
+            const percentage = progressBar.getAttribute('data-percentage');
+            const skillPercentageElem = progressBar.querySelector('.skill-percentage');
+            const finalValue = parseInt(percentage, 10);
+            let currentPercentage = 0;
+
+            // Animate the bar width
+            progressBar.style.transition = "width 3s ease";
+            progressBar.style.width = percentage;
+
+            // Animate the percentage text to increase with the bar
+            const interval = setInterval(() => {
+                currentPercentage++;
+                skillPercentageElem.textContent = currentPercentage + '%';
+
+                if (currentPercentage >= finalValue) {
+                    clearInterval(interval);
+                }
+            }, 30); // Adjust this value to control the percentage animation speed
+        });
+    };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                const progressBar = entry.target;
-                const percentage = progressBar.getAttribute('data-percentage');
-                const skillPercentageElem = progressBar.querySelector('.skill-percentage');
-                const finalValue = parseInt(percentage, 10);
-                let currentPercentage = 0;
-
-                // Animate the bar width
-                progressBar.style.transition = "width 3s ease";  // Slow down the animation speed
-                progressBar.style.width = percentage;
-
-                // Animate the percentage text to increase with the bar
-                const interval = setInterval(() => {
-                    currentPercentage++;
-                    skillPercentageElem.textContent = currentPercentage + '%';
-
-                    if (currentPercentage >= finalValue) {
-                        clearInterval(interval);
-                    }
-                }, 30);  // Adjust this value to control how fast the percentage increases
-
-                observer.unobserve(progressBar);  // Stop observing once animated
+                const sectionBars = entry.target.querySelectorAll('.progress');
+                animateBars(sectionBars);
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });  // Trigger when 50% of the skill bar is visible
+    }, { threshold: 0.5 });
 
-    skillBars.forEach(bar => {
-        bar.style.width = '0%';  // Start at 0%
-        observer.observe(bar);
-    });
+    observer.observe(document.getElementById('fullStackSkillBars'));
+    observer.observe(document.getElementById('dataEngSkillBars'));
 }
 
 // Call the function when the DOM is fully loaded
@@ -196,14 +200,11 @@ function openCanDoModal() {
     candoModal.show();
 }
 
-// Add event listener to the Django Skill Bar
+// Add event listeners to the Django Skill Bar and Items
 document.getElementById('djangoSkillBar').addEventListener('click', openCanDoModal);
-
-// Add event listener to the 3D Django Skill Item
 document.getElementById('djangoSkill3D').addEventListener('click', openCanDoModal);
 
-// Add event listener to the SQL Skill Bar
+// Add event listeners to the SQL Skill Bar and Items
 document.getElementById('sqlSkillBar').addEventListener('click', openCanDoModal);
-
-// Add event listener to the 3D SQL Skill Item
 document.getElementById('sqlSkill3D').addEventListener('click', openCanDoModal);
+

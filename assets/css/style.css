@@ -348,6 +348,7 @@ section {
     transform-style: preserve-3d;
     animation: rotate 70s infinite linear;
     transform-origin: center right;
+    margin-bottom: 40px;
 }
 
 @keyframes rotate {
@@ -473,6 +474,26 @@ section {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* ========== Specific Styling for Iungo Card ========== */
+.iungo-card {
+    background-size: contain; /* Ensures the image fits within the card */
+    background-repeat: no-repeat; /* Prevents tiling of the logo */
+    background-position: center; /* Centers the logo within the card */
+}
+/* ========== Specific Styling for Code Institute Card ========== */
+.code-card {
+    background-size: contain; /* Ensures the image fits within the card */
+    background-repeat: no-repeat; /* Prevents tiling of the logo */
+    background-position: center; /* Centers the logo within the card */
+}
+/* Specific Styling for PL-300 Card */
+.pl300-card {
+    background-size: contain; /* Ensures the image fits within the card */
+    background-repeat: no-repeat; /* Prevents tiling of the logo */
+    background-position: center; /* Centers the logo within the card */
+}
+
+
 /* Control Arrows */
 .arrow {
     position: absolute;
@@ -491,6 +512,112 @@ section {
 .right-arrow {
     right: 0px;
 }
+
+/* Blog Wrapper */
+.blog-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Horizontal Scroll and Hide Scrollbars */
+.scrolling-wrapper-blog {
+    display: flex;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    flex-grow: 1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 10px;
+    justify-content: flex-start;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrolling-wrapper-blog::-webkit-scrollbar {
+    display: none;
+}
+
+.blog-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 200px;
+    margin: 0 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s;
+    color: white;
+    overflow: hidden;
+    scroll-snap-align: start;
+    transform: rotateX(15deg);
+}
+
+.blog-card:hover {
+    transform: scale(1.05) rotateX(0deg);
+}
+
+.blog-card .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.blog-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.blog-card h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.blog-card p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.modal-body img {
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body h6 {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.modal-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+/* Blog Date Styling */
+.blog-card .date {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #cccccc; /* Lighter text color for the date */
+    font-weight: 400;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6); /* Subtle shadow for readability */
+    display: block; /* Ensures it is displayed on a new line */
+}
+
+
 
 /* ========== Footer Styles ========== */
 footer {

@@ -14,6 +14,8 @@
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/dark.css" rel="stylesheet">
+    <link href="/assets/css/bee-animation.css" rel="stylesheet"> 
+
 </head>
 
 <body>
@@ -74,19 +76,10 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <p class="about-paragraph">
-                    As a detail-focused Junior Full-Stack Developer, I’m passionate about creating user-centric web
-                    applications using technologies like HTML, CSS, JavaScript, and Python. My tech journey is just
-                    beginning, and I’m excited about the future, eager to keep learning and adapting. I excel in
-                    problem-solving, thrive in collaborative environments, and am committed to delivering innovative,
-                    impactful solutions. My attention to detail and quick learning ability make me a valuable asset in
-                    any team
+                    As a detail-focused Junior Full-Stack Developer and Data Engineer, I’m passionate about building efficient, user-centric web applications and data solutions. My expertise spans technologies like HTML, CSS, JavaScript, Python, Django, and SQL, along with data engineering tools such as Apache Spark, Azure, and Power BI. I specialize in designing automated data pipelines, creating cloud-based architectures, and delivering actionable insights through data visualization. My tech journey is just beginning, and I’m eager to keep learning, adapting, and solving problems. I thrive in collaborative environments and am committed to delivering impactful solutions. My attention to detail and learning ability make me a valuable asset to any team.
                 </p>
                 <p class="about-paragraph">
-                    Outside of coding, I’m driven by my love for adventure. I’ve traveled to 84 countries as a scuba
-                    diving instructor, with the goal of visiting every country in the world. I speak four languages and
-                    love connecting with people from diverse backgrounds. My experiences around the globe shape my
-                    creativity and adaptability, and I’m excited to apply these qualities to my tech career as I
-                    continue to grow.
+                    Outside of coding, I’m an adventurer at heart and find inspiration in the world around me. I’ve traveled to 84 countries as a scuba diving instructor, exploring the depths of the ocean and connecting with diverse cultures along the way. When I’m not diving, I’m a passionate photographer, chess enthusiast, and lifelong learner. I enjoy expanding my knowledge in areas like data science and emerging technologies or immersing myself in capturing breathtaking landscapes. Whether strategizing my next chess move or chasing new adventures, I bring curiosity and determination to everything I do. These experiences shape my creativity, adaptability, and drive—qualities that fuel my passion for technology and make me excited for what’s ahead.
                 </p>
             </div>
         </div>
@@ -94,8 +87,9 @@
     <section id="skills" class="skills-carousel-container py-5">
         <div class="container">
             <h2>Skills</h2>
-            <!-- Skill bars are always visible -->
-            <div id="skillBars" class="skill-bars-container">
+            <h3>Full-Stack Development</h3>
+            <!-- Full-Stack Development Skill Bars -->
+            <div id="fullStackSkillBars" class="skill-bars-container">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="skill-bar">
@@ -139,7 +133,7 @@
                             </a>
                         </div>
                     </div>
-
+    
                     <div class="col-md-6">
                         <div class="skill-bar" id="djangoSkillBar">
                             <a href="javascript:void(0);">
@@ -151,7 +145,6 @@
                                 </div>
                             </a>
                         </div>
-
                         <div class="skill-bar" id="sqlSkillBar">
                             <a href="javascript:void(0);">
                                 <div class="bar">
@@ -162,7 +155,6 @@
                                 </div>
                             </a>
                         </div>
-
                         <div class="skill-bar">
                             <a href="#git-cert">
                                 <div class="bar">
@@ -188,13 +180,13 @@
             </div>
         </div>
     </section>
+    
+    <!-- Skills Carousel -->
     <section>
         <div class="skills-wrapper">
-
             <!-- Left Arrow (Small Devices) -->
             <span class="skills-arrow-left" id="skills-left"><i class="fas fa-chevron-left"></i></span>
-
-            <!-- Skills Carousel -->
+    
             <div class="skills-carousel" id="skillsCarousel">
                 <div class="skill-item" style="--i:0;">
                     <a href="your-html-credential-link.html" target="_blank">
@@ -226,13 +218,11 @@
                         <img src="assets/images/dj.png" alt="Django Logo">
                     </a>
                 </div>
-
                 <div class="skill-item" style="--i:6;" id="sqlSkill3D">
                     <a href="javascript:void(0);">
                         <img src="assets/images/sql.png" alt="SQL Logo">
                     </a>
                 </div>
-
                 <div class="skill-item" style="--i:7;">
                     <a href="your-github-credential-link.html" target="_blank">
                         <img src="assets/images/github.png" alt="GitHub Logo">
@@ -243,11 +233,143 @@
                         <img src="assets/images/heroku.png" alt="Heroku Logo">
                     </a>
                 </div>
+                <div class="skill-item" style="--i:0;">
+                    <a href="your-html-credential-link.html" target="_blank">
+                        <img src="assets/images/ETL.png" alt="HTML Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:1;">
+                    <a href="your-js-credential-link.html" target="_blank">
+                        <img src="assets/images/SPARK.png" alt="JavaScript Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:2;">
+                    <a href="your-css-credential-link.html" target="_blank">
+                        <img src="assets/images/Azure.png" alt="CSS Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:3;">
+                    <a href="your-bootstrap-credential-link.html" target="_blank">
+                        <img src="assets/images/PowerBi.png" alt="Bootstrap Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:4;">
+                    <a href="your-python-credential-link.html" target="_blank">
+                        <img src="assets/images/databrick.png" alt="Python Logo">
+                    </a>
+                </div>
+                <div class="skill-item" style="--i:5;" id="djangoSkill3D">
+                    <a href="javascript:void(0);">
+                        <img src="assets/images/bigdata.png" alt="Django Logo">
+                    </a>
+                </div>
             </div>
-
+    
             <!-- Right Arrow (Small Devices) -->
             <span class="skills-arrow-right" id="skills-right"><i class="fas fa-chevron-right"></i></span>
         </div>
+    </section>
+    
+    <!-- Data Engineering Section -->
+    <section id="skills" class="skills-carousel-container py-5">
+        <div class="container">
+            <h3>Data Engineering</h3>
+            <!-- Data Engineering Skill Bars -->
+            <div id="dataEngSkillBars" class="skill-bars-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="skill-bar">
+                            <a href="#spark-cert">
+                                <div class="bar">
+                                    <label>Apache Spark</label>
+                                    <div class="progress" data-percentage="60%">
+                                        <span class="skill-percentage">60%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="skill-bar">
+                            <a href="#azure-cert">
+                                <div class="bar">
+                                    <label>Azure</label>
+                                    <div class="progress" data-percentage="55%">
+                                        <span class="skill-percentage">55%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="skill-bar">
+                            <a href="#powerbi-cert">
+                                <div class="bar">
+                                    <label>Power BI</label>
+                                    <div class="progress" data-percentage="70%">
+                                        <span class="skill-percentage">70%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="skill-bar">
+                            <a href="#dataops-cert">
+                                <div class="bar">
+                                    <label>DataOps</label>
+                                    <div class="progress" data-percentage="50%">
+                                        <span class="skill-percentage">50%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6">
+                        <div class="skill-bar">
+                            <a href="#etl-cert">
+                                <div class="bar">
+                                    <label>ETL</label>
+                                    <div class="progress" data-percentage="65%">
+                                        <span class="skill-percentage">65%/span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="skill-bar">
+                            <a href="#bigdata-cert">
+                                <div class="bar">
+                                    <label>Big Data</label>
+                                    <div class="progress" data-percentage="55%">
+                                        <span class="skill-percentage">55%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="skill-bar">
+                            <a href="#ml-cert">
+                                <div class="bar">
+                                    <label>Machine Learning</label>
+                                    <div class="progress" data-percentage="65%">
+                                        <span class="skill-percentage">65%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="skill-bar">
+                            <a href="#data-governance-cert">
+                                <div class="bar">
+                                    <label>Data Governance</label>
+                                    <div class="progress" data-percentage="80%">
+                                        <span class="skill-percentage">80%</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <section>
+        <div class="skills-wrapper">
+    
     </section>
     <!-- Projects Section -->
     <section id="projects" class="py-5">
@@ -1257,85 +1379,191 @@
     </div>
 </div>
 
+<!-- Credentials Section -->
+<section id="credentials" class="py-5">
+    <div class="container">
+        <h2>Credentials</h2>
+        <div class="credentials-wrapper position-relative">
+            <!-- Left Arrow -->
+            <span class="arrow left-arrow" id="scroll-left-cred"><i class="fas fa-chevron-left"></i></span>
 
-
-
-    <!-- Credentials Section -->
-    <section id="credentials" class="py-5">
-        <div class="container">
-            <h2>Credentials</h2>
-            <div class="credentials-wrapper position-relative">
-                <!-- Left Arrow -->
-                <span class="arrow left-arrow" id="scroll-left-cred"><i class="fas fa-chevron-left"></i></span>
-
-                <!-- Carousel Wrapper -->
-                <div class="scrolling-wrapper-cred row flex-row flex-nowrap mt-4 pb-4" id="scroll-container-cred">
-                    <!-- Credential Item 1: Code Institute Bootcamp -->
-                    <div class="col-12 col-md-4 credential-item">
-                        <div class="credential-card" style="background-image: url('assets/images/code.png');"
-                            data-bs-toggle="modal" data-bs-target="#modalCodeInstituteCert">
-                        </div>
-                    </div>
-
-                    <!-- Credential Item 2: HTML & CSS -->
-                    <div class="col-12 col-md-4 credential-item">
-                        <div class="credential-card" style="background-image: url('assets/images/html-css-cert.jpg');"
-                            data-bs-toggle="modal" data-bs-target="#modalHtmlCssCert">
-                        </div>
-                    </div>
-
-                    <!-- Credential Item 3: JavaScript -->
-                    <div class="col-12 col-md-4 credential-item">
-                        <div class="credential-card" style="background-image: url('assets/images/js-cert.jpg');"
-                            data-bs-toggle="modal" data-bs-target="#modalJsCert">
-                        </div>
-                    </div>
-
-                    <!-- Credential Item 4: Python -->
-                    <div class="col-12 col-md-4 credential-item">
-                        <div class="credential-card" style="background-image: url('assets/images/python-cert.jpg');"
-                            data-bs-toggle="modal" data-bs-target="#modalPythonCert">
-                        </div>
-                    </div>
-
-                    <!-- Credential Item 5: Django -->
-                    <div class="col-12 col-md-4 credential-item">
-                        <div class="credential-card" style="background-image: url('assets/images/django-cert.jpg');"
-                            data-bs-toggle="modal" data-bs-target="#modalDjangoCert">
-                        </div>
+            <!-- Carousel Wrapper -->
+            <div class="scrolling-wrapper-cred row flex-row flex-nowrap mt-4 pb-4" id="scroll-container-cred">
+                <!-- Credential Item 1: Code Institute Bootcamp -->
+                <div class="col-12 col-md-4 credential-item">
+                    <div class="credential-card code-card" style="background-image: url('assets/images/ci2.png');"
+                        data-bs-toggle="modal" data-bs-target="#modalCodeInstituteCert">
                     </div>
                 </div>
 
-                <!-- Right Arrow -->
-                <span class="arrow right-arrow" id="scroll-right-cred"><i class="fas fa-chevron-right"></i></span>
+                <!-- Credential Item 2: Iungo Data Engineering -->
+                <div class="col-12 col-md-4 credential-item">
+                    <div class="credential-card iungo-card" style="background-image: url('assets/images/iungo-cert.png');"
+                        data-bs-toggle="modal" data-bs-target="#modalIungoCert">
+                    </div>
+                </div>
+
+                <!-- Credential Item 3: PL-300 Certification -->
+                <div class="col-12 col-md-4 credential-item">
+                    <div class="credential-card pl300-card" style="background-image: url('assets/images/pl300-cert.png');"
+                        data-bs-toggle="modal" data-bs-target="#modalPL300Cert">
+                    </div>
+                </div>
             </div>
+
+            <!-- Right Arrow -->
+            <span class="arrow right-arrow" id="scroll-right-cred"><i class="fas fa-chevron-right"></i></span>
         </div>
-    </section>
+    </div>
+</section>
 
 
-    <!-- Modals -->
-    <!-- Modal 1: Code Institute Bootcamp -->
-    <div class="modal fade" id="modalCodeInstituteCert" tabindex="-1" aria-labelledby="modalCodeInstituteCertLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalCodeInstituteCertLabel">Code Institute Bootcamp</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/ci.jpg" class="img-fluid mb-3" alt="Code Institute Certificate">
-                    <h6>Technologies Learned:</h6>
-                    <p><strong>HTML & CSS:</strong> Fundamentals of web development, semantic HTML, responsive
-                        design with CSS and Bootstrap.</p>
-                    <p><strong>JavaScript:</strong> Understanding of ES6, DOM manipulation, and event-driven
-                        programming.</p>
-                    <p><strong>Python & Django:</strong> Back-end development, Django framework for building
-                        full-stack web applications, databases, and authentication.</p>
+
+
+<!-- Modals -->
+<!-- Modal 1: Code Institute Bootcamp -->
+<div class="modal fade" id="modalCodeInstituteCert" tabindex="-1" aria-labelledby="modalCodeInstituteCertLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCodeInstituteCertLabel">Code Institute Bootcamp</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- Image Column -->
+                    <div class="col-md-6 text-center">
+                        <a href="assets/images/ci.jpg" target="_blank">
+                            <img src="assets/images/ci.jpg" class="img-fluid img-thumbnail" alt="Code Institute Certificate">
+                        </a>
+                        <small class="d-block mt-2">Click to expand</small>
+                    </div>
+                    <!-- Text Column -->
+                    <div class="col-md-6">
+                        <h6>Technologies Learned:</h6>
+                        <div class="mb-2">
+                            <h6><strong>HTML:</strong></h6>
+                            <p>Learned the fundamentals of semantic HTML to create accessible, well-structured web pages.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>CSS:</strong></h6>
+                            <p>Gained skills in responsive design and layout techniques using CSS and Bootstrap framework.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>JavaScript:</strong></h6>
+                            <p>Developed an understanding of ES6, DOM manipulation, and event-driven programming for dynamic web pages.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>Python:</strong></h6>
+                            <p>Acquired knowledge of Python programming for backend development, including scripting and automation.</p>
+                        </div>
+                        <div>
+                            <h6><strong>Django:</strong></h6>
+                            <p>Built full-stack web applications using the Django framework, working with databases and user authentication.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- Modal 2: Iungo Data Engineering -->
+<div class="modal fade" id="modalIungoCert" tabindex="-1" aria-labelledby="modalIungoCertLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalIungoCertLabel">Iungo Data Engineering Certification</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- Image Column -->
+                    <div class="col-md-6 text-center">
+                        <a href="assets/images/iungo-cert.jpg" target="_blank">
+                            <img src="assets/images/iungo-cert.jpg" class="img-fluid img-thumbnail" alt="Iungo Data Engineering Certificate">
+                        </a>
+                        <small class="d-block mt-2">Click to expand</small>
+                    </div>
+                    <!-- Text Column -->
+                    <div class="col-md-6">
+                        <h6>Technologies Learned:</h6>
+                        <div class="mb-2">
+                            <h6><strong>Apache Spark:</strong></h6>
+                            <p>Mastered distributed computing to process large-scale data efficiently.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>Azure:</strong></h6>
+                            <p>Gained experience with Microsoft Azure cloud platform for data storage, analysis, and deployment.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>Power BI:</strong></h6>
+                            <p>Learned to create interactive and visually compelling dashboards for business intelligence.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>ETL Processes:</strong></h6>
+                            <p>Built Extract, Transform, and Load pipelines to move and process data across systems.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>DataOps:</strong></h6>
+                            <p>Applied principles of agile development and DevOps to streamline data workflows.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>Big Data:</strong></h6>
+                            <p>Worked with structured and unstructured data to gain insights from vast datasets.</p>
+                        </div>
+                        <div>
+                            <h6><strong>Machine Learning:</strong></h6>
+                            <p>Developed foundational skills in applying machine learning algorithms to analyze data and make predictions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3: PL-300 Certification -->
+<div class="modal fade" id="modalPL300Cert" tabindex="-1" aria-labelledby="modalPL300CertLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalPL300CertLabel">PL-300 Certification</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <!-- Image Column -->
+                    <div class="col-md-6 text-center">
+                        <a href="assets/images/pl300-cert.png" target="_blank">
+                            <img src="assets/images/pl300-cert.png" class="img-fluid img-thumbnail" alt="PL-300 Certification">
+                        </a>
+                        <small class="d-block mt-2">Click to expand</small>
+                    </div>
+                    <!-- Text Column -->
+                    <div class="col-md-6">
+                        <h6>Technologies Learned:</h6>
+                        <div class="mb-2">
+                            <h6><strong>Power BI:</strong></h6>
+                            <p>Developed skills in creating interactive dashboards, data models, and transforming raw data into actionable insights.</p>
+                        </div>
+                        <div class="mb-2">
+                            <h6><strong>Data Analysis:</strong></h6>
+                            <p>Learned advanced techniques for cleaning, transforming, and visualizing data to support business decisions.</p>
+                        </div>
+                        <div>
+                            <h6><strong>Microsoft Ecosystem:</strong></h6>
+                            <p>Gained expertise in integrating Power BI with other Microsoft tools like Excel, SQL Server, and Azure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
     <!-- Modal 2: HTML & CSS Certification -->
     <div class="modal fade" id="modalHtmlCssCert" tabindex="-1" aria-labelledby="modalHtmlCssCertLabel"
@@ -1421,23 +1649,176 @@
     <section id="resume" class="py-5">
         <div class="container">
             <h2>Resume</h2>
-            <p>Download my resume <a href="path-to-your-resume.pdf" target="_blank">here</a>.</p>
+            <p>Download my resume <a href="assets/cv/CVTECH.pdf"  target="_blank">here</a>.</p>
             <!-- You can add more resume details or link to a separate page if needed -->
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="py-5">
-        <div class="container">
-            <h2>Blog</h2>
-            <p>Read my latest blog posts:</p>
-            <ul>
-                <li><a href="blog-post-1-link.html">Blog Post 1</a></li>
-                <li><a href="blog-post-2-link.html">Blog Post 2</a></li>
-                <li><a href="blog-post-3-link.html">Blog Post 3</a></li>
-            </ul>
+<!-- Blog Section -->
+<section id="blog" class="py-5">
+    <div class="container">
+        <h2>Blog</h2>
+        <div class="blog-wrapper position-relative" id="blogWrapper">
+            <!-- Left Arrow -->
+            <span class="arrow left-arrow" id="scroll-left-blog"><i class="fas fa-chevron-left"></i></span>
+            <!-- Horizontal Scroll Wrapper -->
+            <div class="scrolling-wrapper-blog row flex-row flex-nowrap mt-4 pb-4" id="scroll-container-blog">
+                <!-- Blog Post 1 -->
+                <div class="col-12 col-md-4 blog-item">
+                    <div class="blog-card" style="background-image: url('assets/images/blog1.png');"
+                        data-bs-toggle="modal" data-bs-target="#blogModal1">
+                        <div class="overlay">
+                            <h4>Understanding Data Engineering</h4>
+                            <p>A beginner's guide to modern data workflows</p>
+                            <p class="date">Published: November 10, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="col-12 col-md-4 blog-item">
+                    <div class="blog-card" style="background-image: url('assets/images/');"
+                        data-bs-toggle="modal" data-bs-target="#blogModal2">
+                        <div class="overlay">
+                            <h4>Mastering Python</h4>
+                            <p>Key tips for writing clean and efficient code</p>
+                            <p class="date">Published: November 15, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-12 col-md-4 blog-item">
+                    <div class="blog-card" style="background-image: url('assets/images/blog3.png');"
+                        data-bs-toggle="modal" data-bs-target="#blogModal3">
+                        <div class="overlay">
+                            <h4>The Future of AI</h4>
+                            <p>Exploring the impact of AI in web development</p>
+                            <p class="date">Published: November 20, 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Arrow -->
+            <span class="arrow right-arrow" id="scroll-right-blog"><i class="fas fa-chevron-right"></i></span>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Blog Modals -->
+<!-- Blog Modal 1 -->
+<div class="modal fade" id="blogModal1" tabindex="-1" aria-labelledby="blogModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogModal1Label">Understanding Data Engineering</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="assets/images/blog1-1.png" class="img-fluid mb-3" alt="Data Engineering Workflow">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="assets/images/blog1-2.png" class="img-fluid mb-3" alt="ETL Process">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6>Introduction</h6>
+                        <p>In this post, we explore the essential concepts and workflows in modern data engineering. Learn about ETL pipelines, data lakes, and cloud platforms.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Key Concepts</h6>
+                        <p>Understand how data pipelines transform raw data into actionable insights, and discover the role of cloud platforms like Azure and AWS in this process.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Why It Matters</h6>
+                        <p>Modern data engineering enables organizations to harness the power of big data, improving decision-making and operational efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Modal 2 -->
+<div class="modal fade" id="blogModal2" tabindex="-1" aria-labelledby="blogModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogModal2Label">Mastering Python</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img src="assets/images/blog2-1.png" class="img-fluid mb-3" alt="Python Best Practices">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="assets/images/blog2-2.png" class="img-fluid mb-3" alt="Python Scripting">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6>Introduction</h6>
+                        <p>This blog shares tips and techniques for writing clean, efficient, and maintainable Python code. Explore advanced features and best practices.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Advanced Features</h6>
+                        <p>Dive into Python's powerful libraries, including NumPy and Pandas, to handle data manipulation and analysis with ease.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Best Practices</h6>
+                        <p>Learn to write Python code that is clean, reusable, and adheres to industry standards, ensuring maintainability and scalability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Modal 3 -->
+<div class="modal fade" id="blogModal3" tabindex="-1" aria-labelledby="blogModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogModal3Label">The Future of AI</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="assets/images/blog3-1.png" class="img-fluid mb-3" alt="AI Innovations">
+                    </div>
+                    <div class="col-md-8">
+                        <img src="assets/images/blog3-2.png" class="img-fluid mb-3" alt="AI in Web Development">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6>Introduction</h6>
+                        <p>Explore how AI is reshaping web development, from personalized user experiences to advanced automation and intelligent systems.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>AI Innovations</h6>
+                        <p>Discover the latest advancements in AI technology and their applications in web development and beyond.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Challenges</h6>
+                        <p>Understand the ethical and technical challenges of integrating AI into everyday tools and workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
     <!-- Footer (Contact Section) -->
@@ -1497,6 +1878,27 @@
         </div>
     </footer>
 
+    <div class="bee-container">
+        <lottie-player
+            id="bee-animation"
+            src="assets/animation/just-a-bee.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay>
+        </lottie-player>
+      </div>
+      
+
+    
+      
+      <!-- GSAP for animations -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <!-- Lottie Player -->
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest"></script>
+
+      <!-- New JavaScript for the flying bee -->
+      <script src="assets/js/bee-animation.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

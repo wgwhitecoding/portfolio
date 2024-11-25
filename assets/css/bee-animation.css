@@ -1,0 +1,146 @@
+/* bee-animation.css */
+/* Allow the page to scroll */
+body {
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling but allow vertical */
+  }
+  
+  .bee-container {
+    position: absolute; /* Ensure it doesn’t affect page flow */
+    top: 50px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    z-index: 1000; /* Place above other elements */
+    width: 100px; /* Adjust the bee size */
+    height: 100px;
+    pointer-events: auto; /* Allow interaction with the bee */
+  }
+  
+  
+  
+  .message {
+    position: absolute;
+    font-size: 25px;
+    color: #ff4500;
+    font-weight: bold;
+    
+    border-radius: 5px;
+    padding: 5px 10px;
+    pointer-events: none;
+    display: none;
+    z-index: 1100; /* Above the bee */
+  }
+
+  .vortex {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(255, 0, 255, 0.5), rgba(0, 0, 0, 0));
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.8), 0 0 30px rgba(0, 0, 255, 0.6);
+    z-index: 1001;
+    overflow: hidden;
+    animation: pulse 2s ease-in-out infinite, spin 1.5s linear infinite;
+  }
+  
+  /* Inner swirling layer */
+  .vortex::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 0deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(0, 0, 255, 0.8),
+      rgba(0, 0, 0, 0)
+    );
+    animation: spin-reverse 1.5s linear infinite;
+  }
+  
+  /* Tornado tail */
+  .vortex::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 300px;
+    bottom: -200px; /* Position below the vortex */
+    left: 50%; /* Center align */
+    transform: translateX(-50%) scale(0.9); /* Slightly taper the tail */
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(0, 0, 0, 0));
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+    animation: swirl 1.5s ease-in-out infinite, taper 2s ease-in-out infinite;
+  }
+  
+  /* Particle layer */
+  .vortex .particles {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0));
+    animation: particle-spin 2s linear infinite;
+  }
+  
+  /* Animations for spinning and pulsing */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for tornado tail swirling */
+  @keyframes swirl {
+    0% {
+      transform: translateX(-50%) rotate(0deg) scale(0.9);
+    }
+    100% {
+      transform: translateX(-50%) rotate(360deg) scale(1);
+    }
+  }
+  
+  /* Tail tapering effect */
+  @keyframes taper {
+    0%, 100% {
+      transform: translateX(-50%) scale(0.9);
+    }
+    50% {
+      transform: translateX(-50%) scale(0.8);
+    }
+  }
+  
+  /* Particle orbit animation */
+  @keyframes particle-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
