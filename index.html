@@ -62,13 +62,35 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section text-center">
-        <div class="container">
-            <h1>Hello, I'm Walid White</h1>
-            <p>Full-Stack Developer, Web Enthusiast, and Lifelong Learner</p>
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-        </div>
-    </header>
+<header class="hero-section text-center">
+    <div class="container">
+      <h1>Hello, I'm Walid White</h1>
+      <p>Full-Stack Developer, Web Enthusiast, and Lifelong Learner</p>
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+  
+      <!-- Bee Toggle Switch -->
+      <div class="bee-toggle-container">
+        <label class="bee-switch">
+          <input type="checkbox" id="beeToggle">
+          <span class="slider"></span>
+        </label>
+        <span id="toggle-text">Bee is On</span>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Bee Modal -->
+<div id="beeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalBeeContainer">
+        <h2>Congratulations!</h2>
+        <p>You caught the busy bee!</p>
+        <div id="clonedBee" class="bee-clone"></div>
+        <button id="followButton">Follow</button>
+      </div>
+    </div>
+  </div>
 
     <!-- About Section -->
     <section id="about" class="about-section">
@@ -1888,24 +1910,6 @@
             autoplay>
         </lottie-player>
       </div>
-
-<!-- Bee Modal -->
-<div id="beeModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modalBeeContainer">
-        <h2>Congratulations!</h2>
-        <p>You caught the busy bee!</p>
-        <div id="clonedBee" class="bee-clone"></div>
-        <button id="followButton">Follow</button>
-      </div>
-    </div>
-  </div>
-  
-  
-      
-
-    
       
       <!-- GSAP for animations -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

@@ -1,149 +1,143 @@
-/* bee-animation.css */
-/* Allow the page to scroll */
+/* General Body Styling */
 body {
-    margin: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling but allow vertical */
-  }
-  
-  .bee-container {
-    position: absolute; /* Ensure it doesn’t affect page flow */
-    top: 50px; /* Adjust as needed */
-    left: 50px; /* Adjust as needed */
-    z-index: 1000; /* Place above other elements */
-    width: 100px; /* Adjust the bee size */
-    height: 100px;
-    pointer-events: auto; /* Allow interaction with the bee */
-  }
-  
-  
-  
-  .message {
-    position: absolute;
-    font-size: 25px;
-    color: #ff4500;
-    font-weight: bold;
-    
-    border-radius: 5px;
-    padding: 5px 10px;
-    pointer-events: none;
-    display: none;
-    z-index: 1100; /* Above the bee */
-  }
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling but allow vertical */
+}
 
-  .vortex {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(255, 0, 255, 0.5), rgba(0, 0, 0, 0));
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.8), 0 0 30px rgba(0, 0, 255, 0.6);
-    z-index: 1001;
-    overflow: hidden;
-    animation: pulse 2s ease-in-out infinite, spin 1.5s linear infinite;
+/* Bee container */
+.bee-container {
+  position: absolute; /* Ensure it doesn’t affect page flow */
+  top: 50px; /* Adjust as needed */
+  left: 50px; /* Adjust as needed */
+  z-index: 1000; /* Place above other elements */
+  width: 100px; /* Adjust the bee size */
+  height: 100px;
+  pointer-events: auto; /* Allow interaction with the bee */
+}
+
+/* Message styles */
+.message {
+  position: absolute;
+  font-size: 25px;
+  color: #ff4500;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 10px;
+  pointer-events: none;
+  display: none;
+  z-index: 1100; /* Above the bee */
+}
+
+/* Vortex styles */
+.vortex {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(255, 0, 255, 0.5), rgba(0, 0, 0, 0));
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0.8), 0 0 30px rgba(0, 0, 255, 0.6);
+  z-index: 1001;
+  overflow: hidden;
+  animation: pulse 2s ease-in-out infinite, spin 1.5s linear infinite;
+}
+
+/* Inner swirling layer */
+.vortex::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 255, 0.8), rgba(0, 0, 0, 0));
+  animation: spin-reverse 1.5s linear infinite;
+}
+
+/* Tornado tail */
+.vortex::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 300px;
+  bottom: -200px; /* Position below the vortex */
+  left: 50%; /* Center align */
+  transform: translateX(-50%) scale(0.9); /* Slightly taper the tail */
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(0, 0, 0, 0));
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+  animation: swirl 1.5s ease-in-out infinite, taper 2s ease-in-out infinite;
+}
+
+/* Particle layer */
+.vortex .particles {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0));
+  animation: particle-spin 2s linear infinite;
+}
+
+/* Animations for spinning and pulsing */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  /* Inner swirling layer */
-  .vortex::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: conic-gradient(
-      from 0deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(0, 0, 255, 0.8),
-      rgba(0, 0, 0, 0)
-    );
-    animation: spin-reverse 1.5s linear infinite;
+  to {
+    transform: rotate(360deg);
   }
-  
-  /* Tornado tail */
-  .vortex::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 300px;
-    bottom: -200px; /* Position below the vortex */
-    left: 50%; /* Center align */
-    transform: translateX(-50%) scale(0.9); /* Slightly taper the tail */
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(0, 0, 0, 0));
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
-    animation: swirl 1.5s ease-in-out infinite, taper 2s ease-in-out infinite;
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
   }
-  
-  /* Particle layer */
-  .vortex .particles {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0));
-    animation: particle-spin 2s linear infinite;
+  to {
+    transform: rotate(0deg);
   }
-  
-  /* Animations for spinning and pulsing */
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
   }
-  
-  @keyframes spin-reverse {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
   }
-  
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 0.8;
-    }
-    50% {
-      transform: scale(1.2);
-      opacity: 1;
-    }
+}
+
+/* Animation for tornado tail swirling */
+@keyframes swirl {
+  0% {
+    transform: translateX(-50%) rotate(0deg) scale(0.9);
   }
-  
-  /* Animation for tornado tail swirling */
-  @keyframes swirl {
-    0% {
-      transform: translateX(-50%) rotate(0deg) scale(0.9);
-    }
-    100% {
-      transform: translateX(-50%) rotate(360deg) scale(1);
-    }
+  100% {
+    transform: translateX(-50%) rotate(360deg) scale(1);
   }
-  
-  /* Tail tapering effect */
-  @keyframes taper {
-    0%, 100% {
-      transform: translateX(-50%) scale(0.9);
-    }
-    50% {
-      transform: translateX(-50%) scale(0.8);
-    }
+}
+
+/* Tail tapering effect */
+@keyframes taper {
+  0%, 100% {
+    transform: translateX(-50%) scale(0.9);
   }
-  
-  /* Particle orbit animation */
-  @keyframes particle-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  50% {
+    transform: translateX(-50%) scale(0.8);
   }
-  
-  /* Modal Styling */
+}
+
+/* Particle orbit animation */
+@keyframes particle-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modal Styling */
 #beeModal {
   position: fixed;
   z-index: 1500;
@@ -218,6 +212,7 @@ body {
 #followButton:hover {
   background: #ff3300;
 }
+
 /* Full-screen fade overlay */
 .fade-overlay {
   position: fixed;
@@ -231,3 +226,53 @@ body {
   pointer-events: none;
   transition: opacity 2s ease; /* Smooth fade effect */
 }
+
+/* Toggle switch for the bee */
+.bee-toggle-container {
+  position: fixed;
+  bottom: 20px; /* Adjust position */
+  right: 20px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bee-toggle-container input[type="checkbox"] {
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  background: #ccc;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.bee-toggle-container input[type="checkbox"]:checked {
+  background: #ff4500;
+}
+
+.bee-toggle-container input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s ease;
+}
+
+.bee-toggle-container input[type="checkbox"]:checked::before {
+  transform: translateX(20px);
+}
+
+.bee-toggle-container label {
+  color: white;
+  font-size: 16px;
+}
+
+

@@ -10,12 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Modal elements
   const modal = document.getElementById("beeModal");
   const followButton = document.getElementById("followButton");
+  const closeModalButton = document.querySelector(".close"); // Modal close button
   const clonedBeeContainer = document.getElementById("clonedBee");
 
   // Full-screen overlay for fade-to-black effect
   const fadeOverlay = document.createElement("div");
   fadeOverlay.className = "fade-overlay";
   document.body.appendChild(fadeOverlay);
+
+  // Bee Toggle elements
+  const beeToggle = document.getElementById("beeToggle");
+  const toggleText = document.getElementById("toggle-text");
 
   if (beeAnimation) {
     console.log("Bee animation element found");
@@ -32,6 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let isPaused = false;
   let isCaught = false; // Track if the bee is caught
+  let isBeeActive = true; // Track if the bee is toggled on
+
+  // Set the toggle to start as "on"
+  beeToggle.checked = true;
 
   // Random positions for flying
   function getRandomPosition() {
@@ -47,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Make the bee pause, speak, and then fly away
   function speakAndFly() {
-    if (isPaused || isCaught) return;
+    if (isPaused || isCaught || !isBeeActive) return;
     isPaused = true;
 
     // Randomly pick a phrase
@@ -70,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Flying animation
   function flyBee() {
-    if (isCaught) return; // Stop flying if the bee is caught
+    if (isCaught || !isBeeActive) return; // Stop flying if the bee is caught or toggled off
     const { x, y } = getRandomPosition();
     gsap.to(beeContainer, {
       x: x,
@@ -84,24 +93,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle missed clicks
   document.body.addEventListener("click", (e) => {
-    if (!beeContainer.contains(e.target)) {
-      const randomMissedPhrase = missedPhrases[Math.floor(Math.random() * missedPhrases.length)];
-      message.textContent = randomMissedPhrase;
+    if (!isBeeActive || beeContainer.contains(e.target)) return; // Stop if the bee is toggled off or clicked
+    const randomMissedPhrase = missedPhrases[Math.floor(Math.random() * missedPhrases.length)];
+    message.textContent = randomMissedPhrase;
 
-      // Position the message near the click
-      message.style.left = `${e.clientX}px`;
-      message.style.top = `${e.clientY}px`;
-      message.style.display = "block";
+    // Position the message near the click
+    message.style.left = `${e.clientX}px`;
+    message.style.top = `${e.clientY}px`;
+    message.style.display = "block";
 
-      // Hide the message after a short delay
-      setTimeout(() => {
-        message.style.display = "none";
-      }, 1000);
-    }
+    // Hide the message after a short delay
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 1000);
   });
 
   // Handle "catching" the bee
   beeContainer.addEventListener("click", () => {
+    if (!isBeeActive) return; // Stop if the bee is toggled off
     console.log("Bee clicked!");
     isCaught = true; // Mark the bee as caught
 
@@ -179,7 +188,43 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   });
+
+  // Close modal on "x" or outside click
+  closeModalButton.addEventListener("click", () => {
+    modal.style.display = "none";
+    beeContainer.style.display = "block"; // Restore bee visibility
+    isCaught = false; // Reset caught state
+    flyBee(); // Restart flying
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      beeContainer.style.display = "block"; // Restore bee visibility
+      isCaught = false; // Reset caught state
+      flyBee(); // Restart flying
+    }
+  });
+
+  // Handle bee toggle functionality
+  beeToggle.addEventListener("change", () => {
+    isBeeActive = beeToggle.checked; // Update the bee activity state
+
+    if (isBeeActive) {
+      console.log("Bee turned on");
+      beeContainer.style.display = "block"; // Show the bee
+      toggleText.textContent = "Bee is On";
+      flyBee(); // Restart the flying animation
+    } else {
+      console.log("Bee turned off");
+      beeContainer.style.display = "none"; // Hide the bee
+      gsap.killTweensOf(beeContainer); // Stop the flying animation
+      message.style.display = "none"; // Hide any active messages
+      toggleText.textContent = "Bee is Off";
+    }
+  });
 });
+
 
 
 
