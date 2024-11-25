@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     message.style.top = `${e.clientY}px`;
     message.style.display = "block";
 
-    // Hide the message after a short delay
+    // Hide the message after 1 second
     setTimeout(() => {
       message.style.display = "none";
     }, 1000);
@@ -224,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
