@@ -4,18 +4,18 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling but allow vertical */
 }
 
-/* Ensure the bee has a fixed size */
 .bee-container {
-  position: absolute; /* Ensure it doesn’t affect page flow */
-  top: 50px; /* Adjust as needed */
-  left: 50px; /* Adjust as needed */
-  z-index: 1000; /* Place above other elements */
-  width: 5vw; /* Scale width dynamically based on viewport width */
-  height: 5vw; /* Scale height dynamically based on viewport width */
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 1000;
+  width: 5vw; /* Adjust dynamically */
+  height: 5vw; /* Adjust dynamically */
   max-width: 100px; /* Restrict maximum size */
   max-height: 100px; /* Restrict maximum size */
-  pointer-events: auto; /* Allow interaction with the bee */
-  transform: scale(1); /* Reset any scaling applied */
+  pointer-events: auto;
+  transform: scale(1); /* Reset scaling */
+  overflow: hidden; /* Ensure no size spill */
 }
 
 

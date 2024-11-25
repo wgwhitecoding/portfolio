@@ -9,6 +9,10 @@ body {
     font-weight: 400; /* Set base weight for body */
     line-height: 1.6;
     text-align: justify; /* Ensure text is aligned uniformly */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+      
 }
 
 section {
