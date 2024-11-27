@@ -4,7 +4,7 @@
 
 /* General Dark Mode Body Styles */
 body.dark-mode {
-    background-color: #121212;
+    background-color: #000000;
     color: white;
 }
 
@@ -53,6 +53,9 @@ body.dark-mode .modal-content .overlay {
 
 /* Dark Mode Skill Bars */
 body.dark-mode .bar {
+    background-color: #444;
+}
+#dataEngSkillBars .bar {
     background-color: #444;
 }
 
