@@ -4,7 +4,7 @@
 /* ========== Global Styles ========== */
 body {
     font-family: 'Exo 2', sans-serif;
-    background-color: #f6f7f8;
+    background: #fafafa;
     color: #333;
     font-weight: 400;
     line-height: 1.6;
@@ -368,7 +368,7 @@ section {
 }
 
 .progress {
-    background-color: #007bff; /* Default progress color */
+    background: linear-gradient(to bottom, #2c3e50, #3498db); /* Gradient background for cards */
     height: 100%;
     border-radius: 20px;
     transition: width 1.5s ease; /* Smooth width animation */
@@ -658,6 +658,145 @@ section {
     z-index: 1000;
     color: rgb(7, 6, 6);
 }
+/* ========== Services Section Styles ========== */
+.services-section {
+    padding: 60px 0;
+    background: none; /* Matches the page background */
+    color: #333;
+}
+
+.section-header {
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.service-card {
+    background: linear-gradient(to bottom, #2c3e50, #3498db);
+    border-radius: 10px;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 220px; /* Compact card height */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures proper spacing between elements */
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h4 {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px; /* Adds spacing above the button */
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center aligns the button */
+}
+
+.learn-more-btn:hover {
+    background-color: #218838;
+}
+
+/* Icon Animations */
+.icon-animation {
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon-animation {
+    transform: rotate(20deg) scale(1.1);
+    color: #dfe6e9;
+}
+#services {
+    margin-top: -230px; /* Move Services section closer to Skills */
+    padding-top: 0; /* Optional: Remove top padding of Services */
+}
+
+/* Responsive Adjustments for Services Section */
+@media (max-width: 768px) {
+    .service-card {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .learn-more-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+
+/* ========== Services Modal Styles ========== */
+.services-modal .modal-content {
+    width: 60%; /* Smaller modal size */
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.services-modal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.services-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between elements */
+    padding: 20px;
+}
+
+.services-modal .social-icons a {
+    font-size: 2.5rem; /* Larger icons */
+    margin: 0 10px;
+    color: #333; /* Icon color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.services-modal .social-icons a:hover {
+    color: #007bff; /* Hover color for icons */
+}
+
+/* Responsive Adjustments for Modal */
+@media (max-width: 768px) {
+    .services-modal .modal-content {
+        width: 80%; /* Adjust width for small screens */
+    }
+
+    .services-modal .social-icons a {
+        font-size: 2rem; /* Slightly smaller icons for mobile */
+    }
+}
+
 
 
 
@@ -692,8 +831,8 @@ section {
 .project-card {
     position: relative;
     width: 100%;
-    max-width: 380px;
-    height: 200px;
+    max-width: 430px;
+    height: 220px;
     margin: 0 10px;
     background-size: cover;
     background-position: center;
@@ -746,12 +885,14 @@ section {
 }
 
 .left-arrow {
-    left: -50px;
+    left: -50px; /* Keep this as is */
 }
 
 .right-arrow {
-    right: 0px;
+    right: -40px !important;
 }
+
+
 
 /* ========== Modal Styles ========== */
 .modal-dialog {
@@ -1346,6 +1487,7 @@ footer .col-md-4:nth-child(3) {
         width: 120px;
         height: auto;
     }
+    
 
 /* ========== Footer Media Queries ========== */
     /* Footer Adjustments for Mobile */
