@@ -126,7 +126,7 @@ section {
 .circuit-bottom-right {
     position: absolute;
     top: 410px;
-    left: 1770px;
+    left: 1550px;
     max-width: 350px;
     opacity: 0.7;
     z-index: 1;
@@ -159,56 +159,108 @@ section {
 
 
 
+/* ========== Bee Toggle Switch Styles ========== */
 .bee-toggle-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: center; /* Center the toggle */
+    gap: 10px; /* Spacing between toggle and label */
+    margin-top: 20px; /* Default margin */
+    position: fixed; /* Fixed for specific placement */
+    bottom: 20px; /* Position from the bottom of the viewport */
+    right: 20px; /* Position from the right of the viewport */
+    z-index: 2000; /* Ensure toggle appears above other elements */
 }
 
+/* Switch container */
 .bee-switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 60px; /* Width of the switch */
+    height: 34px; /* Height of the switch */
 }
 
+/* Hide the input (actual toggle) */
 .bee-switch input {
-    opacity: 0;
+    opacity: 0; /* Make input invisible */
     width: 0;
     height: 0;
 }
 
+/* Slider styling (background and border-radius) */
 .bee-switch .slider {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
+    background-color: #ccc; /* Default background color */
+    transition: 0.4s; /* Smooth transition for background */
+    border-radius: 34px; /* Rounded corners */
 }
 
+/* Slider knob styling */
 .bee-switch .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 26px; /* Size of the knob */
+    width: 26px; /* Size of the knob */
     left: 4px;
     bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
+    background-color: white; /* Knob color */
+    transition: 0.4s; /* Smooth transition for movement */
+    border-radius: 50%; /* Fully round knob */
 }
 
+/* Change slider background when checked */
 .bee-switch input:checked + .slider {
-    background-color: #3498db;
+    background-color: #3498db;; /* Orange background for checked state */
 }
 
+/* Move knob to the right when checked */
 .bee-switch input:checked + .slider:before {
-    transform: translateX(26px);
+    transform: translateX(26px); /* Slide knob to the right */
 }
+
+/* Label Styling */
+.bee-toggle-container label {
+    color: white; /* Label text color */
+    font-size: 16px; /* Label font size */
+}
+
+/* Checkbox Styling (Custom Style for Bee Animation) */
+.bee-toggle-container input[type="checkbox"] {
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.bee-toggle-container input[type="checkbox"]:checked {
+    background: #ff4500; /* Checked state background color */
+}
+
+.bee-toggle-container input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+}
+
+.bee-toggle-container input[type="checkbox"]:checked::before {
+    transform: translateX(20px); /* Move toggle knob */
+}
+
 
 @keyframes fadeIn {
     from {
@@ -1112,7 +1164,7 @@ footer .col-md-4:nth-child(3) {
 
     /* Adjust hero section size and alignment */
     .hero-section {
-        min-height: 47vh;
+        min-height: 95vh;
         padding: 15px;
         display: flex;
         flex-direction: column;
@@ -1392,5 +1444,16 @@ footer .col-md-4:nth-child(3) {
     .skills-arrow-left,
     .skills-arrow-right {
         display: none;
+    }
+}
+@media (max-width: 768px) {
+    /* Fix the bee toggle container position below the secret text */
+    .bee-toggle-container {
+        position: absolute;
+        bottom: 50px; /* Space from the bottom of the viewport */
+        left: 50%; /* Center the toggle horizontally */
+        transform: translateX(-50%); /* Align to the center */
+        z-index: 1000; /* Ensure it's above other content */
+        margin-top: 0; /* Remove extra margin */
     }
 }
