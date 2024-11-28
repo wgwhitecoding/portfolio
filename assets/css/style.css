@@ -122,7 +122,7 @@ section {
     z-index: 1;
 }
 
-/* ========== Circuit Design Styling ========== */
+/* ========== Circuit Design Styling Image2========== */
 .circuit-bottom-right {
     position: absolute;
     top: 410px;
@@ -154,10 +154,6 @@ section {
         opacity: 1;
     }
 }
-
-
-
-
 
 /* ========== Bee Toggle Switch Styles ========== */
 .bee-toggle-container {
@@ -292,6 +288,378 @@ section {
         opacity: 1;
     }
 }
+/* ========== About Me Section Styles ========== */
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0; /* Removes extra margin for a cleaner layout */
+}
+
+.about-section {
+    padding: 40px 0; /* Adds vertical spacing for the section */
+    margin-top: 40px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px; /* Adds space between content columns */
+    align-items: stretch; /* Ensures all items stretch equally */
+}
+
+.about-paragraph {
+    flex: 1; /* Ensures equal space for paragraphs */
+    text-align: justify; /* Aligns text for a neat appearance */
+    line-height: 1.6; /* Sets consistent line spacing */
+    word-spacing: 0px; /* Neutralizes extra word spacing */
+    margin: 0; /* Ensures no external spacing */
+    padding: 0; /* Removes internal padding */
+}
+
+/* ========== Global Skills Section Styles ========== */
+
+#skills
+{
+    bottom: 60px;
+}
+.skill-bars-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-bars-container .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-6 {
+    flex: 0 0 48%; /* Columns take 48% of the container */
+}
+
+.skill-bar {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90%; /* Set the width of each skill bar */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Skill Bar Progress and Background */
+.bar {
+    background-color: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px; /* Bar height */
+    width: 100%; /* Full width of the container */
+    max-width: 100%;
+    min-width: 15cm;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    margin-left: 10px;
+}
+
+.bar:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+.progress {
+    background-color: #007bff; /* Default progress color */
+    height: 100%;
+    border-radius: 20px;
+    transition: width 1.5s ease; /* Smooth width animation */
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    width: 0%; /* Initial width for animation */
+    color: #fff;
+}
+
+/* Skill Labels Inside the Bars */
+.skill-bar label {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+    z-index: 3;
+}
+
+.skill-percentage {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #fff;
+    z-index: 3;
+}
+
+/* ========== Full-Stack Skills Section Styles ========== */
+.skills-carousel-container {
+    perspective: 1000px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    padding: 0 20px;
+    position: relative;
+    max-width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.skills-carousel-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.skills-wrapper {
+    margin-top: -160px; /* Adjust top margin */
+}
+
+.skills-carousel {
+    display: flex;
+    width: 800px;
+    transform-style: preserve-3d;
+    animation: rotate 70s infinite linear;
+    transform-origin: center right;
+    margin-bottom: 40px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Skill Item */
+.skill-item {
+    flex: 0 0 auto;
+    width: 100px; /* Skill icon width */
+    height: 100px; /* Skill icon height */
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
+    transition: transform 0.5s ease;
+}
+
+.skill-item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.skill-item:hover img {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Stop animation on hover */
+.skills-carousel:hover {
+    animation-play-state: paused;
+}
+
+/* Arrows for Full-Stack Section */
+.skills-arrow-left {
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
+}
+
+.skills-arrow-right {
+    position: absolute;
+    bottom: -50px;
+    right: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
+}
+
+/* ========== Data Engineering Section Styles ========== */
+#dataEngSkillBars {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#dataEngSkillBars .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+#dataEngSkillBars .col-md-6 {
+    flex: 0 0 48%; /* Match Full-Stack size */
+}
+
+#dataEngSkillBars .skill-bar {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90%; /* Match Full-Stack width */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Data Engineering Skill Bar Progress and Background */
+#dataEngSkillBars .bar {
+    background-color: #000; /* Match Full-Stack background */
+    border-radius: 20px;
+    overflow: hidden;
+    height: 30px; /* Match Full-Stack height */
+    width: 100%;
+    max-width: 100%;
+    min-width: 15cm;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    margin-left: 10px;
+}
+
+#dataEngSkillBars .bar:hover {
+    transform: scale(1.03); /* Match Full-Stack hover effect */
+}
+
+#dataEngSkillBars .progress {
+    background-color: #007bff; /* Match Full-Stack color */
+    height: 100%;
+    border-radius: 20px;
+    transition: width 1.5s ease; /* Match animation */
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    width: 0%; /* Match initial width */
+    color: #fff;
+}
+
+/* Skill Labels Inside the Bars */
+#dataEngSkillBars .skill-bar label {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* Match font size */
+    color: #fff;
+    z-index: 3;
+}
+
+#dataEngSkillBars .skill-percentage {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* Match font size */
+    color: #fff;
+    z-index: 3;
+}
+
+/* Data Engineering Container */
+#skills2 {
+    perspective: 1000px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    padding: 0 20px;
+    position: relative;
+    max-width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    bottom: 140px; /* Adjust positioning */
+}
+
+#skills2::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+#skills2 .skills-wrapper {
+    margin-top: -100px;
+}
+
+/* Data Engineering Carousel */
+#skills2 .skills-carousel {
+    display: flex;
+    width: 800px;
+    transform-style: preserve-3d;
+    animation: rotate 70s infinite linear;
+    transform-origin: center right;
+    margin-bottom: 40px;
+}
+
+#skills2 .skill-item {
+    flex: 0 0 auto;
+    width: 100px; /* Match Full-Stack width */
+    height: 100px; /* Match Full-Stack height */
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
+    transition: transform 0.5s ease;
+}
+
+#skills2 .skill-item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#skills2 .skill-item:hover img {
+    transform: scale(1.2); /* Match Full-Stack hover effect */
+}
+
+/* Stop animation on hover for Data Engineering */
+#skills2 .skills-carousel:hover {
+    animation-play-state: paused;
+}
+
+/* Arrows for Data Engineering */
+#skills2 .skills-arrow-left {
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
+}
+
+#skills2 .skills-arrow-right {
+    position: absolute;
+    bottom: -50px;
+    right: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: rgb(7, 6, 6);
+}
+
+
 
 
 /* ========== Projects Section Styles ========== */
@@ -501,344 +869,7 @@ section {
     margin-bottom: 15px;
 }
 
-/* ========== Global Skills Section Styles ========== */
-.skill-bars-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
 
-.skill-bars-container .row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.col-md-6 {
-    flex: 0 0 48%; /* Columns take 48% of the container */
-}
-
-.skill-bar {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 90%; /* Set the width of each skill bar */
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Skill Bar Progress and Background */
-.bar {
-    background-color: #000;
-    border-radius: 20px;
-    overflow: hidden;
-    height: 30px; /* Bar height */
-    width: 100%; /* Full width of the container */
-    max-width: 100%;
-    min-width: 15cm;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    margin-left: 10px;
-}
-
-.bar:hover {
-    transform: scale(1.03); /* Slightly enlarge on hover */
-}
-
-.progress {
-    background-color: #007bff; /* Default progress color */
-    height: 100%;
-    border-radius: 20px;
-    transition: width 1.5s ease; /* Smooth width animation */
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 2;
-    width: 0%; /* Initial width for animation */
-    color: #fff;
-}
-
-/* Skill Labels Inside the Bars */
-.skill-bar label {
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #fff;
-    z-index: 3;
-}
-
-.skill-percentage {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #fff;
-    z-index: 3;
-}
-
-/* ========== Full-Stack Skills Section Styles ========== */
-.skills-carousel-container {
-    perspective: 1000px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    margin: 50px 0;
-    padding: 0 20px;
-    position: relative;
-    max-width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.skills-carousel-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
-}
-
-.skills-wrapper {
-    margin-top: -100px; /* Adjust top margin */
-}
-
-/* Full-Stack Skills Carousel */
-.skills-carousel {
-    display: flex;
-    width: 800px;
-    transform-style: preserve-3d;
-    animation: rotate 70s infinite linear;
-    transform-origin: center right;
-    margin-bottom: 40px;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-}
-
-/* Skill Item */
-.skill-item {
-    flex: 0 0 auto;
-    width: 100px; /* Skill icon width */
-    height: 100px; /* Skill icon height */
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
-    transition: transform 0.5s ease;
-}
-
-.skill-item img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.skill-item:hover img {
-    transform: scale(1.2); /* Slightly enlarge on hover */
-}
-
-/* Stop animation on hover */
-.skills-carousel:hover {
-    animation-play-state: paused;
-}
-
-/* Arrows for Full-Stack Section */
-.skills-arrow-left {
-    position: absolute;
-    bottom: -50px;
-    left: 50px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: rgb(7, 6, 6);
-}
-
-.skills-arrow-right {
-    position: absolute;
-    bottom: -50px;
-    right: 50px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: rgb(7, 6, 6);
-}
-
-/* ========== Data Engineering Section Styles ========== */
-#dataEngSkillBars {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-#dataEngSkillBars .row {
-    display: flex;
-    justify-content: space-between;
-}
-
-#dataEngSkillBars .col-md-6 {
-    flex: 0 0 48%; /* Match Full-Stack size */
-}
-
-#dataEngSkillBars .skill-bar {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 90%; /* Match Full-Stack width */
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Data Engineering Skill Bar Progress and Background */
-#dataEngSkillBars .bar {
-    background-color: #000; /* Match Full-Stack background */
-    border-radius: 20px;
-    overflow: hidden;
-    height: 30px; /* Match Full-Stack height */
-    width: 100%;
-    max-width: 100%;
-    min-width: 15cm;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    margin-left: 10px;
-}
-
-#dataEngSkillBars .bar:hover {
-    transform: scale(1.03); /* Match Full-Stack hover effect */
-}
-
-#dataEngSkillBars .progress {
-    background-color: #007bff; /* Match Full-Stack color */
-    height: 100%;
-    border-radius: 20px;
-    transition: width 1.5s ease; /* Match animation */
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 2;
-    width: 0%; /* Match initial width */
-    color: #fff;
-}
-
-/* Skill Labels Inside the Bars */
-#dataEngSkillBars .skill-bar label {
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    font-size: 14px; /* Match font size */
-    color: #fff;
-    z-index: 3;
-}
-
-#dataEngSkillBars .skill-percentage {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    font-size: 14px; /* Match font size */
-    color: #fff;
-    z-index: 3;
-}
-
-/* Data Engineering Container */
-#skills2 {
-    perspective: 1000px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    margin: 50px 0;
-    padding: 0 20px;
-    position: relative;
-    max-width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    bottom: 110px; /* Adjust positioning */
-}
-
-#skills2::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
-}
-
-#skills2 .skills-wrapper {
-    margin-top: -100px;
-}
-
-/* Data Engineering Carousel */
-#skills2 .skills-carousel {
-    display: flex;
-    width: 800px;
-    transform-style: preserve-3d;
-    animation: rotate 70s infinite linear;
-    transform-origin: center right;
-    margin-bottom: 40px;
-}
-
-#skills2 .skill-item {
-    flex: 0 0 auto;
-    width: 100px; /* Match Full-Stack width */
-    height: 100px; /* Match Full-Stack height */
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
-    transition: transform 0.5s ease;
-}
-
-#skills2 .skill-item img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-#skills2 .skill-item:hover img {
-    transform: scale(1.2); /* Match Full-Stack hover effect */
-}
-
-/* Stop animation on hover for Data Engineering */
-#skills2 .skills-carousel:hover {
-    animation-play-state: paused;
-}
-
-/* Arrows for Data Engineering */
-#skills2 .skills-arrow-left {
-    position: absolute;
-    bottom: -50px;
-    left: 50px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: rgb(7, 6, 6);
-}
-
-#skills2 .skills-arrow-right {
-    position: absolute;
-    bottom: -50px;
-    right: 50px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: rgb(7, 6, 6);
-}
 
 
 
@@ -1096,62 +1127,7 @@ footer .col-md-4:nth-child(3) {
     font-size: 2rem;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-    footer {
-        padding: 30px 0; /* Reduced padding for smaller screens */
-    }
 
-    footer h4 {
-        font-size: 1.2rem; /* Adjust header size for mobile */
-        margin-bottom: 15px;
-    }
-
-    footer .col-md-4:nth-child(3) {
-        position: static; /* Align sections properly on smaller screens */
-    }
-
-    footer p {
-        font-size: 0.9rem; /* Smaller text for mobile readability */
-    }
-
-    .list-inline {
-        display: flex;
-        justify-content: center; /* Center align icons */
-        flex-wrap: wrap; /* Wrap icons to the next line if needed */
-        gap: 10px; /* Space between icons */
-    }
-
-    .list-inline-item a {
-        font-size: 1.5rem; /* Slightly reduce icon size on mobile */
-    }
-}
-
-#about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.about-section {
-    padding: 40px 0;
-}
-
-.about-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    align-items: stretch;
-}
-
-.about-paragraph {
-    flex: 1;
-    text-align: justify;
-    line-height: 1.6;
-    word-spacing: 0px;
-    margin: 0;
-    padding: 0;
-}
 
 /* ========== Media Query for Mobile (Max Width: 768px) ========== */
 @media (max-width: 768px) {
@@ -1198,205 +1174,213 @@ footer .col-md-4:nth-child(3) {
         margin-top: 0.5rem;
         margin-bottom: 1.5rem;
     }
-}
 
 
-/* ========== Media Queries ========== */
-@media (max-width: 768px) {
+/* ========== Bee Toggle Container Media Query ========== */
 
-    /* Modal Styles for Mobile */
-    .modal-dialog {
-        max-width: 90%;
+    .bee-toggle-container {
+        position: absolute;
+        bottom: 50px; /* Space from the bottom of the viewport */
+        left: 50%; /* Center the toggle horizontally */
+        transform: translateX(-50%); /* Align to the center */
+        z-index: 1000; /* Ensure it's above other content */
+        margin-top: 0; /* Remove extra margin */
     }
 
-    .modal-content {
-        max-height: 90vh;
-        padding: 15px;
+
+
+/* ========== About Me Media Queries ========== */
+
+    /* About Section Adjustments for Mobile */
+   /* ========== About Me Paragraph Styles ========== */
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 20px; /* Adds 20px gap between paragraphs */
+}
+
+
+    .about-section {
+        padding: 40px 0; /* Maintain consistent spacing */
+        margin-bottom: 40px;
     }
 
-    .modal-title {
-        font-size: 1.5rem;
-    }
-
-    .modal-body img {
-        max-height: 200px;
-    }
-
-    /* Project Cards on Mobile */
-    .project-card {
-        width: 100%;
-        max-width: 400px;
-        height: 250px;
-        scroll-snap-align: start;
-        left: 60px;
-    }
-
-    /* Position arrows under the cards for all sections on Mobile */
-.skills-arrow-left,
-.skills-arrow-right {
-    top: 81%;
-    font-size: 2rem;
-    text-align: center;
-    color: #e5dcdc;
-    display: block;
-}
-
-.skills-arrow-left {
-    left: 50px;
-}
-
-.skills-arrow-right {
-    right: 50px;
-}
-
-/* Skills Section for Mobile */
-.col-md-6 {
-    flex: 0 0 100%;
-}
-
-.bar {
-    min-width: 9cm;
-    height: 25px; /* Matches Full-Stack bar height for mobile */
-    min-width: 8cm;
-}
-#skills {
-    margin-top: -20px; /* Adjust the value to move the section higher */
-}
-
-
-.skills-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.skills-carousel {
-    animation: none;
-    transform: none;
-    flex-direction: row;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-}
-
-.skills-carousel-container {
-    justify-content: flex-start;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    top: 10px;
-}
-
-.skill-item {
-    width: 100px;
-    height: 100px;
-    transform: none;
-    margin: 0 10px;
-}
-
-.skill-item img {
-    width: 120px;
-    height: auto;
-}
-
-.skills-carousel {
-    animation: none;
-    transform: none;
-    flex-direction: row;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    
-}
-
-.skills-carousel-container::-webkit-scrollbar {
-    display: none;
-}
-
-.skills-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-#skills h2 {
-    position: relative;
-    left: -20px;
-    text-align: left;
-}
-
-/* Data Engineering Section for Mobile */
-#skills2 .col-md-6 {
-    flex: 0 0 100%;
-}
-#skills2 {
-    bottom: 1%;    
-}
-#skills2 .bar {
-    min-width: 9cm;
-    height: 25px; /* Matches Full-Stack bar height for mobile */
-    min-width: 8cm;
-}
-
-#skills2 .skills-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-#skills2 .skills-carousel {
-    animation: none;
-    transform: none;
-    flex-direction: row;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-#skills2 .skills-carousel-container {
-    justify-content: flex-start;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}
-
-#skills2 .skill-item {
-    width: 100px;
-    height: 100px;
-    transform: none;
-    margin: 0 10px;
-}
-
-#skills2 .skill-item img {
-    width: 120px;
-    height: auto;
-}
-
-#skills2 .skills-carousel-container::-webkit-scrollbar {
-    display: none;
-}
-
-#skills2 .skills-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-#skills2 h3 {
-    position: relative;
-    left: -20px;
-    text-align: left;
-}
-
-
-    /* About Section on Mobile */
     .about-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack content vertically */
+        gap: 20px; /* Add spacing between stacked elements */
     }
 
     .about-paragraph {
-        margin-bottom: 20px;
+        margin-bottom: 20px; /* Add space below each paragraph */
+        text-align: justify;
+        line-height: 1.6;
     }
 
+
+  /* ========== Skills Styles ========== */
+    /* ========== Arrows for Cards on Mobile ========== */
+    .skills-arrow-left,
+    .skills-arrow-right {
+        top: 81%; 
+        font-size: 2rem;
+        text-align: center;
+        color: #e5dcdc;
+        display: none;
+    }
+    
+
+    .skills-arrow-left {
+        left: 50px;
+    }
+
+    .skills-arrow-right {
+        right: 50px;
+    }
+
+    /* ========== Skills Section for Mobile ========== */
+    .col-md-6 {
+        flex: 0 0 100%;
+    }
+
+    .bar {
+        min-width: 9cm;
+        height: 25px;
+        min-width: 8cm;
+    }
+
+    #skills {
+        margin-top: -60px;
+    }
+
+    #skills h2 {
+        position: relative;
+        left: -20px;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .skills-wrapper {
+        position: relative;
+        display: none;
+        align-items: center;
+    }
+
+    .skills-carousel-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .skills-carousel-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .skills-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .skill-item {
+        width: 100px;
+        height: 100px;
+        transform: none;
+        margin: 0 10px;
+    }
+
+    .skill-item img {
+        width: 120px;
+        height: auto;
+    }
+
+    /* ========== Data Engineering Section for Mobile ========== */
+    #skills2 {
+        margin-top: -70px;
+        padding-top: 0;
+    }
+
+    #skills2 .col-md-6 {
+        flex: 0 0 100%;
+    }
+
+    #skills2 h3 {
+        position: relative;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    #skills2 .bar {
+        min-width: 9cm;
+        height: 25px;
+        min-width: 8cm;
+    }
+
+    #skills2 .skills-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    #skills2 .skills-carousel-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #skills2 .skills-carousel-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    #skills2 .skills-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    #skills2 .skill-item {
+        width: 100px;
+        height: 100px;
+        transform: none;
+        margin: 0 10px;
+    }
+
+    #skills2 .skill-item img {
+        width: 120px;
+        height: auto;
+    }
+
+/* ========== Footer Media Queries ========== */
+    /* Footer Adjustments for Mobile */
+    footer {
+        padding: 30px 0;
+    }
+
+    footer h4 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    footer .col-md-4:nth-child(3) {
+        position: static;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    .list-inline {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .list-inline-item a {
+        font-size: 1.5rem;
+    }
+}
+
+
     /* Credentials Cards on Mobile */
+    @media (max-width: 768px) {
     .credential-card {
         width: 100%;
         max-width: 400px;
@@ -1446,14 +1430,4 @@ footer .col-md-4:nth-child(3) {
         display: none;
     }
 }
-@media (max-width: 768px) {
-    /* Fix the bee toggle container position below the secret text */
-    .bee-toggle-container {
-        position: absolute;
-        bottom: 50px; /* Space from the bottom of the viewport */
-        left: 50%; /* Center the toggle horizontally */
-        transform: translateX(-50%); /* Align to the center */
-        z-index: 1000; /* Ensure it's above other content */
-        margin-top: 0; /* Remove extra margin */
-    }
-}
+
