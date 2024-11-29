@@ -1406,7 +1406,7 @@ footer .list-inline-item a i:hover {
 
     /* Adjust hero section size and alignment */
     .hero-section {
-        min-height: 75vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1738,7 +1738,7 @@ footer .list-inline-item a i:hover {
 @media (max-width: 768px) {
     #scroll-right-cred {
         position: absolute;
-        top: 90%; /* Ensure it's below the content */
+        top: 80%; /* Ensure it's below the content */
         right: 40px !important; /* Move closer to the center */
     }
 
