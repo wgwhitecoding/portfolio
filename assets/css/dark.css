@@ -9,7 +9,7 @@ body.dark-mode {
 
 /* ========== Hero Section in Dark Mode ========== */
 body.dark-mode .hero-section {
-    background-color: #333; /* Dark background for hero section */
+    background: linear-gradient(to bottom, #211f1f, #181717); /* Darker gradient */
 }
 
 /* ========== Navbar in Dark Mode ========== */
@@ -21,17 +21,31 @@ body.dark-mode .navbar-light .navbar-brand,
 body.dark-mode .navbar-light .navbar-nav .nav-link {
     color: white !important; /* Light navbar text */
 }
+/* ========== social media colorin Dark Mode ========== */
+body.dark-mode .hero-social-links a {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background for dark mode */
+    -webkit-background-clip: text; /* For WebKit browsers */
+    background-clip: text; /* Standard background-clip */
+    -webkit-text-fill-color: transparent; /* Ensures text uses gradient for WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* ========== hero text color in Dark Mode ========== */
+/* Apply gradient to text in dark mode */
+body.dark-mode .hero-title h1,
+body.dark-mode .hero-subtitle {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);/* Gradient background */
+    -webkit-background-clip: text; /* Clips the background to the text for WebKit browsers */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Ensures gradient text in WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
 
 /* ========== Project Cards in Dark Mode ========== */
-body.dark-mode .project-card {
-    border-color: #444; /* Dark border for project cards */
-    background-color: #333; /* Dark background for project cards */
-    color: white; /* Light text */
-}
 
-body.dark-mode .project-card:hover {
-    background-color: #1a73e8; /* Highlighted color on hover */
-}
 
 /* ========== Buttons in Dark Mode ========== */
 body.dark-mode .btn {
@@ -52,16 +66,13 @@ body.dark-mode .modal-content .overlay {
 
 /* ========== Full-Stack Skill Bars in Dark Mode ========== */
 body.dark-mode #fullStackSkillBars .bar {
-    background-color: #444; /* Gray background for Full-Stack skill bars in dark mode */
+    background: linear-gradient(to bottom,  #343434, #1c1c1c);
 }
 
-body.dark-mode #fullStackSkillBars .progress {
-    background-color: #1a73e8; /* Bright blue progress bar */
-}
 
 /* ========== Data Engineering Skill Bars in Dark Mode ========== */
 body.dark-mode #dataEngSkillBars .bar {
-    background-color: #444; /* Gray background for Data Engineering skill bars in dark mode */
+    background: linear-gradient(to bottom,  #343434, #1c1c1c);
 }
 
 body.dark-mode #dataEngSkillBars .progress {
@@ -96,6 +107,26 @@ body.dark-mode .service-card {
     justify-content: space-between;
     align-items: center;
 }
+/* Hide the 3D carousel in dark mode on small devices */
+@media (max-width: 768px) {
+    body.dark-mode .skills-wrapper {
+        display: none !important; /* Hides the 3D carousel container in dark mode */
+    }
+}
+
+/* ========== headers titles in Dark Mode ========== */
+body.dark-mode .service-header {
+    background: linear-gradient(to bottom, #d4af37, #a67c00, #8c6239); /* Gold to bronze tones */
+    background-clip: text;
+    -webkit-background-clip: text; /* For WebKit browsers */
+    -webkit-text-fill-color: transparent; /* Makes the gradient visible as text color */
+    text-align: left; /* Retain your original alignment */
+    margin-bottom: 40px;
+    font-size: 2.5rem; /* Ensure the size remains consistent */
+    background-color: #d4af37; /* Fallback for older browsers */
+}
+
+
 
 
 body.dark-mode .learn-more-btn {
@@ -146,6 +177,26 @@ body.dark-mode .services-modal .modal-content {
     background: #1e1e1e; /* Dark modal background */
     color: #e0e0e0; /* Light text */
 }
+
+/* ========== arrows /cred/projects/blog colorStyles ========== */
+/* Gradient styling for all arrows in dark mode */
+body.dark-mode #scroll-left-cred i,
+body.dark-mode #scroll-right-cred i,
+body.dark-mode #scroll-left i,
+body.dark-mode #scroll-right i,
+body.dark-mode #scroll-left-blog i,
+body.dark-mode #scroll-right-blog i {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the gradient to the text for WebKit browsers */
+    background-clip: text; /* Standard property for non-WebKit browsers */
+    -webkit-text-fill-color: transparent; /* Transparent text for WebKit browsers */
+    color: transparent; /* Fallback for non-WebKit browsers */
+    font-size: 2rem; /* Adjust size if necessary */
+    transition: background 0.3s ease; /* Smooth transition */
+}
+
+
+
 /* -------------------------------------------
    Media Queries (Mobile Adjustments)
 ------------------------------------------- */
@@ -173,25 +224,6 @@ body.dark-mode .services-modal .modal-content {
 
     body.dark-mode .about-paragraph {
         margin-bottom: 20px;
-    }
-
-    body.dark-mode .project-card {
-        width: 95%;
-        max-width: 400px;
-        height: 250px;
-        scroll-snap-align: start;
-    }
-
-    body.dark-mode .arrow {
-        top: 90%;
-    }
-
-    body.dark-mode .left-arrow {
-        left: 20px;
-    }
-
-    body.dark-mode .right-arrow {
-        right: 20px;
     }
 
     body.dark-mode .col-md-6 {
@@ -258,3 +290,5 @@ body.dark-mode .services-modal .modal-content {
         display: none;
     }
 }
+
+

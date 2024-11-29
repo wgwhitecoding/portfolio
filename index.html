@@ -92,14 +92,8 @@
             <h1 class="hero-line1">Hello, I'm</h1>
             <h1 class="hero-line2">Walid Will White</h1>
         </div>
-        
-        
-        
         <p class="hero-subtitle">Junior Full-Stack Developer/Data Engineer and Lifelong Learner</p>
         <p class="hero-subtitle-small">Catch the Bee and a Secret You'll see!</p>
-
-        
-        
         <!-- Social Media Links -->
         <div class="hero-social-links mt-4">
             <ul class="list-inline">
@@ -139,6 +133,7 @@
             <span id="toggle-text">Bee is On</span>
         </div>
     </div>
+    
 </header>
 
   
@@ -160,6 +155,16 @@
       </div>
       <button id="followButton1">Follow Me!</button>
     </div>
+  </div>
+  <div class="bee-container">
+    <lottie-player
+        id="bee-animation"
+        src="assets/animation/just-a-bee.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay>
+    </lottie-player>
   </div>
   
 
@@ -432,7 +437,7 @@
 <!-- Services Section -->
 <section id="services" class="services-section py-5">
     <div class="container">
-        <h2 class="section-header">Services</h2>
+        <h2 class="section-header service-header">Services</h2>
         <div class="row">
             <!-- Web Development Card -->
             <div class="col-md-4">
@@ -470,13 +475,48 @@
         </div>
     </div>
 </section>
+<!-- Modal for Services -->
+<div class="modal fade services-modal" id="servicesModal" tabindex="-1" aria-labelledby="servicesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title text-center" id="servicesModalLabel">Contact Me for More Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body text-center">
+                <div class="social-icons">
+                    <a href="https://github.com/wgwhitecoding" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/walidwillwhite/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:walidwillwhite@gmail.com" class="email-icon" target="_blank">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/willgaileywhite" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/home?lang=en" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/+447724175010" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Credentials Section -->
 <section id="credentials" class="py-5">
     <div class="container">
         <h2>Credentials</h2>
         <div class="credentials-wrapper position-relative">
             <!-- Left Arrow -->
-            <!-- <span class="arrow left-arrow" id="scroll-left-cred"><i class="fas fa-chevron-left"></i></span>-->
+            <span class="arrow left-arrow" id="scroll-left-cred"><i class="fas fa-chevron-left"></i></span>
 
             <!-- Carousel Wrapper -->
             <div class="scrolling-wrapper-cred row flex-row flex-nowrap mt-4 pb-4" id="scroll-container-cred">
@@ -503,7 +543,7 @@
             </div>
 
             <!-- Right Arrow -->
-            <!--<span class="arrow right-arrow" id="scroll-right-cred"><i class="fas fa-chevron-right"></i></span>-->
+            <span class="arrow right-arrow" id="scroll-right-cred"><i class="fas fa-chevron-right"></i></span>
         </div>
     </div>
 </section>
@@ -648,42 +688,6 @@
     </div>
 </div>
 
-<!-- Modal for Services -->
-<div class="modal fade services-modal" id="servicesModal" tabindex="-1" aria-labelledby="servicesModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header justify-content-center">
-                <h5 class="modal-title text-center" id="servicesModalLabel">Contact Me for More Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- Modal Body -->
-            <div class="modal-body text-center">
-                <div class="social-icons">
-                    <a href="https://github.com/wgwhitecoding" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/walidwillwhite/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:walidwillwhite@gmail.com" class="email-icon" target="_blank">
-                        <i class="fas fa-envelope fa-2x"></i>
-                    </a>
-                    <a href="https://www.instagram.com/willgaileywhite" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://x.com/home?lang=en" target="_blank" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://wa.me/+447724175010" target="_blank" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    
     <!-- Projects Section -->
     <section id="projects" class="py-5">
         <div class="container">
@@ -1531,7 +1535,7 @@
         </div>
     </div>
 </div>
-<!-- Modal for UCD Resume Project -->
+<!-- Modal Project 8 -->
 <div class="modal fade" id="projectModal8" tabindex="-1" aria-labelledby="projectModalUCDResumeLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -1610,7 +1614,7 @@
         </div>
     </div>
 </div>
-<!-- Modal for Project 8 -->
+<!-- Modal for Project 9 -->
 <div class="modal fade" id="projectModalUCDResume" tabindex="-1" aria-labelledby="projectModalUCDResumeLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -1691,86 +1695,6 @@
         </div>
     </div>
 </div>
-
-
-    <!-- Modal 2: HTML & CSS Certification -->
-    <div class="modal fade" id="modalHtmlCssCert" tabindex="-1" aria-labelledby="modalHtmlCssCertLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalHtmlCssCertLabel">HTML & CSS Certification</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/html-css-cert.jpg" class="img-fluid mb-3" alt="HTML & CSS Certificate">
-                    <h6>Technologies Learned:</h6>
-                    <p><strong>HTML:</strong> Structure of web pages, accessibility, and semantic elements.</p>
-                    <p><strong>CSS:</strong> Styling of web pages, Flexbox, Grid, media queries, and animations
-                        using CSS transitions.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: JavaScript Certification -->
-    <div class="modal fade" id="modalJsCert" tabindex="-1" aria-labelledby="modalJsCertLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalJsCertLabel">JavaScript Certification</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/js-cert.jpg" class="img-fluid mb-3" alt="JavaScript Certificate">
-                    <h6>Technologies Learned:</h6>
-                    <p><strong>JavaScript:</strong> ES6+, asynchronous programming with Promises, APIs, and fetch,
-                        and DOM manipulation.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4: Python Certification -->
-    <div class="modal fade" id="modalPythonCert" tabindex="-1" aria-labelledby="modalPythonCertLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalPythonCertLabel">Python Certification</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/python-cert.jpg" class="img-fluid mb-3" alt="Python Certificate">
-                    <h6>Technologies Learned:</h6>
-                    <p><strong>Python:</strong> Basics of programming, object-oriented programming, file handling,
-                        and working with data structures like lists and dictionaries.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 5: Django Certification -->
-    <div class="modal fade" id="modalDjangoCert" tabindex="-1" aria-labelledby="modalDjangoCertLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalDjangoCertLabel">Django Certification</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="assets/images/django-cert.jpg" class="img-fluid mb-3" alt="Django Certificate">
-                    <h6>Technologies Learned:</h6>
-                    <p><strong>Django:</strong> Full-stack development, creating dynamic web applications, using
-                        Django ORM for database interaction, and user authentication systems.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-
 <!-- Blog Section -->
 <section id="blog" class="py-5">
     <div class="container">
@@ -2012,18 +1936,6 @@
             </div>
         </div>
     </footer>
-
-    <div class="bee-container">
-        <lottie-player
-            id="bee-animation"
-            src="assets/animation/just-a-bee.json"
-            background="transparent"
-            speed="1"
-            loop
-            autoplay>
-        </lottie-player>
-      </div>
-      
       <!-- GSAP for animations -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
       <!-- Lottie Player -->

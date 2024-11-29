@@ -4,7 +4,6 @@
 /* ========== Global Styles ========== */
 body {
     font-family: 'Exo 2', sans-serif;
-    background-color: #e6e6e6; /* Light gray */
     color: #333;
     font-weight: 400;
     line-height: 1.6;
@@ -106,7 +105,7 @@ section {
     font-size: 1rem;
     font-weight: 300;
     margin-top: 10px;
-    color: #ddd; 
+    color: #ddd;
     animation: fadeInUp 1.5s;
     line-height: 1.4;
 }
@@ -138,6 +137,7 @@ section {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -149,6 +149,7 @@ section {
         transform: translateY(50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -159,26 +160,36 @@ section {
 .bee-toggle-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the toggle */
-    gap: 10px; /* Spacing between toggle and label */
-    margin-top: 20px; /* Default margin */
-    position: fixed; /* Fixed for specific placement */
-    bottom: 20px; /* Position from the bottom of the viewport */
-    right: 20px; /* Position from the right of the viewport */
-    z-index: 2000; /* Ensure toggle appears above other elements */
+    justify-content: center;
+    /* Center the toggle */
+    gap: 10px;
+    /* Spacing between toggle and label */
+    margin-top: 20px;
+    /* Default margin */
+    position: fixed;
+    /* Fixed for specific placement */
+    bottom: 20px;
+    /* Position from the bottom of the viewport */
+    right: 20px;
+    /* Position from the right of the viewport */
+    z-index: 2000;
+    /* Ensure toggle appears above other elements */
 }
 
 /* Switch container */
 .bee-switch {
     position: relative;
     display: inline-block;
-    width: 60px; /* Width of the switch */
-    height: 34px; /* Height of the switch */
+    width: 60px;
+    /* Width of the switch */
+    height: 34px;
+    /* Height of the switch */
 }
 
 /* Hide the input (actual toggle) */
 .bee-switch input {
-    opacity: 0; /* Make input invisible */
+    opacity: 0;
+    /* Make input invisible */
     width: 0;
     height: 0;
 }
@@ -190,38 +201,49 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc; /* Default background color */
-    transition: 0.4s; /* Smooth transition for background */
-    border-radius: 34px; /* Rounded corners */
+    background-color: #ccc;
+    /* Default background color */
+    transition: 0.4s;
+    /* Smooth transition for background */
+    border-radius: 34px;
+    /* Rounded corners */
 }
 
 /* Slider knob styling */
 .bee-switch .slider:before {
     position: absolute;
     content: "";
-    height: 26px; /* Size of the knob */
-    width: 26px; /* Size of the knob */
+    height: 26px;
+    /* Size of the knob */
+    width: 26px;
+    /* Size of the knob */
     left: 4px;
     bottom: 4px;
-    background-color: white; /* Knob color */
-    transition: 0.4s; /* Smooth transition for movement */
-    border-radius: 50%; /* Fully round knob */
+    background-color: white;
+    /* Knob color */
+    transition: 0.4s;
+    /* Smooth transition for movement */
+    border-radius: 50%;
+    /* Fully round knob */
 }
 
 /* Change slider background when checked */
-.bee-switch input:checked + .slider {
+.bee-switch input:checked+.slider {
     background: linear-gradient(to bottom, #2c3e50, #3498db);
 }
 
 /* Move knob to the right when checked */
-.bee-switch input:checked + .slider:before {
-    transform: translateX(26px); /* Slide knob to the right */
+.bee-switch input:checked+.slider:before {
+    transform: translateX(26px);
+    /* Slide knob to the right */
 }
 
 /* Label Styling */
 #toggle-text {
-    color: black !important; /* Ensure the text is black in light mode */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: black !important;
+    /* Ensure the text is black in light mode */
+    transition: color 0.3s ease;
+    /* Smooth color transition */
 }
 
 
@@ -239,7 +261,8 @@ section {
 }
 
 .bee-toggle-container input[type="checkbox"]:checked {
-    background: #ff4500; /* Checked state background color */
+    background: #ff4500;
+    /* Checked state background color */
 }
 
 .bee-toggle-container input[type="checkbox"]::before {
@@ -255,7 +278,8 @@ section {
 }
 
 .bee-toggle-container input[type="checkbox"]:checked::before {
-    transform: translateX(20px); /* Move toggle knob */
+    transform: translateX(20px);
+    /* Move toggle knob */
 }
 
 
@@ -263,6 +287,7 @@ section {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -273,6 +298,7 @@ section {
         transform: translateY(50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -284,45 +310,57 @@ section {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
+
 /* ========== About Me Section Styles ========== */
 #about p {
     font-size: 1.1rem;
     line-height: 1.6;
-    margin: 0; /* Removes extra margin for a cleaner layout */
+    margin: 0;
+    /* Removes extra margin for a cleaner layout */
 }
 
 .about-section {
-    padding: 40px 0; /* Adds vertical spacing for the section */
+    padding: 40px 0;
+    /* Adds vertical spacing for the section */
     margin-top: 40px;
 }
 
 .about-content {
     display: flex;
     justify-content: space-between;
-    gap: 50px; /* Adds space between content columns */
-    align-items: stretch; /* Ensures all items stretch equally */
+    gap: 50px;
+    /* Adds space between content columns */
+    align-items: stretch;
+    /* Ensures all items stretch equally */
 }
 
 .about-paragraph {
-    flex: 1; /* Ensures equal space for paragraphs */
-    text-align: justify; /* Aligns text for a neat appearance */
-    line-height: 1.6; /* Sets consistent line spacing */
-    word-spacing: 0px; /* Neutralizes extra word spacing */
-    margin: 0; /* Ensures no external spacing */
-    padding: 0; /* Removes internal padding */
+    flex: 1;
+    /* Ensures equal space for paragraphs */
+    text-align: justify;
+    /* Aligns text for a neat appearance */
+    line-height: 1.6;
+    /* Sets consistent line spacing */
+    word-spacing: 0px;
+    /* Neutralizes extra word spacing */
+    margin: 0;
+    /* Ensures no external spacing */
+    padding: 0;
+    /* Removes internal padding */
 }
 
 /* ========== Full stack Skills Section Styles ========== */
 
-#skills
-{
+#skills {
     bottom: 60px;
 }
+
 .skill-bars-container {
     margin-top: 20px;
     display: flex;
@@ -335,7 +373,8 @@ section {
 }
 
 .col-md-6 {
-    flex: 0 0 48%; /* Columns take 48% of the container */
+    flex: 0 0 48%;
+    /* Columns take 48% of the container */
 }
 
 .skill-bar {
@@ -343,7 +382,8 @@ section {
     display: flex;
     align-items: center;
     position: relative;
-    width: 90%; /* Set the width of each skill bar */
+    width: 90%;
+    /* Set the width of each skill bar */
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -354,8 +394,10 @@ section {
     background-color: #000;
     border-radius: 20px;
     overflow: hidden;
-    height: 30px; /* Bar height */
-    width: 100%; /* Full width of the container */
+    height: 30px;
+    /* Bar height */
+    width: 100%;
+    /* Full width of the container */
     max-width: 100%;
     min-width: 15cm;
     position: relative;
@@ -365,20 +407,24 @@ section {
 }
 
 .bar:hover {
-    transform: scale(1.03); /* Slightly enlarge on hover */
+    transform: scale(1.03);
+    /* Slightly enlarge on hover */
 }
 
 .progress {
-    background: linear-gradient(to bottom, #2c3e50, #3498db); /* Gradient background for cards */
+    background: linear-gradient(to bottom, #2c3e50, #3498db);
+    /* Gradient background for cards */
     height: 100%;
     border-radius: 20px;
-    transition: width 1.5s ease; /* Smooth width animation */
+    transition: width 1.5s ease;
+    /* Smooth width animation */
     padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
-    width: 0%; /* Initial width for animation */
+    width: 0%;
+    /* Initial width for animation */
     color: #fff;
 }
 
@@ -422,18 +468,21 @@ section {
 }
 
 .skills-carousel-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
+    display: none;
+    /* Hide scrollbar */
 }
 
 .skills-wrapper {
-    margin-top: -160px; /* Adjust top margin */
+    margin-top: -160px;
+    /* Adjust top margin */
 }
 
 .skills-carousel {
     display: flex;
     width: 800px;
     transform-style: preserve-3d;
-    animation: rotate 70s infinite linear; /* Continuous rotation */
+    animation: rotate 70s infinite linear;
+    /* Continuous rotation */
     transform-origin: center right;
     margin-bottom: 40px;
 }
@@ -442,6 +491,7 @@ section {
     from {
         transform: rotateY(0deg);
     }
+
     to {
         transform: rotateY(360deg);
     }
@@ -449,14 +499,17 @@ section {
 
 /* Prevent animation from pausing on hover */
 .skills-carousel:hover {
-    animation-play-state: running; /* Keep the animation running */
+    animation-play-state: running;
+    /* Keep the animation running */
 }
 
 /* Skill Item */
 .skill-item {
     flex: 0 0 auto;
-    width: 100px; /* Skill icon width */
-    height: 100px; /* Skill icon height */
+    width: 100px;
+    /* Skill icon width */
+    height: 100px;
+    /* Skill icon height */
     margin: 0 10px;
     display: flex;
     justify-content: center;
@@ -471,7 +524,8 @@ section {
 }
 
 .skill-item:hover img {
-    transform: scale(1.2); /* Slightly enlarge on hover */
+    transform: scale(1.2);
+    /* Slightly enlarge on hover */
 }
 
 /* Arrows for Full-Stack Section */
@@ -483,6 +537,7 @@ section {
     cursor: pointer;
     z-index: 1000;
     color: rgb(7, 6, 6);
+    display: none;
 }
 
 .skills-arrow-right {
@@ -493,6 +548,7 @@ section {
     cursor: pointer;
     z-index: 1000;
     color: rgb(7, 6, 6);
+    display: none;
 }
 
 /* ========== Data Engineering Section Styles ========== */
@@ -508,7 +564,8 @@ section {
 }
 
 #dataEngSkillBars .col-md-6 {
-    flex: 0 0 48%; /* Match Full-Stack size */
+    flex: 0 0 48%;
+    /* Match Full-Stack size */
 }
 
 #dataEngSkillBars .skill-bar {
@@ -516,7 +573,8 @@ section {
     display: flex;
     align-items: center;
     position: relative;
-    width: 90%; /* Match Full-Stack width */
+    width: 90%;
+    /* Match Full-Stack width */
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -524,10 +582,12 @@ section {
 
 /* Data Engineering Skill Bar Progress and Background */
 #dataEngSkillBars .bar {
-    background-color: #000; /* Match Full-Stack background */
+    background-color: #000;
+    /* Match Full-Stack background */
     border-radius: 20px;
     overflow: hidden;
-    height: 30px; /* Match Full-Stack height */
+    height: 30px;
+    /* Match Full-Stack height */
     width: 100%;
     max-width: 100%;
     min-width: 15cm;
@@ -538,20 +598,24 @@ section {
 }
 
 #dataEngSkillBars .bar:hover {
-    transform: scale(1.03); /* Match Full-Stack hover effect */
+    transform: scale(1.03);
+    /* Match Full-Stack hover effect */
 }
 
 #dataEngSkillBars .progress {
-    background-color: #007bff; /* Match Full-Stack color */
+    background-color: #007bff;
+    /* Match Full-Stack color */
     height: 100%;
     border-radius: 20px;
-    transition: width 1.5s ease; /* Match animation */
+    transition: width 1.5s ease;
+    /* Match animation */
     padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
-    width: 0%; /* Match initial width */
+    width: 0%;
+    /* Match initial width */
     color: #fff;
 }
 
@@ -563,7 +627,8 @@ section {
     bottom: 0;
     display: flex;
     align-items: center;
-    font-size: 14px; /* Match font size */
+    font-size: 14px;
+    /* Match font size */
     color: #fff;
     z-index: 3;
 }
@@ -575,7 +640,8 @@ section {
     bottom: 0;
     display: flex;
     align-items: center;
-    font-size: 14px; /* Match font size */
+    font-size: 14px;
+    /* Match font size */
     color: #fff;
     z-index: 3;
 }
@@ -592,11 +658,13 @@ section {
     max-width: 100%;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    bottom: 140px; /* Adjust positioning */
+    bottom: 140px;
+    /* Adjust positioning */
 }
 
 #skills2::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
+    display: none;
+    /* Hide scrollbar */
 }
 
 #skills2 .skills-wrapper {
@@ -615,8 +683,10 @@ section {
 
 #skills2 .skill-item {
     flex: 0 0 auto;
-    width: 100px; /* Match Full-Stack width */
-    height: 100px; /* Match Full-Stack height */
+    width: 100px;
+    /* Match Full-Stack width */
+    height: 100px;
+    /* Match Full-Stack height */
     margin: 0 10px;
     display: flex;
     justify-content: center;
@@ -631,7 +701,8 @@ section {
 }
 
 #skills2 .skill-item:hover img {
-    transform: scale(1.2); /* Match Full-Stack hover effect */
+    transform: scale(1.2);
+    /* Match Full-Stack hover effect */
 }
 
 /* Stop animation on hover for Data Engineering */
@@ -659,10 +730,12 @@ section {
     z-index: 1000;
     color: rgb(7, 6, 6);
 }
+
 /* ========== Services Section Styles ========== */
 .services-section {
     padding: 60px 0;
-    background: none; /* Matches the page background */
+    background: none;
+    /* Matches the page background */
     color: #333;
 }
 
@@ -678,21 +751,26 @@ section {
     border-radius: 10px;
     color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 220px; /* Compact card height */
+    height: 220px;
+    /* Compact card height */
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures proper spacing between elements */
+    justify-content: space-between;
+    /* Ensures proper spacing between elements */
     align-items: center;
 }
 
 
 .service-card:hover {
-    transform: scale(1.05); /* Slight scale effect */
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7))
-            drop-shadow(0 0 20px rgba(0, 0, 0, 0.8)); /* Dark glow effect */
-    transition: transform 0.3s, filter 0.3s ease-in-out; /* Smooth animation */
+    transform: scale(1.05);
+    /* Slight scale effect */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
+    /* Dark glow effect */
+    transition: transform 0.3s, filter 0.3s ease-in-out;
+    /* Smooth animation */
 }
+
 .service-card h4 {
     margin-top: 10px;
     font-size: 1.3rem;
@@ -704,7 +782,8 @@ section {
     font-size: 0.9rem;
     color: #ffffff;
     text-align: center;
-    margin-bottom: 10px; /* Adds spacing above the button */
+    margin-bottom: 10px;
+    /* Adds spacing above the button */
 }
 
 /* Learn More Button */
@@ -717,7 +796,8 @@ section {
     padding: 8px 12px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    align-self: center; /* Center aligns the button */
+    align-self: center;
+    /* Center aligns the button */
 }
 
 .learn-more-btn:hover {
@@ -734,32 +814,46 @@ section {
     transform: rotate(20deg) scale(1.1);
     color: #dfe6e9;
 }
+
 #services {
-    margin-top: -230px; /* Move Services section closer to Skills */
-    padding-top: 0; /* Optional: Remove top padding of Services */
+    margin-top: -230px;
+    /* Move Services section closer to Skills */
+    padding-top: 0;
+    /* Optional: Remove top padding of Services */
 }
+
 /* Default Icon Styling */
 .icon-animation {
-    color: transparent; /* Ensure gradient visibility */
-    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Soft, colorful gradient */
-    background-clip: text; /* Standard property */
-    -webkit-background-clip: text; /* For compatibility with Webkit browsers */
-    -webkit-text-fill-color: transparent; /* Gradient text effect */
+    color: transparent;
+    /* Ensure gradient visibility */
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
+    /* Soft, colorful gradient */
+    background-clip: text;
+    /* Standard property */
+    -webkit-background-clip: text;
+    /* For compatibility with Webkit browsers */
+    -webkit-text-fill-color: transparent;
+    /* Gradient text effect */
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 /* Icon Hover Effect */
 .service-card:hover .icon-animation {
-    transform: rotate(20deg) scale(1.1); /* Rotates and enlarges slightly */
-    background: linear-gradient(to bottom, #f0a5f5, #a5d4f5); /* Slightly brighter and more colorful gradient */
-    background-clip: text; /* Standard property */
-    -webkit-background-clip: text; /* For compatibility with Webkit browsers */
+    transform: rotate(20deg) scale(1.1);
+    /* Rotates and enlarges slightly */
+    background: linear-gradient(to bottom, #f0a5f5, #a5d4f5);
+    /* Slightly brighter and more colorful gradient */
+    background-clip: text;
+    /* Standard property */
+    -webkit-background-clip: text;
+    /* For compatibility with Webkit browsers */
     -webkit-text-fill-color: transparent;
 }
 
 /* ========== Services Modal Styles ========== */
 .services-modal .modal-content {
-    width: 60%; /* Smaller modal size */
+    width: 60%;
+    /* Smaller modal size */
     max-width: 500px;
     margin: 0 auto;
     border-radius: 10px;
@@ -778,20 +872,24 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between elements */
+    gap: 20px;
+    /* Space between elements */
     padding: 20px;
 }
 
 .services-modal .social-icons a {
-    font-size: 2.5rem; /* Larger icons */
+    font-size: 2.5rem;
+    /* Larger icons */
     margin: 0 10px;
-    color: #333; /* Icon color */
+    color: #333;
+    /* Icon color */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .services-modal .social-icons a:hover {
-    color: #007bff; /* Hover color for icons */
+    color: #007bff;
+    /* Hover color for icons */
 }
 
 /* ========== Projects Section Styles ========== */
@@ -860,7 +958,8 @@ section {
 .project-card p {
     z-index: 1;
     margin: 0;
-    font-weight: 600; /* Headers slightly bolder */
+    font-weight: 600;
+    /* Headers slightly bolder */
 }
 
 .project-card:hover .overlay {
@@ -878,7 +977,8 @@ section {
 }
 
 .left-arrow {
-    left: -50px; /* Keep this as is */
+    left: -50px;
+    /* Keep this as is */
 }
 
 .right-arrow {
@@ -900,11 +1000,13 @@ section {
     border-radius: 8px;
     max-height: 80vh;
     overflow-y: auto;
-    font-weight: 400; /* Standard weight for readability */
+    font-weight: 400;
+    /* Standard weight for readability */
 }
 
 .modal-title {
-    font-weight: 800; /* Heaviest for modal title */
+    font-weight: 800;
+    /* Heaviest for modal title */
     font-size: 2rem;
     text-align: left;
 }
@@ -923,7 +1025,8 @@ section {
     max-height: 70vh;
     font-weight: 400;
     line-height: 1.6;
-    text-align: justify; /* Align text uniformly */
+    text-align: justify;
+    /* Align text uniformly */
 }
 
 /* Flexbox for Row */
@@ -954,14 +1057,17 @@ section {
 /* Modal Section Headers */
 .modal-body h6 {
     font-weight: 700;
-    font-size: 1.6rem; /* Bolder and larger for section headers */
-    margin-bottom: 15px; /* Ensure even spacing */
+    font-size: 1.6rem;
+    /* Bolder and larger for section headers */
+    margin-bottom: 15px;
+    /* Ensure even spacing */
 }
 
 /* Tech Stack Styles */
 .tech-stack h8 {
     font-size: 1.3rem;
-    font-weight: 700; /* Bolder subheaders */
+    font-weight: 700;
+    /* Bolder subheaders */
     margin-bottom: 10px;
 }
 
@@ -970,7 +1076,8 @@ section {
     margin-bottom: 12px;
     text-align: justify;
     font-weight: 400;
-    line-height: 1.6; /* Ensure consistent line height */
+    line-height: 1.6;
+    /* Ensure consistent line height */
 }
 
 /* Lists in Modal */
@@ -1047,20 +1154,24 @@ section {
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
-    transition: transform 0.3s, filter 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.3s, filter 0.3s ease-in-out;
+    /* Smooth transition */
     color: white;
     overflow: hidden;
     scroll-snap-align: start;
     transform: rotateX(15deg);
-    filter: none; /* No shadow by default */
+    filter: none;
+    /* No shadow by default */
 }
 
 /* Hover state - pulsing dark shadow */
 .credential-card:hover {
-    transform: scale(1.05) rotateX(0deg); /* Slight scaling effect */
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3))
-            drop-shadow(0 0 20px rgba(0, 0, 0, 0.5)); /* Dark glow effect */
-    transition: transform 0.3s, filter 0.3s ease-in-out; /* Smooth animation */
+    transform: scale(1.05) rotateX(0deg);
+    /* Slight scaling effect */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+    /* Dark glow effect */
+    transition: transform 0.3s, filter 0.3s ease-in-out;
+    /* Smooth animation */
 }
 
 
@@ -1070,25 +1181,42 @@ section {
     font-weight: 600;
 }
 
+#scroll-right-cred {
+   display: none;
+}
 
+#scroll-left-cred {
+    display: none;
+}
 
 /* ========== Specific Styling for Iungo Card ========== */
 .iungo-card {
-    background-size: contain; /* Ensures the image fits within the card */
-    background-repeat: no-repeat; /* Prevents tiling of the logo */
-    background-position: center; /* Centers the logo within the card */
+    background-size: contain;
+    /* Ensures the image fits within the card */
+    background-repeat: no-repeat;
+    /* Prevents tiling of the logo */
+    background-position: center;
+    /* Centers the logo within the card */
 }
+
 /* ========== Specific Styling for Code Institute Card ========== */
 .code-card {
-    background-size: 80%; /* Ensures the image fits within the card */
-    background-repeat: no-repeat; /* Prevents tiling of the logo */
-    background-position: center; /* Centers the logo within the card */
+    background-size: 80%;
+    /* Ensures the image fits within the card */
+    background-repeat: no-repeat;
+    /* Prevents tiling of the logo */
+    background-position: center;
+    /* Centers the logo within the card */
 }
+
 /* Specific Styling for PL-300 Card */
 .pl300-card {
-    background-size: contain; /* Ensures the image fits within the card */
-    background-repeat: no-repeat; /* Prevents tiling of the logo */
-    background-position: center; /* Centers the logo within the card */
+    background-size: contain;
+    /* Ensures the image fits within the card */
+    background-repeat: no-repeat;
+    /* Prevents tiling of the logo */
+    background-position: center;
+    /* Centers the logo within the card */
 }
 
 
@@ -1207,7 +1335,7 @@ section {
 
 /* ========== Footer Styles ========== */
 footer {
-    background-color: #000;
+    background: linear-gradient(to bottom,  #343434, #1c1c1c);
     color: #fff;
     padding: 40px 0;
 }
@@ -1232,20 +1360,39 @@ footer .col-md-4:nth-child(3) {
     position: relative;
     left: 4cm;
 }
+/* Footer Social Media Icons Gradient */
+footer .list-inline-item a i {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the gradient to the text for WebKit browsers */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Ensures gradient text in WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Add hover effect for the icons */
+footer .list-inline-item a i:hover {
+    transform: scale(1.2); /* Slight scale effect on hover */
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
 
 /* Social Icon Styles */
 .list-inline-item {
     margin-right: 15px;
 }
 
+
 .list-inline-item a {
     color: white;
     display: inline-block;
-    transition: transform 0.3s ease; /* Smooth pulse effect */
+    transition: transform 0.3s ease;
+    /* Smooth pulse effect */
 }
 
 .list-inline-item a:hover {
-    transform: scale(1.3); /* Pulse effect enlarges slightly */
+    transform: scale(1.3);
+    /* Pulse effect enlarges slightly */
     color: #1a73e8;
 }
 
@@ -1297,64 +1444,80 @@ footer .col-md-4:nth-child(3) {
     .hero-subtitle {
         font-size: 1rem;
         line-height: 1.4;
-        text-align: center; 
+        text-align: center;
         margin-top: 0.5rem;
         margin-bottom: 1.5rem;
     }
 
 
-/* ========== Bee Toggle Container Media Query ========== */
+    /* ========== Bee Toggle Container Media Query ========== */
 
     .bee-toggle-container {
         position: absolute;
-        bottom: 50px; /* Space from the bottom of the viewport */
-        left: 50%; /* Center the toggle horizontally */
-        transform: translateX(-50%); /* Align to the center */
-        z-index: 1000; /* Ensure it's above other content */
-        margin-top: 0; /* Remove extra margin */
+        bottom: 50px;
+        /* Space from the bottom of the viewport */
+        left: 50%;
+        /* Center the toggle horizontally */
+        transform: translateX(-50%);
+        /* Align to the center */
+        z-index: 1000;
+        /* Ensure it's above other content */
+        margin-top: 0;
+        /* Remove extra margin */
     }
 
 
 
-/* ========== About Me Media Queries ========== */
+    /* ========== About Me Media Queries ========== */
 
     /* About Section Adjustments for Mobile */
-   /* ========== About Me Paragraph Styles ========== */
-#about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0 0 20px; /* Adds 20px gap between paragraphs */
-}
+    /* ========== About Me Paragraph Styles ========== */
+    #about p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 0 0 20px;
+        /* Adds 20px gap between paragraphs */
+    }
 
 
     .about-section {
-        padding: 40px 0; /* Maintain consistent spacing */
+        padding: 40px 0;
+        /* Maintain consistent spacing */
         margin-bottom: 40px;
     }
 
     .about-content {
-        flex-direction: column; /* Stack content vertically */
-        gap: 20px; /* Add spacing between stacked elements */
+        flex-direction: column;
+        /* Stack content vertically */
+        gap: 20px;
+        /* Add spacing between stacked elements */
     }
 
     .about-paragraph {
-        margin-bottom: 20px; /* Add space below each paragraph */
+        margin-bottom: 20px;
+        /* Add space below each paragraph */
         text-align: justify;
         line-height: 1.6;
     }
 
+    #about {
+        margin-top: -5px;
+        /* Move it up by 20px */
 
-  /* ========== Skills Styles ========== */
+    }
+
+
+    /* ========== Skills Styles ========== */
     /* ========== Arrows for Cards on Mobile ========== */
     .skills-arrow-left,
     .skills-arrow-right {
-        top: 81%; 
+        top: 81%;
         font-size: 2rem;
         text-align: center;
         color: #e5dcdc;
         display: none;
     }
-    
+
 
     .skills-arrow-left {
         left: 50px;
@@ -1473,9 +1636,52 @@ footer .col-md-4:nth-child(3) {
         width: 120px;
         height: auto;
     }
+
+
+    /* Hide arrows on large screens */
+    .skills-arrow-left,
+    .skills-arrow-right {
+        display: none;
+    }
+
+    /* ========== service Media Queries ========== */
+    
+        #services {
+            position: relative; /* Ensures positioning can be adjusted */
+            top: -30px; /* Moves the Services section upwards */
+            padding-top: 0; /* Removes any extra padding at the top */
+        }
+
     
 
-/* ========== Footer Media Queries ========== */
+    /* Responsive Adjustments for Services Section */
+    @media (max-width: 768px) {
+        .service-card {
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .learn-more-btn {
+            font-size: 0.8rem;
+            padding: 6px 10px;
+        }
+    }
+
+    /* Responsive Adjustments for Modal */
+    @media (max-width: 768px) {
+        .services-modal .modal-content {
+            width: 80%;
+            /* Adjust width for small screens */
+        }
+
+        .services-modal .social-icons a {
+            font-size: 2rem;
+            /* Slightly smaller icons for mobile */
+        }
+    }
+
+
+    /* ========== Footer Media Queries ========== */
     /* Footer Adjustments for Mobile */
     footer {
         padding: 30px 0;
@@ -1506,9 +1712,9 @@ footer .col-md-4:nth-child(3) {
     }
 }
 
-
-    /* Credentials Cards on Mobile */
-    @media (max-width: 768px) {
+/* ========== Credentials Media Queries ========== */
+/* Credentials Cards on Mobile */
+@media (max-width: 768px) {
     .credential-card {
         width: 100%;
         max-width: 400px;
@@ -1521,63 +1727,94 @@ footer .col-md-4:nth-child(3) {
         font-size: 1.2rem;
     }
 
-    #scroll-left {
-        position: absolute;
-        top: 100%;
-        left: 40px;
-    }
-
-    #scroll-right {
-        position: absolute;
-        top: 100%;
-        right: 40px;
-    }
-
-    #scroll-left-cred {
-        position: absolute;
-        top: 100%;
-        left: 40px;
-    }
-
-    #scroll-right-cred {
-        position: absolute;
-        top: 100%;
-        right: 40px;
-    }
 
     .credentials-wrapper {
         position: relative;
     }
-}
-
-@media (min-width: 769px) {
-
-    /* Hide arrows on large screens */
-    .skills-arrow-left,
-    .skills-arrow-right {
-        display: none;
+    #credentials {
+        margin-top: -50px !important; /* Push up the section */
+        padding-top: 0 !important; /* Remove unnecessary padding */
     }
-}
 
-/* Responsive Adjustments for Services Section */
+    /* Reduce spacing between the title and the cards for small devices */
+    #credentials .container h2 {
+        margin-bottom: -60px; /* Reduce space below the title */
+    }
+    
+} 
+
+/* ========== credentials arrows Media Queries ========== */
 @media (max-width: 768px) {
-    .service-card {
-        height: auto;
-        margin-bottom: 20px;
+    #scroll-right-cred {
+        position: absolute;
+        top: 80%; /* Ensure it's below the content */
+        right: 40px !important; /* Move closer to the center */
     }
 
-    .learn-more-btn {
-        font-size: 0.8rem;
-        padding: 6px 10px;
+    #scroll-left-cred {
+        position: absolute;
+        top: 80%; /* Ensure it's below the content */
+        left: 40px !important; /* Keep the left arrow in place */
     }
 }
-/* Responsive Adjustments for Modal */
+
+/* ========== project arrows Media Queries ========== */
 @media (max-width: 768px) {
-    .services-modal .modal-content {
-        width: 80%; /* Adjust width for small screens */
+    #scroll-right {
+        position: absolute;
+        top: 100%; /* Ensures it's below the content */
+        right: 40px !important; /* Move the arrow closer to the center */
     }
 
-    .services-modal .social-icons a {
-        font-size: 2rem; /* Slightly smaller icons for mobile */
+    #scroll-left {
+        position: absolute;
+        top: 100%; /* Ensures it's below the content */
+        left: 40px !important; /* Keep the left arrow in place */
+    }
+}
+@media (max-width: 768px) {
+    #projects {
+        margin-top: -90px; /* Smaller adjustment for mobile screens */
+        padding-top: 0; /* Optional: Remove top padding */
+    }
+}
+@media (max-width: 768px) {
+    #projects .container h2 {
+        margin-bottom: 5px; /* Smaller space for mobile */
+    }
+
+    #projects .projects-wrapper {
+        margin-top: -30px; /* Reduce space even further on mobile */
+    }
+}
+/* ========== blog arrows Media Queries ========== */
+@media (max-width: 768px) {
+    #blog {
+        margin-bottom: 60px !important; /* Adds space between blog and footer */
+    }
+
+    footer {
+        padding-top: 20px !important; /* Additional padding at the top of the footer */
+    }
+}
+/* Adjust Blog Cards Position */
+@media (max-width: 768px) {
+    #blog .scrolling-wrapper-blog {
+        margin-top: -10px !important; /* Move blog cards closer to the header */
+    }
+}
+
+
+@media (max-width: 768px) {
+    #scroll-right-blog{
+        position: absolute;
+        top: 100%; /* Ensure it's below the content */
+        right: 40px !important; /* Move closer to the center */
+    }
+
+    #scroll-left-blog {
+        position: absolute;
+        top: 100%; /* Ensure it's below the content */
+        left: 40px !important; /* Keep the left arrow in place */
     }
 }
