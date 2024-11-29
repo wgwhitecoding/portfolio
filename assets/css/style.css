@@ -20,7 +20,7 @@ section {
 
 /* ========== Hero Section Styles ========== */
 .hero-section {
-    min-height: 55vh;
+    min-height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
