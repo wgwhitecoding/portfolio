@@ -1181,14 +1181,6 @@ section {
     font-weight: 600;
 }
 
-#scroll-right-cred {
-   display: none;
-}
-
-#scroll-left-cred {
-    display: none;
-}
-
 /* ========== Specific Styling for Iungo Card ========== */
 .iungo-card {
     background-size: contain;
@@ -1746,7 +1738,7 @@ footer .list-inline-item a i:hover {
 @media (max-width: 768px) {
     #scroll-right-cred {
         position: absolute;
-        top: 80%; /* Ensure it's below the content */
+        top: 90%; /* Ensure it's below the content */
         right: 40px !important; /* Move closer to the center */
     }
 
@@ -1754,6 +1746,12 @@ footer .list-inline-item a i:hover {
         position: absolute;
         top: 80%; /* Ensure it's below the content */
         left: 40px !important; /* Keep the left arrow in place */
+    }
+}
+@media (min-width: 769px) {
+    #scroll-right-cred,
+    #scroll-left-cred {
+        display: none; /* Hide arrows */
     }
 }
 
