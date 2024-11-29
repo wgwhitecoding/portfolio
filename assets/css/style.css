@@ -4,7 +4,7 @@
 /* ========== Global Styles ========== */
 body {
     font-family: 'Exo 2', sans-serif;
-    background: #fafafa;
+    background-color: #e6e6e6; /* Light gray */
     color: #333;
     font-weight: 400;
     line-height: 1.6;
@@ -210,7 +210,7 @@ section {
 
 /* Change slider background when checked */
 .bee-switch input:checked + .slider {
-    background-color: #3498db;; /* Orange background for checked state */
+    background: linear-gradient(to bottom, #2c3e50, #3498db);
 }
 
 /* Move knob to the right when checked */
@@ -219,10 +219,11 @@ section {
 }
 
 /* Label Styling */
-.bee-toggle-container label {
-    color: white; /* Label text color */
-    font-size: 16px; /* Label font size */
+#toggle-text {
+    color: black !important; /* Ensure the text is black in light mode */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
+
 
 /* Checkbox Styling (Custom Style for Bee Animation) */
 .bee-toggle-container input[type="checkbox"] {
@@ -316,7 +317,7 @@ section {
     padding: 0; /* Removes internal padding */
 }
 
-/* ========== Global Skills Section Styles ========== */
+/* ========== Full stack Skills Section Styles ========== */
 
 #skills
 {
@@ -406,7 +407,7 @@ section {
     z-index: 3;
 }
 
-/* ========== Full-Stack Skills Section Styles ========== */
+/* ========== Carousel Skills Section Styles ========== */
 .skills-carousel-container {
     perspective: 1000px;
     overflow: hidden;
@@ -432,7 +433,7 @@ section {
     display: flex;
     width: 800px;
     transform-style: preserve-3d;
-    animation: rotate 70s infinite linear;
+    animation: rotate 70s infinite linear; /* Continuous rotation */
     transform-origin: center right;
     margin-bottom: 40px;
 }
@@ -444,6 +445,11 @@ section {
     to {
         transform: rotateY(360deg);
     }
+}
+
+/* Prevent animation from pausing on hover */
+.skills-carousel:hover {
+    animation-play-state: running; /* Keep the animation running */
 }
 
 /* Skill Item */
@@ -466,11 +472,6 @@ section {
 
 .skill-item:hover img {
     transform: scale(1.2); /* Slightly enlarge on hover */
-}
-
-/* Stop animation on hover */
-.skills-carousel:hover {
-    animation-play-state: paused;
 }
 
 /* Arrows for Full-Stack Section */
@@ -685,11 +686,13 @@ section {
     align-items: center;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
 
+.service-card:hover {
+    transform: scale(1.05); /* Slight scale effect */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7))
+            drop-shadow(0 0 20px rgba(0, 0, 0, 0.8)); /* Dark glow effect */
+    transition: transform 0.3s, filter 0.3s ease-in-out; /* Smooth animation */
+}
 .service-card h4 {
     margin-top: 10px;
     font-size: 1.3rem;
@@ -735,18 +738,23 @@ section {
     margin-top: -230px; /* Move Services section closer to Skills */
     padding-top: 0; /* Optional: Remove top padding of Services */
 }
+/* Default Icon Styling */
+.icon-animation {
+    color: transparent; /* Ensure gradient visibility */
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Soft, colorful gradient */
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* For compatibility with Webkit browsers */
+    -webkit-text-fill-color: transparent; /* Gradient text effect */
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
 
-/* Responsive Adjustments for Services Section */
-@media (max-width: 768px) {
-    .service-card {
-        height: auto;
-        margin-bottom: 20px;
-    }
-
-    .learn-more-btn {
-        font-size: 0.8rem;
-        padding: 6px 10px;
-    }
+/* Icon Hover Effect */
+.service-card:hover .icon-animation {
+    transform: rotate(20deg) scale(1.1); /* Rotates and enlarges slightly */
+    background: linear-gradient(to bottom, #f0a5f5, #a5d4f5); /* Slightly brighter and more colorful gradient */
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* For compatibility with Webkit browsers */
+    -webkit-text-fill-color: transparent;
 }
 
 /* ========== Services Modal Styles ========== */
@@ -785,21 +793,6 @@ section {
 .services-modal .social-icons a:hover {
     color: #007bff; /* Hover color for icons */
 }
-
-/* Responsive Adjustments for Modal */
-@media (max-width: 768px) {
-    .services-modal .modal-content {
-        width: 80%; /* Adjust width for small screens */
-    }
-
-    .services-modal .social-icons a {
-        font-size: 2rem; /* Slightly smaller icons for mobile */
-    }
-}
-
-
-
-
 
 /* ========== Projects Section Styles ========== */
 .projects-wrapper {
@@ -1042,6 +1035,7 @@ section {
     display: none;
 }
 
+/* Default state - no shadow */
 .credential-card {
     position: relative;
     width: 100%;
@@ -1053,16 +1047,22 @@ section {
     border-radius: 8px;
     cursor: pointer;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, filter 0.3s ease-in-out; /* Smooth transition */
     color: white;
     overflow: hidden;
     scroll-snap-align: start;
     transform: rotateX(15deg);
+    filter: none; /* No shadow by default */
 }
 
+/* Hover state - pulsing dark shadow */
 .credential-card:hover {
-    transform: scale(1.05) rotateX(0deg);
+    transform: scale(1.05) rotateX(0deg); /* Slight scaling effect */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3))
+            drop-shadow(0 0 20px rgba(0, 0, 0, 0.5)); /* Dark glow effect */
+    transition: transform 0.3s, filter 0.3s ease-in-out; /* Smooth animation */
 }
+
 
 .credential-card h4 {
     margin: 0;
@@ -1070,9 +1070,7 @@ section {
     font-weight: 600;
 }
 
-.credential-card:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+
 
 /* ========== Specific Styling for Iungo Card ========== */
 .iungo-card {
@@ -1082,7 +1080,7 @@ section {
 }
 /* ========== Specific Styling for Code Institute Card ========== */
 .code-card {
-    background-size: contain; /* Ensures the image fits within the card */
+    background-size: 80%; /* Ensures the image fits within the card */
     background-repeat: no-repeat; /* Prevents tiling of the logo */
     background-position: center; /* Centers the logo within the card */
 }
@@ -1561,3 +1559,25 @@ footer .col-md-4:nth-child(3) {
     }
 }
 
+/* Responsive Adjustments for Services Section */
+@media (max-width: 768px) {
+    .service-card {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .learn-more-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
+/* Responsive Adjustments for Modal */
+@media (max-width: 768px) {
+    .services-modal .modal-content {
+        width: 80%; /* Adjust width for small screens */
+    }
+
+    .services-modal .social-icons a {
+        font-size: 2rem; /* Slightly smaller icons for mobile */
+    }
+}
