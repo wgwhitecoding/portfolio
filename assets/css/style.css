@@ -1406,7 +1406,7 @@ footer .list-inline-item a i:hover {
 
     /* Adjust hero section size and alignment */
     .hero-section {
-        min-height: 80vh;
+        min-height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
