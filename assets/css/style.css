@@ -1304,6 +1304,11 @@ section {
     margin: 0;
     font-weight: 600;
 }
+/* Add space between Blog Section and Footer */
+#blog {
+    margin-bottom: 50px; /* Adjust the value to your liking */
+}
+
 
 .arrow {
     position: absolute;
@@ -1815,3 +1820,194 @@ footer .list-inline-item a i:hover {
         left: 40px !important; /* Keep the left arrow in place */
     }
 }
+
+/* Media Query for iPads in Portrait Mode (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjustments for iPads in portrait mode */
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-line1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-line2 {
+        font-size: 3rem;
+    }
+
+    .about-section {
+        padding: 50px 20px;
+    }
+
+    .skills-arrow-left,
+    .skills-arrow-right {
+        display: block;
+        font-size: 2rem;
+    }
+
+    /* Adjust service card spacing */
+    .service-card {
+        margin: 20px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 40px 20px;
+    }
+}
+
+/* Media Query for Desktop and Larger Screens (Above 1024px) */
+@media (min-width: 1025px) {
+    /* General large screen styling */
+    .hero-section {
+        padding: 80px 40px;
+    }
+
+    .hero-line1 {
+        font-size: 3rem;
+    }
+
+    .hero-line2 {
+        font-size: 4rem;
+    }
+
+    .about-section {
+        padding: 60px 40px;
+    }
+
+    .skills-wrapper {
+        justify-content: center;
+    }
+
+    .skill-item img {
+        width: 150px;
+        height: auto;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 60px 40px;
+    }
+    
+}
+
+/* General Adjustments for All Screens Above 768px */
+@media (min-width: 769px) {
+    .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .about-content {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .service-card {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .credentials-wrapper {
+        justify-content: space-around;
+    }
+
+    .credentials-wrapper .credential-card {
+        max-width: 450px;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .bar {
+        min-width: 11cm; /* Adjust width */
+    }
+    #dataEngSkillBars .bar  {
+        min-width: 11cm; /* Adjust width */
+    }
+    .skills-arrow-left,
+    .skills-arrow-right {
+        display: none;
+    }
+    #scroll-right {
+        position: absolute;
+        top: 100%; /* Ensures it's below the content */
+        right: 40px !important; /* Move the arrow closer to the center */
+    }
+
+    #scroll-left {
+        position: absolute;
+        top: 100%; /* Ensures it's below the content */
+        left: 40px !important; /* Keep the left arrow in place */
+    }
+    #scroll-right-blog{
+        position: absolute;
+        top: 100%; /* Ensure it's below the content */
+        right: 40px !important; /* Move closer to the center */
+    }
+
+    #scroll-left-blog {
+        position: absolute;
+        top: 100%; /* Ensure it's below the content */
+        left: 40px !important; /* Keep the left arrow in place */
+    }
+    .service-card {
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .bar {
+        min-width: 13cm; /* Adjust width */
+    }
+    #dataEngSkillBars .bar {
+        min-width: 13cm; /* Adjust width */
+    }
+    .skills-arrow-left,
+    .skills-arrow-right {
+        display: none;
+    }
+    #scroll-right {
+        position: absolute;
+        top: 100%; /* Ensures it's below the content */
+        right: 40px !important; /* Move the arrow closer to the center */
+    }
+
+    #scroll-left {
+        position: absolute;
+        top: 100%; /* Ensures it's below the content */
+        left: 40px !important; /* Keep the left arrow in place */
+    }
+    #scroll-right-blog {
+        position: absolute;
+        top: 100%; /* Ensure it's below the content */
+        right: 40px !important; /* Move closer to the center */
+    }
+
+    #scroll-left-blog {
+        position: absolute;
+        top: 100%; /* Ensure it's below the content */
+        left: 40px !important; /* Keep the left arrow in place */
+    }
+    .service-card {
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    
+    #services .service-card {
+        height: 270px; /* Set a height that makes it larger */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+}
+
