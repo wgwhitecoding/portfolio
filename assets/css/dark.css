@@ -292,3 +292,19 @@ body.dark-mode #scroll-right-blog i {
 }
 
 
+
+/* Apply only for small screens where the navbar toggler (hamburger) is visible */
+@media (max-width: 768px) {
+    /* Dark mode state */
+    body.dark-mode .hamburger-icon i {
+        color: transparent;  /* Make original icon color transparent */
+        background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Apply gradient */
+        -webkit-background-clip: text; /* Use webkit for better gradient application */
+        background-clip: text;         /* Standard syntax for background-clip */
+    }
+}
+
+
+
+
+

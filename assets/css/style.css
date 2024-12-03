@@ -18,6 +18,24 @@ section {
     font-weight: 400;
 }
 
+/* Make the hamburger icon bigger and remove the border */
+.navbar-toggler {
+    border: none;  /* Remove the border around the navbar toggler button */
+}
+
+/* Remove the border and outline when navbar toggler is clicked */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;   /* Remove outline */
+    box-shadow: none; /* Remove any box-shadow */
+    border: none;    /* Remove the border */
+}
+
+/* Make the hamburger icon bigger */
+.hamburger-icon i {
+    font-size: 2rem; /* Adjust the size as needed */
+}
+
 /* ========== Hero Section Styles ========== */
 .hero-section {
     min-height: 55vh;
@@ -2010,4 +2028,6 @@ footer .list-inline-item a i:hover {
     }
     
 }
+
+
 

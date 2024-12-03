@@ -2,14 +2,20 @@
 const darkModeToggle = document.getElementById("darkModeToggle");
 const themeIcon = document.getElementById("themeIcon");
 
-// Check for saved user preference in localStorage
+// Check for saved user preference in localStorage and apply dark mode on load
 const isDarkMode = localStorage.getItem("dark-mode") === "true";
 if (isDarkMode) {
   document.body.classList.add("dark-mode");
   themeIcon.classList.remove("fa-moon");
   themeIcon.classList.add("fa-sun");
+} else {
+  // Ensure light mode on page load if no preference is saved or it's set to false
+  document.body.classList.remove("dark-mode");
+  themeIcon.classList.remove("fa-sun");
+  themeIcon.classList.add("fa-moon");
 }
 
+// Dark Mode Toggle Event Listener
 if (darkModeToggle) {
   darkModeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
@@ -26,6 +32,20 @@ if (darkModeToggle) {
     }
   });
 }
+
+// Navbar Collapse After Click on Mobile
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+// Listen for clicks on nav links and collapse the menu
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (navbarCollapse.classList.contains('show')) {
+      navbarToggler.click(); // This triggers the collapse of the navbar
+    }
+  });
+});
 
 // Scroll Arrows Functionality for Project Carousel
 const scrollContainer = document.getElementById("scroll-container");
@@ -246,6 +266,8 @@ function animateSkillBars() {
 }
 
 document.addEventListener("DOMContentLoaded", animateSkillBars);
+
+
 
 
 
