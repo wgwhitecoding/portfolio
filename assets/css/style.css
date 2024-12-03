@@ -18,22 +18,20 @@ section {
     font-weight: 400;
 }
 
-/* Make the hamburger icon bigger and remove the border */
+/* ========== burger Styles ========== */
 .navbar-toggler {
-    border: none;  /* Remove the border around the navbar toggler button */
+    border: none;
 }
 
-/* Remove the border and outline when navbar toggler is clicked */
 .navbar-toggler:focus,
 .navbar-toggler:active {
-    outline: none;   /* Remove outline */
-    box-shadow: none; /* Remove any box-shadow */
-    border: none;    /* Remove the border */
+    outline: none; 
+    box-shadow: none;
+    border: none; 
 }
 
-/* Make the hamburger icon bigger */
 .hamburger-icon i {
-    font-size: 2rem; /* Adjust the size as needed */
+    font-size: 2rem;
 }
 
 /* ========== Hero Section Styles ========== */
@@ -61,10 +59,7 @@ section {
     opacity: 0.8;
     background-size: cover;
 }
-
 /* ========== Hero Title Lines ========== */
-
-/* Style for the first line of the hero title */
 .hero-line1 {
     font-size: 3.5rem;
     font-weight: 800;
@@ -74,7 +69,6 @@ section {
     letter-spacing: 2px;
 }
 
-/* Style for the second line of the hero title */
 .hero-line2 {
     font-size: 3.5rem;
     font-weight: 800;
@@ -179,40 +173,27 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Center the toggle */
     gap: 10px;
-    /* Spacing between toggle and label */
     margin-top: 20px;
-    /* Default margin */
     position: fixed;
-    /* Fixed for specific placement */
     bottom: 20px;
-    /* Position from the bottom of the viewport */
     right: 20px;
-    /* Position from the right of the viewport */
     z-index: 2000;
-    /* Ensure toggle appears above other elements */
 }
 
-/* Switch container */
 .bee-switch {
     position: relative;
     display: inline-block;
     width: 60px;
-    /* Width of the switch */
     height: 34px;
-    /* Height of the switch */
 }
 
-/* Hide the input (actual toggle) */
 .bee-switch input {
     opacity: 0;
-    /* Make input invisible */
     width: 0;
     height: 0;
 }
 
-/* Slider styling (background and border-radius) */
 .bee-switch .slider {
     position: absolute;
     top: 0;
@@ -220,52 +201,35 @@ section {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    /* Default background color */
     transition: 0.4s;
-    /* Smooth transition for background */
     border-radius: 34px;
-    /* Rounded corners */
 }
 
-/* Slider knob styling */
 .bee-switch .slider:before {
     position: absolute;
     content: "";
     height: 26px;
-    /* Size of the knob */
     width: 26px;
-    /* Size of the knob */
     left: 4px;
     bottom: 4px;
     background-color: white;
-    /* Knob color */
     transition: 0.4s;
-    /* Smooth transition for movement */
     border-radius: 50%;
-    /* Fully round knob */
 }
 
-/* Change slider background when checked */
 .bee-switch input:checked+.slider {
     background: linear-gradient(to bottom, #2c3e50, #3498db);
 }
 
-/* Move knob to the right when checked */
 .bee-switch input:checked+.slider:before {
     transform: translateX(26px);
-    /* Slide knob to the right */
 }
 
-/* Label Styling */
 #toggle-text {
     color: black !important;
-    /* Ensure the text is black in light mode */
     transition: color 0.3s ease;
-    /* Smooth color transition */
 }
 
-
-/* Checkbox Styling (Custom Style for Bee Animation) */
 .bee-toggle-container input[type="checkbox"] {
     width: 40px;
     height: 20px;
@@ -280,7 +244,6 @@ section {
 
 .bee-toggle-container input[type="checkbox"]:checked {
     background: #ff4500;
-    /* Checked state background color */
 }
 
 .bee-toggle-container input[type="checkbox"]::before {
@@ -297,9 +260,7 @@ section {
 
 .bee-toggle-container input[type="checkbox"]:checked::before {
     transform: translateX(20px);
-    /* Move toggle knob */
 }
-
 
 @keyframes fadeIn {
     from {
@@ -340,12 +301,10 @@ section {
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0;
-    /* Removes extra margin for a cleaner layout */
 }
 
 .about-section {
     padding: 40px 0;
-    /* Adds vertical spacing for the section */
     margin-top: 40px;
 }
 
@@ -353,28 +312,19 @@ section {
     display: flex;
     justify-content: space-between;
     gap: 50px;
-    /* Adds space between content columns */
     align-items: stretch;
-    /* Ensures all items stretch equally */
 }
 
 .about-paragraph {
     flex: 1;
-    /* Ensures equal space for paragraphs */
     text-align: justify;
-    /* Aligns text for a neat appearance */
     line-height: 1.6;
-    /* Sets consistent line spacing */
     word-spacing: 0px;
-    /* Neutralizes extra word spacing */
     margin: 0;
-    /* Ensures no external spacing */
     padding: 0;
-    /* Removes internal padding */
 }
 
 /* ========== Full stack Skills Section Styles ========== */
-
 #skills {
     bottom: 60px;
 }
@@ -392,7 +342,6 @@ section {
 
 .col-md-6 {
     flex: 0 0 48%;
-    /* Columns take 48% of the container */
 }
 
 .skill-bar {
@@ -401,21 +350,17 @@ section {
     align-items: center;
     position: relative;
     width: 90%;
-    /* Set the width of each skill bar */
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Skill Bar Progress and Background */
 .bar {
     background-color: #000;
     border-radius: 20px;
     overflow: hidden;
     height: 30px;
-    /* Bar height */
     width: 100%;
-    /* Full width of the container */
     max-width: 100%;
     min-width: 15cm;
     position: relative;
@@ -426,27 +371,22 @@ section {
 
 .bar:hover {
     transform: scale(1.03);
-    /* Slightly enlarge on hover */
 }
 
 .progress {
     background: linear-gradient(to bottom, #2c3e50, #3498db);
-    /* Gradient background for cards */
     height: 100%;
     border-radius: 20px;
     transition: width 1.5s ease;
-    /* Smooth width animation */
     padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
     width: 0%;
-    /* Initial width for animation */
     color: #fff;
 }
 
-/* Skill Labels Inside the Bars */
 .skill-bar label {
     position: absolute;
     left: 10px;
@@ -487,12 +427,10 @@ section {
 
 .skills-carousel-container::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar */
 }
 
 .skills-wrapper {
     margin-top: -160px;
-    /* Adjust top margin */
 }
 
 .skills-carousel {
@@ -500,7 +438,6 @@ section {
     width: 800px;
     transform-style: preserve-3d;
     animation: rotate 70s infinite linear;
-    /* Continuous rotation */
     transform-origin: center right;
     margin-bottom: 40px;
 }
@@ -515,19 +452,14 @@ section {
     }
 }
 
-/* Prevent animation from pausing on hover */
 .skills-carousel:hover {
     animation-play-state: running;
-    /* Keep the animation running */
 }
 
-/* Skill Item */
 .skill-item {
     flex: 0 0 auto;
     width: 100px;
-    /* Skill icon width */
     height: 100px;
-    /* Skill icon height */
     margin: 0 10px;
     display: flex;
     justify-content: center;
@@ -543,10 +475,8 @@ section {
 
 .skill-item:hover img {
     transform: scale(1.2);
-    /* Slightly enlarge on hover */
 }
 
-/* Arrows for Full-Stack Section */
 .skills-arrow-left {
     position: absolute;
     bottom: -50px;
@@ -583,7 +513,6 @@ section {
 
 #dataEngSkillBars .col-md-6 {
     flex: 0 0 48%;
-    /* Match Full-Stack size */
 }
 
 #dataEngSkillBars .skill-bar {
@@ -592,20 +521,16 @@ section {
     align-items: center;
     position: relative;
     width: 90%;
-    /* Match Full-Stack width */
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Data Engineering Skill Bar Progress and Background */
 #dataEngSkillBars .bar {
     background-color: #000;
-    /* Match Full-Stack background */
     border-radius: 20px;
     overflow: hidden;
     height: 30px;
-    /* Match Full-Stack height */
     width: 100%;
     max-width: 100%;
     min-width: 15cm;
@@ -617,27 +542,22 @@ section {
 
 #dataEngSkillBars .bar:hover {
     transform: scale(1.03);
-    /* Match Full-Stack hover effect */
 }
 
 #dataEngSkillBars .progress {
     background-color: #007bff;
-    /* Match Full-Stack color */
     height: 100%;
     border-radius: 20px;
     transition: width 1.5s ease;
-    /* Match animation */
     padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
     width: 0%;
-    /* Match initial width */
     color: #fff;
 }
 
-/* Skill Labels Inside the Bars */
 #dataEngSkillBars .skill-bar label {
     position: absolute;
     left: 10px;
@@ -646,7 +566,6 @@ section {
     display: flex;
     align-items: center;
     font-size: 14px;
-    /* Match font size */
     color: #fff;
     z-index: 3;
 }
@@ -659,12 +578,10 @@ section {
     display: flex;
     align-items: center;
     font-size: 14px;
-    /* Match font size */
     color: #fff;
     z-index: 3;
 }
 
-/* Data Engineering Container */
 #skills2 {
     perspective: 1000px;
     overflow: hidden;
@@ -677,19 +594,15 @@ section {
     -ms-overflow-style: none;
     scrollbar-width: none;
     bottom: 140px;
-    /* Adjust positioning */
 }
 
 #skills2::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar */
 }
 
 #skills2 .skills-wrapper {
     margin-top: -100px;
 }
-
-/* Data Engineering Carousel */
 #skills2 .skills-carousel {
     display: flex;
     width: 800px;
@@ -702,9 +615,7 @@ section {
 #skills2 .skill-item {
     flex: 0 0 auto;
     width: 100px;
-    /* Match Full-Stack width */
     height: 100px;
-    /* Match Full-Stack height */
     margin: 0 10px;
     display: flex;
     justify-content: center;
@@ -720,15 +631,8 @@ section {
 
 #skills2 .skill-item:hover img {
     transform: scale(1.2);
-    /* Match Full-Stack hover effect */
 }
 
-/* Stop animation on hover for Data Engineering */
-#skills2 .skills-carousel:hover {
-    animation-play-state: paused;
-}
-
-/* Arrows for Data Engineering */
 #skills2 .skills-arrow-left {
     position: absolute;
     bottom: -50px;
@@ -753,7 +657,6 @@ section {
 .services-section {
     padding: 60px 0;
     background: none;
-    /* Matches the page background */
     color: #333;
 }
 
@@ -770,23 +673,17 @@ section {
     color: #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 220px;
-    /* Compact card height */
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Ensures proper spacing between elements */
     align-items: center;
 }
 
-
 .service-card:hover {
     transform: scale(1.05);
-    /* Slight scale effect */
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
-    /* Dark glow effect */
     transition: transform 0.3s, filter 0.3s ease-in-out;
-    /* Smooth animation */
 }
 
 .service-card h4 {
@@ -801,10 +698,8 @@ section {
     color: #ffffff;
     text-align: center;
     margin-bottom: 10px;
-    /* Adds spacing above the button */
 }
 
-/* Learn More Button */
 .learn-more-btn {
     background-color: #28a745;
     color: #ffffff;
@@ -815,14 +710,12 @@ section {
     cursor: pointer;
     transition: background-color 0.3s ease;
     align-self: center;
-    /* Center aligns the button */
 }
 
 .learn-more-btn:hover {
     background-color: #218838;
 }
 
-/* Icon Animations */
 .icon-animation {
     color: #ffffff;
     transition: transform 0.3s ease;
@@ -835,43 +728,29 @@ section {
 
 #services {
     margin-top: -230px;
-    /* Move Services section closer to Skills */
     padding-top: 0;
-    /* Optional: Remove top padding of Services */
 }
 
-/* Default Icon Styling */
 .icon-animation {
     color: transparent;
-    /* Ensure gradient visibility */
     background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
-    /* Soft, colorful gradient */
     background-clip: text;
-    /* Standard property */
     -webkit-background-clip: text;
-    /* For compatibility with Webkit browsers */
     -webkit-text-fill-color: transparent;
-    /* Gradient text effect */
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
-/* Icon Hover Effect */
 .service-card:hover .icon-animation {
     transform: rotate(20deg) scale(1.1);
-    /* Rotates and enlarges slightly */
     background: linear-gradient(to bottom, #f0a5f5, #a5d4f5);
-    /* Slightly brighter and more colorful gradient */
     background-clip: text;
-    /* Standard property */
     -webkit-background-clip: text;
-    /* For compatibility with Webkit browsers */
     -webkit-text-fill-color: transparent;
 }
 
 /* ========== Services Modal Styles ========== */
 .services-modal .modal-content {
     width: 60%;
-    /* Smaller modal size */
     max-width: 500px;
     margin: 0 auto;
     border-radius: 10px;
@@ -891,23 +770,19 @@ section {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    /* Space between elements */
     padding: 20px;
 }
 
 .services-modal .social-icons a {
     font-size: 2.5rem;
-    /* Larger icons */
     margin: 0 10px;
     color: #333;
-    /* Icon color */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .services-modal .social-icons a:hover {
     color: #007bff;
-    /* Hover color for icons */
 }
 
 /* ========== Projects Section Styles ========== */
@@ -977,7 +852,6 @@ section {
     z-index: 1;
     margin: 0;
     font-weight: 600;
-    /* Headers slightly bolder */
 }
 
 .project-card:hover .overlay {
@@ -996,14 +870,11 @@ section {
 
 .left-arrow {
     left: -50px;
-    /* Keep this as is */
 }
 
 .right-arrow {
     right: -40px !important;
 }
-
-
 
 /* ========== Modal Styles ========== */
 .modal-dialog {
@@ -1019,12 +890,10 @@ section {
     max-height: 80vh;
     overflow-y: auto;
     font-weight: 400;
-    /* Standard weight for readability */
 }
 
 .modal-title {
     font-weight: 800;
-    /* Heaviest for modal title */
     font-size: 2rem;
     text-align: left;
 }
@@ -1044,10 +913,8 @@ section {
     font-weight: 400;
     line-height: 1.6;
     text-align: justify;
-    /* Align text uniformly */
 }
 
-/* Flexbox for Row */
 .modal-body .row {
     display: flex;
     flex-wrap: wrap;
@@ -1067,25 +934,19 @@ section {
     padding: 10px;
 }
 
-/* Ensure columns have equal height */
 .modal-body .row {
     align-items: stretch;
 }
 
-/* Modal Section Headers */
 .modal-body h6 {
     font-weight: 700;
     font-size: 1.6rem;
-    /* Bolder and larger for section headers */
     margin-bottom: 15px;
-    /* Ensure even spacing */
 }
 
-/* Tech Stack Styles */
 .tech-stack h8 {
     font-size: 1.3rem;
     font-weight: 700;
-    /* Bolder subheaders */
     margin-bottom: 10px;
 }
 
@@ -1095,10 +956,8 @@ section {
     text-align: justify;
     font-weight: 400;
     line-height: 1.6;
-    /* Ensure consistent line height */
 }
 
-/* Lists in Modal */
 .modal-body ul {
     padding-left: 20px;
     margin-bottom: 15px;
@@ -1108,29 +967,22 @@ section {
     margin-bottom: 8px;
 }
 
-/* Future Features and Date Section */
 .date-section {
     margin-bottom: 15px;
     font-weight: 500;
 }
 
-/* Scrollable Overflow Fix */
 .modal-body {
     overflow-y: auto;
     max-height: 70vh;
 }
 
-/* Image Styling */
 .modal-body img {
     border-radius: 8px;
     max-width: 100%;
     max-height: 300px;
     margin-bottom: 15px;
 }
-
-
-
-
 
 /* ========== Credentials Section Styles ========== */
 .credentials-wrapper {
@@ -1173,25 +1025,18 @@ section {
     cursor: pointer;
     text-align: center;
     transition: transform 0.3s, filter 0.3s ease-in-out;
-    /* Smooth transition */
     color: white;
     overflow: hidden;
     scroll-snap-align: start;
     transform: rotateX(15deg);
     filter: none;
-    /* No shadow by default */
 }
 
-/* Hover state - pulsing dark shadow */
 .credential-card:hover {
     transform: scale(1.05) rotateX(0deg);
-    /* Slight scaling effect */
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
-    /* Dark glow effect */
     transition: transform 0.3s, filter 0.3s ease-in-out;
-    /* Smooth animation */
 }
-
 
 .credential-card h4 {
     margin: 0;
@@ -1202,35 +1047,23 @@ section {
 /* ========== Specific Styling for Iungo Card ========== */
 .iungo-card {
     background-size: contain;
-    /* Ensures the image fits within the card */
     background-repeat: no-repeat;
-    /* Prevents tiling of the logo */
     background-position: center;
-    /* Centers the logo within the card */
 }
 
 /* ========== Specific Styling for Code Institute Card ========== */
 .code-card {
     background-size: 80%;
-    /* Ensures the image fits within the card */
     background-repeat: no-repeat;
-    /* Prevents tiling of the logo */
     background-position: center;
-    /* Centers the logo within the card */
 }
 
-/* Specific Styling for PL-300 Card */
 .pl300-card {
     background-size: contain;
-    /* Ensures the image fits within the card */
     background-repeat: no-repeat;
-    /* Prevents tiling of the logo */
     background-position: center;
-    /* Centers the logo within the card */
 }
 
-
-/* Control Arrows */
 .arrow {
     position: absolute;
     top: 50%;
@@ -1322,11 +1155,10 @@ section {
     margin: 0;
     font-weight: 600;
 }
-/* Add space between Blog Section and Footer */
-#blog {
-    margin-bottom: 50px; /* Adjust the value to your liking */
-}
 
+#blog {
+    margin-bottom: 50px; 
+}
 
 .arrow {
     position: absolute;
@@ -1345,8 +1177,6 @@ section {
 .right-arrow {
     right: -40px !important;
 }
-
-
 
 /* ========== Footer Styles ========== */
 footer {
@@ -1375,39 +1205,32 @@ footer .col-md-4:nth-child(3) {
     position: relative;
     left: 4cm;
 }
-/* Footer Social Media Icons Gradient */
 footer .list-inline-item a i {
-    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background */
-    -webkit-background-clip: text; /* Clip the gradient to the text for WebKit browsers */
-    background-clip: text; /* Standard property */
-    -webkit-text-fill-color: transparent; /* Ensures gradient text in WebKit browsers */
-    color: transparent; /* Fallback for other browsers */
-    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Add hover effect for the icons */
 footer .list-inline-item a i:hover {
-    transform: scale(1.2); /* Slight scale effect on hover */
-    transition: transform 0.3s ease; /* Smooth scaling transition */
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }
 
-
-/* Social Icon Styles */
 .list-inline-item {
     margin-right: 15px;
 }
-
 
 .list-inline-item a {
     color: white;
     display: inline-block;
     transition: transform 0.3s ease;
-    /* Smooth pulse effect */
 }
 
 .list-inline-item a:hover {
     transform: scale(1.3);
-    /* Pulse effect enlarges slightly */
     color: #1a73e8;
 }
 
@@ -1416,13 +1239,10 @@ footer .list-inline-item a i:hover {
     font-size: 2rem;
 }
 
-
-
 /* ========== Media Query for Mobile (Max Width: 768px) ========== */
 @media (max-width: 768px) {
     /* ========== Hero Section Adjustments ========== */
 
-    /* Hide the hero image on mobile */
     .hero-image {
         display: none;
     }
@@ -1454,7 +1274,6 @@ footer .list-inline-item a i:hover {
     }
 
     /* ========== Hero Subtitle Styling ========== */
-
     .hero-subtitle {
         font-size: 1rem;
         line-height: 1.4;
@@ -1463,9 +1282,7 @@ footer .list-inline-item a i:hover {
         margin-bottom: 1.5rem;
     }
 
-
     /* ========== Bee Toggle Container Media Query ========== */
-
     .bee-toggle-container {
         position: absolute;
         bottom: 110px;
@@ -1480,11 +1297,6 @@ footer .list-inline-item a i:hover {
         /* Remove extra margin */
     }
 
-
-
-    /* ========== About Me Media Queries ========== */
-
-    /* About Section Adjustments for Mobile */
     /* ========== About Me Paragraph Styles ========== */
     #about p {
         font-size: 1.1rem;
@@ -1659,14 +1471,11 @@ footer .list-inline-item a i:hover {
     }
 
     /* ========== service Media Queries ========== */
-    
         #services {
             position: relative; /* Ensures positioning can be adjusted */
             top: -30px; /* Moves the Services section upwards */
             padding-top: 0; /* Removes any extra padding at the top */
         }
-
-    
 
     /* Responsive Adjustments for Services Section */
     @media (max-width: 768px) {
@@ -1693,7 +1502,6 @@ footer .list-inline-item a i:hover {
             /* Slightly smaller icons for mobile */
         }
     }
-
 
     /* ========== Footer Media Queries ========== */
     /* Footer Adjustments for Mobile */
@@ -1938,10 +1746,9 @@ footer .list-inline-item a i:hover {
     }
 }
 
-
 @media (min-width: 1024px) and (max-width: 1366px) {
     .bar {
-        min-width: 11cm; /* Adjust width */
+        min-width: 11cm; 
     }
     #dataEngSkillBars .bar  {
         min-width: 11cm; /* Adjust width */
@@ -1976,8 +1783,13 @@ footer .list-inline-item a i:hover {
         height: auto;
         margin-bottom: 20px;
     }
+    #services .service-card {
+        height: 270px; /* Set a height that makes it larger */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
-
 
 @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
     .bar {
@@ -2017,17 +1829,3 @@ footer .list-inline-item a i:hover {
         margin-bottom: 20px;
     }
 }
-
-@media (min-width: 1024px) and (max-width: 1366px) {
-    
-    #services .service-card {
-        height: 270px; /* Set a height that makes it larger */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-}
-
-
-
