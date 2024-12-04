@@ -1,10 +1,24 @@
-/* -------------------------------------------
-   Dark Mode Styles
-------------------------------------------- */
 /* ========== General Dark Mode Styles ========== */
 body.dark-mode {
-    background: linear-gradient(to bottom, #211f1f, #181717); /* Darker gradient */
-    color: white; /* Light text */
+    background: linear-gradient(to bottom, #211f1f, #181717);
+    color: white;
+}
+/* ========== Navbar in Dark Mode ========== */
+body.dark-mode .navbar-light.bg-light {
+    background-color: #333 !important;
+}
+
+body.dark-mode .navbar-light .navbar-brand,
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: white !important;
+}
+/* ========== Bee Toggle Switch Styles ========== */
+body.dark-mode #toggle-text {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+body.dark-mode .bee-switch input:checked+.slider {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); 
 }
 
 /* ========== Hero Section in Dark Mode ========== */
@@ -12,16 +26,6 @@ body.dark-mode .hero-section {
     background: linear-gradient(to bottom, #211f1f, #181717); /* Darker gradient */
 }
 
-/* ========== Navbar in Dark Mode ========== */
-body.dark-mode .navbar-light.bg-light {
-    background-color: #333 !important; /* Dark navbar background */
-}
-
-body.dark-mode .navbar-light .navbar-brand,
-body.dark-mode .navbar-light .navbar-nav .nav-link {
-    color: white !important; /* Light navbar text */
-}
-/* ========== social media colorin Dark Mode ========== */
 body.dark-mode .hero-social-links a {
     background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background for dark mode */
     -webkit-background-clip: text; /* For WebKit browsers */
@@ -31,8 +35,6 @@ body.dark-mode .hero-social-links a {
     transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
 }
 
-/* ========== hero text color in Dark Mode ========== */
-/* Apply gradient to text in dark mode */
 body.dark-mode .hero-title h1,
 body.dark-mode .hero-subtitle {
     background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);/* Gradient background */
@@ -43,16 +45,6 @@ body.dark-mode .hero-subtitle {
     transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-
-/* ========== Project Cards in Dark Mode ========== */
-
-
-/* ========== Buttons in Dark Mode ========== */
-body.dark-mode .btn {
-    background-color: #555; /* Dark button background */
-    border-color: #555; /* Dark button border */
-    color: white; /* Light button text */
-}
 
 /* ========== Modal Styles in Dark Mode ========== */
 body.dark-mode .modal-content {
@@ -94,9 +86,22 @@ body.dark-mode .skill-item img {
     filter: brightness(0.9); /* Slightly darkened images for consistency */
 }
 
-/* ========== Skills Carousel in Dark Mode ========== */
+/* ========== service Section Styles ========== */
+body.dark-mode .services-modal .modal-content {
+    width: 60%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    background: #1e1e1e; /* Dark modal background */
+    color: #e0e0e0; /* Light text */
+}
+body.dark-mode #services h2, 
+body.dark-mode .section-header {
+    color: #ffffff !important; /* White text color for dark mode */
+}
 body.dark-mode .service-card {
-    background: linear-gradient(to bottom,  #343434, #1c1c1c); /* Darker gradient */
+    background: linear-gradient(to bottom,  #343434, #1c1c1c);
     border-radius: 10px;
     color: #e0e0e0; /* Light text */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -107,14 +112,12 @@ body.dark-mode .service-card {
     justify-content: space-between;
     align-items: center;
 }
-/* Hide the 3D carousel in dark mode on small devices */
-@media (max-width: 768px) {
-    body.dark-mode .skills-wrapper {
-        display: none !important; /* Hides the 3D carousel container in dark mode */
-    }
-}
 
-/* ========== headers titles in Dark Mode ========== */
+body.dark-mode .service-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
 body.dark-mode .service-header {
     background: linear-gradient(to bottom, #d4af37, #a67c00, #8c6239); /* Gold to bronze tones */
     background-clip: text;
@@ -123,79 +126,70 @@ body.dark-mode .service-header {
     text-align: left; /* Retain your original alignment */
     margin-bottom: 40px;
     font-size: 2.5rem; /* Ensure the size remains consistent */
-    background-color: #d4af37; /* Fallback for older browsers */
+    background-color: #d4af37;
+    margin-bottom: 60px; /* Adjust this value to control the spacing */
+
 }
-
-
-
 
 body.dark-mode .learn-more-btn {
     background: linear-gradient(to bottom, #2c3e50, #3498db);
 }
 
-body.dark-mode .service-card:hover {
-    transform: scale(1.05) !important; /* Ensure smooth scaling */
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2) !important; /* Uniform shadow all around */
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Smooth transition */
+body.dark-mode .services-modal .social-icons a {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background for dark mode */
+    -webkit-background-clip: text; /* For WebKit browsers */
+    background-clip: text; /* Standard background-clip */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: background 0.3s ease, color 0.3s ease;
 }
+
+body.dark-mode .services-modal .social-icons a:hover {
+    transform: rotate(20deg) scale(1.1);
+    background: linear-gradient(to bottom, #f0a5f5, #a5d4f5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+body.dark-mode .services-modal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
 /* ========== Credentials Section Styles ========== */
-/* Default state - no shadow */
 body.dark-mode .credential-card {
     position: relative;
     display: inline-block;
-    z-index: 1; /* Ensures the hover effect does not disrupt layout */
-    filter: none; /* No shadow by default */
-    transition: filter 0.3s ease-in-out; /* Smooth transition */
+    z-index: 1;
+    filter: none;
+    transition: filter 0.3s ease-in-out;
 }
 
-/* Hover state - pulsing shadow around visible logo edges */
 body.dark-mode .credential-card:hover {
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))
-        drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); /* Glow effect */
-    transition: filter 0.3s ease-in-out; /* Smooth animation */
-}
-/* Dark Mode Services Title Styling */
-body.dark-mode #services h2, 
-body.dark-mode .section-header {
-    color: #ffffff !important; /* White text color for dark mode */
-}
-/* ========== Bee Toggle Switch Styles ========== */
-/* Dark mode: text is white */
-body.dark-mode #toggle-text {
-    color: white !important; /* Ensure the text is white in dark mode */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-/* No additional pseudo-element needed */
-/* ========== service Section Styles ========== */
-
-body.dark-mode .services-modal .modal-content {
-    width: 60%;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 10px;
-    padding: 20px;
-    background: #1e1e1e; /* Dark modal background */
-    color: #e0e0e0; /* Light text */
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    transition: filter 0.3s ease-in-out;
 }
 
 /* ========== arrows /cred/projects/blog colorStyles ========== */
-/* Gradient styling for all arrows in dark mode */
 body.dark-mode #scroll-left-cred i,
 body.dark-mode #scroll-right-cred i,
 body.dark-mode #scroll-left i,
 body.dark-mode #scroll-right i,
 body.dark-mode #scroll-left-blog i,
 body.dark-mode #scroll-right-blog i {
-    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background */
-    -webkit-background-clip: text; /* Clip the gradient to the text for WebKit browsers */
-    background-clip: text; /* Standard property for non-WebKit browsers */
-    -webkit-text-fill-color: transparent; /* Transparent text for WebKit browsers */
-    color: transparent; /* Fallback for non-WebKit browsers */
-    font-size: 2rem; /* Adjust size if necessary */
-    transition: background 0.3s ease; /* Smooth transition */
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 2rem;
+    transition: background 0.3s ease;
 }
-
-
 
 /* -------------------------------------------
    Media Queries (Mobile Adjustments)
@@ -305,6 +299,10 @@ body.dark-mode #scroll-right-blog i {
 }
 
 
-
+@media (max-width: 768px) {
+    body.dark-mode .skills-wrapper {
+        display: none !important; /* Hides the 3D carousel container in dark mode */
+    }
+}
 
 
