@@ -4,7 +4,7 @@
 body {
     font-family: 'Exo 2', sans-serif;
     color: #333;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.6;
     text-align: justify;
     margin: 0;
@@ -655,12 +655,7 @@ section {
     color: #333;
 }
 
-.section-header {
-    text-align: left;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-    color: #333;
-}
+
 
 .service-card {
     background: linear-gradient(to bottom, #2c3e50, #3498db);
