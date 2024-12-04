@@ -1598,6 +1598,9 @@ footer .list-inline-item a i:hover {
         top: 80%; /* Ensure it's below the content */
         right: 40px !important; /* Move closer to the center */
     }
+    #credentials {
+        margin-top: -210px !important; /* Adjust this value to move it up further or less */
+    }
 
     #scroll-left-cred {
         position: absolute;
