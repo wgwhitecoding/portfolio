@@ -76,17 +76,24 @@ navLinks.forEach(link => {
 // =========================
 // Horizontal Scrolling with Arrows & Swipe (Generic Functions)
 // =========================
-function handleArrowScroll(container, leftArrow, rightArrow, step = null) {
+function handleArrowScroll(container, leftArrow, rightArrow, cardSelector) {
   if (!container || !leftArrow || !rightArrow) return;
 
-  const scrollStep = step || container.clientWidth;
+  const getScrollStep = () => {
+    const card = container.querySelector(cardSelector);
+    if (!card) return container.clientWidth;
+    const cardWidth = card.offsetWidth;
+    const cardMarginRight = parseInt(getComputedStyle(card).marginRight) || 0;
+    const cardMarginLeft = parseInt(getComputedStyle(card).marginLeft) || 0;
+    return cardWidth + cardMarginRight + cardMarginLeft; // Include card width and margins
+  };
 
   leftArrow.addEventListener("click", () => {
-    container.scrollBy({ left: -scrollStep, behavior: "smooth" });
+    container.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
   });
 
   rightArrow.addEventListener("click", () => {
-    container.scrollBy({ left: scrollStep, behavior: "smooth" });
+    container.scrollBy({ left: getScrollStep(), behavior: "smooth" });
   });
 
   // Touch-based swipe support
@@ -111,6 +118,7 @@ function handleArrowScroll(container, leftArrow, rightArrow, step = null) {
 
 // =========================
 // Determine Steps Based on Screen Size
+// (Retained in case you use it elsewhere)
 // =========================
 let blogStep, projectStep;
 if (window.innerWidth < 768) {
@@ -129,7 +137,7 @@ if (window.innerWidth < 768) {
 const scrollContainer = document.getElementById("scroll-container");
 const scrollLeft = document.getElementById("scroll-left");
 const scrollRight = document.getElementById("scroll-right");
-handleArrowScroll(scrollContainer, scrollLeft, scrollRight, projectStep);
+handleArrowScroll(scrollContainer, scrollLeft, scrollRight, ".project-card");
 
 // =========================
 // Skills Carousel for Small Devices
@@ -195,7 +203,7 @@ const blogLeft = document.getElementById("scroll-left-blog");
 const blogRight = document.getElementById("scroll-right-blog");
 
 if (blogContainer && blogLeft && blogRight) {
-  handleArrowScroll(blogContainer, blogLeft, blogRight, blogStep);
+  handleArrowScroll(blogContainer, blogLeft, blogRight, ".blog-card");
 
   let startBlogX;
   blogContainer.addEventListener("touchstart", (e) => {
@@ -225,7 +233,7 @@ const credLeftArrow = document.getElementById("scroll-left-cred");
 const credRightArrow = document.getElementById("scroll-right-cred");
 
 if (credentialsCarousel && credLeftArrow && credRightArrow) {
-  handleArrowScroll(credentialsCarousel, credLeftArrow, credRightArrow);
+  handleArrowScroll(credentialsCarousel, credLeftArrow, credRightArrow, ".credential-card"); // Adjust selector if needed
 
   let startCredX;
   credentialsCarousel.addEventListener("touchstart", (e) => {
