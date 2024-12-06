@@ -24,9 +24,9 @@ section {
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
-    outline: none; 
+    outline: none;
     box-shadow: none;
-    border: none; 
+    border: none;
 }
 
 .hamburger-icon i {
@@ -58,6 +58,7 @@ section {
     opacity: 0.8;
     background-size: cover;
 }
+
 /* ========== Hero Title Lines ========== */
 .hero-line1 {
     font-size: 3.5rem;
@@ -320,6 +321,10 @@ section {
 }
 
 /* ========== Full stack Skills Section Styles ========== */
+/* ======================================
+   Skills Section Styles
+   ====================================== */
+
 #skills {
     bottom: 60px;
 }
@@ -335,33 +340,35 @@ section {
     justify-content: space-between;
 }
 
+/* Using .col-md-6 as a flexible column at ~48% width */
 .col-md-6 {
     flex: 0 0 48%;
 }
 
 .skill-bar {
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     position: relative;
     width: 90%;
+    margin-bottom: 20px;
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .bar {
-    background-color: #000;
-    border-radius: 20px;
-    overflow: hidden;
+    display: flex;
+    position: relative;
     height: 30px;
     width: 100%;
     max-width: 100%;
     min-width: 15cm;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    display: flex;
+    /* Unusual unit, kept to avoid functional changes */
     margin-left: 10px;
+    background-color: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
 .bar:hover {
@@ -369,24 +376,24 @@ section {
 }
 
 .progress {
-    background: linear-gradient(to bottom, #2c3e50, #3498db);
-    height: 100%;
-    border-radius: 20px;
-    transition: width 1.5s ease;
-    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
     width: 0%;
+    height: 100%;
+    padding: 0 10px;
+    background: linear-gradient(to bottom, #2c3e50, #3498db);
+    border-radius: 20px;
     color: #fff;
+    transition: width 1.5s ease;
 }
 
 .skill-bar label {
     position: absolute;
-    left: 10px;
     top: 0;
     bottom: 0;
+    left: 10px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -396,9 +403,9 @@ section {
 
 .skill-percentage {
     position: absolute;
-    right: 10px;
     top: 0;
     bottom: 0;
+    right: 10px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -406,16 +413,20 @@ section {
     z-index: 3;
 }
 
-/* ========== Carousel Skills Section Styles ========== */
+
+/* ======================================
+   3D Skills Carousel (Primary Skills)
+   ====================================== */
+
 .skills-carousel-container {
-    perspective: 1000px;
-    overflow: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
     margin: 50px 0;
     padding: 0 20px;
-    position: relative;
     max-width: 100%;
+    perspective: 1000px;
+    overflow: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -431,10 +442,10 @@ section {
 .skills-carousel {
     display: flex;
     width: 800px;
-    transform-style: preserve-3d;
-    animation: rotate 70s infinite linear;
-    transform-origin: center right;
     margin-bottom: 40px;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    animation: rotate 70s infinite linear;
 }
 
 @keyframes rotate {
@@ -452,13 +463,13 @@ section {
 }
 
 .skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 0 0 auto;
     width: 100px;
     height: 100px;
     margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
     transition: transform 0.5s ease;
 }
@@ -472,21 +483,11 @@ section {
     transform: scale(1.2);
 }
 
-.skills-arrow-left {
-    position: absolute;
-    bottom: -50px;
-    left: 50px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: rgb(7, 6, 6);
-    display: none;
-}
-
+/* Arrows for the 3D carousel (hidden by default) */
+.skills-arrow-left,
 .skills-arrow-right {
     position: absolute;
     bottom: -50px;
-    right: 50px;
     font-size: 2rem;
     cursor: pointer;
     z-index: 1000;
@@ -494,7 +495,20 @@ section {
     display: none;
 }
 
-/* ========== Data Engineering Section Styles ========== */
+.skills-arrow-left {
+    left: 50px;
+}
+
+.skills-arrow-right {
+    right: 50px;
+}
+
+
+/* ======================================
+   Data Engineering Section Styles
+   Similar to #skills but with different progress color
+   ====================================== */
+
 #dataEngSkillBars {
     margin-top: 20px;
     display: flex;
@@ -511,28 +525,28 @@ section {
 }
 
 #dataEngSkillBars .skill-bar {
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     position: relative;
     width: 90%;
+    margin-bottom: 20px;
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 #dataEngSkillBars .bar {
-    background-color: #000;
-    border-radius: 20px;
-    overflow: hidden;
+    display: flex;
+    position: relative;
     height: 30px;
     width: 100%;
     max-width: 100%;
     min-width: 15cm;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    display: flex;
     margin-left: 10px;
+    background-color: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
 #dataEngSkillBars .bar:hover {
@@ -540,24 +554,24 @@ section {
 }
 
 #dataEngSkillBars .progress {
-    background-color: #007bff;
-    height: 100%;
-    border-radius: 20px;
-    transition: width 1.5s ease;
-    padding: 0 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
     width: 0%;
+    height: 100%;
+    padding: 0 10px;
+    background-color: #007bff;
+    border-radius: 20px;
     color: #fff;
+    transition: width 1.5s ease;
 }
 
 #dataEngSkillBars .skill-bar label {
     position: absolute;
-    left: 10px;
     top: 0;
     bottom: 0;
+    left: 10px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -567,9 +581,9 @@ section {
 
 #dataEngSkillBars .skill-percentage {
     position: absolute;
-    right: 10px;
     top: 0;
     bottom: 0;
+    right: 10px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -577,18 +591,24 @@ section {
     z-index: 3;
 }
 
+
+/* ======================================
+   Skills2 Section Styles (If Applicable)
+   Another 3D carousel variant
+   ====================================== */
+
 #skills2 {
-    perspective: 1000px;
-    overflow: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
     margin: 50px 0;
     padding: 0 20px;
-    position: relative;
     max-width: 100%;
+    perspective: 1000px;
+    overflow: hidden;
+    bottom: 140px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    bottom: 140px;
 }
 
 #skills2::-webkit-scrollbar {
@@ -598,23 +618,24 @@ section {
 #skills2 .skills-wrapper {
     margin-top: -100px;
 }
+
 #skills2 .skills-carousel {
     display: flex;
     width: 800px;
-    transform-style: preserve-3d;
-    animation: rotate 70s infinite linear;
-    transform-origin: center right;
     margin-bottom: 40px;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    animation: rotate 70s infinite linear;
 }
 
 #skills2 .skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 0 0 auto;
     width: 100px;
     height: 100px;
     margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transform: rotateY(calc(var(--i) * 70deg)) translateZ(400px);
     transition: transform 0.5s ease;
 }
@@ -628,24 +649,22 @@ section {
     transform: scale(1.2);
 }
 
-#skills2 .skills-arrow-left {
+#skills2 .skills-arrow-left,
+#skills2 .skills-arrow-right {
     position: absolute;
     bottom: -50px;
-    left: 50px;
     font-size: 2rem;
     cursor: pointer;
     z-index: 1000;
     color: rgb(7, 6, 6);
 }
 
+#skills2 .skills-arrow-left {
+    left: 50px;
+}
+
 #skills2 .skills-arrow-right {
-    position: absolute;
-    bottom: -50px;
     right: 50px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    color: rgb(7, 6, 6);
 }
 
 /* ========== Services Section Styles ========== */
@@ -654,8 +673,6 @@ section {
     background: none;
     color: #333;
 }
-
-
 
 .service-card {
     background: linear-gradient(to bottom, #2c3e50, #3498db);
@@ -716,10 +733,6 @@ section {
     color: #dfe6e9;
 }
 
-#services {
-    margin-top: -230px;
-    padding-top: 0;
-}
 
 .icon-animation {
     color: transparent;
@@ -764,7 +777,8 @@ section {
 }
 
 .services-modal .social-icons a {
-    display: inline-block; /* Ensures transform works correctly */
+    display: inline-block;
+    /* Ensures transform works correctly */
     font-size: 2.5rem;
     margin: 0 10px;
     color: #333;
@@ -782,9 +796,13 @@ section {
     margin-top: -100px;
     padding-top: 0;
 }
+
 .service-header {
-    margin-bottom: 60px; /* Adjust this value to control the spacing */
+    margin-bottom: 60px;
+
 }
+
+
 
 
 /* ========== Projects Section Styles ========== */
@@ -812,6 +830,13 @@ section {
 
 .scrolling-wrapper::-webkit-scrollbar {
     display: none;
+}
+
+.scrolling-wrapper::after {
+    content: "";
+    display: block;
+    width: 40px;
+    flex-shrink: 0;
 }
 
 .project-card {
@@ -879,7 +904,8 @@ section {
 }
 
 #projects {
-    margin-top: -80px !important; /* Adjust the value to move it up more or less */
+    margin-top: -80px !important;
+    /* Adjust the value to move it up more or less */
 }
 
 
@@ -975,19 +1001,6 @@ section {
     max-height: 300px;
     margin-bottom: 15px;
 }
-/* Remove these to let bootstrap handle stacking */
-/* .modal-body .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.modal-body .col-md-6 {
-    flex: 1;
-    min-width: 0;
-    margin-right: 15px;
-    margin-bottom: 10px;
-} */
 
 /* ========== Credentials Section Styles ========== */
 .credentials-wrapper {
@@ -1048,11 +1061,15 @@ section {
     font-size: 1.5rem;
     font-weight: 600;
 }
+
 #credentials {
-    margin-top: -210px; /* Adjust this value to move it up further or less */
+    margin-top: -210px;
+    /* Adjust this value to move it up further or less */
 }
+
 #scroll-container-cred {
-    margin-top: -10px !important; /* Adjust the value to move it closer to the header */
+    margin-top: -10px !important;
+    /* Adjust the value to move it closer to the header */
 }
 
 
@@ -1174,8 +1191,12 @@ section {
     font-weight: 600;
 }
 
+.scrolling-wrapper-blog .blog-item:last-child {
+    margin-right: 40px;
+}
+
 #blog {
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 }
 
 .arrow {
@@ -1198,7 +1219,7 @@ section {
 
 /* ========== Footer Styles ========== */
 footer {
-    background: linear-gradient(to bottom,  #343434, #1c1c1c);
+    background: linear-gradient(to bottom, #343434, #1c1c1c);
     color: #fff;
     padding: 40px 0;
 }
@@ -1223,6 +1244,7 @@ footer .col-md-4:nth-child(3) {
     position: relative;
     left: 4cm;
 }
+
 footer .list-inline-item a i {
     background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
     -webkit-background-clip: text;
@@ -1253,7 +1275,8 @@ footer .list-inline-item a i:hover {
 }
 
 #blog {
-    margin-top: -40px; /* Adjust this value to move the section up more or less */
+    margin-top: -40px;
+    /* Adjust this value to move the section up more or less */
 }
 
 
@@ -1495,11 +1518,14 @@ footer .list-inline-item a i:hover {
     }
 
     /* ========== service Media Queries ========== */
-        #services {
-            position: relative; /* Ensures positioning can be adjusted */
-            top: -30px; /* Moves the Services section upwards */
-            padding-top: 0; /* Removes any extra padding at the top */
-        }
+    #services {
+        position: relative;
+        /* Ensures positioning can be adjusted */
+        top: -30px;
+        /* Moves the Services section upwards */
+        padding-top: 0;
+        /* Removes any extra padding at the top */
+    }
 
     /* Responsive Adjustments for Services Section */
     @media (max-width: 768px) {
@@ -1577,39 +1603,52 @@ footer .list-inline-item a i:hover {
     .credentials-wrapper {
         position: relative;
     }
+
     #credentials {
-        margin-top: -50px !important; /* Push up the section */
-        padding-top: 0 !important; /* Remove unnecessary padding */
+        margin-top: -50px !important;
+        /* Push up the section */
+        padding-top: 0 !important;
+        /* Remove unnecessary padding */
     }
 
     /* Reduce spacing between the title and the cards for small devices */
     #credentials .container h2 {
-        margin-bottom: -60px; /* Reduce space below the title */
+        margin-bottom: -60px;
+        /* Reduce space below the title */
     }
-    
-} 
+
+}
 
 /* ========== credentials arrows Media Queries ========== */
 @media (max-width: 768px) {
     #scroll-right-cred {
         position: absolute;
-        top: 80%; /* Ensure it's below the content */
-        right: 40px !important; /* Move closer to the center */
+        top: 80%;
+        /* Ensure it's below the content */
+        right: 40px !important;
+        /* Move closer to the center */
     }
+
     #credentials {
-        margin-top: -210px !important; /* Adjust this value to move it up further or less */
+        margin-top: -210px !important;
+        /* Adjust this value to move it up further or less */
     }
 
     #scroll-left-cred {
         position: absolute;
-        top: 80%; /* Ensure it's below the content */
-        left: 40px !important; /* Keep the left arrow in place */
+        top: 80%;
+        /* Ensure it's below the content */
+        left: 40px !important;
+        /* Keep the left arrow in place */
     }
 }
+
 @media (min-width: 769px) {
+
     #scroll-right-cred,
     #scroll-left-cred {
-        display: none; /* Hide arrows */
+        display: none;
+        /* Hide arrows */
     }
 }
 
@@ -1617,65 +1656,82 @@ footer .list-inline-item a i:hover {
 @media (max-width: 768px) {
     #scroll-right {
         position: absolute;
-        top: 100%; /* Ensures it's below the content */
-        right: 40px !important; /* Move the arrow closer to the center */
+        top: 100%;
+        /* Ensures it's below the content */
+        right: 40px !important;
+        /* Move the arrow closer to the center */
     }
 
     #scroll-left {
         position: absolute;
-        top: 100%; /* Ensures it's below the content */
-        left: 40px !important; /* Keep the left arrow in place */
+        top: 100%;
+        /* Ensures it's below the content */
+        left: 40px !important;
+        /* Keep the left arrow in place */
     }
 }
+
 @media (max-width: 768px) {
     #projects {
-        margin-top: -90px; /* Smaller adjustment for mobile screens */
-        padding-top: 0; /* Optional: Remove top padding */
+        margin-top: -90px;
+        /* Smaller adjustment for mobile screens */
+        padding-top: 0;
+        /* Optional: Remove top padding */
     }
 }
+
 @media (max-width: 768px) {
     #projects .container h2 {
-        margin-bottom: 5px; /* Smaller space for mobile */
+        margin-bottom: 5px;
+        /* Smaller space for mobile */
     }
 
     #projects .projects-wrapper {
-        margin-top: -30px; /* Reduce space even further on mobile */
+        margin-top: -30px;
+        /* Reduce space even further on mobile */
     }
 }
+
 /* ========== blog arrows Media Queries ========== */
 @media (max-width: 768px) {
-    #blog {
-        margin-bottom: 60px !important; /* Adds space between blog and footer */
-    }
+    
 
     footer {
-        padding-top: 20px !important; /* Additional padding at the top of the footer */
+        padding-top: 20px !important;
+        /* Additional padding at the top of the footer */
     }
 }
+
 /* Adjust Blog Cards Position */
 @media (max-width: 768px) {
     #blog .scrolling-wrapper-blog {
-        margin-top: -10px !important; /* Move blog cards closer to the header */
+        margin-top: -10px !important;
+        /* Move blog cards closer to the header */
     }
 }
 
 
 @media (max-width: 768px) {
-    #scroll-right-blog{
+    #scroll-right-blog {
         position: absolute;
-        top: 100%; /* Ensure it's below the content */
-        right: 40px !important; /* Move closer to the center */
+        top: 100%;
+        /* Ensure it's below the content */
+        right: 40px !important;
+        /* Move closer to the center */
     }
 
     #scroll-left-blog {
         position: absolute;
-        top: 100%; /* Ensure it's below the content */
-        left: 40px !important; /* Keep the left arrow in place */
+        top: 100%;
+        /* Ensure it's below the content */
+        left: 40px !important;
+        /* Keep the left arrow in place */
     }
 }
 
 /* Media Query for iPads in Portrait Mode (768px to 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+
     /* Adjustments for iPads in portrait mode */
     .hero-section {
         padding: 60px 20px;
@@ -1712,6 +1768,7 @@ footer .list-inline-item a i:hover {
 
 /* Media Query for Desktop and Larger Screens (Above 1024px) */
 @media (min-width: 1025px) {
+
     /* General large screen styling */
     .hero-section {
         padding: 80px 40px;
@@ -1742,7 +1799,7 @@ footer .list-inline-item a i:hover {
     footer {
         padding: 60px 40px;
     }
-    
+
 }
 
 /* General Adjustments for All Screens Above 768px */
@@ -1775,43 +1832,59 @@ footer .list-inline-item a i:hover {
 
 @media (min-width: 1024px) and (max-width: 1366px) {
     .bar {
-        min-width: 11cm; 
+        min-width: 11cm;
     }
-    #dataEngSkillBars .bar  {
-        min-width: 11cm; /* Adjust width */
+
+    #dataEngSkillBars .bar {
+        min-width: 11cm;
+        /* Adjust width */
     }
+
     .skills-arrow-left,
     .skills-arrow-right {
         display: none;
     }
+
     #scroll-right {
         position: absolute;
-        top: 100%; /* Ensures it's below the content */
-        right: 40px !important; /* Move the arrow closer to the center */
+        top: 100%;
+        /* Ensures it's below the content */
+        right: 40px !important;
+        /* Move the arrow closer to the center */
     }
 
     #scroll-left {
         position: absolute;
-        top: 100%; /* Ensures it's below the content */
-        left: 40px !important; /* Keep the left arrow in place */
+        top: 100%;
+        /* Ensures it's below the content */
+        left: 40px !important;
+        /* Keep the left arrow in place */
     }
-    #scroll-right-blog{
+
+    #scroll-right-blog {
         position: absolute;
-        top: 100%; /* Ensure it's below the content */
-        right: 40px !important; /* Move closer to the center */
+        top: 100%;
+        /* Ensure it's below the content */
+        right: 40px !important;
+        /* Move closer to the center */
     }
 
     #scroll-left-blog {
         position: absolute;
-        top: 100%; /* Ensure it's below the content */
-        left: 40px !important; /* Keep the left arrow in place */
+        top: 100%;
+        /* Ensure it's below the content */
+        left: 40px !important;
+        /* Keep the left arrow in place */
     }
+
     .service-card {
         height: auto;
         margin-bottom: 20px;
     }
+
     #services .service-card {
-        height: 270px; /* Set a height that makes it larger */
+        height: 270px;
+        /* Set a height that makes it larger */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1820,37 +1893,52 @@ footer .list-inline-item a i:hover {
 
 @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
     .bar {
-        min-width: 13cm; /* Adjust width */
+        min-width: 13cm;
+        /* Adjust width */
     }
+
     #dataEngSkillBars .bar {
-        min-width: 13cm; /* Adjust width */
+        min-width: 13cm;
+        /* Adjust width */
     }
+
     .skills-arrow-left,
     .skills-arrow-right {
         display: none;
     }
+
     #scroll-right {
         position: absolute;
-        top: 100%; /* Ensures it's below the content */
-        right: 40px !important; /* Move the arrow closer to the center */
+        top: 100%;
+        /* Ensures it's below the content */
+        right: 40px !important;
+        /* Move the arrow closer to the center */
     }
 
     #scroll-left {
         position: absolute;
-        top: 100%; /* Ensures it's below the content */
-        left: 40px !important; /* Keep the left arrow in place */
+        top: 100%;
+        /* Ensures it's below the content */
+        left: 40px !important;
+        /* Keep the left arrow in place */
     }
+
     #scroll-right-blog {
         position: absolute;
-        top: 100%; /* Ensure it's below the content */
-        right: 40px !important; /* Move closer to the center */
+        top: 100%;
+        /* Ensure it's below the content */
+        right: 40px !important;
+        /* Move closer to the center */
     }
 
     #scroll-left-blog {
         position: absolute;
-        top: 100%; /* Ensure it's below the content */
-        left: 40px !important; /* Keep the left arrow in place */
+        top: 100%;
+        /* Ensure it's below the content */
+        left: 40px !important;
+        /* Keep the left arrow in place */
     }
+
     .service-card {
         height: auto;
         margin-bottom: 20px;
@@ -1858,37 +1946,53 @@ footer .list-inline-item a i:hover {
 }
 
 @media (max-width: 576px) {
+
     /* This targets all .modal-header elements, ensuring the layout changes apply to every modal */
     .modal-header {
-      position: relative;
-      flex-direction: column;
-      align-items: flex-start;
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     /* Keep the close button in the top-right corner for all modals */
     .modal-header .btn-close {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
     }
-  
+
     /* Stack the links vertically for all modals and make them full width */
     .modal-header .d-flex.align-items-center {
-      flex-direction: column;
-      align-items: stretch;
-      margin-top: 1rem;
-      width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 1rem;
+        width: 100%;
     }
-  
+
     .modal-header .d-flex.align-items-center a {
-      display: block;
-      width: 100%;
-      margin-bottom: 0.5rem;
-      margin-right: 0 !important;
-      text-align: center;
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-right: 0 !important;
+        text-align: center;
     }
-  }
-  
-  
-  
-  
+}
+
+@media (max-width: 768px) {
+    /* Push the Services section down on small screens */
+    #services {
+        margin-top: 20px !important; /* Adjust value as needed */
+    }
+
+    /* Push the Blog section down on small screens */
+    #blog {
+        margin-top: 20px !important; /* Adjust value as needed */
+    }
+}
+@media (max-width: 768px) {
+    /* Slightly lower the arrows for projects and blog on small screens */
+    .projects-wrapper .arrow,
+    #blog .arrow {
+        bottom: 5%; /* Adjust this value as needed */
+    }
+}
