@@ -1858,3 +1858,38 @@ footer .list-inline-item a i:hover {
         margin-bottom: 20px;
     }
 }
+
+@media (max-width: 576px) {
+    /* Ensure the modal header is relatively positioned so the close button can be placed absolutely */
+    #projectModal1 .modal-header {
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    /* Position the close button in the top-right corner */
+    #projectModal1 .modal-header .btn-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  
+    /* Stack the links vertically, make them full width, and remove extra margins */
+    #projectModal1 .modal-header .d-flex.align-items-center {
+      flex-direction: column;
+      align-items: stretch; /* Ensures links stretch the full available width */
+      margin-top: 1rem;
+      width: 100%;
+    }
+  
+    #projectModal1 .modal-header .d-flex.align-items-center a {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      margin-right: 0 !important; /* Override .me-2 and .me-3 margins */
+      text-align: center; /* Center the link text */
+    }
+  }
+  
+  
+  
