@@ -832,7 +832,12 @@ section {
     display: none;
 }
 
-
+.scrolling-wrapper::after {
+    content: "";
+    display: block;
+    width: 40px;
+    flex-shrink: 0;
+}
 
 .project-card {
     position: relative;
@@ -1186,6 +1191,9 @@ section {
     font-weight: 600;
 }
 
+.scrolling-wrapper-blog .blog-item:last-child {
+    margin-right: 40px;
+}
 
 #blog {
     margin-bottom: 50px;
