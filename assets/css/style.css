@@ -922,21 +922,6 @@ section {
     text-align: justify;
 }
 
-.modal-body .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.modal-body .col-md-6 {
-    flex: 1;
-    min-width: 0;
-    margin-right: 15px;
-    margin-bottom: 10px;
-}
-
 .modal-body .col-4 {
     padding: 10px;
 }
@@ -990,6 +975,19 @@ section {
     max-height: 300px;
     margin-bottom: 15px;
 }
+/* Remove these to let bootstrap handle stacking */
+/* .modal-body .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.modal-body .col-md-6 {
+    flex: 1;
+    min-width: 0;
+    margin-right: 15px;
+    margin-bottom: 10px;
+} */
 
 /* ========== Credentials Section Styles ========== */
 .credentials-wrapper {
@@ -1860,36 +1858,37 @@ footer .list-inline-item a i:hover {
 }
 
 @media (max-width: 576px) {
-    /* Ensure the modal header is relatively positioned so the close button can be placed absolutely */
-    #projectModal1 .modal-header {
+    /* This targets all .modal-header elements, ensuring the layout changes apply to every modal */
+    .modal-header {
       position: relative;
       flex-direction: column;
       align-items: flex-start;
     }
   
-    /* Position the close button in the top-right corner */
-    #projectModal1 .modal-header .btn-close {
+    /* Keep the close button in the top-right corner for all modals */
+    .modal-header .btn-close {
       position: absolute;
       top: 0.5rem;
       right: 0.5rem;
     }
   
-    /* Stack the links vertically, make them full width, and remove extra margins */
-    #projectModal1 .modal-header .d-flex.align-items-center {
+    /* Stack the links vertically for all modals and make them full width */
+    .modal-header .d-flex.align-items-center {
       flex-direction: column;
-      align-items: stretch; /* Ensures links stretch the full available width */
+      align-items: stretch;
       margin-top: 1rem;
       width: 100%;
     }
   
-    #projectModal1 .modal-header .d-flex.align-items-center a {
+    .modal-header .d-flex.align-items-center a {
       display: block;
       width: 100%;
       margin-bottom: 0.5rem;
-      margin-right: 0 !important; /* Override .me-2 and .me-3 margins */
-      text-align: center; /* Center the link text */
+      margin-right: 0 !important;
+      text-align: center;
     }
   }
+  
   
   
   
