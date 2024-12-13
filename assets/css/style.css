@@ -1997,7 +1997,6 @@ footer .list-inline-item a i:hover {
     }
 }
   
-
 /* ========== General Dark Mode Styles ========== */
 body.dark-mode {
     background: linear-gradient(to bottom, #211f1f, #181717);
@@ -2280,7 +2279,7 @@ body.dark-mode #scroll-right-blog i {
 @media (max-width: 768px) {
     /* Dark mode state */
     body.dark-mode .hamburger-icon i {
-        color: transparent;
+        color: transparent;  /* Make original icon color transparent */
         background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
         -webkit-background-clip: text;
         background-clip: text;
