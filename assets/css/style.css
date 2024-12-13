@@ -1997,5 +1997,300 @@ footer .list-inline-item a i:hover {
     }
 }
   
-  
+
+/* ========== General Dark Mode Styles ========== */
+body.dark-mode {
+    background: linear-gradient(to bottom, #211f1f, #181717);
+    color: white;
+}
+/* ========== Navbar in Dark Mode ========== */
+body.dark-mode .navbar-light.bg-light {
+    background-color: #333 !important;
+}
+
+body.dark-mode .navbar-light .navbar-brand,
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: white !important;
+}
+/* ========== Bee Toggle Switch Styles ========== */
+body.dark-mode #toggle-text {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+body.dark-mode .bee-switch input:checked+.slider {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); 
+}
+
+/* ========== Hero Section in Dark Mode ========== */
+body.dark-mode .hero-section {
+    background: linear-gradient(to bottom, #211f1f, #181717); /* Darker gradient */
+}
+
+body.dark-mode .hero-social-links a {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background for dark mode */
+    -webkit-background-clip: text; /* For WebKit browsers */
+    background-clip: text; /* Standard background-clip */
+    -webkit-text-fill-color: transparent; /* Ensures text uses gradient for WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+}
+
+body.dark-mode .hero-title h1,
+body.dark-mode .hero-subtitle {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);/* Gradient background */
+    -webkit-background-clip: text; /* Clips the background to the text for WebKit browsers */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Ensures gradient text in WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+
+/* ========== Modal Styles in Dark Mode ========== */
+body.dark-mode .modal-content {
+    background-color: #333; /* Dark background for modals */
+    color: white; /* Light text in modals */
+}
+
+body.dark-mode .modal-content .overlay {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay for modals */
+}
+
+/* ========== Full-Stack Skill Bars in Dark Mode ========== */
+body.dark-mode #fullStackSkillBars .bar {
+    background: linear-gradient(to bottom,  #343434, #1c1c1c);
+}
+
+
+/* ========== Data Engineering Skill Bars in Dark Mode ========== */
+body.dark-mode #dataEngSkillBars .bar {
+    background: linear-gradient(to bottom,  #343434, #1c1c1c);
+}
+
+body.dark-mode #dataEngSkillBars .progress {
+    background-color: #1a73e8; /* Bright blue progress bar */
+}
+
+/* ========== Skill Labels and Percentages in Dark Mode ========== */
+body.dark-mode .skill-bar label,
+body.dark-mode .skill-percentage {
+    color: white; /* Light text for skill labels and percentages */
+}
+
+/* ========== Skills Carousel in Dark Mode ========== */
+body.dark-mode .skills-carousel {
+    background-color: transparent; /* Transparent background for carousel */
+}
+
+body.dark-mode .skill-item img {
+    filter: brightness(0.9); /* Slightly darkened images for consistency */
+}
+
+/* ========== service Section Styles ========== */
+body.dark-mode .services-modal .modal-content {
+    width: 60%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    background: #1e1e1e; /* Dark modal background */
+    color: #e0e0e0; /* Light text */
+}
+body.dark-mode #services h2, 
+body.dark-mode .section-header {
+    color: #ffffff !important; /* White text color for dark mode */
+}
+body.dark-mode .service-card {
+    background: linear-gradient(to bottom,  #343434, #1c1c1c);
+    border-radius: 10px;
+    color: #e0e0e0; /* Light text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 220px; /* Compact card height */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.dark-mode .service-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+
+body.dark-mode .learn-more-btn {
+    background: linear-gradient(to bottom, #2c3e50, #3498db);
+}
+
+body.dark-mode .services-modal .social-icons a {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5); /* Gradient background for dark mode */
+    -webkit-background-clip: text; /* For WebKit browsers */
+    background-clip: text; /* Standard background-clip */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .services-modal .social-icons a:hover {
+    transform: rotate(20deg) scale(1.1);
+    background: linear-gradient(to bottom, #f0a5f5, #a5d4f5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+body.dark-mode .services-modal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* ========== Credentials Section Styles ========== */
+body.dark-mode .credential-card {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    filter: none;
+    transition: filter 0.3s ease-in-out;
+}
+
+body.dark-mode .credential-card:hover {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    transition: filter 0.3s ease-in-out;
+}
+
+/* ========== arrows /cred/projects/blog colorStyles ========== */
+body.dark-mode #scroll-left-cred i,
+body.dark-mode #scroll-right-cred i,
+body.dark-mode #scroll-left i,
+body.dark-mode #scroll-right i,
+body.dark-mode #scroll-left-blog i,
+body.dark-mode #scroll-right-blog i {
+    background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 2rem;
+    transition: background 0.3s ease;
+}
+
+/* -------------------------------------------
+   Media Queries (Mobile Adjustments)
+------------------------------------------- */
+@media (max-width: 768px) {
+    body.dark-mode .modal-dialog {
+        max-width: 90%;
+    }
+
+    body.dark-mode .modal-content {
+        max-height: 90vh;
+        padding: 15px;
+    }
+
+    body.dark-mode .modal-title {
+        font-size: 1.5rem;
+    }
+
+    body.dark-mode .modal-body img {
+        max-height: 200px;
+    }
+
+    body.dark-mode .about-content {
+        flex-direction: column;
+    }
+
+    body.dark-mode .about-paragraph {
+        margin-bottom: 20px;
+    }
+
+    body.dark-mode .col-md-6 {
+        flex: 0 0 100%;
+    }
+
+    body.dark-mode .skills-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    body.dark-mode .skills-arrow {
+        top: 100%;
+        font-size: 1.5rem;
+        color: #000;
+        position: absolute;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    body.dark-mode .skills-left-arrow {
+        left: 120px;
+    }
+
+    body.dark-mode .skills-right-arrow {
+        right: 120px;
+    }
+
+    body.dark-mode .skills-carousel {
+        animation: none;
+        transform: none;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+    }
+
+    body.dark-mode .skills-carousel-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    body.dark-mode .skill-item {
+        width: 100px;
+        height: 100px;
+        transform: none;
+        margin: 0 10px;
+    }
+
+    body.dark-mode .skill-item img {
+        width: 120px;
+        height: auto;
+    }
+
+    body.dark-mode .skill-bar {
+        width: 60%;
+    }
+}
+
+@media (min-width: 769px) {
+    body.dark-mode .skills-arrow {
+        display: none;
+    }
+}
+
+
+
+/* Apply only for small screens where the navbar toggler (hamburger) is visible */
+@media (max-width: 768px) {
+    /* Dark mode state */
+    body.dark-mode .hamburger-icon i {
+        color: transparent;
+        background: linear-gradient(to bottom, #6a9fb5, #d4a5a5);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body.dark-mode .skills-wrapper {
+        display: none !important;
+    }
+}  
   
