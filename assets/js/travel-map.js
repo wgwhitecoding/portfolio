@@ -166,6 +166,75 @@ resetInactivityTimeout();
 
 
 
+const canvas = document.getElementById("bubbleCanvas");
+const ctx = canvas.getContext("2d");
+
+// Resize canvas to match section
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resizeCanvas(); // Initial sizing
+window.addEventListener("resize", resizeCanvas); // Resize on window change
+
+// Bubble Class
+class Bubble {
+  constructor() {
+    this.x = Math.random() * canvas.width; // Random horizontal position
+    this.y = canvas.height + Math.random() * 200; // Start below the canvas
+    this.size = Math.random() * 20 + 10; // Random size (10 to 30px)
+    this.speed = Math.random() * 1 + 0.5; // Random upward speed
+  }
+
+  move() {
+    this.y -= this.speed; // Move the bubble upward
+    if (this.y < -this.size) {
+      // Reset bubble to the bottom when it goes off-screen
+      this.y = canvas.height + this.size;
+      this.x = Math.random() * canvas.width;
+    }
+  }
+
+  display() {
+    ctx.fillStyle = "rgba(255, 255, 255, 0.3)"; // Semi-transparent white
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size / 2, 0, Math.PI * 2); // Draw circle
+    ctx.fill();
+  }
+}
+
+// Initialize bubbles
+const bubbles = [];
+for (let i = 0; i < 50; i++) {
+  bubbles.push(new Bubble());
+}
+
+// Animate the bubbles
+function animateBubbles() {
+  // Check canvas size
+  if (canvas.width === 0 || canvas.height === 0) {
+    console.error("Canvas size is zero. Check layout or CSS.");
+    return;
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+  // Update and draw each bubble
+  bubbles.forEach((bubble) => {
+    bubble.move();
+    bubble.display();
+  });
+
+  requestAnimationFrame(animateBubbles); // Continue the animation
+}
+
+// Start animation
+animateBubbles();
+
+
+
+
+
 
 
 

@@ -147,3 +147,9 @@ scrollableElement.addEventListener('scroll', () => {
   const thumbHeight = Math.max(containerHeight / contentHeight * containerHeight, 50); // At least 50px
   document.documentElement.style.setProperty('--thumb-height', `${thumbHeight}px`);
 });
+
+
+
+
+
+
