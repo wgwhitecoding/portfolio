@@ -10,8 +10,10 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
   geocoder: false,
   navigationHelpButton: false,
   sceneModePicker: false,
+  fullscreenButton: false, // Added to remove the fullscreen icon
   imageryProvider: new Cesium.IonImageryProvider({ assetId: 2 }),
-  terrainProvider: Cesium.createWorldTerrain()
+  terrainProvider: Cesium.createWorldTerrain(),
+  creditContainer: document.createElement('div'),
 });
 
 // Path to the GeoJSON file
@@ -93,60 +95,75 @@ function addPolygonToGlobe(geometry, name) {
 
 // Set the globe to rotate initially
 viewer.scene.camera.setView({
-  destination: Cesium.Cartesian3.fromDegrees(0, 20, 15000000)
+  destination: Cesium.Cartesian3.fromDegrees(0, 20, 25000000)
 });
 let isUserInteracting = false;
 
 // Stop rotation when user interacts
 viewer.scene.screenSpaceCameraController.enableRotate = true;
 
-// Add scroll-locking behavior
-let isGlobeClicked = false;
 const cesiumContainer = document.getElementById('cesiumContainer');
 
 // Enable interaction only after the globe is clicked
 cesiumContainer.addEventListener('mousedown', () => {
-  isGlobeClicked = true;
+  isUserInteracting = true;
   viewer.scene.screenSpaceCameraController.enableInputs = true;
 });
 
 // Disable interaction when clicking outside the globe
 document.addEventListener('click', (event) => {
   if (!cesiumContainer.contains(event.target)) {
-    isGlobeClicked = false;
+    isUserInteracting = false;
     viewer.scene.screenSpaceCameraController.enableInputs = false;
   }
 });
 
-// Stop rotation on hover and resume when mouse leaves globe container
+// Stop rotation on hover and reset instantly when leaving
 cesiumContainer.addEventListener('mouseenter', () => {
   isUserInteracting = true;
-  clearTimeout(inactivityTimeout);
+  viewer.clock.onTick.removeEventListener(rotateGlobe);
 });
 
 cesiumContainer.addEventListener('mouseleave', () => {
   isUserInteracting = false;
-  resetInactivityTimeout();
+
+  // Reset the globe instantly when leaving the container
+  viewer.scene.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(0, 20, 25000000),
+    duration: 2,
+    complete: () => {
+      viewer.clock.onTick.addEventListener(rotateGlobe); // Resume rotation after reset
+    }
+  });
 });
 
+// Rotate the globe slowly when not interacting
+function rotateGlobe() {
+  if (!isUserInteracting) {
+    viewer.scene.camera.rotate(Cesium.Cartesian3.UNIT_Z, -0.001); // Slow rotation
+  }
+}
+
+// Handle inactivity after 30 seconds
 let inactivityTimeout;
 function resetInactivityTimeout() {
   clearTimeout(inactivityTimeout);
   inactivityTimeout = setTimeout(() => {
     if (!isUserInteracting) {
       viewer.scene.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(0, 20, 15000000),
+        destination: Cesium.Cartesian3.fromDegrees(0, 20, 25000000),
         duration: 3
       });
     }
-  }, 30000);
+  }, 30000); // 30 seconds
 }
 
-viewer.clock.onTick.addEventListener(() => {
-  if (!isUserInteracting) {
-    viewer.scene.camera.rotate(Cesium.Cartesian3.UNIT_Z, -0.001); // Slow rotation
-  }
-});
+// Initialize rotation and inactivity timeout
+viewer.clock.onTick.addEventListener(rotateGlobe);
+resetInactivityTimeout();
+
+
+
 
 
 

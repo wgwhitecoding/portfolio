@@ -134,3 +134,16 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   });
+
+
+
+  const scrollableElement = document.querySelector('.scroll-content'); // Replace with your scrollable container
+
+scrollableElement.addEventListener('scroll', () => {
+  const contentHeight = scrollableElement.scrollHeight; // Total scrollable height
+  const containerHeight = scrollableElement.clientHeight; // Visible container height
+
+  // Calculate the thumb height based on the scroll ratio
+  const thumbHeight = Math.max(containerHeight / contentHeight * containerHeight, 50); // At least 50px
+  document.documentElement.style.setProperty('--thumb-height', `${thumbHeight}px`);
+});
