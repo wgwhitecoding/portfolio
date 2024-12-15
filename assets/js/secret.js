@@ -35,45 +35,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const aboutSection = document.querySelector("#about");
-  const aboutHeader = document.querySelector("#about h2");
-  const aboutTextElements = document.querySelectorAll("#about .about-text p");
-  const aboutImage = document.querySelector("#about .about-image img");
+  // Function to handle animations for a section
+  function animateSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    const header = section.querySelector("h2");
+    const textElements = section.querySelectorAll(".about-text p, .scuba-fun-text p");
+    const image = section.querySelector(".about-image img, .scuba-fun-image img");
 
-  // Create an Intersection Observer
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Animate the header
-          aboutHeader.style.opacity = "1";
-          aboutHeader.style.transform = "translateY(0)";
+    // Create Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate Header
+            if (header) {
+              header.style.opacity = "1";
+              header.style.transform = "translateY(0)";
+            }
 
-          // Animate each paragraph with a delay
-          aboutTextElements.forEach((element, index) => {
-            setTimeout(() => {
-              element.style.opacity = "1";
-              element.style.transform = "translateY(0)";
-            }, index * 300); // Staggered delay for each paragraph
-          });
+            // Animate Paragraphs with staggered delays
+            textElements.forEach((element, index) => {
+              setTimeout(() => {
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
+              }, index * 300); // Delay of 300ms between each paragraph
+            });
 
-          // Animate the image
-          setTimeout(() => {
-            aboutImage.style.opacity = "1";
-            aboutImage.style.transform = "translateY(0)";
-          }, 600);
+            // Animate Image
+            if (image) {
+              setTimeout(() => {
+                image.style.opacity = "1";
+                image.style.transform = "translateY(0)";
+              }, 600); // Delayed image animation
+            }
 
-          observer.unobserve(aboutSection); 
-        }
-      });
-    },
-    {
-      threshold: 0.3,
-    }
-  );
+            observer.unobserve(section); // Stop observing once animation is triggered
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is visible
+    );
 
-  observer.observe(aboutSection);
+    observer.observe(section); // Start observing the section
+  }
+
+  // Animate both sections: #about and #scuba-fun
+  animateSection("#about");
+  animateSection("#scuba-fun");
 });
+
 
 
 

@@ -232,6 +232,28 @@ function animateBubbles() {
 animateBubbles();
 
 
+// Scroll Trigger for Typing Animation
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector("#scuba-diving");
+  const typingText = document.querySelector(".typing-animation .typing-text");
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (isInViewport(section)) {
+      typingText.style.animation = "typing 4s steps(60, end), blink 0.5s step-end infinite alternate";
+    }
+  });
+});
+
+
+
+
+
+
 
 
 
