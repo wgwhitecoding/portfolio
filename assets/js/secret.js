@@ -35,55 +35,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Function to handle animations for a section
   function animateSection(sectionId) {
     const section = document.querySelector(sectionId);
     const header = section.querySelector("h2");
-    const textElements = section.querySelectorAll(".about-text p, .scuba-fun-text p");
-    const image = section.querySelector(".about-image img, .scuba-fun-image img");
+    const textElements = section.querySelectorAll(
+      ".about-text p, .scuba-fun-text p, .tech-journey-text p, .travel-chronicles-text p"
+    );
+    const image = section.querySelector(
+      ".about-image img, .scuba-fun-image img, .tech-journey-image img, .travel-chronicles-image img"
+    );
 
-    // Create Intersection Observer
     const observer = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Animate Header
             if (header) {
               header.style.opacity = "1";
               header.style.transform = "translateY(0)";
             }
 
-            // Animate Paragraphs with staggered delays
             textElements.forEach((element, index) => {
               setTimeout(() => {
                 element.style.opacity = "1";
                 element.style.transform = "translateY(0)";
-              }, index * 300); // Delay of 300ms between each paragraph
+              }, index * 300);
             });
 
-            // Animate Image
             if (image) {
               setTimeout(() => {
                 image.style.opacity = "1";
                 image.style.transform = "translateY(0)";
-              }, 600); // Delayed image animation
+              }, 600);
             }
 
-            observer.unobserve(section); // Stop observing once animation is triggered
+            observer.unobserve(section);
           }
         });
       },
-      { threshold: 0.3 } // Trigger when 30% of the section is visible
+      { threshold: 0.3 }
     );
 
-    observer.observe(section); // Start observing the section
+    observer.observe(section);
   }
 
-  // Animate both sections: #about and #scuba-fun
   animateSection("#about");
   animateSection("#scuba-fun");
+  animateSection("#tech-journey");
+  animateSection("#travel-chronicles");
 });
-
 
 
 
