@@ -63,16 +63,16 @@ document.addEventListener("DOMContentLoaded", () => {
             aboutImage.style.transform = "translateY(0)";
           }, 600);
 
-          observer.unobserve(aboutSection); // Stop observing after the animation is triggered
+          observer.unobserve(aboutSection); 
         }
       });
     },
     {
-      threshold: 0.3, // Trigger when 30% of the section is visible
+      threshold: 0.3,
     }
   );
 
-  observer.observe(aboutSection); // Start observing the About Me section
+  observer.observe(aboutSection);
 });
 
 
@@ -89,14 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
       effect: "coverflow",
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: 3, /* Fixed number for consistent looping */
-      loop: true, /* Enable infinite looping */
+      slidesPerView: 3,
+      loop: true,
       coverflowEffect: {
-        rotate: 50,      /* Adjusted rotation for smoother effect */
-        stretch: 0,      /* No stretching */
-        depth: 200,      /* Adjusted depth for better visibility */
-        modifier: 1,     /* Balanced modifier */
-        slideShadows: false, /* Disable slide shadows for clarity */
+        rotate: 50,
+        stretch: 0,
+        depth: 200, 
+        modifier: 1, 
+        slideShadows: false,
       },
       pagination: {
         el: ".swiper-pagination",
@@ -110,25 +110,25 @@ document.addEventListener("DOMContentLoaded", function () {
         enabled: true,
       },
       autoplay: {
-        delay: 7000, /* Delay between transitions (7 seconds) */
-        disableOnInteraction: false, /* Continue autoplay after interactions */
-        pauseOnMouseEnter: true, /* Pause autoplay on hover */
+        delay: 7000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
       breakpoints: {
         1400: {
-          slidesPerView: 3, /* Maintain 3 slides per view for large screens */
+          slidesPerView: 3,
           spaceBetween: 40,
         },
         1200: {
-          slidesPerView: 3, /* Maintain 3 slides per view for medium screens */
+          slidesPerView: 3,
           spaceBetween: 30,
         },
         992: {
-          slidesPerView: 2, /* Reduce to 2 slides per view for tablets */
+          slidesPerView: 2,
           spaceBetween: 30,
         },
         768: {
-          slidesPerView: 1, /* Single slide per view for mobile devices */
+          slidesPerView: 1,
           spaceBetween: 20,
         },
       },
@@ -137,14 +137,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  const scrollableElement = document.querySelector('.scroll-content'); // Replace with your scrollable container
+  const scrollableElement = document.querySelector('.scroll-content');
 
 scrollableElement.addEventListener('scroll', () => {
-  const contentHeight = scrollableElement.scrollHeight; // Total scrollable height
-  const containerHeight = scrollableElement.clientHeight; // Visible container height
+  const contentHeight = scrollableElement.scrollHeight;
+  const containerHeight = scrollableElement.clientHeight;
 
   // Calculate the thumb height based on the scroll ratio
-  const thumbHeight = Math.max(containerHeight / contentHeight * containerHeight, 50); // At least 50px
+  const thumbHeight = Math.max(containerHeight / contentHeight * containerHeight, 50);
   document.documentElement.style.setProperty('--thumb-height', `${thumbHeight}px`);
 });
 
