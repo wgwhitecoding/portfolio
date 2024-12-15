@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = [
       {
-        text: `Meet Henry, the charismatic whale shark you’ll see in the video—he’s one of the many stars of my underwater adventures! With his gentle nature and endless curiosity, Henry inspires awe and reveals the wonders of the ocean’s depths. Scuba diving is a chance to explore, innovate, and learn in ways you’ve never imagined. Click below to start your interactive underwater adventure I made just for you!`,
+        text: `Meet Henry, the charismatic whale shark you’ll see in the video—he’s one of the many stars of my underwater adventures! With his gentle nature and endless curiosity, Henry inspires awe and reveals the wonders of the ocean’s depths. Scuba diving is a chance to explore, innovate, and learn in ways you’ve never imagined. Click below to join Scubi Steve in a underwater adventure I made just for you!`,
         containerId: "typing-container",
       },
       {
