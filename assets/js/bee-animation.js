@@ -1,27 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded");
 
+  /* 
+  ===========================================================================
+  ====================   BEE ELEMENTS & BASIC SETUP   ========================
+  ===========================================================================
+  */
   const beeContainer = document.querySelector(".bee-container");
   const beeAnimation = document.getElementById("bee-animation");
   const message = document.createElement("div");
   message.className = "message";
   document.body.appendChild(message);
 
-  // Modal elements
   const modal = document.getElementById("beeModal1");
   const followButton = document.getElementById("followButton1");
-  const closeModalButton = document.querySelector(".close1"); // Modal close button
+  const closeModalButton = document.querySelector(".close1");
   const clonedBeeContainer = document.getElementById("clonedBee1");
 
-  // Full-screen overlay for fade-to-black effect
   const fadeOverlay = document.createElement("div");
   fadeOverlay.className = "fade-overlay";
   document.body.appendChild(fadeOverlay);
 
-  // Bee Toggle elements
   const beeToggle = document.getElementById("beeToggle");
   const toggleText = document.getElementById("toggle-text");
 
+  /* 
+  ===========================================================================
+  ======================   LOTTIE BEE ANIMATION SETUP   ======================
+  ===========================================================================
+  */
   if (beeAnimation) {
     console.log("Bee animation element found");
     beeAnimation.load("assets/animation/just-a-bee.json");
@@ -31,139 +38,127 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Phrases for flying encouragement
+  /* 
+  ===========================================================================
+  ========================   VARIABLES & STATES   ============================
+  ===========================================================================
+  */
   const flyingPhrases = ["Catch me if you can!", "Try to catch me!", "You can't get me!", "Come on, try harder!"];
   const missedPhrases = ["Hehe, missed me!", "Too slow!", "Try again!"];
 
   let isPaused = false;
-  let isCaught = false; // Track if the bee is caught
-  let isBeeActive = true; // Track if the bee is toggled on
+  let isCaught = false;
+  let isBeeActive = true;
 
-  // Set the toggle to start as "on"
-  beeToggle.checked = true;
+  beeToggle.checked = true; // Bee starts on
 
-  // Random positions for flying
+  /* 
+  ===========================================================================
+  ========================   RANDOM POSITIONING   ============================
+  ===========================================================================
+  */
   function getRandomPosition() {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-
-    const x = Math.random() * (viewportWidth - 100); // Stay within horizontal bounds
-    const y = window.scrollY + Math.random() * (viewportHeight - 100); // Allow movement down the page
-
-    console.log(`New position: x=${x}, y=${y}`); // Debugging
+    const x = Math.random() * (viewportWidth - 100);
+    const y = window.scrollY + Math.random() * (viewportHeight - 100);
+    console.log(`New position: x=${x}, y=${y}`);
     return { x, y };
   }
 
-  // Make the bee pause, speak, and then fly away
+  /* 
+  ===========================================================================
+  ====================   SPEAK & FLY (PAUSE, MESSAGE)   =====================
+  ===========================================================================
+  */
   function speakAndFly() {
     if (isPaused || isCaught || !isBeeActive) return;
     isPaused = true;
-
-    // Randomly pick a phrase
     const randomPhrase = flyingPhrases[Math.floor(Math.random() * flyingPhrases.length)];
     message.textContent = randomPhrase;
 
-    // Position the message near the bee
     const beeRect = beeContainer.getBoundingClientRect();
-    let messageX = beeRect.left + window.scrollX + 50; // Default position
-    let messageY = beeRect.top + window.scrollY - 20; // Default position
+    let messageX = beeRect.left + window.scrollX + 50;
+    let messageY = beeRect.top + window.scrollY - 20;
 
-    // Ensure the message doesn't go outside the screen horizontally
     const messageWidth = message.offsetWidth;
-    if (messageX + messageWidth > window.innerWidth) {
-      messageX = window.innerWidth - messageWidth - 10; // Adjust to fit within the screen
-    }
-    if (messageX < 0) {
-      messageX = 10; // Adjust if it's too far left
-    }
+    if (messageX + messageWidth > window.innerWidth) messageX = window.innerWidth - messageWidth - 10;
+    if (messageX < 0) messageX = 10;
 
-    // Ensure the message doesn't go outside the screen vertically
     const messageHeight = message.offsetHeight;
-    if (messageY + messageHeight > window.innerHeight + window.scrollY) {
-      messageY = window.innerHeight + window.scrollY - messageHeight - 10; // Adjust to fit within the screen
-    }
-    if (messageY < window.scrollY) {
-      messageY = window.scrollY + 10; // Adjust if it's too high
-    }
+    if (messageY + messageHeight > window.innerHeight + window.scrollY) messageY = window.innerHeight + window.scrollY - messageHeight - 10;
+    if (messageY < window.scrollY) messageY = window.scrollY + 10;
 
     message.style.left = `${messageX}px`;
     message.style.top = `${messageY}px`;
     message.style.display = "block";
 
-    // Pause for 2 seconds, then fly away
     setTimeout(() => {
       message.style.display = "none";
-      flyBee(); // Resume flying
+      flyBee();
       isPaused = false;
     }, 2000);
   }
 
-  // Flying animation
+  /* 
+  ===========================================================================
+  =======================   BEE FLYING ANIMATION   ===========================
+  ===========================================================================
+  */
   function flyBee() {
-    if (isCaught || !isBeeActive) return; // Stop flying if the bee is caught or toggled off
+    if (isCaught || !isBeeActive) return;
     const { x, y } = getRandomPosition();
     gsap.to(beeContainer, {
       x: x,
       y: y,
-      duration: 2 + Math.random() * 2, // Random duration between 2-4 seconds
+      duration: 2 + Math.random() * 2,
       ease: "power1.inOut",
       onComplete: speakAndFly,
     });
   }
   flyBee();
 
-  // Handle missed clicks
+  /* 
+  ===========================================================================
+  ====================   MISSED CLICK MESSAGES   =============================
+  ===========================================================================
+  */
   document.body.addEventListener("click", (e) => {
-    if (!isBeeActive || beeContainer.contains(e.target)) return; // Stop if the bee is toggled off or clicked
+    if (!isBeeActive || beeContainer.contains(e.target)) return;
     const randomMissedPhrase = missedPhrases[Math.floor(Math.random() * missedPhrases.length)];
     message.textContent = randomMissedPhrase;
 
-    // Position the message near the click
     let messageX = e.clientX + window.scrollX;
     let messageY = e.clientY + window.scrollY;
 
-    // Ensure the message doesn't go outside the screen horizontally
     const messageWidth = message.offsetWidth;
-    if (messageX + messageWidth > window.innerWidth + window.scrollX) {
-      messageX = window.innerWidth + window.scrollX - messageWidth - 10; // Adjust to fit within the screen
-    }
-    if (messageX < window.scrollX) {
-      messageX = window.scrollX + 10; // Adjust if it's too far left
-    }
+    if (messageX + messageWidth > window.innerWidth + window.scrollX) messageX = window.innerWidth + window.scrollX - messageWidth - 10;
+    if (messageX < window.scrollX) messageX = window.scrollX + 10;
 
-    // Ensure the message doesn't go outside the screen vertically
     const messageHeight = message.offsetHeight;
-    if (messageY + messageHeight > window.innerHeight + window.scrollY) {
-      messageY = window.innerHeight + window.scrollY - messageHeight - 10; // Adjust to fit within the screen
-    }
-    if (messageY < window.scrollY) {
-      messageY = window.scrollY + 10; // Adjust if it's too high
-    }
+    if (messageY + messageHeight > window.innerHeight + window.scrollY) messageY = window.innerHeight + window.scrollY - messageHeight - 10;
+    if (messageY < window.scrollY) messageY = window.scrollY + 10;
 
     message.style.left = `${messageX}px`;
     message.style.top = `${messageY}px`;
     message.style.display = "block";
 
-    // Hide the message after 1 second
-    setTimeout(() => {
-      message.style.display = "none";
-    }, 1000);
+    setTimeout(() => { message.style.display = "none"; }, 1000);
   });
 
-  // Handle "catching" the bee
+  /* 
+  ===========================================================================
+  ========================   CATCHING THE BEE   ==============================
+  ===========================================================================
+  */
   beeContainer.addEventListener("click", () => {
-    if (!isBeeActive) return; // Stop if the bee is toggled off
+    if (!isBeeActive) return;
     console.log("Bee clicked!");
-    isCaught = true; // Mark the bee as caught
-
-    // Stop the flying animation
+    isCaught = true;
     gsap.killTweensOf(beeContainer);
-    beeContainer.style.display = "none"; // Hide the bee temporarily
-
-    // Show the modal
+    beeContainer.style.display = "none";
     modal.style.display = "flex";
 
-    // Display the cloned bee in the modal
     clonedBeeContainer.innerHTML = `
       <lottie-player
         src="assets/animation/just-a-bee.json"
@@ -177,95 +172,95 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   });
 
-  // Handle "Follow" button in the modal
+  /* 
+  ===========================================================================
+  ======================   FOLLOW BUTTON IN MODAL   ==========================
+  ===========================================================================
+  */
   followButton.addEventListener("click", () => {
     console.log("Follow button clicked");
-    modal.style.display = "none"; // Close the modal
-
-    // Remove the cloned bee
+    modal.style.display = "none";
     clonedBeeContainer.innerHTML = "";
-
-    // Restore the original bee and make it fly into the vortex
     beeContainer.style.display = "block";
 
-    // Create the vortex if it doesn't exist
     let vortex = document.querySelector(".vortex");
     if (!vortex) {
       vortex = document.createElement("div");
       vortex.className = "vortex";
       document.body.appendChild(vortex);
 
-      // Add particle layer
       const particles = document.createElement("div");
       particles.className = "particles";
       vortex.appendChild(particles);
 
-      // Position the vortex in the top-left corner of the current viewport
       const scrollX = window.scrollX;
       const scrollY = window.scrollY;
-      vortex.style.left = `${scrollX + 20}px`; // 20px from the left edge
-      vortex.style.top = `${scrollY + 20}px`; // 20px from the top edge
+      vortex.style.left = `${scrollX + 20}px`;
+      vortex.style.top = `${scrollY + 20}px`;
     }
 
-    // Animate the bee into the vortex
     const vortexRect = vortex.getBoundingClientRect();
     const beeRect = beeContainer.getBoundingClientRect();
     gsap.to(beeContainer, {
       x: vortexRect.left + window.scrollX + vortexRect.width / 2 - beeRect.width / 2 - beeRect.left,
       y: vortexRect.top + window.scrollY + vortexRect.height / 2 - beeRect.height / 2 - beeRect.top,
-      scale: 0.2, // Shrink the bee as it enters the vortex
+      scale: 0.2,
       duration: 1.5,
       ease: "power1.inOut",
       onComplete: () => {
         console.log("Redirecting to the secret page...");
-
-        // Trigger fade-to-black effect
         fadeOverlay.style.display = "block";
         fadeOverlay.style.opacity = 1;
-
-        // Redirect after the fade completes
         setTimeout(() => {
-          window.location.href = "secret-page.html"; // Redirect to the secret page
-        }, 2000); // Matches the fade duration
+          window.location.href = "secret-page.html";
+        }, 2000);
       },
     });
   });
 
-  // Close modal on "x" or outside click
+  /* 
+  ===========================================================================
+  ======================   CLOSE MODAL FUNCTIONALITY   =======================
+  ===========================================================================
+  */
   closeModalButton.addEventListener("click", () => {
     modal.style.display = "none";
-    beeContainer.style.display = "block"; // Restore bee visibility
-    isCaught = false; // Reset caught state
-    flyBee(); // Restart flying
+    beeContainer.style.display = "block";
+    isCaught = false;
+    flyBee();
   });
 
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
-      beeContainer.style.display = "block"; // Restore bee visibility
-      isCaught = false; // Reset caught state
-      flyBee(); // Restart flying
+      beeContainer.style.display = "block";
+      isCaught = false;
+      flyBee();
     }
   });
 
-  // Handle bee toggle functionality
+  /* 
+  ===========================================================================
+  =======================   BEE TOGGLE FUNCTIONALITY   =======================
+  ===========================================================================
+  */
   beeToggle.addEventListener("change", () => {
-    isBeeActive = beeToggle.checked; // Update the bee activity state
-
+    isBeeActive = beeToggle.checked;
     if (isBeeActive) {
       console.log("Bee turned on");
-      beeContainer.style.display = "block"; // Show the bee
+      beeContainer.style.display = "block";
       toggleText.textContent = "Bee is On";
-      flyBee(); // Restart the flying animation
+      flyBee();
     } else {
       console.log("Bee turned off");
-      beeContainer.style.display = "none"; // Hide the bee
-      gsap.killTweensOf(beeContainer); // Stop the flying animation
-      message.style.display = "none"; // Hide any active messages
+      beeContainer.style.display = "none";
+      gsap.killTweensOf(beeContainer);
+      message.style.display = "none";
       toggleText.textContent = "Bee is Off";
     }
   });
 });
+
 
 
 

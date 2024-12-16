@@ -1,7 +1,11 @@
-/* General Body Styling */
+/* 
+===========================================================================
+============================   GENERAL STYLES   ============================
+===========================================================================
+*/
 body {
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling but allow vertical */
+  overflow-x: hidden; 
 }
 
 .bee-container {
@@ -9,160 +13,95 @@ body {
   top: 50px;
   left: 50px;
   z-index: 1000;
-  width: 5vw; /* Adjust dynamically */
-  height: 5vw; /* Adjust dynamically */
-  max-width: 100px; /* Restrict maximum size */
-  max-height: 100px; /* Restrict maximum size */
+  width: 5vw;
+  height: 5vw;
+  max-width: 100px;
+  max-height: 100px;
   pointer-events: auto;
-  transform: scale(1); /* Reset scaling */
-  overflow: hidden; /* Ensure no size spill */
+  transform: scale(1);
+  overflow: hidden;
 }
 
-/* Message styles */
+/* 
+===========================================================================
+========================   MESSAGE STYLES   ================================
+===========================================================================
+*/
 .message {
   position: absolute;
-  font-size: 16px; /* Smaller, clean text */
-  font-family: Arial, sans-serif; /* Use a clean font */
-  color: #ff4500; /* White text for readability */
-  font-weight: bold; /* Make the message stand out */
-  background: rgba(0, 0, 0, 0.8); /* Dark, semi-transparent background */
-  padding: 10px 15px; /* Add some padding for spacing */
-  border-radius: 10px; /* Rounded corners for a modern look */
-  border: 2px solid #ff4500; /* Add a colorful border to draw attention */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some depth with a shadow */
-  display: none; /* Hidden by default */
-  z-index: 1100; /* Make sure it appears above other elements */
-  white-space: nowrap; /* Prevent breaking of single-line messages */
-  transform: translate(-50%, -50%); /* Center the message */
-  text-align: center; /* Align text in the middle */
-  pointer-events: none; /* Prevent interaction */
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: #ff4500;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #ff4500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1100;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
-/* Add a pulsing animation for better visibility */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-.message {
-  animation: pulse 1.5s infinite ease-in-out; /* Apply the pulse effect */
-}
-
-
-/* Vortex styles */
+/* 
+===========================================================================
+========================   VORTEX STYLES   ================================
+===========================================================================
+*/
 .vortex {
   position: absolute;
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(255, 0, 255, 0.5), rgba(0, 0, 0, 0));
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.8), 0 0 30px rgba(0, 0, 255, 0.6);
+  background: radial-gradient(circle, rgba(0,0,255,0.7), rgba(255,0,255,0.5), rgba(0,0,0,0));
+  box-shadow: 0 0 15px rgba(0,0,255,0.8), 0 0 30px rgba(0,0,255,0.6);
   z-index: 1001;
   overflow: hidden;
   animation: pulse 2s ease-in-out infinite, spin 1.5s linear infinite;
 }
 
-/* Inner swirling layer */
 .vortex::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 255, 0.8), rgba(0, 0, 0, 0));
+  background: conic-gradient(from 0deg, rgba(255,255,255,0.1), rgba(0,0,255,0.8), rgba(0,0,0,0));
   animation: spin-reverse 1.5s linear infinite;
 }
 
-/* Tornado tail */
 .vortex::after {
   content: '';
   position: absolute;
   width: 80px;
   height: 300px;
-  bottom: -200px; /* Position below the vortex */
-  left: 50%; /* Center align */
-  transform: translateX(-50%) scale(0.9); /* Slightly taper the tail */
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 0, 255, 0.7), rgba(0, 0, 0, 0));
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.7);
+  background: radial-gradient(circle, rgba(0,0,255,0.7), rgba(0,0,0,0));
+  box-shadow: 0 0 15px rgba(0,0,255,0.7);
   animation: swirl 1.5s ease-in-out infinite, taper 2s ease-in-out infinite;
 }
 
-/* Particle layer */
 .vortex .particles {
   position: absolute;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0));
+  background: radial-gradient(circle, rgba(255,255,0,0.5), rgba(0,0,0,0));
   animation: particle-spin 2s linear infinite;
 }
 
-/* Animations for spinning and pulsing */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-reverse {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-}
-
-/* Animation for tornado tail swirling */
-@keyframes swirl {
-  0% {
-    transform: translateX(-50%) rotate(0deg) scale(0.9);
-  }
-  100% {
-    transform: translateX(-50%) rotate(360deg) scale(1);
-  }
-}
-
-/* Tail tapering effect */
-@keyframes taper {
-  0%, 100% {
-    transform: translateX(-50%) scale(0.9);
-  }
-  50% {
-    transform: translateX(-50%) scale(0.8);
-  }
-}
-
-/* Particle orbit animation */
-@keyframes particle-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Modal Styling */
+/* 
+===========================================================================
+========================   MODAL STYLES   ==================================
+===========================================================================
+*/
 #beeModal1 {
   position: fixed;
   z-index: 1500;
@@ -170,22 +109,22 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for focus */
+  background-color: rgba(0,0,0,0.7);
   display: none;
   justify-content: center;
   align-items: center;
 }
 
 .modal-content1 {
-  background: #222; /* Dark background for contrast */
+  background: #222;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
   position: relative;
   width: 60%;
-  max-width: 500px; /* Restrict size */
-  color: #fff; /* Light text for readability */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
 .modal-content1 h2 {
@@ -200,24 +139,21 @@ body {
 
 .modal-content1 .close1 {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 10px; right: 10px;
   cursor: pointer;
   font-size: 18px;
   background: #ff4500;
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 30px; height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #clonedBee1 {
-  width: 100px;
-  height: 100px;
+  width: 100px; height: 100px;
   margin: 10px auto;
 }
 
@@ -237,28 +173,82 @@ body {
   background: #e63e00;
 }
 
-/* Full-screen fade overlay */
+/* 
+===========================================================================
+========================   OVERLAY FADE-IN   ===============================
+===========================================================================
+*/
 .fade-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-color: black;
   opacity: 0;
-  z-index: 2000; /* Ensure it's above everything */
+  z-index: 2000;
   pointer-events: none;
-  transition: opacity 2s ease; /* Smooth fade effect */
+  transition: opacity 2s ease;
 }
-@media (max-width: 768px) {
-  .bee-container {
-      width: 15vw; /* Increase size dynamically */
-      height: 16vw; /* Increase size dynamically */
-      max-width: 120px; /* Adjust maximum size */
-      max-height: 120px; /* Adjust maximum size */
-      transform: scale(1.2); /* Slightly enlarge the bee */
+
+/* 
+===========================================================================
+========================   ANIMATIONS   =====================================
+===========================================================================
+*/
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
   }
 }
+
+@keyframes swirl {
+  0% {
+    transform: translateX(-50%) rotate(0deg) scale(0.9);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes taper {
+  0%, 100% { transform: translateX(-50%) scale(0.9); }
+  50% { transform: translateX(-50%) scale(0.8); }
+}
+
+@keyframes particle-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 
+===========================================================================
+========================   RESPONSIVE STYLES   ==============================
+===========================================================================
+*/
+@media (max-width: 768px) {
+  .bee-container {
+    width: 15vw;
+    height: 16vw;
+    max-width: 120px;
+    max-height: 120px;
+    transform: scale(1.2);
+  }
+}
+
 
 
 
