@@ -7,12 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
       containerId: "typing-container",
     },
     {
-      text: `From creating innovative tools to leveraging cutting-edge technologies, my tech journey is an exciting fusion of creativity and problem-solving. Each line of code tells a story, and every project pushes boundaries to deliver impactful solutions. Scroll below to explore a world where innovation meets passion!`,
+      text: `From creating innovative tools to leveraging cutting-edge technologies, my tech journey blends creativity with problem-solving. These projects showcase a wide range of skills—from building full-stack applications with Python and Django to managing complex datasets with SQL and PostgreSQL. Whether developing task management systems, crafting interactive coding tools, or engineering data pipelines, I’m passionate about delivering practical, user-focused solutions.
+
+Explore these creations to simplify everyday tasks—or scroll down to enjoy some fun mini-games at the bottom!!`,
       containerId: "tech-typing-container",
     },
     {
-      text: `Dive into my Mini Games section, where fun meets learning! Explore games that challenge your problem-solving skills, spark creativity, and showcase the exciting possibilities of technology. Click on a game below to begin your journey into interactive adventures!`,
+      text: `Powered by HTML, CSS, and JavaScript, these mini-games showcase the creativity and versatility of front-end web development. From dynamic animations to interactive challenges, they demonstrate how simple code transforms into engaging, playable experiences. 
+      
+      Dive in to explore how design and functionality come together to deliver fun, spark creativity, and bring ideas to life!`,
       containerId: "mini-games-typing-container",
+    },
+    {
+      text: `"Discover the world through my eyes with this interactive 3D globe! Highlighting all the wonderful countries I’ve had the privilege to explore, it allows you to click on each destination to uncover stories, photos, videos, and moments that made each journey unforgettable. Each destination holds its own unique charm—interact with the globe to experience them for yourself and be inspired to embark on your own adventures."`,
+      containerId: "travel-text-container",
     },
   ];
 
@@ -61,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100); // Delay observer initialization
   });
 });
+
 
 
 
