@@ -94,59 +94,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const gallerySwiper = new Swiper(".gallery-swiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 3,
-      loop: true,
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 200, 
-        modifier: 1, 
-        slideShadows: false,
+  const gallerySwiper = new Swiper(".gallery-swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    loop: true,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    keyboard: {
+      enabled: true,
+    },
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    breakpoints: {
+      1400: {
+        slidesPerView: 3,
+        spaceBetween: 40,
       },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30,
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 30,
       },
-      keyboard: {
-        enabled: true,
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 20,
       },
-      autoplay: {
-        delay: 7000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      breakpoints: {
-        1400: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-      },
-    });
+    },
   });
+});
 
 
 
-  const scrollableElement = document.querySelector('.scroll-content');
+const scrollableElement = document.querySelector('.scroll-content');
 
 scrollableElement.addEventListener('scroll', () => {
   const contentHeight = scrollableElement.scrollHeight;
@@ -156,6 +156,8 @@ scrollableElement.addEventListener('scroll', () => {
   const thumbHeight = Math.max(containerHeight / contentHeight * containerHeight, 50);
   document.documentElement.style.setProperty('--thumb-height', `${thumbHeight}px`);
 });
+
+
 
 
 

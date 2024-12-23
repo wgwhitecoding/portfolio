@@ -250,7 +250,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".tech-custom-image"); // Select all images
+  const pointer = document.getElementById("pointer"); // Select the pointer element
+  let currentIndex = 0; // Start with the first image
 
+  const movePointer = () => {
+    if (images.length === 0) return; // Exit if no images are found
+
+    const image = images[currentIndex]; // Get the current image
+    const rect = image.getBoundingClientRect(); // Get the image's position
+    const scrollX = window.scrollX || document.documentElement.scrollLeft; // Horizontal scroll
+    const scrollY = window.scrollY || document.documentElement.scrollTop; // Vertical scroll
+
+    // Position the pointer in the center of the image
+    pointer.style.top = `${rect.top + scrollY + rect.height / 1.3}px`;
+    pointer.style.left = `${rect.left + scrollX + rect.width / 1.3}px`;
+    pointer.style.display = "block"; // Show the pointer
+
+    currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+  };
+
+  // Start moving the pointer every 3 seconds
+  movePointer(); // Initial position
+  setInterval(movePointer, 3000);
+});
 
 
 
