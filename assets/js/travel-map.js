@@ -251,29 +251,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".tech-custom-image"); // Select all images
-  const pointer = document.getElementById("pointer"); // Select the pointer element
-  let currentIndex = 0; // Start with the first image
+  const techImages = document.querySelectorAll(".tech-custom-image"); // Tech images
+  const miniGameImages = document.querySelectorAll(".mini-game-image"); // Mini Games images
+  const techPointer = document.getElementById("pointer"); // Tech pointer
+  const miniGamesPointer = document.getElementById("mini-games-pointer"); // Mini Games pointer
 
-  const movePointer = () => {
-    if (images.length === 0) return; // Exit if no images are found
+  let techCurrentIndex = 0; // Track Tech pointer index
+  let miniGameCurrentIndex = 0; // Track Mini Games pointer index
 
-    const image = images[currentIndex]; // Get the current image
-    const rect = image.getBoundingClientRect(); // Get the image's position
-    const scrollX = window.scrollX || document.documentElement.scrollLeft; // Horizontal scroll
-    const scrollY = window.scrollY || document.documentElement.scrollTop; // Vertical scroll
+  const movePointer = (images, pointer, currentIndex) => {
+    if (images.length === 0) return currentIndex; // Exit if no images
 
-    // Position the pointer in the center of the image
-    pointer.style.top = `${rect.top + scrollY + rect.height / 1.3}px`;
-    pointer.style.left = `${rect.left + scrollX + rect.width / 1.3}px`;
+    const image = images[currentIndex];
+    const rect = image.getBoundingClientRect();
+    const scrollX = window.scrollX || document.documentElement.scrollLeft;
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+    pointer.style.top = `${rect.top + scrollY + rect.height / 2}px`;
+    pointer.style.left = `${rect.left + scrollX + rect.width / 2}px`;
     pointer.style.display = "block"; // Show the pointer
 
-    currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+    return (currentIndex + 1) % images.length; // Move to the next image
   };
 
-  // Start moving the pointer every 3 seconds
-  movePointer(); // Initial position
-  setInterval(movePointer, 3000);
+  // Move Tech Pointer
+  const moveTechPointer = () => {
+    techCurrentIndex = movePointer(techImages, techPointer, techCurrentIndex);
+  };
+
+  // Move Mini Games Pointer
+  const moveMiniGamesPointer = () => {
+    miniGameCurrentIndex = movePointer(miniGameImages, miniGamesPointer, miniGameCurrentIndex);
+  };
+
+  // Initialize pointers
+  moveTechPointer();
+  moveMiniGamesPointer();
+
+  // Schedule pointer movements
+  setInterval(moveTechPointer, 3000); // Every 3 seconds
+  setInterval(moveMiniGamesPointer, 3000); // Every 3 seconds
 });
 
 
@@ -281,13 +298,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// Smooth scrolling function
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
+    // Get the target section's ID from the href
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
 
+    if (targetElement) {
+      // Smoothly scroll to the target section
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start', // Align the target section to the top of the viewport
+        inline: 'nearest'
+      });
+    }
+  });
+});
 
+// Highlight active link based on scroll position
+const sections = document.querySelectorAll('section');
+const navbarLinks = document.querySelectorAll('.navbar a');
 
+window.addEventListener('scroll', () => {
+  let currentSection = '';
 
+  // Check which section is in the viewport
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
 
+    if (window.scrollY >= sectionTop - sectionHeight / 3) {
+      currentSection = section.getAttribute('id');
+    }
+  });
 
+  // Highlight the corresponding navbar link
+  navbarLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${currentSection}`) {
+      link.classList.add('active');
+    }
+  });
+});
 
 
 

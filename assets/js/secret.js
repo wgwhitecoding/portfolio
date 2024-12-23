@@ -2,14 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const curtainContainer = document.querySelector(".curtain-container");
   const heroText = document.querySelector(".hero-text");
   const heroImage = document.querySelector(".hero-image");
+  const navbarIcons = document.querySelectorAll(".navbar a"); // Select all navbar icons
   const elements = document.querySelectorAll(
     ".hero-text h1, .hero-text p, .cta-buttons .btn, .hero-image img"
   );
 
-  // Initially hide all elements
+  // Initially hide all hero elements
   elements.forEach((el) => {
     el.style.opacity = "0";
     el.style.transform = "translateY(20px)";
+  });
+
+  // Initially hide all navbar icons
+  navbarIcons.forEach((icon) => {
+    icon.style.opacity = "0";
+    icon.style.transform = "translateY(20px)";
   });
 
   // Wait for the curtain animation to complete fully
@@ -25,6 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }, index * 800); // Staggered delay of 800ms between each element
     });
 
+    // Start navbar icons animations individually
+    navbarIcons.forEach((icon, index) => {
+      setTimeout(() => {
+        icon.style.transition = "opacity 1.5s ease, transform 1.5s ease"; // Smooth transition
+        icon.style.opacity = "1"; // Fade in
+        icon.style.transform = "translateY(0)"; // Slide up into place
+      }, elements.length * 800 + index * 500); // Delay starts after all hero elements are animated
+    });
+
     // Ensure hero section container is visible (optional safeguard)
     heroText.style.opacity = "1";
     heroImage.style.opacity = "1";
@@ -34,15 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
   function animateSection(sectionId) {
     const section = document.querySelector(sectionId);
     const header = section.querySelector("h2");
     const textElements = section.querySelectorAll(
-      ".about-text p, .scuba-fun-text p, .tech-journey-text p, .travel-chronicles-text p"
+      ".about-text p, .scuba-fun-text p, .tech-journey-text p, .travel-chronicles-text p, .mini-games-text p"
     );
     const image = section.querySelector(
-      ".about-image img, .scuba-fun-image img, .tech-journey-image img, .travel-chronicles-image img"
+      ".about-image img, .scuba-fun-image img, .tech-journey-image img, .travel-chronicles-image img, .mini-games-image img"
     );
 
     const observer = new IntersectionObserver(
@@ -81,7 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
   animateSection("#about");
   animateSection("#scuba-fun");
   animateSection("#tech-journey");
-  animateSection("#travel-chronicles");
+ animateSection("#travel-chronicles");
+  animateSection("#mini-games");
 });
 
 
