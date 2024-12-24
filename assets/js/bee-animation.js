@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded");
 
-  /* 
-  ===========================================================================
-  ====================   BEE ELEMENTS & BASIC SETUP   ========================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     BEE ELEMENTS & BASIC SETUP
+  ========================================================================== */
   const beeContainer = document.querySelector(".bee-container");
   const beeAnimation = document.getElementById("bee-animation");
   const message = document.createElement("div");
@@ -24,25 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const beeToggle = document.getElementById("beeToggle");
   const toggleText = document.getElementById("toggle-text");
 
-  /* 
-  ===========================================================================
-  ======================   LOTTIE BEE ANIMATION SETUP   ======================
-  ===========================================================================
-  */
-  if (beeAnimation) {
-    console.log("Bee animation element found");
-    beeAnimation.load("assets/animation/just-a-bee.json");
-    console.log("Lottie animation loaded successfully!");
-  } else {
-    console.error("Bee animation element NOT found");
-    return;
-  }
-
-  /* 
-  ===========================================================================
-  ========================   VARIABLES & STATES   ============================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     VARIABLES & STATES
+  ========================================================================== */
   const flyingPhrases = ["Catch me if you can!", "Try to catch me!", "You can't get me!", "Come on, try harder!"];
   const missedPhrases = ["Hehe, missed me!", "Too slow!", "Try again!"];
 
@@ -52,25 +34,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   beeToggle.checked = true; // Bee starts on
 
-  /* 
-  ===========================================================================
-  ========================   RANDOM POSITIONING   ============================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     RANDOM POSITIONING
+  ========================================================================== */
   function getRandomPosition() {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-    const x = Math.random() * (viewportWidth - 100);
-    const y = window.scrollY + Math.random() * (viewportHeight - 100);
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    const x = Math.max(50, Math.random() * (viewportWidth - 150)); // Keep bee within bounds
+    const y = Math.max(50, scrollTop + Math.random() * (Math.min(viewportHeight, documentHeight - scrollTop) - 150));
+
     console.log(`New position: x=${x}, y=${y}`);
     return { x, y };
   }
 
-  /* 
-  ===========================================================================
-  ====================   SPEAK & FLY (PAUSE, MESSAGE)   =====================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     SPEAK & FLY (PAUSE, MESSAGE)
+  ========================================================================== */
   function speakAndFly() {
     if (isPaused || isCaught || !isBeeActive) return;
     isPaused = true;
@@ -78,16 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
     message.textContent = randomPhrase;
 
     const beeRect = beeContainer.getBoundingClientRect();
-    let messageX = beeRect.left + window.scrollX + 50;
-    let messageY = beeRect.top + window.scrollY - 20;
+    let messageX = beeRect.left + beeRect.width / 2;
+    let messageY = beeRect.top - 30 + window.scrollY;
 
     const messageWidth = message.offsetWidth;
     if (messageX + messageWidth > window.innerWidth) messageX = window.innerWidth - messageWidth - 10;
     if (messageX < 0) messageX = 10;
 
     const messageHeight = message.offsetHeight;
-    if (messageY + messageHeight > window.innerHeight + window.scrollY) messageY = window.innerHeight + window.scrollY - messageHeight - 10;
-    if (messageY < window.scrollY) messageY = window.scrollY + 10;
+    if (messageY < 0) messageY = 10;
 
     message.style.left = `${messageX}px`;
     message.style.top = `${messageY}px`;
@@ -100,11 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2000);
   }
 
-  /* 
-  ===========================================================================
-  =======================   BEE FLYING ANIMATION   ===========================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     BEE FLYING ANIMATION
+  ========================================================================== */
   function flyBee() {
     if (isCaught || !isBeeActive) return;
     const { x, y } = getRandomPosition();
@@ -118,39 +97,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   flyBee();
 
-  /* 
-  ===========================================================================
-  ====================   MISSED CLICK MESSAGES   =============================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     MISSED CLICK MESSAGES
+  ========================================================================== */
   document.body.addEventListener("click", (e) => {
     if (!isBeeActive || beeContainer.contains(e.target)) return;
     const randomMissedPhrase = missedPhrases[Math.floor(Math.random() * missedPhrases.length)];
     message.textContent = randomMissedPhrase;
 
-    let messageX = e.clientX + window.scrollX;
+    let messageX = e.clientX;
     let messageY = e.clientY + window.scrollY;
 
     const messageWidth = message.offsetWidth;
-    if (messageX + messageWidth > window.innerWidth + window.scrollX) messageX = window.innerWidth + window.scrollX - messageWidth - 10;
-    if (messageX < window.scrollX) messageX = window.scrollX + 10;
+    if (messageX + messageWidth > window.innerWidth) messageX = window.innerWidth - messageWidth - 10;
+    if (messageX < 0) messageX = 10;
 
     const messageHeight = message.offsetHeight;
-    if (messageY + messageHeight > window.innerHeight + window.scrollY) messageY = window.innerHeight + window.scrollY - messageHeight - 10;
-    if (messageY < window.scrollY) messageY = window.scrollY + 10;
+    if (messageY + messageHeight > document.documentElement.scrollHeight) messageY = document.documentElement.scrollHeight - messageHeight - 10;
+    if (messageY < 0) messageY = 10;
 
     message.style.left = `${messageX}px`;
     message.style.top = `${messageY}px`;
     message.style.display = "block";
 
-    setTimeout(() => { message.style.display = "none"; }, 1000);
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 1000);
   });
 
-  /* 
-  ===========================================================================
-  ========================   CATCHING THE BEE   ==============================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     CATCHING THE BEE
+  ========================================================================== */
   beeContainer.addEventListener("click", () => {
     if (!isBeeActive) return;
     console.log("Bee clicked!");
@@ -172,11 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   });
 
-  /* 
-  ===========================================================================
-  ======================   FOLLOW BUTTON IN MODAL   ==========================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     FOLLOW BUTTON IN MODAL
+  ========================================================================== */
   followButton.addEventListener("click", () => {
     console.log("Follow button clicked");
     modal.style.display = "none";
@@ -218,11 +193,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* 
-  ===========================================================================
-  ======================   CLOSE MODAL FUNCTIONALITY   =======================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     CLOSE MODAL FUNCTIONALITY
+  ========================================================================== */
   closeModalButton.addEventListener("click", () => {
     modal.style.display = "none";
     beeContainer.style.display = "block";
@@ -239,11 +212,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* 
-  ===========================================================================
-  =======================   BEE TOGGLE FUNCTIONALITY   =======================
-  ===========================================================================
-  */
+  /* ==========================================================================
+     BEE TOGGLE FUNCTIONALITY
+  ========================================================================== */
   beeToggle.addEventListener("change", () => {
     isBeeActive = beeToggle.checked;
     if (isBeeActive) {
@@ -260,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
