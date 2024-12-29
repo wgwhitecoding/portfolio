@@ -249,6 +249,16 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  #beeModal1 .modal-content1 {
+      width: 90%; /* Increase the width for mobile */
+      padding: 15px; /* Adjust padding for better spacing */
+  }
+
+  .bee-container {
+      margin: 10px auto; /* Center the bee container for small screens */
+  }
+}
 
 
 

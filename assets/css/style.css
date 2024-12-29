@@ -873,9 +873,9 @@ section {
 
 
 /* 
-===========================================================================
-==========================   CREDENTIALS SECTION   =========================
-===========================================================================
+/* ===========================================================================
+   ==========================   CREDENTIALS SECTION   =========================
+   ===========================================================================
 */
 .credentials-wrapper {
     position: relative;
@@ -898,7 +898,9 @@ section {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-.scrolling-wrapper-cred::-webkit-scrollbar { display: none; }
+.scrolling-wrapper-cred::-webkit-scrollbar {
+    display: none;
+}
 
 .credential-card {
     position: relative;
@@ -920,7 +922,7 @@ section {
 }
 .credential-card:hover {
     transform: scale(1.05) rotateX(0deg);
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.3)) drop-shadow(0 0 20px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
     transition: transform 0.3s, filter 0.3s ease-in-out;
 }
 .credential-card h4 {
@@ -955,6 +957,15 @@ section {
     background-position: center;
     background-size: 70%;
 }
+.hyperindev-card {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%; /* Match the styling of other cards */
+}
+
+
+
 
 
 /* 
@@ -1721,5 +1732,3 @@ body.dark-mode #scroll-right-blog i {
         display: none !important;
     }
 }
-
-  
