@@ -139,23 +139,18 @@ body {
 
 .modal-content1 .close1 {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 10px; right: 10px;
   cursor: pointer;
   font-size: 18px;
-  color: #fff; /* White color for the "X" */
-  background: none; /* Remove background */
-  border: none; /* Remove border */
-  outline: none; /* Remove any outline */
-  width: auto; /* Allow auto-sizing */
-  height: auto;
+  background: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px; height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-
-
 
 #clonedBee1 {
   width: 100px; height: 100px;
@@ -255,14 +250,14 @@ body {
 }
 
 @media (max-width: 600px) {
-  #beeModal1 .modal-content1 {
-      width: 90%; /* Increase the width for mobile */
-      padding: 15px; /* Adjust padding for better spacing */
-  }
+    #beeModal1 .modal-content1 {
+        width: 90%; /* Increase the width for mobile */
+        padding: 15px; /* Adjust padding for better spacing */
+    }
 
-  .bee-container {
-      margin: 10px auto; /* Center the bee container for small screens */
-  }
+    .bee-container {
+        margin: 10px auto; /* Center the bee container for small screens */
+    }
 }
 
 
