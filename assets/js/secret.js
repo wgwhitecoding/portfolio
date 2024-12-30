@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const curtainContainer = document.querySelector(".curtain-container");
   const heroText = document.querySelector(".hero-text");
   const heroImage = document.querySelector(".hero-image");
-  const navbarIcons = document.querySelectorAll(".navbar a"); // Select all navbar icons
+  const navbarIcons = document.querySelectorAll(".navbar a");
   const elements = document.querySelectorAll(
     ".hero-text h1, .hero-text p, .cta-buttons .btn, .hero-image img"
   );
@@ -21,30 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Wait for the curtain animation to complete fully
   setTimeout(() => {
-    curtainContainer.style.display = "none"; // Remove the curtains
+    curtainContainer.style.display = "none";
 
     // Start hero section animations
     elements.forEach((el, index) => {
       setTimeout(() => {
-        el.style.transition = "opacity 1.5s ease, transform 1.5s ease"; // Smooth transition
-        el.style.opacity = "1"; // Fade in
-        el.style.transform = "translateY(0)"; // Slide up into place
-      }, index * 800); // Staggered delay of 800ms between each element
+        el.style.transition = "opacity 1.5s ease, transform 1.5s ease";
+        el.style.opacity = "1"; 
+        el.style.transform = "translateY(0)";
+      }, index * 800); 
     });
 
     // Start navbar icons animations individually
     navbarIcons.forEach((icon, index) => {
       setTimeout(() => {
-        icon.style.transition = "opacity 1.5s ease, transform 1.5s ease"; // Smooth transition
-        icon.style.opacity = "1"; // Fade in
-        icon.style.transform = "translateY(0)"; // Slide up into place
-      }, elements.length * 800 + index * 500); // Delay starts after all hero elements are animated
+        icon.style.transition = "opacity 1.5s ease, transform 1.5s ease";
+        icon.style.opacity = "0.5";
+        icon.style.transform = "translateY(0)";
+      }, elements.length * 800 + index * 500);
     });
 
     // Ensure hero section container is visible (optional safeguard)
     heroText.style.opacity = "1";
     heroImage.style.opacity = "1";
-  }, 4000); // Hero animation starts after the curtains are fully removed (4 seconds)
+  }, 4000);
 });
 
 
