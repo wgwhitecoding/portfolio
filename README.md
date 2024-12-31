@@ -11,17 +11,17 @@ Welcome to my portfolio repository! 🎉 This project is a demonstration of my t
 1. [Introduction](#introduction)  
 2. [Wireframes](#wireframes)  
 3. [Features](#features)  
-   - [Responsive Design](#responsive-design)  
-4. [Technologies Used](#technologies-used)  
-5. [Tools & Libraries](#tools--libraries)  
-6. [File Structure](#file-structure)  
-7. [Installation and Setup](#installation-and-setup)  
-8. [Usage](#usage)  
-9. [Screenshots and Visual Highlights](#screenshots-and-visual-highlights)  
-10. [Skills Demonstrated](#skills-demonstrated)  
-11. [Future Improvements](#future-improvements)  
-12. [🤝 Connect with Me](#connect-with-me)  
-13. [📜 License](#license)
+4. [Responsive Design](#responsive-design)  
+5. [Technologies Used](#technologies-used)  
+6. [Tools & Libraries](#tools--libraries)  
+7. [File Structure](#file-structure)  
+8. [Installation and Setup](#installation-and-setup)  
+9. [Usage](#usage)  
+10. [Screenshots and Visual Highlights](#screenshots-and-visual-highlights)  
+11. [Skills Demonstrated](#skills-demonstrated)  
+12. [Future Improvements](#future-improvements)  
+13. [🤝 Connect with Me](#connect-with-me)  
+
 
 ---
 
@@ -183,7 +183,35 @@ The website is built to deliver a seamless experience across all devices, ensuri
 - **🎨 Media Queries Magic**: Tailored styles ensure consistency across resolutions.  
 - **📷 Scalable Visuals**: Images and UI components dynamically resize for every screen.
 
-![Responsive Design](assets/ReadmePics/Responsive.png)
+## 📱 **Mobile Responsiveness**
+
+This portfolio is designed to deliver a seamless experience on all devices, including mobile. Below are examples of how the design adapts to smaller screens, showcasing interactive features, responsive layouts, and engaging visuals.
+
+---
+
+### **📜 Welcome, Skills, and Navigation**
+![Responsive Design](assets/ReadmePics/mobile1.png) 
+
+The welcome section and skills area are perfectly tailored for mobile viewing. My technical expertise is presented with responsive skill bars, while the navigation menu remains user-friendly. The bee animation toggle adds a playful touch, even on mobile devices.
+
+---
+### **🌌 Secret Page: Welcome, Scuba Adventures, and Mini-Games**
+
+![Responsive Design](assets/ReadmePics/mobile3.png) 
+
+The Secret Page is designed to provide an engaging and immersive experience on mobile devices. It combines creative storytelling, interactive elements, and fun mini-games to captivate users. Visitors are welcomed into a hidden universe, dive into underwater adventures, and explore games crafted to challenge and entertain.
+
+---
+
+### **🌍 Interactive Features and 3D Globe**
+![Responsive Design](assets/ReadmePics/mobile2.png)
+
+The interactive 3D globe and navigation showcase the immersive experience this portfolio provides. Users can explore highlighted destinations, interact with animations, and access the site’s core features through an intuitive icon-based menu.
+
+---
+
+
+These combined screenshots demonstrate how the portfolio maintains its interactivity, functionality, and aesthetic appeal across mobile platforms. Every detail has been crafted to ensure a polished and engaging experience for users on any device.
 
 ---
 
@@ -200,10 +228,12 @@ This project leverages the following technologies:
 
 ## 🛠️ **Tools & Libraries**
 
+- **![Bootstrap](https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=flat-square&logo=bootstrap&logoColor=white)**: Used for responsive grid systems and pre-styled components to enhance layout and design.  
 - **![Cesium API](https://img.shields.io/badge/Cesium-%23144D9C.svg?style=flat-square&logo=cesium&logoColor=white)**: For rendering the interactive 3D globe.  
 - **![Font Awesome](https://img.shields.io/badge/Font%20Awesome-%23339AF0.svg?style=flat-square&logo=font-awesome&logoColor=white)**: For enhancing the UI with icons.  
 - **![Google Fonts](https://img.shields.io/badge/Google%20Fonts-%234285F4.svg?style=flat-square&logo=google&logoColor=white)**: Ensures clean typography.  
 - **![Media Files](https://img.shields.io/badge/Media-Files-%23008080.svg?style=flat-square)**: For multimedia elements like videos and images.
+
 
 ---
 
@@ -236,6 +266,29 @@ The repository is organised as follows:
   - `travel-map.js`  
 - **`ReadmePics/`**: Contains images for the README documentation, such as:  
   - `Filestructure.png`  
+
+## **Installation and Setup**
+
+To view or modify this project locally, follow these steps:
+
+1. **Clone the Repository**  
+   Open your terminal and run the following command:  
+   ```bash
+   git clone https://github.com/wgwhitecoding/portfolio.git
+   cd portfolio
+
+2. **Open the Project** 
+
+- Use your favourite code editor, such as **VSCode**, to explore the codebase.  
+- Open the `index.html` file in your web browser to view the portfolio locally.  
+
+3. **Customisation** 
+
+- Modify the content in the **HTML** files to update sections like Projects, Skills, or Contact.  
+- Update styles in the **CSS** folder to customise the design, colours, or layout.  
+- Add or edit scripts in the **JavaScript** folder to enhance interactivity and features.
+
+---
 
 ## 🤝 Connect with Me <a id="connect-with-me"></a>
 
