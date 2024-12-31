@@ -88,45 +88,45 @@ A scroll-based navigation bar located at the top of the main page. As users inte
 
 ![Navbar](assets/ReadmePics/navbar.png)
 
-### 🌗 **Dark Mode**  
+## 🌗 **Dark Mode**  
 A toggle option for users to switch between dark and light modes, enhancing usability and catering to personal preferences.
 
 ![Darkmode](assets/ReadmePics/Darkmode.png)
 
-### 💻 **Skills Section**  
+## 💻 **Skills Section**  
 Highlights my technical expertise, including programming languages, frameworks, tools, and technologies I’ve mastered, all presented in an organised and visually appealing way.
 
 ![Myskills](assets/ReadmePics/Myskills.png)
 
-### 📂 **Projects Section**  
+## 📂 **Projects Section**  
 Showcases a curated selection of my past projects, complete with detailed descriptions, the technology stacks used, and links to live demos or repositories for easy access.
 
 ![Projects](assets/ReadmePics/Myprojects.png)
 
-### 📜 **Credentials and Resume Section**  
+## 📜 **Credentials and Resume Section**  
 Provides direct access to my resume and professional credentials, such as certifications and achievements.
 
 ![Credentials](assets/ReadmePics/Cred.png)
 
-### ✍️ **Blog Section**  
+## ✍️ **Blog Section**  
 A platform where I share technical insights, thoughts, and lessons learned throughout my journey in the tech industry.
 
 ![MyBlog](assets/ReadmePics/Myblog.png)
 
-### 🐝 **Interactive Animations**  
+## 🐝 **Interactive Animations**  
 Features a flying bee animation that adds a playful and interactive touch to the website, guiding users to a hidden **Secret Page**.
 
-### 🐝 **Bee Toggle**  
+## 🐝 **Bee Toggle**  
 Allows users to toggle the flying bee animation on or off for a customisable browsing experience.
 
 ![Bee](assets/ReadmePics/bee.png)
 
-### 🛠️ **Services Section**  
+## 🛠️ **Services Section**  
 Outlines the professional services I provide, including web development, consulting, and bespoke solutions tailored to client needs.
 
 ![Services](assets/ReadmePics/Services.png)
 
-### 📋 **Footer Section**  
+## 📋 **Footer Section**  
 Includes contact details, a link to download my CV, and social media links.
 
 ![Footer](assets/ReadmePics/Footer.png)
@@ -137,37 +137,37 @@ Includes contact details, a link to download my CV, and social media links.
 
 A hidden section accessed through the flying bee animation, offering a more personal and interactive experience.
 
-### 🎨 **Animated Welcome Page**  
+## 🎨 **Animated Welcome Page**  
 A 3D swiper gallery showcasing a collection of images and visuals with smooth transitions and engaging effects.
 
 ![SecretPage](assets/ReadmePics/Secretpage.png)
 
-### 🔗 **Secret Page Navigation (Icon Navbar)**  
+## 🔗 **Secret Page Navigation (Icon Navbar)**  
 A fixed icon-based navigation bar that remains visible as users scroll through the secret page. Each icon represents a specific section (e.g., Gallery, Mini-Games, 3D Globe) and allows users to navigate seamlessly.
 
 ![SecretPagenav](assets/ReadmePics/Secretpagenav.png)
 
-### 🖼️ **Interactive Gallery**  
+## 🖼️ **Interactive Gallery**  
 A 3D swiper gallery showcasing images and visuals with engaging effects.
 
 ![Gallery](assets/ReadmePics/Gallery.png)
 
-### 🌍 **Interactive 3D Globe**  
+## 🌍 **Interactive 3D Globe**  
 Powered by the **Cesium API**, this globe dynamically showcases my travel journey, highlighting locations I’ve visited or explored.
 
 ![Globe](assets/ReadmePics/Globe.png)
 
-### 🎮 **Mini-Games**  
+## 🎮 **Mini-Games**  
 Interactive games created entirely by me, providing entertainment and showcasing creativity.
 
 ![Minigames](assets/ReadmePics/Minigame.png)
 
-### 📂 **Additional Projects**  
+## 📂 **Additional Projects**  
 A showcase of more projects that didn’t make it to the main portfolio section.
 
 ![Scubisteve](assets/ReadmePics/Scubisteve.png)
 
-### 🚀 **Tech Journey**  
+## 🚀 **Tech Journey**  
 A personal narrative detailing my growth and experiences in the tech world.
 
 ![Tech](assets/ReadmePics/Tech.png)
@@ -266,7 +266,7 @@ The repository is organised as follows:
   - `travel-map.js`  
 - **`ReadmePics/`**: Contains images for the README documentation, such as:  
   - `Filestructure.png`  
-
+---
 ## **Installation and Setup**
 
 To view or modify this project locally, follow these steps:
