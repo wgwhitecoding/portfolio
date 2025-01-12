@@ -292,6 +292,23 @@ To view or modify this project locally, follow these steps:
 
 ## 🤝 Connect with Me <a id="connect-with-me"></a>
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wgwhitecoding)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/walidwillwhite/)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:walidwillwhite@gmail.com)
+<div align="center">
+ <p>✨ Feel free to reach out for collaborations, projects, or just a chat! ✨</p>
+ 
+  
+  <a href="https://www.linkedin.com/in/walidwillwhite/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="mailto:walidwillwhite@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+  </a>
+  <a href="https://wgwhitecoding.github.io/portfolio/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio">
+  </a>
+  <a href="https://wgwhitecoding.github.io/CoolSites/" target="_blank">
+    <img src="https://img.shields.io/badge/Want%20a%20Website%3F-00A676?style=for-the-badge&logo=firefox&logoColor=white" alt="Want a Website?">
+  </a>
+  <a href="https://www.linkedin.com/company/techa-nalogy/?viewAsMember=true" target="_blank">
+    <img src="https://img.shields.io/badge/Tech--Analogy-FFD700?style=for-the-badge&logo=bulb&logoColor=white" alt="Tech-Analogy">
+  </a>
+</div>
