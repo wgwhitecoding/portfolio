@@ -312,3 +312,7 @@ To view or modify this project locally, follow these steps:
     <img src="https://img.shields.io/badge/Tech--Analogy-FFD700?style=for-the-badge&logo=bulb&logoColor=white" alt="Tech-Analogy">
   </a>
 </div>
+<br><br>
+<div align="center">
+🚀 Let’s connect and build something amazing together! 🚀
+</div>
